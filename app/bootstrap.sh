@@ -19,15 +19,15 @@ apt-get update
 # Install apache, php, mariadb, node
 apt-get install -y apache2 \
                 git \
-                php8.1 \
-                libapache2-mod-php8.1 \
-                php8.1-common \
-                php8.1-mcrypt \
-                php8.1-zip \
-                php8.1-mysql \
-                php8.1-xml \
-                php8.1-mbstring \
-                php8.1-intl \
+                php8.0 \
+                libapache2-mod-php8.0 \
+                php8.0-common \
+                php8.0-mcrypt \
+                php8.0-zip \
+                php8.0-mysql \
+                php8.0-xml \
+                php8.0-mbstring \
+                php8.0-intl \
                 mariadb-server \
                 nodejs \
                 symfony-cli
@@ -90,3 +90,8 @@ figlet "PRO 2022"
 
 # Remove useless packages
 apt-get purge -y expect figlet
+
+# Adding vagrant user to vboxsf group
+usermod -G vboxsf -a vagrant
+
+echo "export=COMPOSER_RUNTIME_ENV=virtualbox" >> /home/vagrant/.bashrc
