@@ -1,8 +1,6 @@
 # PRO_2022
 
 ## Dev - Starting the project
-Until we have a packaged vagrant box, all the required files & directory (`app/resources/*`, `app/boostrap.sh`) are included in the git.   
-Once we have packaged it, only the `Vagrantfile` will be present.
 
 ### Initial setup
 There is a bit of setup to do the first time you want to run the app.
