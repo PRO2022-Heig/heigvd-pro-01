@@ -30,6 +30,8 @@ apt-get install -y apache2 \
                 php8.0-intl \
                 mariadb-server \
                 nodejs \
+                zip \
+                unzip \
                 symfony-cli
 
 # Setup mariadb -- not really sure
@@ -61,7 +63,7 @@ expect eof
 
 echo "$SECURE_MYSQL"
 
-echo "CREATE user db@'%' IDENTIFIED BY 'db';GRANT ALL PRIVILEGES ON *.* TO 'db'@'%' IDENTIFIED BY 'db';" > ./user.sql
+echo "CREATE user 'db'@'%' IDENTIFIED BY 'db';GRANT ALL PRIVILEGES ON *.* TO 'db'@'%' IDENTIFIED BY 'db';" > ./user.sql
 
 mysql -u root < ./user.sql
 
@@ -94,4 +96,7 @@ apt-get purge -y expect figlet
 # Adding vagrant user to vboxsf group
 usermod -G vboxsf -a vagrant
 
-echo "export=COMPOSER_RUNTIME_ENV=virtualbox" >> /home/vagrant/.bashrc
+# Creating temp folders for symfony
+mkdir /var/symfony
+chown www-data:www-data /var/symfony
+chmod 777 /var/symfony
