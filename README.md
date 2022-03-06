@@ -16,11 +16,9 @@ There is a bit of setup to do the first time you want to run the app.
    ```
 
 ### Start the project
-To start the project, simply open a terminal to the `app` directory and run
+To start the project, simply open a terminal to the `app` directory and run `vagrant up`
 
-```shell
-vagrant up
-```
+Then you can use `vagrant ssh` to ssh into the VM. You have now entered the development environment
 
 ### Access
 - The backend can be accessed from `api.our-app.local`
