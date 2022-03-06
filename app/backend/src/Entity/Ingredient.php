@@ -5,10 +5,11 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
 #[ApiResource]
-class Ingredient
+class Ingredient extends AbstractEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,6 +17,7 @@ class Ingredient
     private int $id;
 
     #[ORM\Column(type: "string", length: 255)]
+    #[Assert\NotBlank]
     private string $name;
 
     /**
