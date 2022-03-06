@@ -12,6 +12,6 @@ class IngredientTest extends KernelTestCase
     public function testEmptyName(): void
     {
         $ingredient = new Ingredient();
-        $this->assertErrorCount(1, $ingredient->setName(''), 'empty ingredient name');
+        $this->assertErrorCount(1, $ingredient->setName(""), "empty ingredient name");
     }
 }

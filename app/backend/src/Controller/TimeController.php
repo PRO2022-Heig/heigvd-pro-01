@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
 
 class TimeController extends AbstractController
 {
@@ -14,7 +13,7 @@ class TimeController extends AbstractController
     public function index(): Response
     {
         $response = new JsonResponse();
-        $response->setData(['date' => (new \DateTime())->format('d-m-Y H:i:s')]);
+        $response->setData(["date" => (new \DateTime())->format("d-m-Y H:i:s")]);
         return $response;
     }
 }
