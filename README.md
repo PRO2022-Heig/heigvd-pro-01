@@ -19,8 +19,9 @@ vagrant up
 ```
 
 ### Access
-- The backend can be accessed with `api.our-app.local`
-- The frontend can be accessed with `our-app.local`
+- The backend can be accessed from `api.our-app.local`
+- The frontend can be accessed from `our-app.local`
+- MailHog can be access from `our-app.local:8025`
 
 ### Side note
 The URL might change once we have settled for a name. In that case, simply change the entries in the hosts file and access the different parts using the new URLs.
