@@ -11,11 +11,11 @@ class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        return '/var/symfony/cache/';
+        return "/var/symfony/cache/";
     }
 
     public function getLogDir(): string
     {
-        return '/var/symfony/log/';
+        return "/var/symfony/log/";
     }
 }

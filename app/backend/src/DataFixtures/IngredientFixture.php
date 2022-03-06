@@ -10,7 +10,6 @@ class IngredientFixture extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-
         $ingredient = new Ingredient();
         $ingredient->setName("potato");
         $manager->persist($ingredient);
