@@ -3,6 +3,10 @@
 ## Dev - Starting the project
 
 ### Initial setup
+Install [virtualbox](https://www.virtualbox.org/wiki/Downloads) with the extension pack
+
+Install [vagrant](https://www.vagrantup.com/downloads)
+
 There is a bit of setup to do the first time you want to run the app.
 1. Edit the hosts file of your system (windows `C:\Windows\System32\Drivers\etc\hosts`, linux you should know it ;))
 1. Add the following content
