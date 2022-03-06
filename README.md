@@ -18,6 +18,15 @@ To start the project, simply open a terminal to the `app` directory and run
 vagrant up
 ```
 
+#### backend
+In order to have a working backend a number of things must be initialized, go into the backend directory (from within th VM) and run `composer setup`
+
+
+To run symfony unit tests in the backend directory and run the following command
+```
+./bin/phpunit
+```
+
 ### Access
 - The backend can be accessed from `api.our-app.local`
 - The frontend can be accessed from `our-app.local`
