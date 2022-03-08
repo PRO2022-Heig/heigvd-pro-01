@@ -1,0 +1,5 @@
+## IDEs configuraiton folder
+.idea/
+
+## Vagrant working directory
+app/.vagrant/
