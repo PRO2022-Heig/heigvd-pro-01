@@ -80,8 +80,7 @@
             "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff"
         ],
         "setup": [
-            "chmod +x ./scripts/setup.sh",
-            "./scripts/setup.sh"
+            "bash ./scripts/setup.sh"
         ]
     },
     "conflict": {
