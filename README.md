@@ -27,3 +27,19 @@ Then you can use `vagrant ssh` to ssh into the VM. You have now entered the deve
 
 ### Side note
 The URL might change once we have settled for a name. In that case, simply change the entries in the hosts file and access the different parts using the new URLs.
+
+### Git usage (for developer)
+#### Commit nomenclature
+A Commit message should look like this: `(?["STATE"]) (?{"ISSUE_KEY"}) "text"`
+
+With the following "names":
+- text: The normal commit message. What have been done
+- STATE: (optional, UPPERCASE) To use when the commit does not have a global meaning of "task".  
+  For example: [WIP], [BUGFIX], [LOGIC_FIX], ...
+- ISSUE_KEY: The "Jira Key" used to link the issues from Jira
+
+##### Examples
+- normal: `Init Backend`
+- with a state: `[BUGFIX] reload db on error`
+- with an ISSUE_KEY: `{DEV-12330} Auth login with Google`
+- with both: `[LOGIC_FIX] {DEV-12330} Login now realy works`
