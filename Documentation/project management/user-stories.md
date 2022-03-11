@@ -73,7 +73,11 @@ He inputs who will partake and the approximate location where the restaurant sho
 
 #### Context
 
+A recipe has been chosen for a meal between friends. The host must now go and buy all the ingredients ahead of the meal.
+
 #### Solution
+
+The application automatically generates a shopping list based on the recipe and the number of guests.
 
 ## Goals
 
