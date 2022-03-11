@@ -4,9 +4,54 @@ This document states the features that will be supported on each iteration.
 
 
 
+## Global vision
+
+This diagram show global vision of the features that would be supported by the application.
+
+![model_diagram.drawio](img/model_diagram.drawio.png)
+
+### Blocks
+
+#### Main Blocks
+
+* Blue: The users can choose a meal for themselves or for a group. This is barely the core of the service  and needs to be extended by other blocks.
+* Green: Meals can be cocked using many recipes and ingredients, and this is part of the biggest issue when choosing a meal. 
+* Red: There are many providers for each ingredients. Ingredients have different characteristics (size, price, taste, ...) and are sold in different places. This blocks aims to have more precise informations about the recipe and also to geolocalise stores that sell the ingredients.
+
+#### Secondary Blocks
+
+* Yellow: Features that helps planning meals
+* Purple: Not only would you choose what you eat, but also where.
+
+### Project Focus
+
+By importance, the most important features are the blue and green blocks:
+
+* They will allow a community to grow really fast.
+* The service will be ready for production
+  * We will be able to obtain data to prioritize the next revenue streams.
+  * We will gain attention from brand in order to implement the red block.
+
+The project will focus on the blue and green blocks.  Even if they are not directly the biggest revenue stream of the service, having them first will cost less and be ready in fewer time. We will be then able to have a better response to the market and maximize the benefits of the application with the red block once the service as gained popularity.
+
+
+
 ## Revenue stream
 
-* 
+Active advertising have a negative impact on user experience which is bad for us as we want to create a community. Especially considering that the application will mainly be used on phones.
+
+This kind of service works better with:
+
+* Premium tier adding extra features
+* Production promotion: Companies can pay to have their products highlighted.
+
+The product promotion will be dealt with in the future in the red block. We need to gain popularity first.
+
+
+
+Considering that the benefits are proportional to the number of users, we need to gain popularity quickly to generate bigger revenues. If we prioritize premium features, we could generate our first incomes quicker, but the community would grow smaller as there would be fewer free features.
+
+The choice is made to prioritize importants freemium features. This is an investment in order to maximize the future benefits. 
 
 
 
@@ -35,6 +80,7 @@ This document states the features that will be supported on each iteration.
   * Recipe contains specific ingredients
   * Recipe cooking-time under a specified value.
   * Type of meal (Asiatic, Italian, Mexican, ...)
+* Users can shuffle the search result
 * User can add its own receipts (available for anyone)
 * User can mark receipts.
 

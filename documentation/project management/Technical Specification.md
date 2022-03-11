@@ -2,7 +2,25 @@
 
 
 
-### Resources needs
+## Stack
+
+“[LAMP](https://doc.ubuntu-fr.org/lamp)” Web application, divided into backend/frontend:
+
+- ​	Apache2-Php with  [Symfony](https://symfony.com/) framework for the backend.
+- ​	Javascript with [Angular](https://angular.io/) for the frontend
+- ​	MariaDB as DBMS
+- ​	OS Linux
+
+### 
+
+### Remarks
+
+- The choices were made according to the skills and wish of the team's members as long as the technology suited the project well. This ensure that the technologies are mastered and reduce the risks.
+- MariaDB was choosen over Postgresql because it is well integrated with php and it is easier to find [DBaaS](https://blogs.oracle.com/oracle-france/post/definition-database-as-a-service) providers for MariaDB.
+
+
+
+## Resources needs
 
 * There is no strong need for resources, even on connection peak during meal time
 
@@ -13,15 +31,11 @@
 * The application is monolithic and will be launched on a single platform. Therefore:
   * it does not need to be cross-platform.
   * Docker is not a real advantage: Docker is very good to handle micro-services architectures
-* 
-
-- ​	L’application est prévu pour être centralisée et n’a besoin de pouvoir tourner que sur une seule plateforme. En revanche, dans la majorité des scénarios, les utilisateurs accèdent au service à travers leurs smartphones. C’est pourquoi l’UX est essentiel
-- ​	Le succès de ce genre d'applications repose sur sa facilité d’utilisation. L’[UX](https://en.wikipedia.org/wiki/User_experience) doit donc être extrêmement bien pensée. La priorité d’une fonctionnalité sera revue si son utilisation est trop complexe ou ne convient pas.
-- ​	L’application répondra rapidement à énormément de besoins avec un set limité de fonctionnalités mais beaucoup de fonctionnalités peuvent être pensées et imaginées comme extensions à l’application. Il est important que l’application soit maintenable pour permettre ces ajouts.
+* The application's success lay on its popularity. The UX needs to be really well made to please the user and the overall project needs to be maintainable in order to be extended.
 
 
 
-### Deployment (Production and Dev)
+## Deployment (Production and Dev)
 
 Since our application is a monolith, docker is not a good choice.
 
