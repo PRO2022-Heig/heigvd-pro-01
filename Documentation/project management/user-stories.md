@@ -19,45 +19,61 @@ Among other things, the application will make it easier to choose meals and sele
 
 ## Application's use cases
 
-### Context 1
+### 1. Allergy concerns in meal choices  (required)
+
+#### Context
 
 A young adult, about 30, invites some friends to eat on a Friday night. She wants to cook a nice meal, with a starter, a main course, and a desert. The budget is not a problem, but some of the guests have allergies.
 
-### Solution 1 (required)
+#### Solution
 
 She creates a group in the application and adds all of her guests. The application then suggests some recipes taking into account the allergies of her guests.
 
-### Context 2
+### 2. Voting on a group meals (required)
+
+#### Context
 
 A group of friends is planning to cook together. They each have individual preferences and can't reach an understanding over what to cook.
 
-### Solution 2 (required)
+#### Solution
 
 They all join a group and the application suggests a list of possible meals. They can vote on their preferred choice. Once everyone voted, the application shows the results.
 
-### Context 3
+### 3. Recipes containing specific ingredients (required)
+
+#### Context
 
 A student is about to meet the parents of her boyfriend for the first time. She wants to impress them with a nice homemade meal. She wants red meet to be the center piece of the main course.
 
-### Solution 3 (required)
+#### Solution
 
 She inputs her criteria and the application suggests recipes with rib eye steaks or beef tenderloin.
 
-### Context 4
+### 4. Recipe cooked in a specified amount of time (required)
+
+#### Context
 
 A student doesn't have much time to prepare a lunch. He knows that he has leeks in his fridge that he needs to eat soon. Moreover, he needs a meal that requires about 20 minutes of preparation.
 
-### Solution 4 (required)
+#### Solution
 
 The application will therefore suggest a list of recipes containing leeks and cooked quickly.
 
-### Context 5
+### 5. Restaurant suggestion (wished)
+
+#### Context
 
 An employee is in charge of choosing the restaurant for the end-of-the-year office party. He doesn't know the individual preferences of all of his coworkers, but they are all signed up on the platform.
 
-### Solution 5 (wished)
+#### Solution
 
 He inputs who will partake and the approximate location where the restaurant should be. The application then suggests a list of restaurants best matching the preferences of his coworkers.
+
+### 6. Shopping list (wished)
+
+#### Context
+
+#### Solution
 
 ## Goals
 
