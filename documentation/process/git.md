@@ -50,6 +50,8 @@ We need to implement a *login method*:
   Note: In this example both `dev/backend` and `dev/frontend` have new features. It is quite possible that only one of the two is used.
 - Verifications of the `develop` branch. Then merge into `main`.
 
+
+
 ---
 
 **In case of failure in verifications**
