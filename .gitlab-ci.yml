@@ -1,6 +1,6 @@
 stages:
-    - dependencies
-    - test
+  - dependencies
+  - test
 
 include:
   - local: '/app/backend/.gitlab/ci.yml'

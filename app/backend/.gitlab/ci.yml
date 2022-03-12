@@ -1,13 +1,13 @@
 composer-dependencies:
   image: composer
-    stage: dependencies
-    script:
-      - cd app/backend
-      - composer install
-    cache:
-      key: "$CI_COMMIT_REF_SLUG"
-      paths:
-        - app/backend/vendor
+  stage: dependencies
+  script:
+    - cd app/backend
+    - composer install
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - app/backend/vendor
 
 backend-lint:
   image: composer
