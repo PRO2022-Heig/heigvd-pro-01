@@ -11,11 +11,19 @@ class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        return "/var/symfony/cache/";
+        if (isset($_ENV["VAR_DIR"]) && !empty($_ENV["VAR_DIR"])) {
+            return $_ENV["VAR_DIR"] . "/cache/";
+        }
+
+        return parent::getCacheDir();
     }
 
     public function getLogDir(): string
     {
-        return "/var/symfony/log/";
+        if (isset($_ENV["VAR_DIR"]) && !empty($_ENV["VAR_DIR"])) {
+            return $_ENV["VAR_DIR"] . "/log/";
+        }
+
+        return parent::getLogDir();
     }
 }
