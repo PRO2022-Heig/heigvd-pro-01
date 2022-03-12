@@ -1,32 +1,7 @@
-composer-dependencies:
-    image: composer
-    stage: dependencies
-    script:
-        - cd app/backend
-        - composer install
-    cache:
-        key: "$CI_COMMIT_REF_SLUG"
-        paths:
-            - app/backend/vendor
+stages:
+    - dependencies
+    - test
 
-backend-lint:
-    image: composer
-    stage: test
-    script:
-        - cd app/backend
-        - ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --dry-run
-    cache:
-        key: "$CI_COMMIT_REF_SLUG"
-        paths:
-            - app/backend/vendor
-
-backend-test:
-    image: composer
-    stage: test
-    script:
-        - cd app/backend
-        - ./bin/phpunit
-    cache:
-        key: "$CI_COMMIT_REF_SLUG"
-        paths:
-            - app/backend/vendor
+include:
+  - local: '/app/backend/.gitlab/ci.yml'
+  - local: '/app/frontend/.gitlab/ci.yml'
