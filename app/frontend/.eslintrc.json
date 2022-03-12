@@ -1,0 +1,138 @@
+{
+	"parserOptions": {
+		"project": "tsconfig.json",
+		"sourceType": "module"
+	},
+	"plugins": [
+		"@html-eslint",
+		"@typescript-eslint/eslint-plugin",
+		"@typescript-eslint/tslint"
+	],
+	"overrides": [{
+		"files": ["*.html"],
+		"parser": "@html-eslint/parser",
+		"rules": {
+			"@html-eslint/require-meta-description": "warn",
+			"@html-eslint/quotes": ["error", "double"],
+			"@html-eslint/id-naming-convention": ["error", "kebab-case"],
+			"@html-eslint/no-duplicate-id": "error",
+			"@html-eslint/no-inline-styles": "warn",
+			"@html-eslint/no-obsolete-tags": "error",
+			"@html-eslint/require-img-alt": "warn"
+		}
+	}, {
+		"files": ["*.ts"],
+		"parser": "@typescript-eslint/parser",
+		"rules": {
+			"@typescript-eslint/explicit-member-accessibility": "error",
+			"@typescript-eslint/interface-name-prefix": "off",
+			"@typescript-eslint/explicit-function-return-type": "off",
+			"@typescript-eslint/explicit-module-boundary-types": "off",
+			"@typescript-eslint/no-explicit-any": "warn",
+			"@typescript-eslint/no-inferrable-types": "warn",
+			"@typescript-eslint/no-unused-vars": "error",
+			"@typescript-eslint/tslint/config": [
+				"error",
+				{
+					/* https://github.com/eslint/eslint/issues/5583 */
+					"rules": {
+						"curly": [
+							true,
+							"as-needed"
+						],
+						"ordered-imports": [
+							true,
+							{
+								"module-source-path": "full",
+								"grouped-imports": true,
+								"groups": [
+									{
+										"name": "Angular Modules",
+										"match": "^@angular",
+										"order": 1
+									},
+									{
+										"name": "Node Modules",
+										"match": "^@[a-z]+",
+										"order": 1
+									},
+									{
+										"name": "Node Modules",
+										"match": "^[a-z]+",
+										"order": 1
+									},
+									{
+										"name": "Local lib",
+										"match": "^\\.[.a-zA-Z/]*/_lib/",
+										"order": 2
+									},
+									{
+										"name": "Local",
+										"match": "^\\.[./]*/",
+										"order": 3
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	}],
+	"extends": [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"root": true,
+	"env": {
+		"node": true,
+		"jest": true
+	},
+	"rules": {
+		"arrow-parens": "off",
+		"brace-style": [
+			"error",
+			"1tbs",
+			{
+				"allowSingleLine": false
+			}
+		],
+		"comma-dangle": "error",
+		"eqeqeq": "error",
+		"eol-last": "error",
+		"max-len": [
+			"error",
+			150
+		],
+		"prefer-template": "error",
+		"prefer-const": "error",
+		"no-alert": "error",
+		"no-console": "error",
+		"no-empty": "error",
+		"no-extra-semi": "error",
+		"no-return-await": "error",
+		"no-trailing-spaces": "error",
+		"no-unused-expressions": "error",
+		"no-unused-labels": "error",
+		"no-var": "error",
+		"quotes": [
+			"error",
+			"double",
+			{
+				"allowTemplateLiterals": true,
+				"avoidEscape": true
+			}
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"object-property-newline": [
+			"warn",
+			{
+				"allowAllPropertiesOnSameLine": true
+			}
+		]
+	}
+}

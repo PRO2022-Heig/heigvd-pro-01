@@ -1,0 +1,13 @@
+<h3>Example</h3>
+
+<p>
+	Make a request every
+	<input type="number" (change)="setRequest()"
+	   [(ngModel)]="time" [min]="TIME_MIN"/>
+	milliseconds.
+</p>
+
+<div *ngIf="request">
+	<p>Response from the server (each {{ time / 1000 | number:".1-1" }} s):</p>
+	<pre>{{ request | async | json }}</pre>
+</div>
