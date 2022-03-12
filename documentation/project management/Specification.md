@@ -94,7 +94,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 
 
 
-### 2. Groups Management (4Weeks -> Date:  11/5/2022)
+### 2. Groups Management (5Weeks -> Date:  18/5/2022)
 
 #### User features
 
@@ -110,9 +110,11 @@ The choice is made to prioritize importants freemium features. This is an invest
 
 
 
-### 3. Project consolidation and paid features(3Weeks -> Date:  1/6/2022)
+### 3. Project consolidation and paid features(2Weeks -> Date:  1/6/2022)
 
-#### User features (paid features) if enough time
+This iteration is used to consolidate the previous ones. If we have enough time, we will add some premium features from the backlog.
+
+#### Example of User features (paid features) if enough time
 
 * User can plan meals for a period and generate a shopping list
 * Agenda (google) integration: user can bind a meal date with its calendar
