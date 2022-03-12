@@ -5,7 +5,7 @@ composer-dependencies:
     - cd app/backend
     - composer install
   cache:
-    key: "$CI_COMMIT_REF_SLUG"
+    key: "be-$CI_COMMIT_REF_SLUG"
     paths:
       - app/backend/vendor
 
@@ -16,7 +16,7 @@ backend-lint:
     - cd app/backend
     - composer cs-fixer
   cache:
-    key: "$CI_COMMIT_REF_SLUG"
+    key: "be-$CI_COMMIT_REF_SLUG"
     paths:
       - app/backend/vendor
 
@@ -27,6 +27,6 @@ backend-test:
     - cd app/backend
     - ./bin/phpunit
   cache:
-    key: "$CI_COMMIT_REF_SLUG"
+    key: "be-$CI_COMMIT_REF_SLUG"
     paths:
       - app/backend/vendor

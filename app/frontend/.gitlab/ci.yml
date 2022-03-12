@@ -5,7 +5,7 @@ node-dependencies:
         - cd app/frontend
         - npm install
     cache:
-        key: "$CI_COMMIT_REF_SLUG"
+        key: "$fe-CI_COMMIT_REF_SLUG"
         paths:
             - app/frontend/node_modules
 
@@ -16,7 +16,7 @@ frontend-lint:
         - cd app/frontend
         - npm run lint
     cache:
-        key: "$CI_COMMIT_REF_SLUG"
+        key: "$fe-CI_COMMIT_REF_SLUG"
         paths:
             - app/frontend/node_modules
 
@@ -27,6 +27,6 @@ frontend-test:
         - cd app/frontend
         - npm test -- --no-watch --browsers=ChromeHeadlessCI
     cache:
-        key: "$CI_COMMIT_REF_SLUG"
+        key: "$fe-CI_COMMIT_REF_SLUG"
         paths:
             - app/frontend/node_modules
