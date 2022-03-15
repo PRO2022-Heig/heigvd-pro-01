@@ -10,6 +10,8 @@ on:
 jobs:
   Backend:
     runs-on: ubuntu-latest
+    env:
+      VAR_DIR: ''
     steps:
       - uses: actions/checkout@v2
       - name: Setup PHP, with composer and extensions
