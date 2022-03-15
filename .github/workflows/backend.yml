@@ -17,7 +17,6 @@ jobs:
         with:
           php-version: '8.0'
           extensions: mbstring, simplexml, dom
-        working-directory: './app/backend'
       - name: Install dependencies
         run: composer install --no-progress --optimize-autoloader
         working-directory: './app/backend'
