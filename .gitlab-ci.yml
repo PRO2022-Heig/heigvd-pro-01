@@ -1,7 +1,0 @@
-stages:
-  - dependencies
-  - test
-
-include:
-  - local: '/app/backend/.gitlab/ci.yml'
-  - local: '/app/frontend/.gitlab/ci.yml'

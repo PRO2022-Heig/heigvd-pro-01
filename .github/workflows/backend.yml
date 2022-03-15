@@ -1,0 +1,22 @@
+name: Backend
+jobs:
+  Backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          extensions: mbstring, simplexml, dom
+        working-directory: './app/backend'
+      - name: Install dependencies
+        run: composer install --no-progress --optimize-autoloader
+        working-directory: './app/backend'
+      - name: Running tests
+        run: ./bin/phpunit
+        working-directory: './app/backend'
+      - name: Running linter
+        run: composer cs-fixer
+        working-directory: './app/backend'
