@@ -21,7 +21,7 @@ To start the project, simply open a terminal to the `app` directory and run `vag
 Then you can use `vagrant ssh` to ssh into the VM. You have now entered the development environment
 
 #### backend
-In order to have a working backend a number of things must be initialized, go into the backend directory (from within th VM) and run `composer setup`
+In order to have a working backend a number of things must be initialized, go into the app/backend directory (from within th VM) and run `composer setup`
 
 
 To run symfony unit tests in the backend directory and run the following command

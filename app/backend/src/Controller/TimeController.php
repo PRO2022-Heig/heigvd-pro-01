@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TimeController extends AbstractController
 {
-    #[Route("/api/time", name: "app_time")]
+    #[Route("/time", name: "app_time")]
     public function index(): Response
     {
         $response = new JsonResponse();

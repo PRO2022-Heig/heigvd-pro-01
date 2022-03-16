@@ -18,7 +18,8 @@ return (new Config())
                 "patches",
                 "migrations",
                 "public",
-                "vendor"
+                "vendor",
+                "var"
             ])
             ->in(__DIR__)
     )

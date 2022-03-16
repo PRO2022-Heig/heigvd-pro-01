@@ -7,15 +7,26 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.vm.box = "nigelmann/symfony-node"
+  config.vm.box_version = "1.0"
 
   config.vm.network "private_network", ip: "192.168.56.69"
 
-  config.vm.synced_folder ".", "/var/www/our-app", :owner => "vagrant", :group => "www-data"
+  config.vm.synced_folder ".", "/home/vagrant/app", :owner => "vagrant", :group => "www-data"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "vagrant-pro2022"
-    vb.memory = "512"
+    vb.memory = "1024"
     vb.cpus = 1
     vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
+
+  config.vm.provision "shell", inline: <<-SCRIPT
+# Creating temp folders for symfony
+mkdir /var/symfony -p
+chown www-data:www-data /var/symfony
+chmod 777 /var/symfony
+
+# Create symlinks to back and front end directories
+ln -s /home/vagrant/app /var/www/our-app
+SCRIPT
 end
