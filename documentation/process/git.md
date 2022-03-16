@@ -1,45 +1,53 @@
-### Git usage (for developer)
+# Git usage (for developer)
 
-This document states our git processes
+This document states our git processes.
 
-#### Commit nomenclature
+## Commit message rules
 
-A Commit message should look like this: `(?["STATE"]) (?{"ISSUE_KEY"}) "text"`
+A commit message should look like this: `(?["STATE"]) (?{"ISSUE_KEY"}) "summary"`
 
 With the following "names":
 
-- text: The normal commit message. What have been done
-- STATE: (optional, UPPERCASE) To use when the commit does not have a global meaning of "task".  
-  For example: [WIP], [BUGFIX], [LOGIC_FIX], ...
-- ISSUE_KEY: The "Jira Key" used to link the issues from Jira.
+**summary:** A summary line starts with a keyword and a brief summary of what the change does. Make sure to describe how the behavior now is.
 
-##### Examples
+**STATE:** (optional, UPPERCASE) To use when the commit does not have a global meaning of "task"  
+The state can take **one** of the following values:
+  - `[BUGFIX]`: A fix for a bug
+  - `[LOGICFIX]`: A fix for a logic problem
+  - `[DOCS]`: When adding of editing documentation  
 
-- normal: `Init Backend`
+`[WIP]` Can be added **before** an other state to signal that the work is still in progress  
+`[FOLLOWUP]` Can be added **before** to signal that it is in relationto the **previous** commit
+
+**ISSUE_KEY:** The "Jira Key" used to link the issues from Jira.
+
+### Examples
+
+- normal: `{DEV-12330} Init Backend`
 - with a state: `[BUGFIX] reload db on error`
-- with an ISSUE_KEY: `{DEV-12330} Auth login with Google`
-- with both: `[LOGIC_FIX] {DEV-12330} Login really works now`
+- with both: `[LOGICFIX] {DEV-12330} Login really works now`
+- work in progress `[WIP][LOGICFIX] {DEV-12330} Login really works now`
+- followup `[FOLLOWUP][LOGICFIX] {DEV-12330} Login really works now`
 
-#### Branch nomenclature
+## Branch naming
 
 There are 4 main branches on which we normally do not code directly:
-<!-- TODO: dev or develop? Or nothing? -->
 
 - **dev/backend** & **dev/frontend**: Main branches separating the *backend* and the *frontend*, they are equivalent to a **develop** branch for these two parts.
 - **develop**: Usually before merging on **main**: A functional code on which is added a set of new features to be tested for validation.
 - **main**: Represents a stable production state: All the code works and provides a functional solution.
 
 New branches should look like: `dev/<part>/<name>`.  
-Where
 
+Where  
 - *\<part\>* is `backend` or `frontend`
 - *\<name\>* a meaningful name of the feature/task to develop AND/OR related to a Jira Issue.
 
-<!-- TODO: better title -->
+For other changes not directly related to code like user documentation this **must** be done on the **documentation** branch and then merged on **main** via a merge request that **must** be validated by quality control
 
-##### Example of usage
 
-<!-- TODO: to develop, fix, modify, it seems logical to me when I wrote this, but it can be improved -->
+### Usage example
+
 We need to implement a *login method*:  
 
 - `dev/backend/login`: is used on the backend folder.
@@ -54,10 +62,9 @@ We need to implement a *login method*:
 
 ---
 
-**In case of failure in verifications**
+## In case of failure in verifications
 
 If the CI fails on a merge request, the merge is not done and the fix has to be done on the unmerged branch.  
-If the merge is done (not a merge request, merge request but error(s) not detected or manual merge):
+If the merge has already been done and a bug is found a `hotfix/<name>` branch is created to fix the issue and a merge request is done on the original branch. Then fix fix is also merged on the lower branch to apply the fix.
 
-- the errors can be fixed with a [QUICK_FIX]/[HOTFIX] state on the merged branch if it is done quickly and simply.
-- Else (the merge is "undone" and) the fix is done on the original branch or a "hotfix" branch
+Where *\<name\>* is a meaningful name of the hotfix to implement AND related to a Jira Issue.
