@@ -1,5 +1,6 @@
 # PRO_2022
 
+<!-- TODO: A table of contents? -->
 ## Dev - Starting the project
 
 ### Initial setup
