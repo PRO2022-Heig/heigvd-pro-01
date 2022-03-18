@@ -8,7 +8,7 @@ The conventions of message commits and name's branches are difined in the follow
 
 The workflow will follow the "rules" describes in the following diagram:
 
-***TODO: add the image of the diagram workflow when MR will merge.***
+![diagram](dev_worflow.png)
 
 ## Merge request
 
@@ -24,11 +24,11 @@ He can also adds some TODO in the code and commit with a message "Code review".
 
 ### Changelog
 
-When creating a merge request, the changes must be spcecified in the [changelog.md]() file.
+When creating a merge request, the changes must be spcecified in the [changelog.md](changelog.md) file.
 
-***TODO: add link to the changelog file***
+In the file, the developper must add a lign at the begening of the file. The line must contain the date and the commit message of the last changes.
 
-In the file, the developper must add a lign at the begening of the file. The line must contain the date and a little description. The description describe the feature and if it's a fix or a new feature.
+The file contains an example of a chage.
 
 ### Uint tests
 
