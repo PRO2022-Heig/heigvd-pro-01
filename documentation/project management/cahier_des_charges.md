@@ -9,7 +9,7 @@ Centered around a user's preferences: allergies and intolerences, meal type and 
 
 ### A few words about allergies
 Since a few of our team members have allergies, we know that it's a complicated subject to manage and there is no correct way of doing it. A specific focus on this matter has been put and we have developed multiple ways to maximize the accuracy of the information.   
-However, we are not a medical platform and do not wish to be so, the information is and will be as accurate as our data provider can be (whether it is an external company, sample data found on the internet).  
+However, we are not a medical platform and do not wish to be one. The information is and will be as accurate as our data provider can be (whether it is an external company or sample data found on the internet).  
 More on this subject can be found in the [Specification / Global vision](#global-vision) section.
 
 ## Objectives
@@ -103,20 +103,20 @@ The choice is made to prioritize importants freemium features. This is an invest
 * If needed, features can be shifted to the next iteration. The third iteration is kept for this usage, otherwise it will be used to add extra features.
 * An intermediate presentation will take place on the first iteration's end. 
 
-#### 1. First working version (5Weeks -> Date:  13/4/2022)
+#### 1. First working version (5 weeks -> Date:  13/4/2022)
 ##### User features
 * User can sign up and sign in into the application using login/password
 * User can sign up and sign in into the application using OAuth
 * User can update their profiles
   * Add/remove their allergies/ethics (e.g. Vegan)
   * Add/remove preferences (likes and dislikes)
-* Users can find a meal and a receipt based on their profiles and the following filters
+* Users can find a meal and a recipes based on their profiles and the following filters
   * Recipe contains specific ingredients
   * Recipe cooking-time under a specified value.
   * Type of meal (Asiatic, Italian, Mexican, ...)
 * Users can shuffle the search result
-* User can add its own receipts (available for anyone)
-* User can mark receipts.
+* [TODO-REVIEW] User can add its own recipes (available for anyone)
+* User can mark recipes.
 
 ##### Additional features
 * Definition of the entity model
@@ -125,18 +125,18 @@ The choice is made to prioritize importants freemium features. This is an invest
 * Samples of real data will already be available
 * There is a way to differentiate premium users from freemium ones
 
-#### 2. Groups Management (5Weeks -> Date:  18/5/2022)
+#### 2. Groups Management & Restaurant (5 weeks -> Date:  18/5/2022)
 ##### User features
 * User can add/remove other user as their friends.
 * User can create and delete groups
 * User can add/remove other users (even not their friends)
-* User can select the meal and receipt for the group
-* User can choose some meals and let the group vote
+* User can select the meal and recipes for the group
+* [TODO] Add features for restaurant-meals
 
 ##### Additional features
 * Data will be added in a larger scale.
 
-#### 3. Project enhancement and paid features(2Weeks -> Date:  1/6/2022)
+#### 3. Project enhancement and paid features(2 weeks -> Date:  1/6/2022)
 This iteration is used to enhance the previous ones. If we have enough time, we will add some premium features from the backlog.
 
 ##### Example of User features (paid features) if enough time
@@ -144,7 +144,8 @@ This iteration is used to enhance the previous ones. If we have enough time, we 
 * Agenda (google) integration: user can bind a meal date with its calendar
 
 ##### Additional features
-* Consolidation of existing features
+* [TODO-REVIEW] User can choose some meals and let the group vote
+* Enhancement of existing features
 * This iteration is also a buffer for previous iterations
 
 ### Disclaimers
