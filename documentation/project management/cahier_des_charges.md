@@ -13,14 +13,15 @@ However, we are not a medical platform and do not wish to be one. The informatio
 More on this subject can be found in the [Specification / Global vision](#global-vision) section.
 
 ## Objectives
-The market for food&eating realted websites is already well taken by major actors in our initial geographical permiter (French-speaking part of Switzerland): Marmiton, Betty Bossy, a simple Google search, a whatsapp group. If we want to be competitive, we have two choices
+The market for food&eating realted websites is already well taken by major actors in our initial geographical permiter (French-speaking part of Switzerland): Marmiton, Betty Bossy, a simple Google search, everlasting discussion on whatsapp groups. If we want to be competitive, we have two choices
 * Take on a specific competitor and be better than them
-* Create a set of features that allows the user to do a bit of each competitor in our product.
+* Gather features of each competitor to have the best of all worlds in our product.
+* Provide something they don't
 
-We are aiming at the second option. We want to replace endless Google searches for a meal idea, endless Whatsapp discussions on what to eat at the family gathering. 
+We are aiming at the second and third options. We want to replace endless Google searches for a meal idea, endless Whatsapp discussions on what to eat at the family gathering. 
 With a recipe engine based on one or multiple user's "food profile", a meal idea can be found easily, directly linked to a recipe on our platform. 
 
-In conclusion, we will not outperform our competitors that are very good on a specific subject by being better at it than them, but by having a bit of each feature of our different competitors and allowing a user to remain on our platform for every part of the eating-planning process.
+In conclusion, we will not outperform our competitors by being better than them, but by having a bit of each feature of our different competitors and allowing a user to remain on our platform for every part of the eating-planning process, which other services don't provide.
 
 ## Detailed uses cases
 ### 1. Allergy concerns in meal choices (required)
@@ -115,13 +116,13 @@ The choice is made to prioritize importants freemium features. This is an invest
   * Recipe cooking-time under a specified value.
   * Type of meal (Asiatic, Italian, Mexican, ...)
 * Users can shuffle the search result
-* [TODO-REVIEW] User can add its own recipes (available for anyone)
-* User can mark recipes.
+* User can choose a meal provided by a restaurant
 
 ##### Additional features
 * Definition of the entity model
 * Research of source of data
-* There is an easy way to import large amount of data
+* There is an easy way to import large amount of data (Meals, recipes, ingredients and products)
+* There is a way to bind restaurant to meals and defined the allergens they contains
 * Samples of real data will already be available
 * There is a way to differentiate premium users from freemium ones
 
@@ -131,20 +132,24 @@ The choice is made to prioritize importants freemium features. This is an invest
 * User can create and delete groups
 * User can add/remove other users (even not their friends)
 * User can select the meal and recipes for the group
-* [TODO] Add features for restaurant-meals
+* User can add its own recipes (available for anyone)
+* User can mark recipes.
 
 ##### Additional features
 * Data will be added in a larger scale.
 
-#### 3. Project enhancement and paid features(2 weeks -> Date:  1/6/2022)
-This iteration is used to enhance the previous ones. If we have enough time, we will add some premium features from the backlog.
 
-##### Example of User features (paid features) if enough time
+
+### Extra Weeks (2 weeks -> Date:  1/6/2022)
+
+We keep some weeks to enhance the previous iterations and consolidate the deliverables. If we have enough time, we will add some premium features from the backlog.
+
+##### Example of User features (paid features)
 * User can plan meals for a period and generate a shopping list
 * Agenda (google) integration: user can bind a meal date with its calendar
 
 ##### Additional features
-* [TODO-REVIEW] User can choose some meals and let the group vote
+* User can choose some meals and let the group vote
 * Enhancement of existing features
 * This iteration is also a buffer for previous iterations
 
