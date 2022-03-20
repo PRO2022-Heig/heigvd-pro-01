@@ -1,5 +1,5 @@
 # PRO-2022 Cahier des charges
-V3.1 - 19.03.2022
+V3.2 - 19.03.2022
 ## Project introduction & context
 Have you ever found yourself endlessly Googling for meals ideas ? Or trying to choose what to cook for your next meal with your laser-game squad? Or been in a city you don't know, trying to find a restaurant that would match your tedious food preferences?
 
