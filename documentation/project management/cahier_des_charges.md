@@ -1,5 +1,16 @@
 # PRO-2022 Cahier des charges
-V3.2 - 19.03.2022
+V3.3 - 20.03.2022
+## Team members & roles
+Équipe 01 :
+* Ackermann Simon (Développeur Backend [simon.ackermann@heig-vd.ch](mailto:simon.ackermann@heig-vd.ch))
+* Boegli Noah (Développeur Backend, remplaçant chef de projet [noah.boegli@heig-vd.ch](mailto:noah.boegli@heig-vd.ch))
+* Comte Emmanuelle (Tests techniques, gestion des données et responsable qualité [emmanuelle.comte@heig-vd.ch](mailto:emmanuelle.comte@heig-vd.ch))
+* Gachet Jean (Product Owner, Développeur Backend [jean.gachet@heig-vd.ch](mailto:jean.gachet@heig-vd.ch))
+* Gallay David (Chef de projet [david.gallay@heig-vd.ch](mailto:david.gallay@heig-vd.ch))
+* Mendes Hugo (Développeur Frontend [hugo.mendes@heig-vd.ch](mailto:hugo.mendes@heig-vd.ch))
+* Terrani Fabien (Développeur Frontend et responsable UI/UX [fabien.terrani@heig-vd.ch](mailto:fabien.terrani@heig-vd.ch))
+
+(ordre alphabétique)
 ## Project introduction & context
 Have you ever found yourself endlessly Googling for meals ideas ? Or trying to choose what to cook for your next meal with your laser-game squad? Or been in a city you don't know, trying to find a restaurant that would match your tedious food preferences?
 
