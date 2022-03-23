@@ -1,9 +1,14 @@
-:host {
-	&.scrolled-down {
-		:not(.sidenav-opened) app-header {
-			transform: translateY(-100%);
-		}
-	}
+app-header {
+	width: 100vw;
+	z-index: 100;
+}
+
+mat-sidenav, app-sidebar {
+	width: 200px;
+}
+
+app-sidebar {
+	overflow: auto;
 }
 
 .extra-small-size {
@@ -12,8 +17,7 @@
 
 	app-header {
 		position: fixed;
-
-		transition: transform 250ms cubic-bezier(0.0, 0.0, 0.2, 1) 50ms;
+		transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 50ms;
 		transition-property: all;
 	}
 
@@ -30,15 +34,10 @@
 	}
 }
 
-app-header {
-	width: 100vw;
-	z-index: 100;
-}
-
-mat-sidenav, app-sidebar {
-	width: 200px;
-}
-
-app-sidebar {
-	overflow: auto;
+:host {
+	&.scrolled-down {
+		:not(.sidenav-opened) app-header {
+			transform: translateY(-100%);
+		}
+	}
 }

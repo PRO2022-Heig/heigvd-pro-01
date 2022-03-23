@@ -1,7 +1,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-const routes: Routes = [];
+import { MealComponent } from "../components/meals/meal/meal.component";
+import { MealsComponent } from "../components/meals/meals.component";
+
+const routes: Routes = [{
+	component: MealsComponent,
+	path: "meals"
+}, {
+	component: MealComponent,
+	path: "meal/:id"
+}];
 
 @NgModule({
 	exports: [RouterModule],
