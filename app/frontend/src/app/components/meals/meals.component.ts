@@ -8,5 +8,6 @@ import { Component, OnInit } from "@angular/core";
 export class MealsComponent implements OnInit {
 
 	public ngOnInit() {
+		// TODO
 	}
 }
