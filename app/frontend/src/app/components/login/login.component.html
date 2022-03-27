@@ -1,0 +1,81 @@
+<div fxFlex fxLayoutAlign="center center">
+	<mat-card fxFlex="350px" fxFlex.xs="75">
+		<ng-container *ngIf="!user._connected || state.loginOk || state.redirection">
+			<mat-card-header>
+				<mat-card-title>{{ state.signup ? "Créer un compte" : "Connexion" }}</mat-card-title>
+				<mat-card-subtitle>test: {{ tmp.user }} | {{ tmp.pass }}</mat-card-subtitle>
+			</mat-card-header>
+
+			<mat-card-content fxLayout="column">
+				<div *ngIf="state.redirection" fxLayout="column" fxLayoutAlign="center center">
+					<mat-spinner mode="indeterminate" diameter="75"></mat-spinner>
+					<p>
+						<mat-hint>Redirection</mat-hint>
+					</p>
+				</div>
+
+				<ng-container *ngIf="!state.redirection">
+					<form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
+						<mat-form-field>
+							<mat-label>Adresse e-mail</mat-label>
+							<input [formControl]="loginForm.controls.email" matInput type="email" required>
+						</mat-form-field>
+
+						<mat-form-field>
+							<mat-label>Mot de passe</mat-label>
+							<input [formControl]="loginForm.controls.password" matInput type="password" required>
+						</mat-form-field>
+
+						<button mat-raised-button type="submit" color="primary" [disabled]="state.signup || !loginForm.valid">Connexion</button>
+						<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+
+						<p *ngIf="error">
+							<mat-error *ngIf="error.status === 401">
+								<mat-icon inline>error_outline</mat-icon>
+								<ng-container>L'identification a echoué.</ng-container>
+							</mat-error>
+						</p>
+					</form>
+
+					<mat-list id="oauth-list">
+						<div mat-subheader fxLayoutAlign="center center">Ou</div>
+
+						<mat-list-item *ngFor="let oAuth of oAuths" class="oauth-item">
+							<button mat-stroked-button fxFlex (click)="oAuth.onclick()" disabled>
+								<div fxFlex="18px" fxLayoutAlign="center center">
+									<img class="oauth-icon" [alt]="oAuth.img.alt" [src]="oAuth.img.src">
+								</div>
+
+								<span fxFlex fxLayoutAlign="center center">Continuer avec&nbsp;<span class="oauth-name">{{ oAuth.name }}</span></span>
+							</button>
+						</mat-list-item>
+					</mat-list>
+				</ng-container>
+			</mat-card-content>
+
+			<mat-card-actions *ngIf="!state.redirection">
+				<button mat-button color="primary" fxFlex
+						(click)="toggleSignup()">{{ state.signup ? "Déjà un compte? Se connecter" : "Créer un compte" }}</button>
+			</mat-card-actions>
+		</ng-container>
+
+		<ng-container *ngIf="!(!user._connected || state.loginOk || state.redirection)">
+			<mat-card-header>
+				<mat-card-title>Déjà connecté</mat-card-title>
+				<mat-card-subtitle>profil : {{ user.email }}</mat-card-subtitle>
+			</mat-card-header>
+
+			<mat-card-content>
+				<p>Vous êtes déjà connecté. Vous pouvez suivre ces liens :</p>
+				<ul>
+					<li><a routerLink="/" disabled>Profil</a></li>
+					<li><a routerLink="/" disabled>Accueil</a></li>
+				</ul>
+			</mat-card-content>
+
+			<mat-card-actions>
+				<button mat-button color="primary" fxFlex (click)="logout()">Se déconnecter?</button>
+			</mat-card-actions>
+		</ng-container>
+	</mat-card>
+</div>
