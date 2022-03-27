@@ -21,7 +21,7 @@ Centered around a user's preferences: allergies and intolerences, meal type and 
 ### A few words about allergies
 Since a few of our team members have allergies, we know that it's a complicated subject to manage and there is no correct way of doing it. A specific focus on this matter has been put and we have developed multiple ways to maximize the accuracy of the information.   
 However, we are not a medical platform and do not wish to be one. The information is and will be as accurate as our data provider can be (whether it is an external company or sample data found on the internet).  
-More on this subject can be found in the [Specification / Global vision](#global-vision) section.
+More on this subject and potential legal implications can be found in the [Specification / Global vision](#global-vision) section.
 
 ## Objectives
 The market for food&eating realted websites is already well taken by major actors in our initial geographical area (French-speaking part of Switzerland): Marmiton, Betty Bossy, a simple Google search, everlasting discussion on whatsapp groups. If we want to be competitive, we have two choices
@@ -113,7 +113,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 
 * The project will be delivered at 3 stages of its development. The most important features are all integrated in the first two steps, but the importance alone won't define the priority. They were selected then planned in order to optimize the delivery process.
 * If needed, features can be shifted to the next iteration. The third iteration is kept for this usage, otherwise it will be used to add extra features.
-* An intermediate presentation will take place on the first iteration's end. 
+* An intermediate presentation will take place on the first iteration's end. Its main focus will be on team collaboration.
 
 #### 1. First working version (5 weeks -> Date:  13/4/2022)
 ##### User features
@@ -147,7 +147,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 * User can mark recipes.
 
 ##### Additional features
-* Data will be added in a larger scale.
+* Data will be added in a larger scale. The source of the data is yet to be determined.
 
 
 
