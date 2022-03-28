@@ -21,10 +21,10 @@ Centered around a user's preferences: allergies and intolerences, meal type and 
 ### A few words about allergies
 Since a few of our team members have allergies, we know that it's a complicated subject to manage and there is no correct way of doing it. A specific focus on this matter has been put and we have developed multiple ways to maximize the accuracy of the information.   
 However, we are not a medical platform and do not wish to be one. The information is and will be as accurate as our data provider can be (whether it is an external company or sample data found on the internet).  
-More on this subject can be found in the [Specification / Global vision](#global-vision) section.
+More on this subject and potential legal implications can be found in the [Specification / Global vision](#global-vision) section.
 
 ## Objectives
-The market for food&eating realted websites is already well taken by major actors in our initial geographical permiter (French-speaking part of Switzerland): Marmiton, Betty Bossy, a simple Google search, everlasting discussion on whatsapp groups. If we want to be competitive, we have two choices
+The market for food&eating realted websites is already well taken by major actors in our initial geographical area (French-speaking part of Switzerland): Marmiton, Betty Bossy, a simple Google search, everlasting discussion on whatsapp groups. If we want to be competitive, we have two choices
 * Take on a specific competitor and be better than them
 * Gather features of each competitor to have the best of all worlds in our product.
 * Provide something they don't
@@ -82,7 +82,7 @@ The application automatically generates a shopping list based on the recipe and 
 This section states the features that will be supported on each iteration.
 
 ### Global vision
-This diagram show global vision of the features that would be supported by the application.
+This diagram shows the global vision of the features that would be supported by the application.
 
 ![model_diagram.drawio](img/model_diagram.drawio.png)
 
@@ -113,7 +113,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 
 * The project will be delivered at 3 stages of its development. The most important features are all integrated in the first two steps, but the importance alone won't define the priority. They were selected then planned in order to optimize the delivery process.
 * If needed, features can be shifted to the next iteration. The third iteration is kept for this usage, otherwise it will be used to add extra features.
-* An intermediate presentation will take place on the first iteration's end. 
+* An intermediate presentation will take place on the first iteration's end. Its main focus will be on team collaboration.
 
 #### 1. First working version (5 weeks -> Date:  13/4/2022)
 ##### User features
@@ -122,7 +122,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 * User can update their profiles
   * Add/remove their allergies/ethics (e.g. Vegan)
   * Add/remove preferences (likes and dislikes)
-* Users can find a meal and a recipes based on their profiles and the following filters
+* Users can find a meal and a recipe based on their profiles and the following filters
   * Recipe contains specific ingredients
   * Recipe cooking-time under a specified value.
   * Type of meal (Asiatic, Italian, Mexican, ...)
@@ -137,7 +137,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 * Samples of real data will already be available
 * There is a way to differentiate premium users from freemium ones
 
-#### 2. Groups Management & Restaurant (5 weeks -> Date:  18/5/2022)
+#### 2. Group Management & Restaurant (5 weeks -> Date:  18/5/2022)
 ##### User features
 * User can add/remove other user as their friends.
 * User can create and delete groups
@@ -147,7 +147,7 @@ The choice is made to prioritize importants freemium features. This is an invest
 * User can mark recipes.
 
 ##### Additional features
-* Data will be added in a larger scale.
+* Data will be added in a larger scale. The source of the data is yet to be determined.
 
 
 
@@ -204,5 +204,5 @@ In opposition,
 * Most cloud providers provide snapshots solutions
 * The application is very simple to deploy with a bootstrap script.  
 
-Also, we already have an hosting solution available and the choice was made according to possibilities we had.  
+Also, we already have a hosting solution available and the choice was made according to possibilities we had.  
 We choose to use vagrant for developpement. It provides a way to develop quickly on any plateform in a similar way that the service will be deployed in production  
