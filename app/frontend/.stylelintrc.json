@@ -5,6 +5,7 @@
 	],
 	"rules": {
 		"scss/at-mixin-argumentless-call-parentheses": null,
+		"color-function-notation": null,
 		"function-no-unknown": [true, {
 			"ignoreFunctions": ["/^mat\\..+/"]
 		}],
