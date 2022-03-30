@@ -81,6 +81,9 @@
         ],
         "setup": [
             "bash ./scripts/setup.sh"
+        ],
+        "test": [
+            "XDEBUG_MODE=coverage ./bin/phpunit"
         ]
     },
     "conflict": {
