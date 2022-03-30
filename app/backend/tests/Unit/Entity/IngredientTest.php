@@ -15,12 +15,6 @@ class IngredientTest extends KernelTestCase
         $this->assertErrorCount(1, $ingredient->setName(""), "empty ingredient name");
     }
 
-    public function testGetId(): void
-    {
-        $ingredient = new Ingredient();
-        $this->assertEquals(0, $ingredient->getId(), "Id has problem");
-    }
-
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

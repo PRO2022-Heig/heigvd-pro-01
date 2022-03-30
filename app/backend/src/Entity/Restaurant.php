@@ -8,14 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RestaurantRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[ApiResource]
 class Restaurant extends AbstractEntity
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
-    private int $id = 0;
-
     #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
     private string $name;
@@ -25,11 +21,6 @@ class Restaurant extends AbstractEntity
 
     #[ORM\Column(type: "string", length: 255)]
     private string $location;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getName(): ?string
     {
