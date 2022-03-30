@@ -53,5 +53,6 @@ export class MealComponent implements OnInit {
 	} as Meal;
 
 	public ngOnInit() {
+		// TODO
 	}
 }
