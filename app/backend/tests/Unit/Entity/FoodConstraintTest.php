@@ -10,6 +10,9 @@ class FoodConstraintTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

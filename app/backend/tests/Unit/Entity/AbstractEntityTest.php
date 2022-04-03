@@ -8,12 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class AbstractEntityTest extends KernelTestCase
 {
-    public function testGetId(): void
-    {
-        $entity = $this->getEntity();
-        $this->assertEquals(null, $entity->getId(), "Id has problem");
-    }
-
     public function testPrePersist(): void
     {
         $entity = $this->getEntity();
@@ -41,6 +35,15 @@ class AbstractEntityTest extends KernelTestCase
             $entity->getUpdatedAt()->getTimestamp(),
             "Pre update life cycle does not work"
         );
+    }
+
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
+    public function testGetId(): void
+    {
+        $entity = $this->getEntity();
+        $this->assertEquals(null, $entity->getId(), "Id has problem");
     }
 
     protected function getEntity(): AbstractEntity

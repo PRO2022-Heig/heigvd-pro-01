@@ -15,6 +15,9 @@ class RestaurantTest extends KernelTestCase
         $this->assertErrorCount(1, $restaurant, "Restaurant name can not be empty");
     }
 
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

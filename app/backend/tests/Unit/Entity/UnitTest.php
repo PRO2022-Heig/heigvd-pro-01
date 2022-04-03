@@ -9,6 +9,9 @@ class UnitTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
     public function testUnValidUnitType(): void
     {
         $type = "custom";

@@ -17,6 +17,9 @@ class IngredientTest extends KernelTestCase
         $this->assertErrorCount(1, $ingredient, "empty ingredient name");
     }
 
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

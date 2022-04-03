@@ -11,6 +11,9 @@ class StepTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    /*****************************************************************************************************************
+     * GETTER, SETTER, ADDER, REMOVER
+     ****************************************************************************************************************/
     public function testActionGetterAndSetter(): void
     {
         $testAction = "test";
