@@ -11,9 +11,16 @@ class StepTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testEmptyAction(): void
+    {
+        $step = $this->hydrate(Step::class, ["action" => ""]);
+        $this->assertErrorCount(1, $step, "step action should not be blank");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testActionGetterAndSetter(): void
     {
         $testAction = "test";

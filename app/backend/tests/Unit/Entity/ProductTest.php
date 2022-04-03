@@ -11,9 +11,22 @@ class ProductTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testEmptyName(): void
+    {
+        $product = $this->hydrate(Product::class, ["name" => "", "reference" => "not blank"]);
+        $this->assertErrorCount(1, $product, "product name should not be blank");
+    }
+
+    public function testEmptyReference(): void
+    {
+        $product = $this->hydrate(Product::class, ["name" => "name", "reference" => ""]);
+        $this->assertErrorCount(1, $product, "product reference should not be blank");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -12,12 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
 class Product extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
+    #[Assert\NotBlank]
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
     private string $description;
 
     #[ORM\Column(type: "string", length: 255)]
+    #[Assert\NotBlank]
     private string $reference;
 
     #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: "products")]

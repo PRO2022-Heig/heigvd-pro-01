@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Unit extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
+    #[Assert\NotBlank]
     private string $name;
 
     #[ORM\Column(type: "string", length: 255)]

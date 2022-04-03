@@ -18,6 +18,7 @@ class RestaurantTest extends KernelTestCase
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

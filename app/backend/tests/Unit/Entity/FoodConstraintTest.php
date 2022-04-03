@@ -10,9 +10,16 @@ class FoodConstraintTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testEmptyName(): void
+    {
+        $foodConstraint = $this->hydrate(FoodConstraint::class, ["name" => ""]);
+        $this->assertErrorCount(1, $foodConstraint, "food constraint name should not be blank");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

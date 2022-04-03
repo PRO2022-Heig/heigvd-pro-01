@@ -10,9 +10,16 @@ class ProviderTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testEmptyName(): void
+    {
+        $product = $this->hydrate(Provider::class, ["name" => ""]);
+        $this->assertErrorCount(1, $product, "provider name should not be blank");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

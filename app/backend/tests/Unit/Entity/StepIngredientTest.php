@@ -12,9 +12,33 @@ class StepIngredientTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testNullIngredient(): void
+    {
+        $step = $this->hydrate(Step::class, ["action" => "action"]);
+        $stepIngredient = $this->hydrate(StepIngredient::class, ["amount" => 3, "ingredient" => null, "step" => $step]);
+        $this->assertErrorCount(1, $stepIngredient, "ingredient step must have an ingredient");
+    }
+
+    public function testNegativeAmount(): void
+    {
+        $step = $this->hydrate(Step::class, ["action" => "action"]);
+        $ingredient = $this->hydrate(Ingredient::class, ["name" => "name"]);
+        $stepIngredient = $this->hydrate(StepIngredient::class, ["amount" => -5, "ingredient" => $ingredient, "step" => $step]);
+        $this->assertErrorCount(1, $stepIngredient, "step ingredient amount must be positive");
+    }
+
+    public function testZeroAmount(): void
+    {
+        $step = $this->hydrate(Step::class, ["action" => "action"]);
+        $ingredient = $this->hydrate(Ingredient::class, ["name" => "name"]);
+        $stepIngredient = $this->hydrate(StepIngredient::class, ["amount" => 0, "ingredient" => $ingredient, "step" => $step]);
+        $this->assertErrorCount(1, $stepIngredient, "step ingredient amount must be greater than 0");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testAmountGetterAndSetter(): void
     {
         $amount = 5.0;

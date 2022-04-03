@@ -2,8 +2,6 @@
 
 namespace App\Tests\Unit\Entity;
 
-use App\Entity\FoodConstraint;
-use App\Entity\Ingredient;
 use App\Entity\Recipe;
 use App\Entity\Step;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -12,9 +10,28 @@ class RecipeTest extends KernelTestCase
 {
     use EntityAssertionsTrait;
 
+    public function testEmptyName(): void
+    {
+        $recipe = $this->hydrate(Recipe::class, ["name" => "", "numberOfPeople" => 5]);
+        $this->assertErrorCount(1, $recipe, "recipe name should not be blank");
+    }
+
+    public function testNegativeNumberOfPeople(): void
+    {
+        $recipe = $this->hydrate(Recipe::class, ["name" => "name", "numberOfPeople" => -5]);
+        $this->assertErrorCount(1, $recipe, "recipe can not be for a negative number of people");
+    }
+
+    public function testZeroNumberOfPeople(): void
+    {
+        $recipe = $this->hydrate(Recipe::class, ["name" => "name", "numberOfPeople" => 0]);
+        $this->assertErrorCount(1, $recipe, "recipe can not be for 0 person");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";

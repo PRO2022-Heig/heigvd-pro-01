@@ -49,12 +49,12 @@ trait EntityAssertionsTrait
             $setter = "set" . ucfirst($property);
             if (method_exists($className, $setter)) {
                 $entity->$setter($value);
-                break;
+                continue;
             }
             $adder = "add" . ucfirst($property);
             if (method_exists($className, $adder)) {
                 $entity->$adder($value);
-                break;
+                continue;
             }
         }
 

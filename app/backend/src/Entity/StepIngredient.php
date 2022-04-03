@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\StepIngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: StepIngredientRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -11,13 +12,15 @@ class StepIngredient extends AbstractEntity
 {
     #[ORM\ManyToOne(targetEntity: Ingredient::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private Ingredient $ingredient;
+    #[Assert\NotNull]
+    private ?Ingredient $ingredient;
 
     #[ORM\ManyToOne(targetEntity: Step::class, inversedBy: "ingredients")]
     #[ORM\JoinColumn(nullable: false)]
     private ?Step $step;
 
     #[ORM\Column(type: "float")]
+    #[Assert\GreaterThan(0)]
     private float $amount;
 
     #[ORM\ManyToOne(targetEntity: Unit::class)]

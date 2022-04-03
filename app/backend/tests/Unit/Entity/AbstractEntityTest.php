@@ -40,6 +40,7 @@ class AbstractEntityTest extends KernelTestCase
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
+
     public function testGetId(): void
     {
         $entity = $this->getEntity();
