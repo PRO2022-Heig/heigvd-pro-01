@@ -6,6 +6,8 @@ use App\Entity\AbstractEntity;
 use function count;
 use function implode;
 use Symfony\Component\Validator\ConstraintViolation;
+use function method_exists;
+use function ucfirst;
 
 trait EntityAssertionsTrait
 {
@@ -32,5 +34,18 @@ trait EntityAssertionsTrait
         self::bootKernel();
 
         return self::getContainer()->get("validator")->validate($entity);
+    }
+
+    public function hydrate(string $class, array $properties = []): AbstractEntity
+    {
+        $entity = new $class();
+        foreach ($properties as $property => $value) {
+            $setter = "set" . ucfirst($property);
+            if (method_exists($class, $setter)) {
+                $entity->$setter($value);
+            }
+        }
+
+        return $entity;
     }
 }

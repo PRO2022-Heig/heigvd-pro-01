@@ -11,15 +11,14 @@ class IngredientTest extends KernelTestCase
 
     public function testEmptyName(): void
     {
-        $ingredient = new Ingredient();
-        $this->assertErrorCount(1, $ingredient->setName(""), "empty ingredient name");
+        $ingredient = $this->hydrate(Ingredient::class, ["name" => ""]);
+        $this->assertErrorCount(1, $ingredient, "empty ingredient name");
     }
 
     public function testNameGetterAndSetter(): void
     {
         $testName = "test";
-        $ingredient = new Ingredient();
-        $ingredient->setName($testName);
+        $ingredient = $this->hydrate(Ingredient::class, ["name" => $testName]);
         $this->assertEquals($testName, $ingredient->getName(), "$testName does not match return");
     }
 }
