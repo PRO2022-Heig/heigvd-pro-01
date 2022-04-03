@@ -3,24 +3,22 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\RestaurantRepository;
+use App\Repository\RecipeRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: RestaurantRepository::class)]
+#[ORM\Entity(repositoryClass: RecipeRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
-class Restaurant extends AbstractEntity
+class Recipe extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
-    #[Assert\NotBlank]
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
     private string $description;
 
-    #[ORM\Column(type: "string", length: 255)]
-    private string $location;
+    #[ORM\Column(type: "integer")]
+    private int $numberOfPeople;
 
     public function getName(): ?string
     {
@@ -39,21 +37,21 @@ class Restaurant extends AbstractEntity
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getLocation(): ?string
+    public function getNumberOfPeople(): ?int
     {
-        return $this->location;
+        return $this->numberOfPeople;
     }
 
-    public function setLocation(string $location): self
+    public function setNumberOfPeople(int $numberOfPeople): self
     {
-        $this->location = $location;
+        $this->numberOfPeople = $numberOfPeople;
 
         return $this;
     }

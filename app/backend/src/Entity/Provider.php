@@ -2,34 +2,26 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\IngredientRepository;
+use App\Repository\ProviderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[ORM\Entity(repositoryClass: ProviderRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ApiResource]
-class Ingredient extends AbstractEntity
+class Provider extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
-    #[Assert\NotBlank]
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
     private string $description;
 
-    #[ORM\ManyToMany(targetEntity: FoodConstraint::class, mappedBy: "ingredients")]
-    private Collection $foodConstraints;
-
-    #[ORM\OneToMany(mappedBy: "ingredient", targetEntity: Product::class)]
-    private $products;
+    #[ORM\OneToMany(mappedBy: "provider", targetEntity: Product::class, orphanRemoval: true)]
+    private Collection $products;
 
     public function __construct()
     {
-        $this->foodConstraints = new ArrayCollection();
         $this->products = new ArrayCollection();
     }
 
@@ -58,33 +50,6 @@ class Ingredient extends AbstractEntity
     }
 
     /**
-     * @return Collection<int, FoodConstraint>
-     */
-    public function getFoodConstraints(): Collection
-    {
-        return $this->foodConstraints;
-    }
-
-    public function addFoodConstraint(FoodConstraint $foodConstraint): self
-    {
-        if (!$this->foodConstraints->contains($foodConstraint)) {
-            $this->foodConstraints[] = $foodConstraint;
-            $foodConstraint->addIngredient($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFoodConstraint(FoodConstraint $foodConstraint): self
-    {
-        if ($this->foodConstraints->removeElement($foodConstraint)) {
-            $foodConstraint->removeIngredient($this);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Product>
      */
     public function getProducts(): Collection
@@ -96,7 +61,7 @@ class Ingredient extends AbstractEntity
     {
         if (!$this->products->contains($product)) {
             $this->products[] = $product;
-            $product->setIngredient($this);
+            $product->setProvider($this);
         }
 
         return $this;
@@ -106,8 +71,8 @@ class Ingredient extends AbstractEntity
     {
         if ($this->products->removeElement($product)) {
             // set the owning side to null (unless already changed)
-            if ($product->getIngredient() === $this) {
-                $product->setIngredient(null);
+            if ($product->getProvider() === $this) {
+                $product->setProvider(null);
             }
         }
 
