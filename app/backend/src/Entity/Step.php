@@ -24,7 +24,7 @@ class Step extends AbstractEntity
     #[ORM\OneToMany(mappedBy: "step", targetEntity: StepIngredient::class, orphanRemoval: true)]
     private Collection $ingredients;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'steps')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: "steps")]
     #[ORM\JoinColumn(nullable: false)]
     private ?Recipe $recipe;
 

@@ -5,7 +5,6 @@ namespace App\Tests\Unit\Entity;
 use App\Entity\FoodConstraint;
 use App\Entity\Ingredient;
 use App\Entity\Meal\RestaurantMeal;
-use App\Entity\Restaurant;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class FoodConstraintTest extends KernelTestCase

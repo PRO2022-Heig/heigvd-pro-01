@@ -25,7 +25,7 @@ class FoodConstraint extends AbstractEntity
     #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: "foodConstraints")]
     private Collection $ingredients;
 
-    #[ORM\ManyToMany(targetEntity: RestaurantMeal::class, mappedBy: 'foodConstraint')]
+    #[ORM\ManyToMany(targetEntity: RestaurantMeal::class, mappedBy: "foodConstraint")]
     private $restaurantMeals;
 
     public function __construct()

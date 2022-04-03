@@ -28,7 +28,6 @@ class UnitTest extends KernelTestCase
         $this->assertErrorCount(1, $unit, "$type should not be a valid unit type");
     }
 
-
     public function testValidType(): void
     {
         $type = Unit::getUnitTypes()[0];

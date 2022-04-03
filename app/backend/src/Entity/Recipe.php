@@ -25,7 +25,7 @@ class Recipe extends AbstractEntity
     #[Assert\GreaterThan(0)]
     private int $numberOfPeople;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Step::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "recipe", targetEntity: Step::class, orphanRemoval: true)]
     private Collection $steps;
 
     public function __construct()

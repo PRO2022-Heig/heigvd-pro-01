@@ -17,11 +17,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ApiResource]
 class Meal extends AbstractEntity
 {
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
     private string $name;
 
-    #[ORM\Column(type: 'text', nullable: true)]
+    #[ORM\Column(type: "text", nullable: true)]
     private string $description;
 
     public function getName(): ?string

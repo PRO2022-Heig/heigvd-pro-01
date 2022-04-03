@@ -25,7 +25,7 @@ class Restaurant extends AbstractEntity
     #[ORM\Column(type: "string", length: 255)]
     private string $location;
 
-    #[ORM\OneToMany(mappedBy: 'restaurant', targetEntity: RestaurantMeal::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "restaurant", targetEntity: RestaurantMeal::class, orphanRemoval: true)]
     private Collection $meals;
 
     public function __construct()
