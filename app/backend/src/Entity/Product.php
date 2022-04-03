@@ -22,11 +22,11 @@ class Product extends AbstractEntity
 
     #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: "products")]
     #[ORM\JoinColumn(nullable: false)]
-    private Ingredient $ingredient;
+    private ?Ingredient $ingredient;
 
     #[ORM\ManyToOne(targetEntity: Provider::class, inversedBy: "products")]
     #[ORM\JoinColumn(nullable: false)]
-    private Provider $provider;
+    private ?Provider $provider;
 
     public function getName(): ?string
     {

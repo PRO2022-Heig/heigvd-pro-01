@@ -20,7 +20,11 @@ class Step extends AbstractEntity
     private int $number;
 
     #[ORM\OneToMany(mappedBy: "step", targetEntity: StepIngredient::class, orphanRemoval: true)]
-    private $ingredients;
+    private Collection $ingredients;
+
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'steps')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Recipe $recipe;
 
     public function __construct()
     {
@@ -77,6 +81,18 @@ class Step extends AbstractEntity
                 $ingredient->setStep(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRecipe(): ?Recipe
+    {
+        return $this->recipe;
+    }
+
+    public function setRecipe(?Recipe $recipe): self
+    {
+        $this->recipe = $recipe;
 
         return $this;
     }

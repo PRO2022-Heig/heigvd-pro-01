@@ -17,11 +17,6 @@ class Unit extends AbstractEntity
     #[Assert\Choice(callback: "getUnitTypes")]
     private string $type;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getName(): ?string
     {
         return $this->name;
@@ -46,7 +41,7 @@ class Unit extends AbstractEntity
         return $this;
     }
 
-    public function getUnitTypes(): array
+    public static function getUnitTypes(): array
     {
         return [
             "volume",

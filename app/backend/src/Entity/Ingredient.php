@@ -25,7 +25,7 @@ class Ingredient extends AbstractEntity
     private Collection $foodConstraints;
 
     #[ORM\OneToMany(mappedBy: "ingredient", targetEntity: Product::class)]
-    private $products;
+    private Collection $products;
 
     public function __construct()
     {

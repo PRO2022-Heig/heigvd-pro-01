@@ -15,7 +15,7 @@ class StepIngredient extends AbstractEntity
 
     #[ORM\ManyToOne(targetEntity: Step::class, inversedBy: "ingredients")]
     #[ORM\JoinColumn(nullable: false)]
-    private Step $step;
+    private ?Step $step;
 
     #[ORM\Column(type: "float")]
     private float $amount;
