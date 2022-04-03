@@ -4,6 +4,8 @@ namespace App\Tests\Unit\Entity;
 
 use App\Entity\FoodConstraint;
 use App\Entity\Ingredient;
+use App\Entity\Meal\RestaurantMeal;
+use App\Entity\Restaurant;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class FoodConstraintTest extends KernelTestCase
@@ -47,5 +49,20 @@ class FoodConstraintTest extends KernelTestCase
         $foodConstraint = $this->hydrate(FoodConstraint::class, ["ingredient" => $testIngredient]);
         $foodConstraint->removeIngredient($testIngredient);
         $this->assertEmpty($foodConstraint->getIngredients(), $testIngredient->getName() . " has not been removed");
+    }
+
+    public function testRestaurantGetterAndAdder(): void
+    {
+        $restaurantMeal = $this->hydrate(RestaurantMeal::class, ["name" => "meal"]);
+        $foodConstraint = $this->hydrate(FoodConstraint::class, ["restaurantMeal" => $restaurantMeal]);
+        $this->assertEquals($restaurantMeal, $foodConstraint->getRestaurantMeals()->first(), $restaurantMeal->getName() . " does not match return");
+    }
+
+    public function testRestaurantRemover(): void
+    {
+        $restaurantMeal = $this->hydrate(RestaurantMeal::class, ["name" => "meal"]);
+        $foodConstraint = $this->hydrate(FoodConstraint::class, ["restaurantMeal" => $restaurantMeal]);
+        $foodConstraint->removeRestaurantMeal($restaurantMeal);
+        $this->assertEmpty($foodConstraint->getRestaurantMeals(), $restaurantMeal->getName() . " has not been removed");
     }
 }

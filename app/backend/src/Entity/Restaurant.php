@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Entity\Meal\RestaurantMeal;
 use App\Repository\RestaurantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -21,6 +24,14 @@ class Restaurant extends AbstractEntity
 
     #[ORM\Column(type: "string", length: 255)]
     private string $location;
+
+    #[ORM\OneToMany(mappedBy: 'restaurant', targetEntity: RestaurantMeal::class, orphanRemoval: true)]
+    private Collection $meals;
+
+    public function __construct()
+    {
+        $this->meals = new ArrayCollection();
+    }
 
     public function getName(): ?string
     {
@@ -54,6 +65,36 @@ class Restaurant extends AbstractEntity
     public function setLocation(string $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RestaurantMeal>
+     */
+    public function getMeals(): Collection
+    {
+        return $this->meals;
+    }
+
+    public function addMeal(RestaurantMeal $meal): self
+    {
+        if (!$this->meals->contains($meal)) {
+            $this->meals[] = $meal;
+            $meal->setRestaurant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMeal(RestaurantMeal $meal): self
+    {
+        if ($this->meals->removeElement($meal)) {
+            // set the owning side to null (unless already changed)
+            if ($meal->getRestaurant() === $this) {
+                $meal->setRestaurant(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Entity\Meal\RestaurantMeal;
 use App\Repository\FoodConstraintRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -24,9 +25,13 @@ class FoodConstraint extends AbstractEntity
     #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: "foodConstraints")]
     private Collection $ingredients;
 
+    #[ORM\ManyToMany(targetEntity: RestaurantMeal::class, mappedBy: 'foodConstraint')]
+    private $restaurantMeals;
+
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
+        $this->restaurantMeals = new ArrayCollection();
     }
 
     public function getName(): ?string
@@ -73,6 +78,33 @@ class FoodConstraint extends AbstractEntity
     public function removeIngredient(Ingredient $ingredient): self
     {
         $this->ingredients->removeElement($ingredient);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RestaurantMeal>
+     */
+    public function getRestaurantMeals(): Collection
+    {
+        return $this->restaurantMeals;
+    }
+
+    public function addRestaurantMeal(RestaurantMeal $restaurantMeal): self
+    {
+        if (!$this->restaurantMeals->contains($restaurantMeal)) {
+            $this->restaurantMeals[] = $restaurantMeal;
+            $restaurantMeal->addFoodConstraint($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRestaurantMeal(RestaurantMeal $restaurantMeal): self
+    {
+        if ($this->restaurantMeals->removeElement($restaurantMeal)) {
+            $restaurantMeal->removeFoodConstraint($this);
+        }
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Tests\Unit\Entity;
 
+use App\Entity\Meal\RestaurantMeal;
 use App\Entity\Restaurant;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -38,5 +39,20 @@ class RestaurantTest extends KernelTestCase
         $testLocation = "test";
         $restaurant = $this->hydrate(Restaurant::class, ["location" => $testLocation]);
         $this->assertEquals($testLocation, $restaurant->getLocation(), "$testLocation does not match return");
+    }
+
+    public function testStepsGetterAndAdder(): void
+    {
+        $meal = $this->hydrate(RestaurantMeal::class, ["name" => "testProduct"]);
+        $restaurant = $this->hydrate(Restaurant::class, ["meal" => $meal]);
+        $this->assertEquals($meal, $restaurant->getMeals()->first(), $meal->getName() . " does not match return");
+    }
+
+    public function testFoodConstraintRemover(): void
+    {
+        $meal = $this->hydrate(RestaurantMeal::class, ["name" => "testProduct"]);
+        $restaurant = $this->hydrate(Restaurant::class, ["meal" => $meal]);
+        $restaurant->removeMeal($meal);
+        $this->assertEmpty($restaurant->getMeals(), $meal->getName() . " has not been removed");
     }
 }
