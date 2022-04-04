@@ -34,37 +34,42 @@ The state can take **one** of the following values:
 There are 4 main branches on which we normally do not code directly:
 
 - **dev/backend** & **dev/frontend**: Main branches separating the *backend* and the *frontend*, they are equivalent to a **develop** branch for these two parts.
-- **develop**: Usually before merging on **main**: A functional code on which is added a set of new features to be tested for validation.
-- **main**: Represents a stable production state: All the code works and provides a functional solution.
+- **develop**: Usually before merging on **master**: A functional code on which is added a set of new features to be tested for validation.
+- **master**: Represents a stable production state: All the code works and provides a functional solution.
 
-New branches should look like: `dev/<part>/<name>`.  
+New branches should look like: `dev/<feeature>/<name>`.  
 
 Where  
-- *\<part\>* is `backend` or `frontend`
-- *\<name\>* a meaningful name of the feature/task to develop AND/OR related to a Jira Issue.
+- *\<feature\>* is a meaningful name of the feature/task to develop AND/OR related to a Jira Issue.
+- *\<name\>* could be described as a subtask of the feature.
 
-For other changes not directly related to code like user documentation this **must** be done on the **documentation** branch and then merged on **main** via a merge request that **must** be validated by quality control
+examples: `dev/login/backend` or `dev/{P2-23}-login/frontend` with a "Jira Key"
 
+For other changes not directly related to code like user documentation this **must** be done on a **documentation** branch and then merged on **develop** or **master** via a pull request that **must** be validated by quality control.
 
-### Usage example
+### In case of failure in verifications
 
-We need to implement a *login method*:  
+If the CI fails on a pull request, the merge is not done and the fix has to be done on the unmerged branch.  
+If the merge has already been done and a bug is found a `<name>/hotfix` branch is created to fix the issue and a pull request is done on the original branch. Then the fix is also merged on the lower branch to apply the fix.
 
-- `dev/backend/login`: is used on the backend folder.
-- `dev/frontend/login`: is used on the frontend folder.
-- Once it's done and verified on their branches: merge (request) `dev/backend/login` into `dev/backend` (with probably others branches).
-- Same idea with `dev/frontend/login` and `dev/frontend`
-- When `dev/backend` and `dev/frontend` are individually verified: merge (request) both into `develop`.  
-  Note: In this example both `dev/backend` and `dev/frontend` have new features. It is quite possible that only one of the two is used.
-- Verifications of the `develop` branch. Then merge into `main`.
+Where *\<name\>* is a meaningful name of the hotfix to implement AND related to a Jira Issue (usually the same name as given for the task).
 
+## Usage example
 
+We need to implement a *login method*:
 
----
+- `dev/login/backend`: is used on the backend folder and comes from the `dev/backend` that contains the base code.  
+  (Note. It can be created from another branch if It makes sens, for example: `dev/user-entity/backend`)
+- `dev/login/frontend`: is used for the frontend part and is created from the previous branch `dev/login/backend`.  
+  (Another branch can be merged into this one to update the code, for example: `dev/frontend`)
+- When the feature is complete on each branch, all its content should be available on the latest branch  <!-- TODO: or with another name? -->
+- Once it's done and verified: merge (pull request) the last updated branch into `develop`
+- If there's error(s) on the merged `develop` branch (due to the new feature), a `dev/login/hotfix` is created to fix the feature then merged again in `develop`.
+- Verifications of the `develop` branch and then merge into `master` for a new release.
+- The `develop` branch can be merged into `dev/backend` and `dev/frontend` to update the base code.
 
-## In case of failure in verifications
+### Gitflow diagram
 
-If the CI fails on a merge request, the merge is not done and the fix has to be done on the unmerged branch.  
-If the merge has already been done and a bug is found a `hotfix/<name>` branch is created to fix the issue and a merge request is done on the original branch. Then fix fix is also merged on the lower branch to apply the fix.
+Here's a diagram of the example above:
 
-Where *\<name\>* is a meaningful name of the hotfix to implement AND related to a Jira Issue.
+![](git-branching.png "gitflow-diagram")
