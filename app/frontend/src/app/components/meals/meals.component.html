@@ -1,6 +1,6 @@
 <mat-form-field appearance="fill">
 	<mat-label>Chercher un repas (spaghettis aux tomates)</mat-label>
-	<input matInput type="text" [(ngModel)]="searchTerms" style="width: 100%">
+	<input matInput type="text" [(ngModel)]="searchTerms">
 	<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
 		<mat-icon>search</mat-icon>
 	</button>

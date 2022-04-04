@@ -19,35 +19,16 @@ export class MealComponent implements OnInit {
 			"Italie et dans le monde, à base de pâtes cuisinées avec des œufs, des lardons et du fromage râpé.",
 		"recipes": [
 			{
+				"id": 2,
 				"name": "Spaghetti carbonara traditionnels",
 				"description": "Ingrédients utilisés dans la recette classique.",
-				"nbPeopleServed": 2,
-				"steps": [
-					{
-						"action": "Mettre l'eau dans une casserole, ajouter le sel, faire bouillir et y ajouter les pâtes.",
-						"orderNumber": 1,
-						"ingredients": [
-							{
-								"name": "spaghettis",
-								"description": "???",
-								"quantity": 200,
-								"unit": "g"
-							},
-							{
-								"name": "sel",
-								"description": "???",
-								"quantity": 1,
-								"unit": "cc"
-							},
-							{
-								"name": "eau",
-								"description": "???",
-								"quantity": 1,
-								"unit": "litre"
-							}
-						]
-					}
-				]
+				"nbPeopleServed": 2
+			},
+			{
+				"id": 3,
+				"name": "Spaghetti carbonara sans gluten",
+				"description": "Recette avec pâtes sans gluten.",
+				"nbPeopleServed": 2
 			}
 		]
 	} as Meal;

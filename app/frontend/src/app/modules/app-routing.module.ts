@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { MealComponent } from "../components/meals/meal/meal.component";
 import { MealsComponent } from "../components/meals/meals.component";
+import {RecipeComponent} from "../components/recipe/recipe.component";
 
 const routes: Routes = [{
 	component: MealsComponent,
@@ -10,6 +11,9 @@ const routes: Routes = [{
 }, {
 	component: MealComponent,
 	path: "meal/:id"
+}, {
+	component: RecipeComponent,
+	path: "recipe/:id"
 }];
 
 @NgModule({

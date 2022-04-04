@@ -1,28 +1,10 @@
 <h1>{{meal.name}}</h1>
 <p>{{meal.description}}</p>
 
-<div fxLayout="row">
+<div fxLayout="row" *ngFor="let recipe of meal.recipes">
 	<mat-card fxFlex="30">
-		<ul>
-			<li>400 g de spaghettis</li>
-			<li>1 l d'eau</li>
-			<li>1 cc de sel</li>
-		</ul>
-	</mat-card>
-	<mat-card fxFlex="70">
-		<p>Mettre l'eau dans une casserole, ajouter le sel, faire bouillir et y ajouter les pâtes.</p>
+		<mat-card-title>{{recipe.name}}</mat-card-title>
+		<mat-card-subtitle>{{recipe.nbPeopleServed}} personne(s)</mat-card-subtitle>
+		<p>{{recipe.description}}</p>
 	</mat-card>
 </div>
-
-<mat-card fxLayout="row">
-	<div fxFlex="30">
-		<ul>
-			<li>100 g de guanciale</li>
-			<li>50 g de parmesan</li>
-			<li>1 jaune d'oeuf</li>
-		</ul>
-	</div>
-	<div fxFlex="70">
-		<p>Mettre l'eau dans une casserole, ajouter le sel, faire bouillir et y ajouter les pâtes.</p>
-	</div>
-</mat-card>
