@@ -5,3 +5,4 @@ composer install
 ./bin/console doctrine:database:create --no-interaction
 ./bin/console doctrine:migration:migrate --no-interaction
 ./bin/console doctrine:fixtures:load --no-interaction
+./bin/console lexik:jwt:generate-keypair
