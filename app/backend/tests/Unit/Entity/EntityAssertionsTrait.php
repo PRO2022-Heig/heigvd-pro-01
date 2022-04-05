@@ -5,7 +5,9 @@ namespace App\Tests\Unit\Entity;
 use App\Entity\AbstractEntity;
 use function count;
 use function implode;
+use function method_exists;
 use Symfony\Component\Validator\ConstraintViolation;
+use function ucfirst;
 
 trait EntityAssertionsTrait
 {
@@ -32,5 +34,30 @@ trait EntityAssertionsTrait
         self::bootKernel();
 
         return self::getContainer()->get("validator")->validate($entity);
+    }
+
+    /**
+     * @template T
+     * @param class-string<T> $className
+     * @param array $properties
+     * @return T
+     */
+    public function hydrate(string $className, array $properties = []): AbstractEntity
+    {
+        $entity = new $className();
+        foreach ($properties as $property => $value) {
+            $setter = "set" . ucfirst($property);
+            if (method_exists($className, $setter)) {
+                $entity->$setter($value);
+                continue;
+            }
+            $adder = "add" . ucfirst($property);
+            if (method_exists($className, $adder)) {
+                $entity->$adder($value);
+                continue;
+            }
+        }
+
+        return $entity;
     }
 }
