@@ -26,4 +26,5 @@ coverage.txt
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
+!/config/jwt/*_insecure.pem
 ###< lexik/jwt-authentication-bundle ###
