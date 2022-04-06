@@ -43,13 +43,13 @@ For example, if a bugfix on the login is fixed the 23 april, the developer will 
 Tests are automatically run using the github-workflow CI and their success is mandatory to enable the MR validation.
 
 * Backend Framework: [phpunit](https://phpunit.de/)
-* Frontend Framework: [Jasmin](https://jasmine.github.io/)
+* Frontend Framework: [Karma](https://karma-runner.github.io/latest/index.html)
 
 
 
 ### Code coverage
 
-A minimum of code coverage as been set to ensure that enough part of the code are tested. However the backend and the frontend will have different threshold since there will be a lot of logic-less code for design which is insignificant. 
+A minimum of code coverage as been set to ensure that enough part of the code are tested. However the backend and the frontend will have different threshold since there will be a lot of logic-less code for design which not significative. 
 
 * Backend: 80%
 * Frontend: 30% 
