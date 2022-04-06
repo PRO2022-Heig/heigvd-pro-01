@@ -24,8 +24,7 @@ class UserFixture extends Fixture
         $user = (new AppUser())
             ->setFirstName("John")
             ->setLastName("Doe")
-            ->setEmailAddress("john.doe@fake.com")
-            ->setSource(AppUser::SOURCE_SIGNUP);
+            ->setEmailAddress("john.doe@fake.com");
 
         $plaintextPassword = "supersecurepassword123";
 

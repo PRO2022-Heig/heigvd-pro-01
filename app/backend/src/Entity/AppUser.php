@@ -16,9 +16,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 )]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    public const SOURCE_SIGNUP = "signup";
-    public const SOURCE_GOOGLE = "google";
-
     #[ORM\Column(type: "string", length: 255, unique: true)]
     private string $emailAddress;
 
@@ -33,9 +30,6 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
 
     #[ORM\Column(type: "string", length: 255)]
     private string $lastName;
-
-    #[ORM\Column(type: "string", length: 255)]
-    private string $source;
 
     /**
      * A visual identifier that represents this user.
@@ -122,18 +116,6 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     public function setEmailAddress(string $emailAddress): self
     {
         $this->emailAddress = $emailAddress;
-
-        return $this;
-    }
-
-    public function getSource(): ?string
-    {
-        return $this->source;
-    }
-
-    public function setSource(string $source): self
-    {
-        $this->source = $source;
 
         return $this;
     }
