@@ -61,9 +61,22 @@ We use [github-worklfow](https://docs.github.com/en/actions/using-workflows).
 #### Frontend
 
 * Main Framework: [Angular](https://angular.io/) 
+
 * Package Manager: [npm](https://www.npmjs.com/)
-* Test Framework:  [Karma](https://karma-runner.github.io/latest/index.html) / [Jasmin](https://jasmine.github.io/)
-* Linter:  [ESLint](https://eslint.org/) (the configuration file is `app/frontend/.eslintrc.json`)
+
+* Test Framework:  [Karma](https://karma-runner.github.io/latest/index.html)
+
+* Styling:
+
+  * Basic CSS3 with [Scss](https://sass-lang.com/guide) preprocessor 
+  * [Angular materials](https://material.angular.io/)
+
+* Linter: 
+
+  * [ESLint ](https://eslint.org/)for typescript. The configuration file is `app/frontend/.eslintrc.json`
+  * [Stylelint](https://stylelint.io/) for Scss. The configuration file is `app/frontend/.stylelintrc.json`
+
+  The rules are the recommended ones for each tool with additional rules. 
 
 
 
