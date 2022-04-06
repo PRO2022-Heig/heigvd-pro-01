@@ -2,36 +2,47 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: AppUserRepository::class)]
-class AppUser implements UserInterface, PasswordAuthenticatedUserInterface
+#[ORM\HasLifecycleCallbacks]
+#[ApiResource]
+class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    public const SOURCE_SIGNUP = "signup";
+    public const SOURCE_GOOGLE = "google";
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
-    private $id;
+    protected int|null $id;
 
     #[ORM\Column(type: "string", length: 180, unique: true)]
-    private $username;
+    private string $username;
 
     #[ORM\Column(type: "json")]
-    private $roles = [];
+    private array $roles = [];
 
     #[ORM\Column(type: "string")]
-    private $password;
+    #[Groups(["NO_ONE"])]
+    private string $password;
 
     #[ORM\Column(type: "string", length: 255)]
-    private $firstName;
+    private string $firstName;
 
     #[ORM\Column(type: "string", length: 255)]
-    private $lastName;
+    private string $lastName;
 
     #[ORM\Column(type: "string", length: 255)]
-    private $emailAddress;
+    private string $emailAddress;
+
+    #[ORM\Column(type: "string", length: 255)]
+    private string $source;
 
     public function getId(): ?int
     {
@@ -135,6 +146,18 @@ class AppUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmailAddress(string $emailAddress): self
     {
         $this->emailAddress = $emailAddress;
+
+        return $this;
+    }
+
+    public function getSource(): ?string
+    {
+        return $this->source;
+    }
+
+    public function setSource(string $source): self
+    {
+        $this->source = $source;
 
         return $this;
     }

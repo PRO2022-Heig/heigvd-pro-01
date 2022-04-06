@@ -13,10 +13,10 @@ abstract class AbstractEntity
     #[ORM\Column(type: "integer")]
     protected ?int $id = null;
 
-    #[ORM\Column(type: "datetime")]
+    #[ORM\Column(type: "datetime_immutable")]
     protected DateTimeImmutable $createdAt;
 
-    #[ORM\Column(type: "datetime")]
+    #[ORM\Column(type: "datetime_immutable")]
     protected DateTimeImmutable $updatedAt;
 
     #[ORM\PrePersist]
