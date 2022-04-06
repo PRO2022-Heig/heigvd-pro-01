@@ -70,7 +70,7 @@ The type of a restaurant location is yet to be determined. Some possible choices
 
 ### Recipes, steps and ingredients
 
-A recipe is an ordered sequence of steps that result in a meal for a specified amount of people. Each step can involve ingredients. In the context of a recipe, an ingredient is a precursor that cannot be further subdivided. It should be noted that different recipes will not necessarily consider the same things to be ingredients.
+A recipe is an ordered sequence of steps that result in a meal for a specified amount of people. Each step can involve ingredients. In the context of a recipe, an ingredient is a atomic precursor, in the sens that it is not the object of preparation steps. It should be noted that different recipes will not necessarily consider the same things to be ingredients.
 
 Example: Let's suppose that a user wants to eat pasta with tomato sauce. On the one hand, a particular recipe can list "tomato sauce" as one of the ingredient and the user is assumed to have it ready as basic ingredient before beginning the recipe. On the other hand, another recipe can list "tomatoes", "salt", "garlic" and "basil" as ingredients and extra steps to make the tomato sauce as part of the recipe itself.
 
