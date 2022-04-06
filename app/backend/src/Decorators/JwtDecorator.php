@@ -7,6 +7,7 @@ namespace App\Decorators;
 use ApiPlatform\Core\OpenApi\Factory\OpenApiFactoryInterface;
 use ApiPlatform\Core\OpenApi\Model;
 use ApiPlatform\Core\OpenApi\OpenApi;
+use ArrayObject;
 
 final class JwtDecorator implements OpenApiFactoryInterface
 {
@@ -20,7 +21,7 @@ final class JwtDecorator implements OpenApiFactoryInterface
         $openApi = ($this->decorated)($context);
         $schemas = $openApi->getComponents()->getSchemas();
 
-        $schemas["Token"] = new \ArrayObject(
+        $schemas["Token"] = new ArrayObject(
             [
                 "type" => "object",
                 "properties" => [
@@ -31,7 +32,7 @@ final class JwtDecorator implements OpenApiFactoryInterface
                 ],
             ]
         );
-        $schemas["Credentials"] = new \ArrayObject(
+        $schemas["Credentials"] = new ArrayObject(
             [
                 "type" => "object",
                 "properties" => [
@@ -50,34 +51,32 @@ final class JwtDecorator implements OpenApiFactoryInterface
         $pathItem = new Model\PathItem(
             ref: "JWT Token",
             post: new Model\Operation(
-                     operationId: "postCredentialsItem",
-                     tags:        ["Token"],
-                     responses:   [
-                                      "200" => [
-                                          "description" => "Get JWT token",
-                                          "content" => [
-                                              "application/json" => [
-                                                  "schema" => [
-                                                      "$ref" => "#/components/schemas/Token",
-                                                  ],
-                                              ],
-                                          ],
-                                      ],
-                                  ],
-                     summary:     "Get JWT token to login.",
-                     requestBody: new Model\RequestBody(
-                                      description: "Generate new JWT Token",
-                                      content:     new \ArrayObject(
-                                                       [
-                                                           "application/json" => [
-                                                               "schema" => [
-                                                                   "$ref" => "#/components/schemas/Credentials",
-                                                               ],
-                                                           ],
-                                                       ]
-                                                   ),
-                                  ),
-                 ),
+                operationId: "postCredentialsItem",
+                tags:        ["Token"],
+                responses:   [
+                                 "200" => [
+                                     "description" => "Get JWT token",
+                                     "content" => [
+                                         "application/json" => [
+                                             "schema" => [
+                                                 "\$ref" => "#/components/schemas/Token",
+                                             ],
+                                         ],
+                                     ],
+                                 ],
+                             ],
+                summary:     "Get JWT token to login.",
+                requestBody: new Model\RequestBody(
+                    description: "Generate new JWT Token",
+                    content: new ArrayObject([
+                               "application/json" => [
+                                   "schema" => [
+                                       "\$ref" => "#/components/schemas/Credentials",
+                                   ],
+                               ],
+                           ]),
+                ),
+            ),
         );
         $openApi->getPaths()->addPath("/authentication_token", $pathItem);
 

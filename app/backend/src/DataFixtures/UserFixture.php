@@ -12,7 +12,6 @@ class UserFixture extends Fixture
     private UserPasswordHasherInterface $passwordHasher;
 
     /**
-     * Auto-wiring fuckers !!
      * @param \Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface $passwordHasher
      */
     public function __construct(UserPasswordHasherInterface $passwordHasher)
@@ -26,7 +25,8 @@ class UserFixture extends Fixture
             ->setUsername("johndoe")
             ->setFirstName("John")
             ->setLastName("Doe")
-            ->setEmailAddress("john.doe@fake.com");
+            ->setEmailAddress("john.doe@fake.com")
+            ->setSource(AppUser::SOURCE_SIGNUP);
 
         $plaintextPassword = "supersecurepassword123";
 

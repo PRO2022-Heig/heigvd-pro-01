@@ -7,11 +7,13 @@ use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: AppUserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ApiResource]
+#[ApiResource(
+    collectionOperations: ["get", "post"],
+    itemOperations: ["get", "patch" => ["security" => "object == user"]],
+)]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     public const SOURCE_SIGNUP = "signup";
@@ -29,7 +31,6 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     private array $roles = [];
 
     #[ORM\Column(type: "string")]
-    #[Groups(["NO_ONE"])]
     private string $password;
 
     #[ORM\Column(type: "string", length: 255)]
