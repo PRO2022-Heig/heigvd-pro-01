@@ -19,11 +19,6 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     public const SOURCE_SIGNUP = "signup";
     public const SOURCE_GOOGLE = "google";
 
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
-    protected int|null $id;
-
     #[ORM\Column(type: "string", length: 180, unique: true)]
     private string $username;
 
@@ -44,11 +39,6 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
 
     #[ORM\Column(type: "string", length: 255)]
     private string $source;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getUsername(): ?string
     {
