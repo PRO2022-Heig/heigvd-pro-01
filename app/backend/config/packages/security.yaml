@@ -11,7 +11,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\AppUser
-                property: username
+                property: emailAddress
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         api_token_refresh:
@@ -27,7 +27,7 @@ security:
             provider: app_user_provider
             json_login:
                 check_path: /api/token/get
-                username_path: username
+                username_path: emailAddress
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure

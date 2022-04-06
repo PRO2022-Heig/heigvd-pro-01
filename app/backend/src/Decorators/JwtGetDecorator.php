@@ -40,9 +40,9 @@ final class JwtGetDecorator implements OpenApiFactoryInterface
             [
                 "type" => "object",
                 "properties" => [
-                    "username" => [
+                    "emailAddress" => [
                         "type" => "string",
-                        "example" => "johndoe",
+                        "example" => "john.doe@fake.com",
                     ],
                     "password" => [
                         "type" => "string",

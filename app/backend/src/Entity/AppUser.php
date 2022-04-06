@@ -19,8 +19,8 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     public const SOURCE_SIGNUP = "signup";
     public const SOURCE_GOOGLE = "google";
 
-    #[ORM\Column(type: "string", length: 180, unique: true)]
-    private string $username;
+    #[ORM\Column(type: "string", length: 255, unique: true)]
+    private string $emailAddress;
 
     #[ORM\Column(type: "json")]
     private array $roles = [];
@@ -35,22 +35,7 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     private string $lastName;
 
     #[ORM\Column(type: "string", length: 255)]
-    private string $emailAddress;
-
-    #[ORM\Column(type: "string", length: 255)]
     private string $source;
-
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
-    }
 
     /**
      * A visual identifier that represents this user.
@@ -59,7 +44,7 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->username;
+        return $this->emailAddress;
     }
 
     /**

@@ -22,7 +22,6 @@ class UserFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = (new AppUser())
-            ->setUsername("johndoe")
             ->setFirstName("John")
             ->setLastName("Doe")
             ->setEmailAddress("john.doe@fake.com")
