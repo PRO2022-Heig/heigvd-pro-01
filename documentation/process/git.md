@@ -37,7 +37,7 @@ There are 4 main branches on which we normally do not code directly:
 - **develop**: Usually before merging on **master**: A functional code on which is added a set of new features to be tested for validation.
 - **master**: Represents a stable production state: All the code works and provides a functional solution.
 
-New branches should look like: `dev/<feeature>/<name>`.  
+New branches should look like: `dev/<feature>/<name>`.  
 
 Where  
 - *\<feature\>* is a meaningful name of the feature/task to develop AND/OR related to a Jira Issue.
@@ -62,7 +62,7 @@ We need to implement a *login method*:
   (Note. It can be created from another branch if It makes sens, for example: `dev/user-entity/backend`)
 - `dev/login/frontend`: is used for the frontend part and is created from the previous branch `dev/login/backend`.  
   (Another branch can be merged into this one to update the code, for example: `dev/frontend`)
-- When the feature is complete on each branch, all its content should be available on the latest branch  <!-- TODO: or with another name? -->
+- When the feature is complete on each branch, all its content should be available on the latest branch
 - Once it's done and verified: merge (pull request) the last updated branch into `develop`
 - If there's error(s) on the merged `develop` branch (due to the new feature), a `dev/login/hotfix` is created to fix the feature then merged again in `develop`.
 - Verifications of the `develop` branch and then merge into `master` for a new release.
