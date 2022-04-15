@@ -1,5 +1,5 @@
 authentication_token:
-  path: /api/token/get
+  path: /token/get
   methods: ["POST"]
 gesdinet_jwt_refresh_token:
-  path: /api/token/refresh
+  path: /token/refresh

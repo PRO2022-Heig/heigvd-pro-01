@@ -29,6 +29,10 @@ final class JwtRefreshDecorator implements OpenApiFactoryInterface
                         "type" => "string",
                         "readOnly" => true,
                     ],
+                    "refresh_token" => [
+                        "type" => "string",
+                        "readOnly" => true,
+                    ],
                 ],
             ]
         );
@@ -74,7 +78,7 @@ final class JwtRefreshDecorator implements OpenApiFactoryInterface
                 ),
             ),
         );
-        $openApi->getPaths()->addPath("/api/token/refresh", $pathItem);
+        $openApi->getPaths()->addPath("/token/refresh", $pathItem);
 
         return $openApi;
     }

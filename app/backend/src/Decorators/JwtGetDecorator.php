@@ -82,7 +82,7 @@ final class JwtGetDecorator implements OpenApiFactoryInterface
                 ),
             ),
         );
-        $openApi->getPaths()->addPath("/api/token/get", $pathItem);
+        $openApi->getPaths()->addPath("/token/get", $pathItem);
 
         return $openApi;
     }

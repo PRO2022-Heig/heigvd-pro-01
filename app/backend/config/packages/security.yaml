@@ -15,7 +15,7 @@ security:
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         api_token_refresh:
-            pattern: ^/api/token/refresh
+            pattern: ^/token/refresh
             stateless: true
             refresh_jwt:
                 provider: app_user_provider
@@ -26,7 +26,7 @@ security:
             stateless: true
             provider: app_user_provider
             json_login:
-                check_path: /api/token/get
+                check_path: /token/get
                 username_path: emailAddress
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
@@ -43,8 +43,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
-        - { path: ^/api/token/get, roles: PUBLIC_ACCESS }
-        - { path: ^/api/token/refresh, roles: PUBLIC_ACCESS }
+        - { path: ^/token/get, roles: PUBLIC_ACCESS }
+        - { path: ^/token/refresh, roles: PUBLIC_ACCESS }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
 
 
