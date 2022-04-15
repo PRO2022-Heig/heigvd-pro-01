@@ -157,6 +157,9 @@
             "config/packages/lexik_jwt_authentication.yaml"
         ]
     },
+    "liip/test-fixtures-bundle": {
+        "version": "2.3.0"
+    },
     "myclabs/deep-copy": {
         "version": "1.11.0"
     },
@@ -399,6 +402,12 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/http-client": {
+        "version": "v6.0.7"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v3.0.1"
     },
     "symfony/http-foundation": {
         "version": "v6.0.5"
