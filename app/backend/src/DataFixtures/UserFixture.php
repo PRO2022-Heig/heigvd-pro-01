@@ -25,10 +25,10 @@ class UserFixture extends Fixture
             ->setUsername("johndoe")
             ->setFirstName("John")
             ->setLastName("Doe")
-            ->setEmailAddress("john.doe@fake.com")
+            ->setEmailAddress(static::getDefaultEmail())
             ->setSource(AppUser::SOURCE_SIGNUP);
 
-        $plaintextPassword = "supersecurepassword123";
+        $plaintextPassword = static::getDefaultPassword();
 
         $hashedPassword = $this->passwordHasher->hashPassword(
             $user,
@@ -37,5 +37,15 @@ class UserFixture extends Fixture
         $user->setPassword($hashedPassword);
         $manager->persist($user);
         $manager->flush();
+    }
+
+    public static function getDefaultEmail(): string
+    {
+        return "john.doe@fake.com";
+    }
+
+    public static function getDefaultPassword(): string
+    {
+        return "supersecurepassword123";
     }
 }

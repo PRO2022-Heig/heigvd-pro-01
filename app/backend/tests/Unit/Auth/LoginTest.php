@@ -11,12 +11,8 @@ class LoginTest extends ApiTestCase
 
     public function testLoginValidUserAndPassword(): void
     {
-        $response = $this->request("POST", "/authentication_token", [
-            "headers" => ["Content-Type" => "application/json"],
-            "json" => [
-                "username" => "johndoe",
-                "password" => "supersecurepassword123"
-            ]
+        $response = $this->request("POST", $this->authenticationTokenRoute, [
+            "json" => $this->getUser()
         ]);
 
         $json = $response->toArray(false);
@@ -26,8 +22,7 @@ class LoginTest extends ApiTestCase
 
     public function testLoginValidUserWrongPassword(): void
     {
-        $response = $this->request("POST", "/authentication_token", [
-            "headers" => ["Content-Type" => "application/json"],
+        $response = $this->request("POST", $this->authenticationTokenRoute, [
             "json" => [
                 "username" => "johndoe",
                 "password" => "wrong"
@@ -41,8 +36,7 @@ class LoginTest extends ApiTestCase
 
     public function testLoginInvalidUser(): void
     {
-        $response = $this->request("POST", "/authentication_token", [
-            "headers" => ["Content-Type" => "application/json"],
+        $response = $this->request("POST", $this->authenticationTokenRoute, [
             "json" => [
                 "username" => "fake",
                 "password" => "wrong"

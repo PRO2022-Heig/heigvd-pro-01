@@ -13,6 +13,7 @@ trait ApiTestTrait
 {
     protected AbstractDatabaseTool $databaseTool;
     protected Client $client;
+    protected string $authenticationTokenRoute = "/authentication_token";
 
     public function setUp(): void
     {
@@ -25,12 +26,8 @@ trait ApiTestTrait
 
     public function authenticatedRequest(string $method, string $path, array $options = []): ResponseInterface
     {
-        $response = $this->request("POST", "/authentication_token", [
-            "headers" => ["Content-Type" => "application/json"],
-            "json" => [
-                "username" => "johndoe",
-                "password" => "supersecurepassword123"
-            ]
+        $response = $this->request("POST", $this->authenticationTokenRoute, [
+            "json" => $this->getUser()
         ]);
         $options = array_merge_recursive($options, [
             "headers" => [
@@ -42,6 +39,19 @@ trait ApiTestTrait
 
     public function request(string $method, string $path, array $options = []): ResponseInterface
     {
+        $options = array_merge_recursive($options, [
+            "headers" => [
+                "Content-Type" => "application/json"
+            ]
+        ]);
         return  $this->client->request($method, $path, $options);
+    }
+
+    protected function getUser(): array
+    {
+        return [
+            "username" => "johndoe",
+            "password" => UserFixture::getDefaultPassword()
+        ];
     }
 }
