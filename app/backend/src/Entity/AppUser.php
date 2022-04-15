@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\UserMiController;
 use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -11,8 +12,22 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Entity(repositoryClass: AppUserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource(
-    collectionOperations: ["get", "post"],
-    itemOperations: ["get", "patch" => ["security" => "object == user"]],
+    collectionOperations: [
+        "get",
+        "post",
+        "getMiself" => [
+            "method" => "GET",
+            "path" => "/app_user/mi",
+            "controller" => UserMiController::class,
+            "read" => false,
+        ],
+    ],
+    itemOperations: [
+        "get",
+        "patch" => [
+            "security" => "object == user"
+        ]
+    ],
 )]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
