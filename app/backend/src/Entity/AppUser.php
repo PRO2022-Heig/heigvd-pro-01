@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: AppUserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -48,6 +49,7 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]
     #[Groups(["user:restricted", "user:create"])]
+    #[Assert\NotBlank]
     private string $emailAddress;
 
     #[ORM\Column(type: "json")]
