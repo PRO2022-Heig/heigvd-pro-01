@@ -8,18 +8,32 @@ use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: AppUserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource(
     collectionOperations: [
         "get",
-        "post",
+        "post" => [
+            "denormalization_context" => [
+                "groups" => [
+                    "user:create"
+                ]
+            ]
+        ],
         "getMiself" => [
             "method" => "GET",
             "path" => "/app_user/mi",
             "controller" => UserMiController::class,
             "read" => false,
+            "normalization_context" => [
+                "groups" => [
+                    "entity:full",
+                    "user:restricted",
+                    "user:extended"
+                ]
+            ]
         ],
     ],
     itemOperations: [
@@ -28,22 +42,28 @@ use Symfony\Component\Security\Core\User\UserInterface;
             "security" => "object == user"
         ]
     ],
+    normalizationContext: ["groups" => "user:restricted"],
 )]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]
+    #[Groups("user:restricted", "user:create")]
     private string $emailAddress;
 
     #[ORM\Column(type: "json")]
+    #[Groups("user:extended")]
     private array $roles = [];
 
     #[ORM\Column(type: "string")]
+    #[Groups("user:create")]
     private string $password;
 
     #[ORM\Column(type: "string", length: 255)]
+    #[Groups("user:restricted", "user:create")]
     private string $firstName;
 
     #[ORM\Column(type: "string", length: 255)]
+    #[Groups("user:restricted", "user:create")]
     private string $lastName;
 
     /**
