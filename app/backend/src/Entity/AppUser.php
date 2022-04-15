@@ -47,23 +47,23 @@ use Symfony\Component\Serializer\Annotation\Groups;
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]
-    #[Groups("user:restricted", "user:create")]
+    #[Groups(["user:restricted", "user:create"])]
     private string $emailAddress;
 
     #[ORM\Column(type: "json")]
-    #[Groups("user:extended")]
+    #[Groups(["user:extended"])]
     private array $roles = [];
 
     #[ORM\Column(type: "string")]
-    #[Groups("user:create")]
+    #[Groups(["user:create"])]
     private string $password;
 
     #[ORM\Column(type: "string", length: 255)]
-    #[Groups("user:restricted", "user:create")]
+    #[Groups(["user:restricted", "user:create"])]
     private string $firstName;
 
     #[ORM\Column(type: "string", length: 255)]
-    #[Groups("user:restricted", "user:create")]
+    #[Groups(["user:restricted", "user:create"])]
     private string $lastName;
 
     /**
