@@ -15,7 +15,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource(
     collectionOperations: [
-        "get",
         "post" => [
             "denormalization_context" => [
                 "groups" => [
@@ -38,7 +37,9 @@ use Symfony\Component\Validator\Constraints as Assert;
         ],
     ],
     itemOperations: [
-        "get",
+        "get" => [
+            "security" => "object == user"
+        ],
         "patch" => [
             "security" => "object == user"
         ]
