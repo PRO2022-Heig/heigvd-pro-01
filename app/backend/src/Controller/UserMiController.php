@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\AppUser;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Security\Core\User\UserInterface;
 
