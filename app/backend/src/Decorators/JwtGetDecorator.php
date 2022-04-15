@@ -7,6 +7,7 @@ namespace App\Decorators;
 use ApiPlatform\Core\OpenApi\Factory\OpenApiFactoryInterface;
 use ApiPlatform\Core\OpenApi\Model;
 use ApiPlatform\Core\OpenApi\OpenApi;
+use App\DataFixtures\UserFixture;
 use ArrayObject;
 
 final class JwtGetDecorator implements OpenApiFactoryInterface
@@ -42,11 +43,11 @@ final class JwtGetDecorator implements OpenApiFactoryInterface
                 "properties" => [
                     "emailAddress" => [
                         "type" => "string",
-                        "example" => "john.doe@fake.com",
+                        "example" => UserFixture::getDefaultEmail(),
                     ],
                     "password" => [
                         "type" => "string",
-                        "example" => "supersecurepassword123",
+                        "example" => UserFixture::getDefaultPassword(),
                     ],
                 ],
             ]
