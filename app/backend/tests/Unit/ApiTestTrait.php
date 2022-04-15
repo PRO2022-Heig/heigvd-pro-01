@@ -13,7 +13,7 @@ trait ApiTestTrait
 {
     protected AbstractDatabaseTool $databaseTool;
     protected Client $client;
-    protected string $authenticationTokenRoute = "/authentication_token";
+    protected string $authenticationTokenRoute = "/token/get";
 
     public function setUp(): void
     {
@@ -50,7 +50,7 @@ trait ApiTestTrait
     protected function getUser(): array
     {
         return [
-            "username" => "johndoe",
+            "emailAddress" => UserFixture::getDefaultEmail(),
             "password" => UserFixture::getDefaultPassword()
         ];
     }

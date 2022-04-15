@@ -11,5 +11,6 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ["dev" => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ["dev" => true, "test" => true],
     Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ["all" => true],
+    Gesdinet\JWTRefreshTokenBundle\GesdinetJWTRefreshTokenBundle::class => ["all" => true],
     Liip\TestFixturesBundle\LiipTestFixturesBundle::class => ["dev" => true, "test" => true],
 ];

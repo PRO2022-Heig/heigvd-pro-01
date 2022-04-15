@@ -3,6 +3,7 @@
 namespace App\Tests\Unit\Auth;
 
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
+use App\DataFixtures\UserFixture;
 use App\Tests\Unit\ApiTestTrait;
 
 class LoginTest extends ApiTestCase
@@ -24,7 +25,7 @@ class LoginTest extends ApiTestCase
     {
         $response = $this->request("POST", $this->authenticationTokenRoute, [
             "json" => [
-                "username" => "johndoe",
+                "emailAddress" => UserFixture::getDefaultEmail(),
                 "password" => "wrong"
             ]
         ]);
@@ -38,7 +39,7 @@ class LoginTest extends ApiTestCase
     {
         $response = $this->request("POST", $this->authenticationTokenRoute, [
             "json" => [
-                "username" => "fake",
+                "emailAddress" => "fake@fake.com",
                 "password" => "wrong"
             ]
         ]);
