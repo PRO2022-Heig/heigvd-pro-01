@@ -51,6 +51,7 @@ class AppUser extends AbstractEntity implements UserInterface, PasswordAuthentic
     #[ORM\Column(type: "string", length: 255, unique: true)]
     #[Groups(["user:restricted", "user:create"])]
     #[Assert\NotBlank]
+    #[Assert\Email]
     private string $emailAddress;
 
     #[ORM\Column(type: "json")]

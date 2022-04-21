@@ -15,6 +15,12 @@ class AppUserTest extends KernelTestCase
         $this->assertErrorCount(1, $appUser, "user email should not be blank");
     }
 
+    public function testInvalidEmail(): void
+    {
+        $appUser = $this->hydrate(AppUser::class, ["emailAddress" => "toto@"]);
+        $this->assertErrorCount(1, $appUser, "user email should be a valid e-mail");
+    }
+
     /*****************************************************************************************************************
      * GETTER, SETTER, ADDER, REMOVER
      ****************************************************************************************************************/
