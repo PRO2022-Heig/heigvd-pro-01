@@ -14,3 +14,12 @@ At the moment, all routes but the ones below require a valid token in the `Autho
 - `/app_users`: (POST) User creation (for sign-up)
 
 At the moment, no OAuth through Google or any other provider is possible. 
+
+Password requirement: The password should
+
+- At least have one special char (non alphanum)
+- At least have one uppercase char
+- At least have one digit
+- Be at least 8 chars long
+
+This can be modified in `App\DataPersisters\AppUserDataPersister` (maybe we could add a configuration for that later)
