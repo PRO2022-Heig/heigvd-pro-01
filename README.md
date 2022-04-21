@@ -17,6 +17,9 @@ There is a bit of setup to do the first time you want to run the app.
    ```
 
 ### Start the project
+
+> Note: By default the project is in development mode, which will grant you access to swagger through `api.our-app.local/docs`. This will also enable advanced debugging messages in API errors,
+
 To start the project, simply open a terminal to the `app` directory and run `vagrant up`
 
 Then you can use `vagrant ssh` to ssh into the VM. You have now entered the development environment
