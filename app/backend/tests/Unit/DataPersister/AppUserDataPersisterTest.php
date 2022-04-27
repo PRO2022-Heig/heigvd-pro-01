@@ -63,7 +63,8 @@ class AppUserDataPersisterTest extends KernelTestCase
             ["1aetqzdh", false],
             ["1Qetqzdh", false],
             ["1Q\$tqzd", false],
-            ["1Q\$tqzdh", true],
+            ["1Q\$TQZDH", false],
+            ["1Q\$tQZDH", true],
         ];
 
         foreach ($passwords as $password) {

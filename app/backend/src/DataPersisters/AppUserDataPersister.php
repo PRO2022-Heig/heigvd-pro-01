@@ -31,17 +31,21 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
         $minDigits = 1;
         $minSpecial = 1;
         $minUppercase = 1;
+        $minLowercase = 1;
         $minLength = 8;
 
         $actualDigits = 0;
         $actualSpecial = 0;
         $actualUppercase = 0;
+        $actualLowercase = 0;
 
         foreach (str_split($password) as $char) {
             if (ctype_digit($char)) {
                 ++$actualDigits;
             } elseif (ctype_upper($char)) {
                 ++$actualUppercase;
+            } elseif (ctype_lower($char)) {
+                ++$actualLowercase;
             } elseif (!ctype_alnum($char)) {
                 ++$actualSpecial;
             }
@@ -52,6 +56,7 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
             || $actualDigits < $minDigits
             || $actualSpecial < $minSpecial
             || $actualUppercase < $minUppercase
+            || $actualLowercase < $minLowercase
         ) {
             throw new PasswordDoesNotMatchRequirementsException();
         }

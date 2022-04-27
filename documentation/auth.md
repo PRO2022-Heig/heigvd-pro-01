@@ -18,7 +18,7 @@ At the moment, no OAuth through Google or any other provider is possible.
 Password requirement: The password should
 
 - At least have one special char (non alphanum)
-- At least have one uppercase char
+- At least have one uppercase and one lowercase char
 - At least have one digit
 - Be at least 8 chars long
 
