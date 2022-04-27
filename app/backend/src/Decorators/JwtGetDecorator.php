@@ -57,29 +57,29 @@ final class JwtGetDecorator implements OpenApiFactoryInterface
             ref: "JWT Token Retrieval",
             post: new Model\Operation(
                 operationId: "postCredentialsItem",
-                tags:        ["Token"],
-                responses:   [
-                                      "200" => [
-                                          "description" => "Get JWT token",
-                                          "content" => [
-                                              "application/json" => [
-                                                  "schema" => [
-                                                      "\$ref" => "#/components/schemas/Token",
-                                                  ],
-                                              ],
-                                          ],
-                                      ],
-                                  ],
-                summary:     "Gets a new JWT token.",
+                tags: ["Token"],
+                responses: [
+                    "200" => [
+                        "description" => "Get JWT token",
+                        "content" => [
+                            "application/json" => [
+                                "schema" => [
+                                    "\$ref" => "#/components/schemas/Token",
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                summary: "Gets a new JWT token.",
                 requestBody: new Model\RequestBody(
                     description: "Generate new JWT Token",
-                    content:     new ArrayObject([
-                                                                       "application/json" => [
-                                                                           "schema" => [
-                                                                               "\$ref" => "#/components/schemas/Credentials",
-                                                                           ],
-                                                                       ],
-                                                                   ]),
+                    content: new ArrayObject([
+                        "application/json" => [
+                            "schema" => [
+                                "\$ref" => "#/components/schemas/Credentials",
+                            ],
+                        ],
+                    ]),
                 ),
             ),
         );

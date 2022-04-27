@@ -52,29 +52,29 @@ final class JwtRefreshDecorator implements OpenApiFactoryInterface
             ref: "JWT Token Refresh",
             post: new Model\Operation(
                 operationId: "postCredentialsItemRefresh",
-                tags:        ["Token"],
-                responses:   [
-                                 "200" => [
-                                     "description" => "Get JWT token",
-                                     "content" => [
-                                         "application/json" => [
-                                             "schema" => [
-                                                 "\$ref" => "#/components/schemas/Token",
-                                             ],
-                                         ],
-                                     ],
-                                 ],
-                             ],
-                summary:     "Refreshes JWT Token.",
+                tags: ["Token"],
+                responses: [
+                    "200" => [
+                        "description" => "Get JWT token",
+                        "content" => [
+                            "application/json" => [
+                                "schema" => [
+                                    "\$ref" => "#/components/schemas/Token",
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                summary: "Refreshes JWT Token.",
                 requestBody: new Model\RequestBody(
                     description: "Refresh a JWT Token with the refresh token",
                     content: new ArrayObject([
-                               "application/json" => [
-                                   "schema" => [
-                                       "\$ref" => "#/components/schemas/RefreshTokenCredentials",
-                                   ],
-                               ],
-                           ]),
+                        "application/json" => [
+                            "schema" => [
+                                "\$ref" => "#/components/schemas/RefreshTokenCredentials",
+                            ],
+                        ],
+                    ]),
                 ),
             ),
         );
