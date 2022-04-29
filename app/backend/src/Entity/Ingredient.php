@@ -4,45 +4,112 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\IngredientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[ApiResource]
 class Ingredient extends AbstractEntity
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
-    private int $id;
-
     #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
     private string $name;
 
-    /**
-     * @return int|null
-     */
-    public function getId(): ?int
+    #[ORM\Column(type: "text", nullable: true)]
+    private string $description;
+
+    #[ORM\ManyToMany(targetEntity: FoodConstraint::class, mappedBy: "ingredients")]
+    private Collection $foodConstraints;
+
+    #[ORM\OneToMany(mappedBy: "ingredient", targetEntity: Product::class)]
+    private Collection $products;
+
+    public function __construct()
     {
-        return $this->id;
+        $this->foodConstraints = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
-    /**
-     * @return string|null
-     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return $this
-     */
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, FoodConstraint>
+     */
+    public function getFoodConstraints(): Collection
+    {
+        return $this->foodConstraints;
+    }
+
+    public function addFoodConstraint(FoodConstraint $foodConstraint): self
+    {
+        if (!$this->foodConstraints->contains($foodConstraint)) {
+            $this->foodConstraints[] = $foodConstraint;
+            $foodConstraint->addIngredient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodConstraint(FoodConstraint $foodConstraint): self
+    {
+        if ($this->foodConstraints->removeElement($foodConstraint)) {
+            $foodConstraint->removeIngredient($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->setIngredient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->products->removeElement($product)) {
+            // set the owning side to null (unless already changed)
+            if ($product->getIngredient() === $this) {
+                $product->setIngredient(null);
+            }
+        }
 
         return $this;
     }
