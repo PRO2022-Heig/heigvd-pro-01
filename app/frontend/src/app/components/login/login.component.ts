@@ -113,7 +113,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 	/**
 	 * Form submit: signup or login
 	 */
-	public formSubmit() {
+	public async formSubmit() {
 		if (!this.loginForm.valid)
 			return;
 
@@ -121,14 +121,12 @@ export class LoginComponent extends BaseComponent implements OnInit {
 		this.loading = true;
 
 		const {email, password} = this.loginForm.value;
-		const action = this.state.signup ? this.authService.signup({
+		return (this.state.signup ? this.authService.signup({
 			firstName: this.loginForm.controls.firstname.value,
 			lastName: this.loginForm.controls.lastname.value,
 			emailAddress: email,
 			password
-		}) : this.authService.login(email, password);
-
-		action
+		}) : this.authService.login(email, password))
 			.then(() => {
 				this.state.loginOk = true;
 				this.redirect();
@@ -163,7 +161,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
 	private redirect() {
 		this.state.redirection = true;
-		setTimeout(() => this.router.navigateByUrl(this.redirectUrl || this.DEFAULT_REDIRECT), 750);
+		setTimeout(() => this.router.navigateByUrl(this.redirectUrl || this.DEFAULT_REDIRECT), 500);
 	}
 
 	/**

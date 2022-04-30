@@ -11,9 +11,13 @@ export class UserHttpHandler extends ModelHttpHandler<User> {
 	}
 
 	protected override verifyCreate(data: unknown): number | User {
-		// TODO: better
 		if (!data)
 			return 400;
+
+		// TODO: better
+		const mail = (data as User).emailAddress;
+		if (mail && this.mocks.find(_ => _.emailAddress === mail))
+			return 500; // TODO: change to 409
 
 		return data as User;
 	}

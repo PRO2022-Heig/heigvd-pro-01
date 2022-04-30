@@ -14,7 +14,7 @@ export const users: UserTest[] = [{
 	lastName: "test2",
 	password: "password"
 }, {
-	id: 1,
+	id: 2,
 	createdAt: new Date(2020, 11, 10, 10, 0, 0).toISOString(),
 	updatedAt: new Date(2020, 12, 10, 10, 0, 0).toISOString(),
 

@@ -84,14 +84,16 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 	 * Handle the "create" route
 	 */
 	protected handleCreate(params: HttpHandlerTestParams, request: HttpRequest<unknown>): HttpResponseBase {
-		const created = this.verifyCreate(request.body);
+		const created = this.verifyCreate(request.body) as T;
 		if (+created)
 			return new HttpErrorResponse({
 				url: params.fullUri,
 				status: +created
 			});
 
-		this.mocks.push(created as T);
+		created.id = this.mocks.reduce((a, b) => a > b.id ? a : b.id, 0) + 1;
+		this.mocks.push(created);
+
 		return new HttpResponse({
 			body: created,
 			url: params.fullUri,

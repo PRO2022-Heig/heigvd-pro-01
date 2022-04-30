@@ -18,10 +18,6 @@ export class CookieService {
 	public constructor(private readonly cookieService: NGXCookieService) {
 	}
 
-	public exists(): boolean {
-		return this.cookieService.check(this.COOKIE_NAME);
-	}
-
 	public get(): Cookie {
 		if (this.exists()) try {
 			const json = JSON.parse(this.cookieService.get(this.COOKIE_NAME));
@@ -51,6 +47,17 @@ export class CookieService {
 		return false;
 	}
 
+	public reset() {
+		this.set(this.getInitialCookie());
+	}
+
+	protected getInitialCookie(): Cookie {
+		return {};
+	}
+
+	private exists(): boolean {
+		return this.cookieService.check(this.COOKIE_NAME);
+	}
 
 	/**
 	 * Validates content of data according the Cookie (Whitelist)
@@ -66,9 +73,5 @@ export class CookieService {
 			};
 
 		return cookie;
-	}
-
-	private getInitialCookie(): Cookie {
-		return {};
 	}
 }

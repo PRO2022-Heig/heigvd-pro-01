@@ -3,6 +3,7 @@ import { TestBed } from "@angular/core/testing";
 
 import { ApiTestProviders } from "../../../../test/helpers/api";
 import { users } from "../../../../test/mocks/api";
+import { CookieService } from "../../services/cookie";
 import { ApiClientModule } from "../api-client.module";
 import { AuthService, UserSignup } from "./auth.service";
 import { AuthUser } from "./auth.types";
@@ -16,6 +17,7 @@ describe("AuthService", () => {
 		});
 
 		service = TestBed.inject(AuthService);
+		TestBed.inject(CookieService).reset();
 	});
 
 	it("should be created", () => {
@@ -28,7 +30,7 @@ describe("AuthService", () => {
 			.catch((error: HttpErrorResponse) => expect(error.status).toBe(401));
 
 		await service._refresh()
-			.catch((error: HttpErrorResponse) => expect(error.status).toBe(401));;
+			.catch((error: HttpErrorResponse) => expect(error.status).toBe(401));
 
 		const logged = await service.login(user.emailAddress, user.password);
 		expect(logged.id).toBe(user.id);
@@ -54,7 +56,6 @@ describe("AuthService", () => {
 
 		const created = await service.signup(userSignup);
 		expect(user._connected).toBe(true);
-
 		expect(created.firstName).toBe(user.firstName);
 		expect(userSignup.lastName).toBe(user.lastName);
 
