@@ -13,20 +13,20 @@ export class ApiInterceptorTest implements HttpInterceptor {
 		new UserHttpHandler(users)
 	];
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 		const fullUri = request.url.replace(apiUrl, "");
 
 		const handler = this.handlers.find(handler => handler.canHandle(fullUri));
 		if (handler) {
 			let uri = fullUri;
-			let queryParams = ""; // TODO: convert to object
+			//let queryParams = ""; // TODO: convert to object
 
 			{
 				const paramPos = uri.indexOf("?");
-				if (paramPos !== -1) {
-					queryParams = uri.substring(paramPos + 1);
+				if (paramPos !== -1)
+					//queryParams = uri.substring(paramPos + 1);
 					uri = uri.substring(0, paramPos);
-				}
 			}
 
 			const response = handler.handle({uri, fullUri}, request);

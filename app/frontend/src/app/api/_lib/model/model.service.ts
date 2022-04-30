@@ -26,6 +26,7 @@ export abstract class ModelService<T extends Model> {
 	 * Search for data according to the conditions.
 	 * @return models and pagination
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public findAndPagination<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T>): Promise<ModelFoundAndPagination<U>> {
 		// TODO: search, params, pagination
 		return this.apiClient.get<ModelFindResponse<U>>(this.entryPoint)

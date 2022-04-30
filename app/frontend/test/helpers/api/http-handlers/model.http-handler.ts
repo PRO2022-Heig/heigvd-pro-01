@@ -62,8 +62,9 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 
 	/**
 	 * Handle the "get" route
-	 */
+	 */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected handleGet(params: HttpHandlerTestParams, request: HttpRequest<unknown>): HttpResponseBase {
+		// request is keep for possible overrides
 		const id = +this.getAction(params).substring(1);
 		const data = this.mocks.find(_ => _.id === id);
 
