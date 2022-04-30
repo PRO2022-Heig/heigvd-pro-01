@@ -3,7 +3,6 @@
 		<ng-container *ngIf="!user._connected || state.loginOk || state.redirection">
 			<mat-card-header>
 				<mat-card-title>{{ state.signup ? "Créer un compte" : "Connexion" }}</mat-card-title>
-				<mat-card-subtitle>test: {{ tmp.user }} | {{ tmp.pass }}</mat-card-subtitle>
 			</mat-card-header>
 
 			<mat-card-content fxLayout="column">
@@ -15,24 +14,44 @@
 				</div>
 
 				<ng-container *ngIf="!state.redirection">
-					<form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
+					<form [formGroup]="loginForm" (ngSubmit)="formSubmit()" fxLayout="column">
+						<mat-form-field *ngIf="state.signup">
+							<mat-label>Prénom</mat-label>
+							<input [formControl]="loginForm.controls.firstname" matInput type="text">
+							<mat-error>{{ getControlErrorMessage(loginForm.controls.firstname) | async }}</mat-error>
+						</mat-form-field>
+
+						<mat-form-field *ngIf="state.signup">
+							<mat-label>Nom</mat-label>
+							<input [formControl]="loginForm.controls.lastname" matInput type="text">
+							<mat-error>{{ getControlErrorMessage(loginForm.controls.lastname) | async }}</mat-error>
+						</mat-form-field>
+
 						<mat-form-field>
 							<mat-label>Adresse e-mail</mat-label>
 							<input [formControl]="loginForm.controls.email" matInput type="email" required>
+							<mat-error>{{ getControlErrorMessage(loginForm.controls.email) | async }}</mat-error>
 						</mat-form-field>
 
 						<mat-form-field>
 							<mat-label>Mot de passe</mat-label>
 							<input [formControl]="loginForm.controls.password" matInput type="password" required>
+							<mat-error>{{ getControlErrorMessage(loginForm.controls.password) | async }}</mat-error>
 						</mat-form-field>
 
-						<button mat-raised-button type="submit" color="primary" [disabled]="state.signup || !loginForm.valid">Connexion</button>
+						<button mat-raised-button type="submit" color="primary"
+								[disabled]="!loginForm.valid">{{ state.signup ? "Créer" : "Connexion" }}</button>
 						<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
 
 						<p *ngIf="error">
 							<mat-error *ngIf="error.status === 401">
 								<mat-icon inline>error_outline</mat-icon>
 								<ng-container>L'identification a echoué.</ng-container>
+							</mat-error>
+
+							<mat-error *ngIf="error.status >= 500">
+								<mat-icon inline>error_outline</mat-icon>
+								<ng-container>Une erreur est survenue.</ng-container>
 							</mat-error>
 						</p>
 					</form>
@@ -62,13 +81,13 @@
 		<ng-container *ngIf="!(!user._connected || state.loginOk || state.redirection)">
 			<mat-card-header>
 				<mat-card-title>Déjà connecté</mat-card-title>
-				<mat-card-subtitle>profil : {{ user.email }}</mat-card-subtitle>
+				<mat-card-subtitle>profil : {{ user.emailAddress }}</mat-card-subtitle>
 			</mat-card-header>
 
 			<mat-card-content>
 				<p>Vous êtes déjà connecté. Vous pouvez suivre ces liens :</p>
 				<ul>
-					<li><a routerLink="/" disabled>Profil</a></li>
+					<li><a routerLink="/profile" disabled>Profil</a></li>
 					<li><a routerLink="/" disabled>Accueil</a></li>
 				</ul>
 			</mat-card-content>
