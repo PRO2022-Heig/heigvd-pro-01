@@ -7,6 +7,7 @@
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
+		"test-inline": "npm test -- --no-watch --browsers=ChromeHeadlessCI",
 		"lint": "npm run lint-code; npm run lint-style",
 		"lint-code": "eslint \"{e2e,test,src}/**/*.{html,ts}\"",
 		"lint-style": "stylelint \"src/**/*.{css,scss}\""
