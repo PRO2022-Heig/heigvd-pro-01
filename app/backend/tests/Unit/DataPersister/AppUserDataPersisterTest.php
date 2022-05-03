@@ -68,7 +68,6 @@ class AppUserDataPersisterTest extends KernelTestCase
         $appUser = new AppUser();
         $appUser->setEmailAddress("toto@mercedes.com"); // Required in order to get the persister to work
 
-        $appUser->setPassword("abcdeffq");
         $passwords = [
             ["abcdeffq", false],
             ["1aetqzdh", false],
