@@ -24,7 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
         ],
         "getMiself" => [
             "method" => "GET",
-            "path" => "/app_user/mi",
+            "path" => "/app_users/mi",
             "controller" => UserMiController::class,
             "read" => false,
             "normalization_context" => [
