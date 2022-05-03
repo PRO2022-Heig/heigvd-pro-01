@@ -4,13 +4,11 @@ namespace App\Tests\Unit\DataPersister;
 
 use ApiPlatform\Core\Exception\InvalidArgumentException;
 use App\CustomException\PasswordDoesNotMatchRequirementsException;
-use App\DataFixtures\UserFixture;
 use App\DataPersisters\AppUserDataPersister;
 use App\Entity\AppUser;
 use App\Entity\Ingredient;
 use App\Repository\AppUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ManagerRegistry;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;

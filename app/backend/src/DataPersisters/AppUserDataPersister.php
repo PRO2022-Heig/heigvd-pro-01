@@ -31,7 +31,6 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
     /**
      * @param AppUser $data
      * @param array $context
-     * @return void
      */
     public function persist($data, array $context = [])
     {

@@ -11,7 +11,7 @@ class UserMiControllerTest extends ApiTestCase
 
     public function testDataReturnedCorrectly(): void
     {
-        $this->authenticatedRequest("GET", "/app_user/mi");
+        $this->authenticatedRequest("GET", "/app_users/mi");
 
         $this->assertResponseIsSuccessful();
 
