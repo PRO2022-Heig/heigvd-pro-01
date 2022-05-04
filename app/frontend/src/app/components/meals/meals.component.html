@@ -8,12 +8,9 @@
 	</mat-form-field>
 
 	<div class="food-prefs">
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>vegan</mat-checkbox>
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>lactose-free</mat-checkbox>
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>gluten-free</mat-checkbox>
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>vegetarian</mat-checkbox>
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>meat-free</mat-checkbox>
-		<mat-checkbox><mat-icon>cruelty_free</mat-icon>not spicy</mat-checkbox>
+		<mat-checkbox *ngFor="let foodConstraint of foodConstraints$ | async" [title]="foodConstraint.description">
+			<mat-icon>cruelty_free</mat-icon>{{foodConstraint.name}}
+		</mat-checkbox>
 	</div>
 
 	Preparation time

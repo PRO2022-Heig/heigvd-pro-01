@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {Observable, of} from "rxjs";
 
 import {Meal, MealService} from "../../api/meal";
+import {FoodConstraint} from "../../api/food-constraint";
 
 @Component({
 	selector: "app-meals",
@@ -10,6 +11,7 @@ import {Meal, MealService} from "../../api/meal";
 })
 export class MealsComponent implements OnInit {
 	public meals$!: Observable<Meal[]>;
+	public foodConstraints$!: Observable<FoodConstraint[]>;
 	public searchTerms: string;
 	public minutes = 0;
 
@@ -18,7 +20,7 @@ export class MealsComponent implements OnInit {
 	}
 
 	public ngOnInit(): void {
-        // subscribe to observables here (use "extends BaseComponent") et appeler addSubscription()
+		// subscribe to observables here (use "extends BaseComponent") et appeler addSubscription()
 		this.meals$ = of([
 			{
 				"id": 1,
@@ -33,9 +35,22 @@ export class MealsComponent implements OnInit {
 				"name":"Pad thai",
 				"description": "Le phat thai est un plat traditionnel thaïlandais à base de nouilles de riz, très apprécié et très " +
 					"consommé dans toute la Thaïlande. Son nom signifie littéralement « sauté de style thaï ». "
-			},
+			}
 
 		] as Meal[]);
+
+		this.foodConstraints$ = of([
+			{
+				"id": 1,
+				"name": "Vegan",
+				"description": "Vegan food does not use any product that has involved the exploitation of an animal."
+			},
+			{
+				"id": 2,
+				"name": "Vegetarian",
+				"description": "Vegetarian food does not use any animal flesh (meat, fish and possibly more)."
+			}
+		] as FoodConstraint[]);
     }
 
 	// if instant search is wanted -> https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject

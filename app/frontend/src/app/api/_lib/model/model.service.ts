@@ -16,5 +16,8 @@ export abstract class ModelService<T> {
 		return this.apiClient.get<U>(`${this.entryPoint}/${id}`);
 	}
 
+	public getAll<U extends T = T>(): Promise<U> {
+		return this.apiClient.get<U>(this.entryPoint);
+	}
 	// TODO: add more
 }
