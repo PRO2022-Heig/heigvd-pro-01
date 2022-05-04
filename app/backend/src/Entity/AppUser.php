@@ -18,7 +18,13 @@ use Symfony\Component\Validator\Constraints as Assert;
         "post" => [
             "denormalization_context" => [
                 "groups" => [
-                    "user:create"
+                    "user:create",
+                    "entity:full"
+                ]
+            ],
+            "normalization_context" => [
+                "groups" => [
+                    "entity:full"
                 ]
             ]
         ],
