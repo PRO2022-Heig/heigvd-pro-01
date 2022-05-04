@@ -2,8 +2,31 @@
 	padding: 1em;
 	box-sizing: border-box;
 
+	mat-form-field {
+		width: 100%;
+		font-size: 1.5em;
+	}
+
 	mat-card {
 		margin-bottom: 1em;
 		cursor: pointer;
+	}
+
+	.food-prefs {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.results-title {
+		margin: 1em 0;
+		padding: 0.5em 0;
+		background: rgba(255,255,255,0.5);
+		color: #a37d62;
+
+		> * {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
 	}
 }

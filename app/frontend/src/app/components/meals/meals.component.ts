@@ -11,9 +11,14 @@ import {Meal, MealService} from "../../api/meal";
 export class MealsComponent implements OnInit {
 	public meals$!: Observable<Meal[]>;
 	public searchTerms: string;
+	public minutes = 0;
 
 	public constructor(private mealService: MealService) {
 		this.searchTerms = "";
+	}
+
+	public asdf(x : any) {
+		console.log(x);
 	}
 
 	public ngOnInit(): void {

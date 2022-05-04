@@ -1,10 +1,32 @@
-<mat-form-field appearance="fill">
-	<mat-label>Chercher un repas (spaghettis aux tomates)</mat-label>
-	<input matInput type="text" [(ngModel)]="searchTerms">
-	<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
-		<mat-icon>search</mat-icon>
-	</button>
-</mat-form-field>
+<mat-card>
+	<mat-form-field>
+		<mat-label>Find a meal</mat-label>
+		<input matInput type="text" [(ngModel)]="searchTerms" placeholder="Ratatouille, spaghettis carbonara...">
+		<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
+			<mat-icon>search</mat-icon>
+		</button>
+	</mat-form-field>
+
+	<div class="food-prefs">
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>vegan</mat-checkbox>
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>lactose-free</mat-checkbox>
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>gluten-free</mat-checkbox>
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>vegetarian</mat-checkbox>
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>meat-free</mat-checkbox>
+		<mat-checkbox><mat-icon>cruelty_free</mat-icon>not spicy</mat-checkbox>
+	</div>
+
+	Preparation time
+	<mat-slider step="5" min="0" max="90" (input)="minutes = $event.value || 0;"></mat-slider>
+	<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
+	<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
+
+</mat-card>
+
+<div class="results-title">
+	<h1>Résultats</h1>
+	<p>{{(meals$ | async)?.length}} repas trouvé(s)</p>
+</div>
 
 <mat-card *ngFor="let meal of meals$ | async" [routerLink]="['/meal/' + meal.id]">
 	<mat-card-title>{{meal.name}}</mat-card-title>
