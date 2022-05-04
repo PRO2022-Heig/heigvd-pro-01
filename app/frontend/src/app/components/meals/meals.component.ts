@@ -17,10 +17,6 @@ export class MealsComponent implements OnInit {
 		this.searchTerms = "";
 	}
 
-	public asdf(x : any) {
-		console.log(x);
-	}
-
 	public ngOnInit(): void {
         // subscribe to observables here (use "extends BaseComponent") et appeler addSubscription()
 		this.meals$ = of([
