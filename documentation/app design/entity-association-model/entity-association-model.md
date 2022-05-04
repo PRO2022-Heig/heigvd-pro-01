@@ -12,10 +12,11 @@ After an analysis of the data requirements of our application, the following ent
 
 ### Food constraints
 
-A food constraint is a constraint that forbids, for various reasons and with various levels of consequences if not respected, the inclusion of something in a meal. Food constraints come in different forms. At first, we will restrict those to 2 main categories:
+A food constraint is a constraint that forbids, for various reasons and with various levels of consequences if not respected, the inclusion of something in a meal. Food constraints come in different forms. At first, we will restrict those to 3 main categories:
 
 - Food intolerances and allergies (celiac disease, nut allergies, lactose intolerance, etc.)
 - Ethical choices (vegetarian, vegan, no seafood, etc.)
+- User preferences (Italian food, French cuisine, etc.)
 
 Food constraints are linked to the following entities:
 
