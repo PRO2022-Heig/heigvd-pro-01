@@ -2,7 +2,7 @@
 
 namespace App\Tests\Unit\DataPersister;
 
-use ApiPlatform\Core\Exception\InvalidArgumentException;
+use App\CustomException\EmailDuplicateException;
 use App\CustomException\PasswordDoesNotMatchRequirementsException;
 use App\DataPersisters\AppUserDataPersister;
 use App\Entity\AppUser;
@@ -105,9 +105,7 @@ class AppUserDataPersisterTest extends KernelTestCase
         $appUser->setEmailAddress("luis@mercedes.com");
         $appUser->setPassword("1Q\$tQZDH");
 
-//        $this->appUserRepository->method("findBy")->willReturn();
-
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(EmailDuplicateException::class);
 
         $this->dataPersister->persist($appUser);
     }

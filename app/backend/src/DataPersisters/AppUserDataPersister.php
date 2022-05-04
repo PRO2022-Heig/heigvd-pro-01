@@ -3,7 +3,7 @@
 namespace App\DataPersisters;
 
 use ApiPlatform\Core\DataPersister\ContextAwareDataPersisterInterface;
-use ApiPlatform\Core\Exception\InvalidArgumentException;
+use App\CustomException\EmailDuplicateException;
 use App\CustomException\PasswordDoesNotMatchRequirementsException;
 use App\Entity\AppUser;
 use App\Repository\AppUserRepository;
@@ -31,6 +31,7 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
     /**
      * @param AppUser $data
      * @param array $context
+     * @throws \App\CustomException\EmailDuplicateException
      */
     public function persist($data, array $context = [])
     {
@@ -72,7 +73,7 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
         // If it is a new user, checking that the e-mail does not already exist
         if ($data->getId() === null) {
             if (count($this->appUserRepository->findBy(["emailAddress" => $data->getEmailAddress()])) > 0) {
-                throw new InvalidArgumentException("E-mail address already in use");
+                throw new EmailDuplicateException();
             }
         }
 
