@@ -9,6 +9,10 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatListModule} from "@angular/material/list";
+import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import {MatSliderModule} from "@angular/material/slider";
 
 
 export const materials = [
@@ -21,7 +25,11 @@ export const materials = [
 	MatInputModule,
 	ReactiveFormsModule,
 	MatCardModule,
-	MatProgressSpinnerModule
+	MatProgressSpinnerModule,
+	MatDividerModule,
+	MatListModule,
+	MatCheckboxModule,
+	MatSliderModule
 ];
 
 @NgModule({
