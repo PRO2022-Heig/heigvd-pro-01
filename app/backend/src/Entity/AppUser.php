@@ -24,6 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
             ],
             "normalization_context" => [
                 "groups" => [
+                    "user:create",
                     "entity:full"
                 ]
             ]
