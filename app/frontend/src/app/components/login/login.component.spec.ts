@@ -235,10 +235,10 @@ describe("LoginComponent", () => {
 
 			expect(component.user._connected).toBe(false);
 			expect(compiled.querySelector(pMatError)).toBeDefined();
-			expect(compiled.querySelector(pMatError)?.textContent).toContain("Une erreur est survenue");
+			expect(compiled.querySelector(pMatError)?.textContent).toContain("utilisateur existe déjà");
 
 			expect(component.error).toBeDefined();
-			expect((component.error as HttpErrorResponse).status).toBe(500); // TODO: change when 409 is set
+			expect((component.error as HttpErrorResponse).status).toBe(409);
 		});
 
 		it("should signup (and redirect)", async () => {

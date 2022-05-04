@@ -14,7 +14,7 @@ export class TokenHttpHandler implements HttpHandlerTest {
 	// Refresh tokens
 	private readonly rTokens = new Map<string, ModelId>();
 
-	private readonly GET_SELF = "/app_user/mi";
+	private readonly GET_SELF = "/app_users/mi";
 
 	public canHandle(url: string): boolean {
 		return url.startsWith(AuthService.ENTRY_POINT) || url.startsWith(this.GET_SELF);
