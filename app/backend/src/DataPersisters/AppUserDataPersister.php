@@ -16,8 +16,11 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
     private UserPasswordHasherInterface $passwordHasher;
     private AppUserRepository $appUserRepository;
 
-    public function __construct(EntityManagerInterface $manager, UserPasswordHasherInterface $passwordHasher, \App\Repository\AppUserRepository $appUserRepository)
-    {
+    public function __construct(
+        EntityManagerInterface $manager,
+        UserPasswordHasherInterface $passwordHasher,
+        AppUserRepository $appUserRepository
+    ) {
         $this->manager = $manager;
         $this->passwordHasher = $passwordHasher;
         $this->appUserRepository = $appUserRepository;
@@ -28,11 +31,6 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
         return $data instanceof AppUser;
     }
 
-    /**
-     * @param AppUser $data
-     * @param array $context
-     * @throws \App\CustomException\EmailDuplicateException
-     */
     public function persist($data, array $context = [])
     {
         $password = $data->getPassword();
