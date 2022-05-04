@@ -49,6 +49,11 @@
 								<ng-container>L'identification a echoué.</ng-container>
 							</mat-error>
 
+							<mat-error *ngIf="error.status === 409">
+								<mat-icon inline>error_outline</mat-icon>
+								<ng-container>L'utilisateur existe déjà.</ng-container>
+							</mat-error>
+
 							<mat-error *ngIf="error.status >= 500">
 								<mat-icon inline>error_outline</mat-icon>
 								<ng-container>Une erreur est survenue.</ng-container>

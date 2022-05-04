@@ -2,10 +2,6 @@ import { User, UserService } from "../../../../src/app/api/user";
 import { ModelHttpHandler } from "./model.http-handler";
 
 export class UserHttpHandler extends ModelHttpHandler<User> {
-	public override canHandle(url: string): boolean {
-		return super.canHandle(url) || url.startsWith("/app_user"); // TODO: fix
-	}
-
 	protected override getEntryPoint(): string {
 		return UserService.ENTRY_POINT;
 	}
@@ -17,7 +13,7 @@ export class UserHttpHandler extends ModelHttpHandler<User> {
 		// TODO: better
 		const mail = (data as User).emailAddress;
 		if (mail && this.mocks.find(_ => _.emailAddress === mail))
-			return 500; // TODO: change to 409
+			return 409;
 
 		return data as User;
 	}

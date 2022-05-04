@@ -17,7 +17,6 @@ export class UserService extends ModelService<User> {
 	 * @warning Use the AuthService, so it is managed with the session.
 	 */
 	public _loadConnected<U extends User = User>() {
-		// TODO: change URL when fixed
-		return this.apiClient.get<U>("/app_user/mi");
+		return this.apiClient.get<U>(`${this.entryPoint}/mi`);
 	}
 }
