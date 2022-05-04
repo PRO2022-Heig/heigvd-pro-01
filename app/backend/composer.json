@@ -81,6 +81,9 @@
         ],
         "setup": [
             "bash ./scripts/setup.sh"
+        ],
+        "test": [
+            "XDEBUG_MODE=coverage ./bin/phpunit"
         ]
     },
     "conflict": {
@@ -96,8 +99,10 @@
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "friendsofphp/php-cs-fixer": "^3.6",
         "gd-75/php-cs-fixer-enforce-double-quotes": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "6.0.*",
+        "symfony/css-selector": "6.0.*",
         "symfony/maker-bundle": "^1.38",
-        "symfony/phpunit-bridge": "^6.0",
-		"phpunit/phpunit": "^9.5"
+        "symfony/phpunit-bridge": "^6.0"
     }
 }
