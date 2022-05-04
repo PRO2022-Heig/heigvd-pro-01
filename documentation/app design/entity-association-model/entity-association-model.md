@@ -4,7 +4,7 @@
 
 ## Diagram of the model
 
-After an analysis of the data requirements of our application, the following entity-association model was designed. Shown is red are the latest changes required to implement some of the application features.
+After an analysis of the data requirements of our application, the following entity-association model was designed. Shown in red are the latest changes required to implement some of the application features.
 
 ![](entity-association-model.drawio.png)
 
