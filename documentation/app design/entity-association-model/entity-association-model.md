@@ -4,7 +4,7 @@
 
 ## Diagram of the model
 
-After an analysis of the data requirements of our application, the following entity-association model was designed:
+After an analysis of the data requirements of our application, the following entity-association model was designed. Shown in red are the latest changes required to implement some of the application features.
 
 ![](entity-association-model.drawio.png)
 
@@ -12,10 +12,11 @@ After an analysis of the data requirements of our application, the following ent
 
 ### Food constraints
 
-A food constraint is a constraint that forbids, for various reasons and with various levels of consequences if not respected, the inclusion of something in a meal. Food constraints come in different forms. At first, we will restrict those to 2 main categories:
+A food constraint is a constraint that forbids, for various reasons and with various levels of consequences if not respected, the inclusion of something in a meal. Food constraints come in different forms. At first, we will restrict those to 3 main categories:
 
 - Food intolerances and allergies (celiac disease, nut allergies, lactose intolerance, etc.)
 - Ethical choices (vegetarian, vegan, no seafood, etc.)
+- User preferences (Italian food, French cuisine, etc.)
 
 Food constraints are linked to the following entities:
 
@@ -30,10 +31,19 @@ Each of these links will be mentioned and, if need be, further clarified in the 
 
 #### Users
 
-In the application, a user will be able to:
+In the application, a user can have different roles:
+
+- standard user;
+- premium user;
+- restaurant manager (see [Restaurants](#Restaurants));
+- provider manager (see [Products and providers](#Products and providers)).
+
+Standard and premium users will be able to:
 
 - specify certain food constraints in his/her user profile;
 - add other users to a group or join a group to partake in a group meal;
+- like a specific recipe;
+- be friends with other users;
 - search for meals.
 
 Note: This last feature does not require a link between the user and the meal in this model.
@@ -44,7 +54,7 @@ An event, or group meal, links a group of users to a specific meal that will tak
 
 #### Group
 
-A group is simply one or more users that plan to eat one or more meals together.
+A group is simply one or more users that plan to eat one or more meals together. It is administrated by one or more of its members.
 
 ### Meals
 
@@ -60,17 +70,11 @@ A restaurant meal is served by a specific restaurant, who cooks it. The food con
 
 ### Restaurants
 
-Restaurants are responsible for the potential food constraints that the meals they cook can entail.
-
-The type of a restaurant location is yet to be determined. Some possible choices are:
-
-- GPS coordinates
-- A simple string of characters
-- Multi-valued attribute: address (street name, street number, city, zip code, country)
+Restaurants are responsible for the potential food constraints that the meals they cook can entail. It has at least one user that manages it. The managers are responsible for the accuracy of the information provided about the restaurant meals the restaurant is serving.
 
 ### Recipes, steps and ingredients
 
-A recipe is an ordered sequence of steps that result in a meal for a specified amount of people. Each step can involve ingredients. In the context of a recipe, an ingredient is a atomic precursor, in the sens that it is not the object of preparation steps. It should be noted that different recipes will not necessarily consider the same things to be ingredients.
+A recipe is an ordered sequence of steps that result in a meal for a specified amount of people. It involves ingredients and is cooked in a specified amount of time. In the context of a recipe, an ingredient is a atomic precursor, in the sens that it is not the object of preparation steps. It should be noted that different recipes will not necessarily consider the same things to be ingredients.
 
 Example: Let's suppose that a user wants to eat pasta with tomato sauce. On the one hand, a particular recipe can list "tomato sauce" as one of the ingredient and the user is assumed to have it ready as basic ingredient before beginning the recipe. On the other hand, another recipe can list "tomatoes", "salt", "garlic" and "basil" as ingredients and extra steps to make the tomato sauce as part of the recipe itself.
 
@@ -93,7 +97,7 @@ A product is an ingredient that is sold by a provider. Multiple products can be 
 
 An ingredient represents the abstract concept of a recipe's precursor and as such can intrinsically be linked to some food constraints. Conversely, a product is a real-world physical thing that is an ingredient. It inherits all of the food constraints of the ingredient it is, but can have additional food constraints depending on how it is made by the provider.
 
-Providers are responsible for the accuracy of the food constraints linked to their respective products.
+Providers are responsible for the accuracy of the food constraints linked to their respective products. This is done by the provider's manager.
 
 Example: If a recipe lists tomato sauce as one of its ingredient, then the user is responsible for the making of said tomato sauce. The only intrinsic food constraint linked to tomato sauce is if someone is allergic or intolerant of tomato. But a store-bought tomato sauce can contain more ingredients than just tomatoes. In particular, it could contain garlic or bell peppers. In that case, the provider must advertise the associated extra food constraints.
 
