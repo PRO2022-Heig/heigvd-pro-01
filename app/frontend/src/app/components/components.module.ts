@@ -10,10 +10,11 @@ import { MealComponent } from "./meals/meal/meal.component";
 import { MealsComponent } from "./meals/meals.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, MealComponent, MealsComponent, SidebarComponent, RecipeComponent],
-    imports: [AppRoutingModule, CommonModule, FlexLayoutModule, FlexModule, MaterialsModule, FormsModule]
+    imports: [AppRoutingModule, CommonModule, FlexLayoutModule, FlexModule, MaterialsModule, FormsModule, MatExpansionModule]
 })
 export class ComponentsModule {
 }

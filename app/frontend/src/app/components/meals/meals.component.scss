@@ -15,9 +15,12 @@
 		cursor: pointer;
 	}
 
-	.food-prefs {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+	mat-panel-title {
+		font-size: 1.2em;
+	}
+
+	mat-panel-description {
+		font-size: 0.85em;
 	}
 
 	.results-title {

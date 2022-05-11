@@ -25,9 +25,20 @@
 	<p>{{(meals$ | async)?.length}} repas trouvé(s)</p>
 </div>
 
-<mat-card *ngFor="let meal of meals$ | async" [routerLink]="['/meal/' + meal.id]">
-	<mat-card-title>{{meal.name}}</mat-card-title>
-	<mat-card-content>
-		<p>{{meal.description}}</p>
-	</mat-card-content>
-</mat-card>
+<mat-accordion multi>
+	<mat-expansion-panel *ngFor="let meal of meals$ | async">
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				{{meal.name}}
+			</mat-panel-title>
+			<mat-panel-description>
+				{{meal.description}}
+			</mat-panel-description>
+		</mat-expansion-panel-header>
+
+		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
+		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
+		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
+
+	</mat-expansion-panel>
+</mat-accordion>
