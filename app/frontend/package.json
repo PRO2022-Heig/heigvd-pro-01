@@ -7,18 +7,25 @@
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
-		"lint": "eslint \"{e2e,src}/**/*.{html,ts}\""
+		"test-inline": "npm test -- --no-watch --browsers=ChromeHeadlessCI",
+		"lint": "npm run lint-code; npm run lint-style",
+		"lint-code": "eslint \"{e2e,test,src}/**/*.{html,ts}\"",
+		"lint-style": "stylelint \"src/**/*.{css,scss}\""
 	},
 	"private": true,
 	"dependencies": {
 		"@angular/animations": "~13.2.0",
+		"@angular/cdk": "^13.3.0",
 		"@angular/common": "~13.2.0",
 		"@angular/compiler": "~13.2.0",
 		"@angular/core": "~13.2.0",
+		"@angular/flex-layout": "^13.0.0-beta.38",
 		"@angular/forms": "~13.2.0",
+		"@angular/material": "^13.3.0",
 		"@angular/platform-browser": "~13.2.0",
 		"@angular/platform-browser-dynamic": "~13.2.0",
 		"@angular/router": "~13.2.0",
+		"ngx-cookie-service": "^13.2.0",
 		"rxjs": "~7.5.0",
 		"tslib": "^2.3.0",
 		"zone.js": "~0.11.4"
@@ -43,6 +50,9 @@
 		"karma-coverage": "~2.1.0",
 		"karma-jasmine": "~4.0.0",
 		"karma-jasmine-html-reporter": "~1.7.0",
+		"stylelint": "^14.6.0",
+		"stylelint-config-standard": "^25.0.0",
+		"stylelint-config-standard-scss": "^3.0.0",
 		"typescript": "~4.5.2"
 	}
 }

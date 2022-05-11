@@ -1,0 +1,43 @@
+app-header {
+	width: 100vw;
+	z-index: 100;
+}
+
+mat-sidenav, app-sidebar {
+	width: 200px;
+}
+
+app-sidebar {
+	overflow: auto;
+}
+
+.extra-small-size {
+	// TODO: get from module
+	$toolbar-height: 56px;
+
+	app-header {
+		position: fixed;
+		transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 50ms;
+		transition-property: all;
+	}
+
+	mat-sidenav {
+		position: fixed;
+	}
+
+	mat-sidenav, mat-sidenav-container {
+		margin-top: $toolbar-height;
+	}
+
+	::ng-deep mat-sidenav-container.mat-drawer-container {
+		overflow: unset;
+	}
+}
+
+:host {
+	&.scrolled-down {
+		:not(.sidenav-opened) app-header {
+			transform: translateY(-100%);
+		}
+	}
+}

@@ -18,13 +18,20 @@ use Symfony\Component\Validator\Constraints as Assert;
         "post" => [
             "denormalization_context" => [
                 "groups" => [
-                    "user:create"
+                    "user:create",
+                    "entity:full"
+                ]
+            ],
+            "normalization_context" => [
+                "groups" => [
+                    "user:create",
+                    "entity:full"
                 ]
             ]
         ],
         "getMiself" => [
             "method" => "GET",
-            "path" => "/app_user/mi",
+            "path" => "/app_users/mi",
             "controller" => UserMiController::class,
             "read" => false,
             "normalization_context" => [

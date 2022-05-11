@@ -1,4 +1,6 @@
 api_platform:
+    exception_to_status:
+        App\CustomException\EmailDuplicateException: 409
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:

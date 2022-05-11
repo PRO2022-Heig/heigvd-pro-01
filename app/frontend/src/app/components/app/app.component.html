@@ -1,0 +1,13 @@
+<div fxFlex="100%" fxLayout="column" ngClass.xs="extra-small-size"
+	 [class.sidenav-opened]="sidenav.opened">
+	<app-header (menuClick)="sidenav.toggle()"></app-header>
+
+	<mat-sidenav-container fxFlex>
+		<mat-sidenav #sidenav>
+			<app-sidebar></app-sidebar>
+		</mat-sidenav>
+		<mat-sidenav-content fxFlex>
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>

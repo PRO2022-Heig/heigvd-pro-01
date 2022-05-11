@@ -3,8 +3,10 @@
 namespace App\DataPersisters;
 
 use ApiPlatform\Core\DataPersister\ContextAwareDataPersisterInterface;
+use App\CustomException\EmailDuplicateException;
 use App\CustomException\PasswordDoesNotMatchRequirementsException;
 use App\Entity\AppUser;
+use App\Repository\AppUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -12,11 +14,16 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
 {
     private EntityManagerInterface $manager;
     private UserPasswordHasherInterface $passwordHasher;
+    private AppUserRepository $appUserRepository;
 
-    public function __construct(EntityManagerInterface $manager, UserPasswordHasherInterface $passwordHasher)
-    {
+    public function __construct(
+        EntityManagerInterface $manager,
+        UserPasswordHasherInterface $passwordHasher,
+        AppUserRepository $appUserRepository
+    ) {
         $this->manager = $manager;
         $this->passwordHasher = $passwordHasher;
+        $this->appUserRepository = $appUserRepository;
     }
 
     public function supports($data, array $context = []): bool
@@ -59,6 +66,13 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
             || $actualLowercase < $minLowercase
         ) {
             throw new PasswordDoesNotMatchRequirementsException();
+        }
+
+        // If it is a new user, checking that the e-mail does not already exist
+        if ($data->getId() === null) {
+            if (count($this->appUserRepository->findBy(["emailAddress" => $data->getEmailAddress()])) > 0) {
+                throw new EmailDuplicateException();
+            }
         }
 
         $data->setPassword($this->passwordHasher->hashPassword($data, $password));
