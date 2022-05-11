@@ -11,8 +11,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatListModule} from "@angular/material/list";
-import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import { MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSliderModule} from "@angular/material/slider";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {TagInputModule} from "ngx-chips";
 
 
 export const materials = [
@@ -29,7 +31,9 @@ export const materials = [
 	MatDividerModule,
 	MatListModule,
 	MatCheckboxModule,
-	MatSliderModule
+	MatSliderModule,
+	MatAutocompleteModule,
+	TagInputModule
 ];
 
 @NgModule({

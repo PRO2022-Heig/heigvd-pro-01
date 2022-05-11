@@ -7,17 +7,17 @@
 		</button>
 	</mat-form-field>
 
-	<div class="food-prefs">
-		<mat-checkbox *ngFor="let foodConstraint of foodConstraints$ | async" [title]="foodConstraint.description">
-			<mat-icon>cruelty_free</mat-icon>{{foodConstraint.name}}
-		</mat-checkbox>
+	<tag-input [(ngModel)]="chosenFoodConstraints" [onlyFromAutocomplete]="true" [identifyBy]="'id'" [displayBy]="'name'">
+		<tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="serverFoodConstraints"  [identifyBy]="'id'" [displayBy]="'name'">
+		</tag-input-dropdown>
+	</tag-input>
+
+	<div>
+		<p>Preparation time</p>
+		<mat-slider step="5" min="0" max="90" (input)="minutes = $event.value || 0;" color="primary"></mat-slider>
+		<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
+		<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
 	</div>
-
-	Preparation time
-	<mat-slider step="5" min="0" max="90" (input)="minutes = $event.value || 0;"></mat-slider>
-	<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
-	<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
-
 </mat-card>
 
 <div class="results-title">
