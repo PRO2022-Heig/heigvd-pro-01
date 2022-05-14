@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Entity\Meal\HomeMeal;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -31,10 +32,14 @@ class Recipe extends AbstractEntity
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: ["persist"], orphanRemoval: true)]
     private Collection $ingredients;
 
+    #[ORM\ManyToMany(targetEntity: HomeMeal::class, inversedBy: 'recipes')]
+    private Collection $meals;
+
     public function __construct()
     {
         $this->steps = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
+        $this->meals = new ArrayCollection();
     }
 
     public function getName(): ?string
@@ -129,6 +134,30 @@ class Recipe extends AbstractEntity
                 $ingredient->setRecipe(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, HomeMeal>
+     */
+    public function getMeals(): Collection
+    {
+        return $this->meals;
+    }
+
+    public function addMeal(HomeMeal $meal): self
+    {
+        if (!$this->meals->contains($meal)) {
+            $this->meals[] = $meal;
+        }
+
+        return $this;
+    }
+
+    public function removeMeal(HomeMeal $meal): self
+    {
+        $this->meals->removeElement($meal);
 
         return $this;
     }

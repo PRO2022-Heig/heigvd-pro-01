@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource]
 class HomeMeal extends Meal
 {
-    #[ORM\ManyToMany(targetEntity: Recipe::class)]
+    #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: 'meals')]
     private Collection $recipes;
 
     public function __construct()
@@ -35,6 +35,7 @@ class HomeMeal extends Meal
     {
         if (!$this->recipes->contains($recipe)) {
             $this->recipes[] = $recipe;
+            $recipe->addMeal($this);
         }
 
         return $this;
@@ -42,7 +43,9 @@ class HomeMeal extends Meal
 
     public function removeRecipe(Recipe $recipe): self
     {
-        $this->recipes->removeElement($recipe);
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeMeal($this);
+        }
 
         return $this;
     }

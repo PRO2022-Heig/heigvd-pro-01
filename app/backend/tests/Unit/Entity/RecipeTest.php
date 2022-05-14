@@ -2,6 +2,7 @@
 
 namespace App\Tests\Unit\Entity;
 
+use App\Entity\Meal\HomeMeal;
 use App\Entity\Recipe;
 use App\Entity\RecipeIngredient;
 use App\Entity\Step;
@@ -82,5 +83,21 @@ class RecipeTest extends KernelTestCase
         $testRecipe = $this->hydrate(Recipe::class, ["ingredient" => $testIngredient]);
         $testRecipe->removeIngredient($testIngredient);
         $this->assertEmpty($testRecipe->getIngredients(), " has not been removed");
+    }
+
+
+    public function testMealsGetterAndAdder(): void
+    {
+        $testMeal = $this->hydrate(HomeMeal::class, ["name" => "hello"]);
+        $testRecipe = $this->hydrate(Recipe::class, ["meal" => $testMeal]);
+        $this->assertEquals($testMeal, $testRecipe->getMeals()->first(), " does not match return");
+    }
+
+    public function testMealsRemover(): void
+    {
+        $testMeal = $this->hydrate(HomeMeal::class, ["name" => "hello"]);
+        $testRecipe = $this->hydrate(Recipe::class, ["meals" => $testMeal]);
+        $testRecipe->removeMeal($testMeal);
+        $this->assertEmpty($testRecipe->getMeals(), " has not been removed");
     }
 }
