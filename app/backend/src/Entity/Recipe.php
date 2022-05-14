@@ -25,12 +25,16 @@ class Recipe extends AbstractEntity
     #[Assert\GreaterThan(0)]
     private int $numberOfPeople;
 
-    #[ORM\OneToMany(mappedBy: "recipe", targetEntity: Step::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "recipe", targetEntity: Step::class, cascade: ["persist"], orphanRemoval: true)]
     private Collection $steps;
+
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: ["persist"], orphanRemoval: true)]
+    private Collection $ingredients;
 
     public function __construct()
     {
         $this->steps = new ArrayCollection();
+        $this->ingredients = new ArrayCollection();
     }
 
     public function getName(): ?string
@@ -93,6 +97,36 @@ class Recipe extends AbstractEntity
             // set the owning side to null (unless already changed)
             if ($step->getRecipe() === $this) {
                 $step->setRecipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RecipeIngredient>
+     */
+    public function getIngredients(): Collection
+    {
+        return $this->ingredients;
+    }
+
+    public function addIngredient(RecipeIngredient $ingredient): self
+    {
+        if (!$this->ingredients->contains($ingredient)) {
+            $this->ingredients[] = $ingredient;
+            $ingredient->setRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIngredient(RecipeIngredient $ingredient): self
+    {
+        if ($this->ingredients->removeElement($ingredient)) {
+            // set the owning side to null (unless already changed)
+            if ($ingredient->getRecipe() === $this) {
+                $ingredient->setRecipe(null);
             }
         }
 

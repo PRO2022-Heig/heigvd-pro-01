@@ -3,6 +3,7 @@
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\Recipe;
+use App\Entity\RecipeIngredient;
 use App\Entity\Step;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -66,5 +67,20 @@ class RecipeTest extends KernelTestCase
         $testRecipe = $this->hydrate(Recipe::class, ["step" => $testStep]);
         $testRecipe->removeStep($testStep);
         $this->assertEmpty($testRecipe->getSteps(), $testStep->getAction() . " has not been removed");
+    }
+
+    public function testIngredientsGetterAndAdder(): void
+    {
+        $testIngredient = $this->hydrate(RecipeIngredient::class, ["quantity" => 1]);
+        $testRecipe = $this->hydrate(Recipe::class, ["ingredient" => $testIngredient]);
+        $this->assertEquals($testIngredient, $testRecipe->getIngredients()->first(), " does not match return");
+    }
+
+    public function testIngredientsRemover(): void
+    {
+        $testIngredient = $this->hydrate(RecipeIngredient::class, ["quantity" => 1]);
+        $testRecipe = $this->hydrate(Recipe::class, ["ingredient" => $testIngredient]);
+        $testRecipe->removeIngredient($testIngredient);
+        $this->assertEmpty($testRecipe->getIngredients(), " has not been removed");
     }
 }

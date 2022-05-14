@@ -18,12 +18,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 class RestaurantMeal extends Meal
 {
     #[ORM\ManyToOne(targetEntity: Restaurant::class, inversedBy: "meals")]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     #[Assert\NotNull]
     private ?Restaurant $restaurant;
 
     #[ORM\ManyToMany(targetEntity: FoodConstraint::class, inversedBy: "restaurantMeals")]
-    private $foodConstraint;
+    private Collection $foodConstraint;
 
     public function __construct()
     {

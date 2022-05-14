@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\StepIngredient;
+use App\Entity\RecipeIngredient;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method StepIngredient|null find($id, $lockMode = null, $lockVersion = null)
- * @method StepIngredient|null findOneBy(array $criteria, array $orderBy = null)
- * @method StepIngredient[]    findAll()
- * @method StepIngredient[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method RecipeIngredient|null find($id, $lockMode = null, $lockVersion = null)
+ * @method RecipeIngredient|null findOneBy(array $criteria, array $orderBy = null)
+ * @method RecipeIngredient[]    findAll()
+ * @method RecipeIngredient[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class StepIngredientRepository extends ServiceEntityRepository
+class RecipeIngredientRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, StepIngredient::class);
+        parent::__construct($registry, RecipeIngredient::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(StepIngredient $entity, bool $flush = true): void
+    public function add(RecipeIngredient $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class StepIngredientRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(StepIngredient $entity, bool $flush = true): void
+    public function remove(RecipeIngredient $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class StepIngredientRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return StepIngredient[] Returns an array of StepIngredient objects
+    //  * @return RecipeIngredient[] Returns an array of RecipeIngredient objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
+            ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class StepIngredientRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?StepIngredient
+    public function findOneBySomeField($value): ?RecipeIngredient
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

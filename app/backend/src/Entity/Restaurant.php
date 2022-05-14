@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\RestaurantMeal;
 use App\Repository\RestaurantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,6 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: RestaurantRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ['name' => 'partial'])]
 class Restaurant extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
@@ -25,7 +28,12 @@ class Restaurant extends AbstractEntity
     #[ORM\Column(type: "string", length: 255)]
     private string $location;
 
-    #[ORM\OneToMany(mappedBy: "restaurant", targetEntity: RestaurantMeal::class, orphanRemoval: true)]
+    #[ORM\OneToMany(
+        mappedBy: "restaurant",
+        targetEntity: RestaurantMeal::class,
+        cascade: ["persist"],
+        orphanRemoval: true
+    )]
     private Collection $meals;
 
     public function __construct()

@@ -2,6 +2,7 @@
 
 namespace App\Tests\Unit\Entity;
 
+use App\Entity\FoodConstraint;
 use App\Entity\Ingredient;
 use App\Entity\Product;
 use App\Entity\Provider;
@@ -60,5 +61,28 @@ class ProductTest extends KernelTestCase
         $testProvider = $this->hydrate(Provider::class, ["name" => "test ingredient"]);
         $product = $this->hydrate(Product::class, ["provider" => $testProvider]);
         $this->assertEquals($testProvider, $product->getProvider(), $testProvider->getName() . " does not match return");
+    }
+
+    public function testImageUrlGetterAndSetter(): void
+    {
+        $testImageUrl = "hello";
+        $product = $this->hydrate(Product::class, ["imageUrl" => $testImageUrl]);
+        $this->assertEquals($testImageUrl, $product->getImageUrl(), "$testImageUrl does not match return");
+    }
+
+
+    public function testFoodConstraintGetterAndAdder(): void
+    {
+        $testFoodConstraint = $this->hydrate(FoodConstraint::class, ["name" => "testProduct"]);
+        $testProduct = $this->hydrate(Product::class, ["foodConstraint" => $testFoodConstraint]);
+        $this->assertEquals($testFoodConstraint, $testProduct->getFoodConstraints()->first(), $testFoodConstraint->getName() . " does not match return");
+    }
+
+    public function testFoodConstraintRemover(): void
+    {
+        $testFoodConstraint = $this->hydrate(FoodConstraint::class, ["name" => "testProduct"]);
+        $testProduct = $this->hydrate(Product::class, ["foodConstraint" => $testFoodConstraint]);
+        $testProduct->removeFoodConstraint($testFoodConstraint);
+        $this->assertEmpty($testProduct->getFoodConstraints(), $testFoodConstraint->getName() . " has not been removed");
     }
 }
