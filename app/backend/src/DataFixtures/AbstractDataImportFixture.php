@@ -2,8 +2,6 @@
 
 namespace App\DataFixtures;
 
-use Psr\Log\LoggerAwareInterface;
-use Psr\Log\LoggerInterface;
 use function array_diff;
 use function array_filter;
 use function array_keys;
@@ -17,6 +15,8 @@ use function fopen;
 use function html_entity_decode;
 use InvalidArgumentException;
 use function json_decode;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
 use function trim;
 
 abstract class AbstractDataImportFixture extends Fixture implements FixtureGroupInterface, LoggerAwareInterface

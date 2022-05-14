@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource]
 class HomeMeal extends Meal
 {
-    #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: 'meals')]
+    #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: "meals")]
     private Collection $recipes;
 
     public function __construct()

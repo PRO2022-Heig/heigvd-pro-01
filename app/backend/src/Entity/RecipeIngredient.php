@@ -9,10 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\HasLifecycleCallbacks]
 class RecipeIngredient extends AbstractEntity
 {
-    #[ORM\Column(type: 'float')]
+    #[ORM\Column(type: "float")]
     private float $quantity;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: "ingredients")]
     #[ORM\JoinColumn(nullable: false)]
     private ?Recipe $recipe;
 

@@ -70,7 +70,6 @@ class ProductTest extends KernelTestCase
         $this->assertEquals($testImageUrl, $product->getImageUrl(), "$testImageUrl does not match return");
     }
 
-
     public function testFoodConstraintGetterAndAdder(): void
     {
         $testFoodConstraint = $this->hydrate(FoodConstraint::class, ["name" => "testProduct"]);

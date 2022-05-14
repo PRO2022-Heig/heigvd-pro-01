@@ -46,7 +46,7 @@ class Product extends AbstractEntity
     #[Groups(["product:list"])]
     private ?Provider $provider;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: "string", length: 255)]
     #[Groups(["product:list"])]
     private string $imageUrl;
 

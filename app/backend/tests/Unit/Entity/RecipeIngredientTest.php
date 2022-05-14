@@ -2,9 +2,7 @@
 
 namespace App\Tests\Unit\Entity;
 
-use App\Entity\FoodConstraint;
 use App\Entity\Ingredient;
-use App\Entity\Meal\RestaurantMeal;
 use App\Entity\Recipe;
 use App\Entity\RecipeIngredient;
 use App\Entity\Unit;

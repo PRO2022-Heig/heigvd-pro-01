@@ -75,7 +75,7 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
             $manager->persist($recipe);
         }
 
-        if ($this->notfound > 0)  {
+        if ($this->notfound > 0) {
             $this->logger->warning("Not all ingredients were found (" . $this->found . " found, " . $this->notfound . " not found)");
         }
         $manager->flush();

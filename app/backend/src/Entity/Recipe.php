@@ -2,37 +2,54 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
 use App\Entity\Meal\HomeMeal;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ApiResource]
+#[ApiResource(
+    normalizationContext: [
+        "groups" => [
+            "entity:full",
+            "recipe:list"
+        ]
+    ]
+)]
+#[ApiFilter(NumericFilter::class, properties: ["meals.id"])]
 class Recipe extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
+    #[Groups(["recipe:list"])]
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
+    #[Groups(["recipe:list"])]
     private string $description;
 
     #[ORM\Column(type: "integer")]
     #[Assert\GreaterThan(0)]
+    #[Groups(["recipe:list"])]
     private int $numberOfPeople;
 
     #[ORM\OneToMany(mappedBy: "recipe", targetEntity: Step::class, cascade: ["persist"], orphanRemoval: true)]
+    #[Groups(["recipe:list"])]
     private Collection $steps;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: ["persist"], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "recipe", targetEntity: RecipeIngredient::class, cascade: ["persist"], orphanRemoval: true)]
+    #[Groups(["recipe:list"])]
     private Collection $ingredients;
 
-    #[ORM\ManyToMany(targetEntity: HomeMeal::class, inversedBy: 'recipes')]
+    #[ORM\ManyToMany(targetEntity: HomeMeal::class, inversedBy: "recipes")]
+    #[Groups(["recipe:list"])]
     private Collection $meals;
 
     public function __construct()

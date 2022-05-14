@@ -85,7 +85,6 @@ class RecipeTest extends KernelTestCase
         $this->assertEmpty($testRecipe->getIngredients(), " has not been removed");
     }
 
-
     public function testMealsGetterAndAdder(): void
     {
         $testMeal = $this->hydrate(HomeMeal::class, ["name" => "hello"]);
