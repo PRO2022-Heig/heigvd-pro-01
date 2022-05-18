@@ -1,20 +1,55 @@
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { APP_INITIALIZER, NgModule } from "@angular/core";
 import { FlexLayoutModule, FlexModule } from "@angular/flex-layout";
-import {FormsModule} from "@angular/forms";
 
+import { AuthService } from "../api/auth";
+import { AuthInterceptor } from "../interceptors";
 import { AppRoutingModule, MaterialsModule } from "../modules";
 import { AppComponent } from "./app/app.component";
 import { HeaderComponent } from "./header/header.component";
+import { LoginComponent } from "./login/login.component";
 import { MealComponent } from "./meals/meal/meal.component";
 import { MealsComponent } from "./meals/meals.component";
-import { RecipeComponent } from "./recipe/recipe.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
-import {MatExpansionModule} from "@angular/material/expansion";
+import { UserProfileComponent } from "./users/user-profile/user-profile.component";
+import {RecipeComponent} from "./recipe/recipe.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, MealComponent, MealsComponent, SidebarComponent, RecipeComponent],
-    imports: [AppRoutingModule, CommonModule, FlexLayoutModule, FlexModule, MaterialsModule, FormsModule, MatExpansionModule]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		LoginComponent,
+		MealComponent,
+		MealsComponent,
+		RecipeComponent,
+		SidebarComponent,
+		UserProfileComponent
+	],
+	imports: [
+		AppRoutingModule,
+		CommonModule,
+		FlexLayoutModule,
+		FlexModule,
+		FormsModule,
+		MaterialsModule
+	],
+	providers: [{
+		deps: [AuthService],
+		multi: true,
+		provide: APP_INITIALIZER,
+		useFactory: (authService: AuthService) => async () => {
+			if (authService.hasAuthCookie())
+				await authService._refresh()
+					.then(() => authService.getConnected())
+					.catch(() => undefined);
+		}
+	}, {
+		provide: HTTP_INTERCEPTORS,
+		useClass: AuthInterceptor,
+		multi: true
+	}]
 })
 export class ComponentsModule {
 }

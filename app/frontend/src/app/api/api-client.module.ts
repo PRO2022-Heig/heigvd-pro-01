@@ -4,6 +4,7 @@ import { lastValueFrom } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { environment } from "../../environments/environment";
+import { CookieService } from "../services/cookie";
 
 export interface IRequestOptions {
 	headers?: HttpHeaders | {
@@ -24,6 +25,11 @@ export interface IRequestOptions {
 }
 
 interface RequestOptions extends IRequestOptions {
+	/**
+	 * Put the bearer token if present
+	 * @default true
+	 */
+	auth?: boolean;
 	body?: unknown;
 }
 
@@ -41,7 +47,9 @@ export class ApiClientModule {
 	}
 
 	// Extending the HttpClient through the Angular DI.
-	public constructor(public readonly http: HttpClient) {
+	public constructor(
+		protected readonly http: HttpClient,
+		private readonly cookieService: CookieService) {
 	}
 
 	/**
@@ -96,12 +104,25 @@ export class ApiClientModule {
 	}
 
 	private request<T>(method: string, endPoint: string, option: RequestOptions = {}): Promise<T> {
-		// TODO: enable
-		//if ((option as Record<string, boolean>).withCredentials !== false)
-		//	(option as Record<string, boolean>)["withCredentials"] = true;
+		if (option.auth ?? true) {
+			// Add the authorization header
+			const cookie = this.cookieService.get();
+			if (cookie.auth?.token) {
+				const header = "Authorization";
+				const bearer = `Bearer ${cookie.auth.token}`;
+
+				if (option.headers instanceof HttpHeaders)
+					option.headers.set(header, bearer);
+				else {
+					if (!option.headers)
+						option.headers = {};
+
+					option.headers[header] = bearer;
+				}
+			}
+		}
 
 		const onEvents = option.observeEvent || option.observe === "events";
-
 		if (onEvents) {
 			option.observe = "events";
 			option.reportProgress = true;

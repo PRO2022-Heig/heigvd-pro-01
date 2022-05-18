@@ -17,6 +17,9 @@ There is a bit of setup to do the first time you want to run the app.
    ```
 
 ### Start the project
+
+> Note: By default the project is in development mode, which will grant you access to swagger through `api.our-app.local/docs`. This will also enable advanced debugging messages in API errors,
+
 To start the project, simply open a terminal to the `app` directory and run `vagrant up`
 
 Then you can use `vagrant ssh` to ssh into the VM. You have now entered the development environment
@@ -24,8 +27,17 @@ Then you can use `vagrant ssh` to ssh into the VM. You have now entered the deve
 #### backend
 In order to have a working backend a number of things must be initialized, go into the `app/backend` directory (from within th VM) and run `composer setup`
 
-
 To run symfony unit tests in the backend directory and run the following command `composer test`
+
+#### frontend
+As for the backend, go into the `app/frontend` directory and install the dependencies with `npm install`.  
+Then
+- use `npm run start` (alias of `ng serve`) to run the frontend on a live server (port *4200*)
+- or `npm run build` (alias of `ng build`) to build the web content (html, js, css, ...) that can be hosted on a HTTP server (apache, nginx, etc.) 
+
+To run Angular test:
+- `npm test`: To run the tests on a client web browser on the port *9876*
+- `npm run test-inline`: To run the tests on a headless web browser in the terminal
 
 ### Access
 - The backend can be accessed from `api.our-app.local`. 

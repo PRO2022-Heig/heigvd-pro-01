@@ -8,5 +8,7 @@ import { Meal } from "./meal.interface";
 	providedIn: "root"
 })
 export class MealService extends ModelService<Meal> {
-	public readonly entryPoint = "/meal";
+	public static readonly ENTRY_POINT = "/meals";
+
+	public readonly entryPoint = MealService.ENTRY_POINT;
 }

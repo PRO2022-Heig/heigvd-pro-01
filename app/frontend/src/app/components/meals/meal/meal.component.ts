@@ -1,8 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
-import {Meal} from "../../../api/meal";
-import {Step} from "../../../api/meal/step.interface";
-import {Ingredient} from "../../../api/meal/ingredient.interface";
+import { Meal as MealApi } from "../../../api/meal";
+import { Recipe } from "../../../api/meal/recipe.interface";
+
+interface Meal extends MealApi {
+	// TODO: remove?
+	recipes: Recipe[];
+}
 
 @Component({
 	selector: "app-meal",

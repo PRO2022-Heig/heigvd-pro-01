@@ -1,5 +1,10 @@
 export type ModelId = number;
 
-export interface Model {
+export interface ModelWithId {
 	id: ModelId;
+}
+
+export interface Model extends ModelWithId {
+	createdAt: string;
+	updatedAt: string;
 }
