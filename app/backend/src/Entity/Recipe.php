@@ -49,7 +49,7 @@ class Recipe extends AbstractEntity
     #[Groups(["recipe:list"])]
     private Collection $meals;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
+    #[ORM\Column(type: "integer", nullable: true)]
     #[Groups(["recipe:list"])]
     private int $duration;
 
