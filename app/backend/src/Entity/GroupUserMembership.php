@@ -12,57 +12,59 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource(
 //    collectionOperations: [
 //        "get" => [
-//            "security" => "object.user == user"
+////            "security" => "object.user == user"
 //        ],
 //        "post" => [
-//            "security" => "object.user == user"
+////            "security" => "object.user == user"
 //        ],
 //    ],
     itemOperations: [
+        "get" => [],
         "delete" => [
-//            "security" => "object.user == user"
+            "security" => "object.getUser() == user"
         ],
-    ]
+    ],
 )]
 #[ApiFilter(NumericFilter::class, properties: ["group.id", "user.id"])]
+#[ORM\HasLifecycleCallbacks]
 class GroupUserMembership extends AbstractEntity
 {
-    #[ORM\OneToOne(targetEntity: Group::class, cascade: ["persist", "remove"])]
+    #[ORM\OneToOne(targetEntity: Group::class, cascade: ["persist"])]
     #[ORM\JoinColumn(nullable: false)]
     private Group $group;
 
-    #[ORM\OneToOne(targetEntity: AppUser::class, cascade: ["persist", "remove"])]
+    #[ORM\OneToOne(targetEntity: AppUser::class, cascade: ["persist"])]
     #[ORM\JoinColumn(nullable: false)]
     private AppUser $user;
 
     #[ORM\Column(type: "boolean")]
     private bool $isAdmin;
 
-    public function getGroup(): ?Group
+    public function getGroup(): Group
     {
-        return $this->_group;
+        return $this->group;
     }
 
-    public function setGroup(Group $_group): self
+    public function setGroup(Group $group): self
     {
-        $this->_group = $_group;
+        $this->group = $group;
 
         return $this;
     }
 
-    public function getUser(): ?AppUser
+    public function getUser(): AppUser
     {
-        return $this->_user;
+        return $this->user;
     }
 
-    public function setUser(AppUser $_user): self
+    public function setUser(AppUser $user): self
     {
-        $this->_user = $_user;
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getIsAdmin(): ?bool
+    public function getIsAdmin(): bool
     {
         return $this->isAdmin;
     }
