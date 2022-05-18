@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\RestaurantMeal;
 use App\Repository\RestaurantRepository;
@@ -15,7 +16,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: RestaurantRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
-#[ApiFilter(SearchFilter::class, properties: ["name" => "partial"])]
+#[ApiFilter(SearchFilter::class, properties: [
+    "name" => "partial",
+    "description" => "partial",
+    "location" => "partial"
+])]
+#[ApiFilter(NumericFilter::class, properties: ["meals.id"])]
 class Restaurant extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]

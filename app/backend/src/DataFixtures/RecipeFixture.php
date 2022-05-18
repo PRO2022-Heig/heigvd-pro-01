@@ -18,7 +18,7 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
 
     public function load(ObjectManager $manager): void
     {
-        $data = $this->getJsonData(mandatoryFields: ["name", "personnes", "steps", "ingredients"]);
+        $data = $this->getJsonData(mandatoryFields: ["name", "personnes", "steps", "ingredients", "duration"]);
         $ingredientTagMapping = $this->getJsonData("recipes_ingredients__tags.json");
         $undefinedUnit = $this->getReference("unit-undefined");
 
@@ -26,6 +26,7 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
             $recipe = new Recipe();
             $recipe
                 ->setName($item["name"])
+                ->setDuration($item["duration"])
                 ->setNumberOfPeople($item["personnes"]);
 
             $stepCounter = 1;
@@ -37,10 +38,10 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
 
                 $recipe->addStep($step);
             }
-            foreach ($item["ingredients"] as $item) {
+            foreach ($item["ingredients"] as $subItem) {
                 $recipeIngredient = new RecipeIngredient();
 
-                $ingredientMap = $ingredientTagMapping[$item["main_ingredient"]];
+                $ingredientMap = $ingredientTagMapping[$subItem["main_ingredient"]];
                 $ingredient = null;
                 foreach ($ingredientMap as $tag) {
                     if ($this->hasReference("ingredient-" . $tag)) {
@@ -51,12 +52,12 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
                 }
 
                 if ($ingredient === null) {
-                    $this->logger->debug("ingredient: " . $item["main_ingredient"] . " has no tag matching");
+                    $this->logger->debug("ingredient: " . $subItem["main_ingredient"] . " has no tag matching");
                     ++$this->notfound;
                     continue;
                 }
 
-                $unitRef = "unit-" . trim($item["unit"]);
+                $unitRef = "unit-" . trim($subItem["unit"]);
                 if ($this->hasReference($unitRef)) {
                     $unit = $this->getReference($unitRef);
                 } else {
@@ -65,7 +66,7 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
 
                 $recipeIngredient
                     ->setUnit($unit)
-                    ->setQuantity((float) $item["qty"])
+                    ->setQuantity((float) $subItem["qty"])
                     ->setIngredient($ingredient);
 
                 $recipe->addIngredient($recipeIngredient);

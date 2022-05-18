@@ -55,6 +55,13 @@ class RecipeTest extends KernelTestCase
         $this->assertEquals($testNumberOfPeople, $testRecipe->getNumberOfPeople(), "$testNumberOfPeople does not match return");
     }
 
+    public function testDurationGetterAndSetter(): void
+    {
+        $testDuration = 5;
+        $testRecipe = $this->hydrate(Recipe::class, ["duration" => $testDuration]);
+        $this->assertEquals($testDuration, $testRecipe->getDuration(), "$testDuration does not match return");
+    }
+
     public function testStepsGetterAndAdder(): void
     {
         $testStep = $this->hydrate(Step::class, ["action" => "testProduct"]);

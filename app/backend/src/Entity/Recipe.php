@@ -5,6 +5,8 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\HomeMeal;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -15,15 +17,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ApiResource(
-    normalizationContext: [
-        "groups" => [
-            "entity:full",
-            "recipe:list"
-        ]
-    ]
-)]
+#[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
 #[ApiFilter(NumericFilter::class, properties: ["meals.id"])]
+#[ApiFilter(RangeFilter::class, properties: ["numberOfPeople", "duration"])]
 class Recipe extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
@@ -51,6 +48,10 @@ class Recipe extends AbstractEntity
     #[ORM\ManyToMany(targetEntity: HomeMeal::class, inversedBy: "recipes")]
     #[Groups(["recipe:list"])]
     private Collection $meals;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    #[Groups(["recipe:list"])]
+    private int $duration;
 
     public function __construct()
     {
@@ -175,6 +176,18 @@ class Recipe extends AbstractEntity
     public function removeMeal(HomeMeal $meal): self
     {
         $this->meals->removeElement($meal);
+
+        return $this;
+    }
+
+    public function getDuration(): ?int
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(int $duration): self
+    {
+        $this->duration = $duration;
 
         return $this;
     }
