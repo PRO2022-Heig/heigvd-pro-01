@@ -32,7 +32,7 @@ class RecipeIngredientTest extends KernelTestCase
 
     public function testRecipeGetterAndSetter(): void
     {
-        $testRecipe = $this->hydrate(Recipe::class, ["name" => "testIngredient"]);
+        $testRecipe = $this->hydrate(Recipe::class, ["name" => "testRecipe"]);
         $recipeIngredient = $this->hydrate(RecipeIngredient::class, ["recipe" => $testRecipe]);
         $this->assertEquals($testRecipe, $recipeIngredient->getRecipe(), $testRecipe->getName() . " does not match return");
     }
