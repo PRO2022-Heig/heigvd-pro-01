@@ -1,5 +1,5 @@
 import { KeysOf, RecursivePartial } from "../../../../helpers/types";
-import { Model, ModelWithId } from "./model.interface";
+import {Model, ModelId, ModelWithId} from "./model.interface";
 
 export interface ModelFindResponse<T> {
 	// TODO: watch for field change
@@ -16,7 +16,11 @@ export interface ModelFoundAndPagination<T> {
 }
 
 // TODO (hypothetical, temporary)
-export type ModelSearch<T> = RecursivePartial<T>;
+export type ModelSearch<T> = RecursivePartial<T> | {
+	id?: ModelId[] | ModelId;
+
+	// TODO: more
+}
 
 export interface ModelSearchParams<T> {
 	limit?: number;

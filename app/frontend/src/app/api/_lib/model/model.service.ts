@@ -9,6 +9,42 @@ import { ModelFindResponse, ModelFoundAndPagination, ModelSearch, ModelSearchPar
 	providedIn: "root"
 })
 export abstract class ModelService<T extends Model> {
+	/**
+	 * Convert {name: {fr: {text: 1}, en: false}} => name[fr][text]=1&name[en]=false&
+	 * @param object to convert
+	 * @returns {string}
+	 */
+	public static toHttpQueryString(object: unknown): string {
+		let query = this._toHttpQueryString(object as object);
+
+		if (query.length) // remove '?'
+			query = query.slice(0, -1);
+		return query;
+	}
+
+	/**
+	 * Convert {name: {fr: {text: 1}, en: false}} => name[fr][text]=1&name[en]=false&
+	 * @param object to convert
+	 * @param {string} _key used only for recursion
+	 * @returns {string}
+	 */
+	private static _toHttpQueryString(object: object, _key = ""): string {
+		let query = "";
+
+		for (let key of Object.keys(object)) {
+			const value = (object as Record<string, unknown>)[key];
+
+			if (_key !== "")
+				key = `${_key}[${key}]`;
+
+			query += value instanceof Object
+				? this._toHttpQueryString(value, key)
+				: `${key}=${value}&`;
+		}
+
+		return query;
+	}
+
 	public abstract readonly entryPoint: string;
 
 	public constructor(protected readonly apiClient: ApiClientModule) {
@@ -18,7 +54,7 @@ export abstract class ModelService<T extends Model> {
 	 * Search for data according to the conditions.
 	 * @return only the models
 	 */
-	public find<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T>): Promise<U[]> {
+	public find<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T> = {}): Promise<U[]> {
 		return this.findAndPagination<U>(search, params).then(res => res.data);
 	}
 
@@ -27,9 +63,14 @@ export abstract class ModelService<T extends Model> {
 	 * @return models and pagination
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	public findAndPagination<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T>): Promise<ModelFoundAndPagination<U>> {
-		// TODO: search, params, pagination
-		return this.apiClient.get<ModelFindResponse<U>>(this.entryPoint)
+	public findAndPagination<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T> = {}): Promise<ModelFoundAndPagination<U>> {
+		// TODO: params, pagination
+
+		let url = this.entryPoint;
+		if (Object.keys(search).length)
+			url+= `?${ModelService.toHttpQueryString(search)}`;
+
+		return this.apiClient.get<ModelFindResponse<U>>(url)
 			.then(res => ({data: res["hydra:member"], pagination: {total: res["hydra:totalItems"]}}));
 	}
 
