@@ -2,7 +2,9 @@
 
 namespace App\Tests\Unit\Entity;
 
+use App\Entity\Meal\HomeMeal;
 use App\Entity\Recipe;
+use App\Entity\RecipeIngredient;
 use App\Entity\Step;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -53,6 +55,13 @@ class RecipeTest extends KernelTestCase
         $this->assertEquals($testNumberOfPeople, $testRecipe->getNumberOfPeople(), "$testNumberOfPeople does not match return");
     }
 
+    public function testDurationGetterAndSetter(): void
+    {
+        $testDuration = 5;
+        $testRecipe = $this->hydrate(Recipe::class, ["duration" => $testDuration]);
+        $this->assertEquals($testDuration, $testRecipe->getDuration(), "$testDuration does not match return");
+    }
+
     public function testStepsGetterAndAdder(): void
     {
         $testStep = $this->hydrate(Step::class, ["action" => "testProduct"]);
@@ -66,5 +75,35 @@ class RecipeTest extends KernelTestCase
         $testRecipe = $this->hydrate(Recipe::class, ["step" => $testStep]);
         $testRecipe->removeStep($testStep);
         $this->assertEmpty($testRecipe->getSteps(), $testStep->getAction() . " has not been removed");
+    }
+
+    public function testIngredientsGetterAndAdder(): void
+    {
+        $testIngredient = $this->hydrate(RecipeIngredient::class, ["quantity" => 1]);
+        $testRecipe = $this->hydrate(Recipe::class, ["ingredient" => $testIngredient]);
+        $this->assertEquals($testIngredient, $testRecipe->getIngredients()->first(), " does not match return");
+    }
+
+    public function testIngredientsRemover(): void
+    {
+        $testIngredient = $this->hydrate(RecipeIngredient::class, ["quantity" => 1]);
+        $testRecipe = $this->hydrate(Recipe::class, ["ingredient" => $testIngredient]);
+        $testRecipe->removeIngredient($testIngredient);
+        $this->assertEmpty($testRecipe->getIngredients(), " has not been removed");
+    }
+
+    public function testMealsGetterAndAdder(): void
+    {
+        $testMeal = $this->hydrate(HomeMeal::class, ["name" => "hello"]);
+        $testRecipe = $this->hydrate(Recipe::class, ["meal" => $testMeal]);
+        $this->assertEquals($testMeal, $testRecipe->getMeals()->first(), " does not match return");
+    }
+
+    public function testMealsRemover(): void
+    {
+        $testMeal = $this->hydrate(HomeMeal::class, ["name" => "hello"]);
+        $testRecipe = $this->hydrate(Recipe::class, ["meals" => $testMeal]);
+        $testRecipe->removeMeal($testMeal);
+        $this->assertEmpty($testRecipe->getMeals(), " has not been removed");
     }
 }
