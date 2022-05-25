@@ -12,12 +12,12 @@ class MealSearchController extends AbstractController
     private MealRepository $mealRepository;
 
     #[Route(
-        path: '/meals/{id}/publication',
+        path: "/meals/{id}/publication",
         defaults: [
-            '_api_resource_class' => Meal::class,
-            '_api_item_operation_name' => 'meals_search',
+            "_api_resource_class" => Meal::class,
+            "_api_item_operation_name" => "meals_search",
         ],
-        methods: ['GET'],
+        methods: ["GET"],
     )]
     public function searchAction()
     {
