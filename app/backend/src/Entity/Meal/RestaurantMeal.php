@@ -2,7 +2,10 @@
 
 namespace App\Entity\Meal;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\FoodConstraint;
 use App\Entity\Meal;
 use App\Entity\Restaurant;
@@ -15,6 +18,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: RestaurantMealRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(NumericFilter::class, properties: ["foodConstraint.id"])]
 class RestaurantMeal extends Meal
 {
     #[ORM\ManyToOne(targetEntity: Restaurant::class, inversedBy: "meals")]

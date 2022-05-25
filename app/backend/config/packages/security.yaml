@@ -46,7 +46,7 @@ security:
         - { path: ^/token/get, roles: PUBLIC_ACCESS }
         - { path: ^/token/refresh, roles: PUBLIC_ACCESS }
         - { path: ^/app_users, roles: PUBLIC_ACCESS, methods: [POST] } # Allows user creation
-        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/, roles: PUBLIC_ACCESS }
 
 
 when@test:
