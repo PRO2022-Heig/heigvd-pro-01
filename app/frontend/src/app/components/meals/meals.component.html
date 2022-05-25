@@ -1,1 +1,14 @@
-<p>meals works!</p>
+<mat-form-field appearance="fill">
+	<mat-label>Chercher un repas (spaghettis aux tomates)</mat-label>
+	<input matInput type="text" [(ngModel)]="searchTerms">
+	<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
+		<mat-icon>search</mat-icon>
+	</button>
+</mat-form-field>
+
+<mat-card *ngFor="let meal of meals$ | async" [routerLink]="['/meal/' + meal.id]">
+	<mat-card-title>{{meal.name}}</mat-card-title>
+	<mat-card-content>
+		<p>{{meal.description}}</p>
+	</mat-card-content>
+</mat-card>

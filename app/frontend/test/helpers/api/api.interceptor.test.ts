@@ -15,6 +15,8 @@ export class ApiInterceptorTest implements HttpInterceptor {
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+		// TODO: add a random sleep? (simulates a response time)
+
 		const fullUri = request.url.replace(apiUrl, "");
 
 		const handler = this.handlers.find(handler => handler.canHandle(fullUri));

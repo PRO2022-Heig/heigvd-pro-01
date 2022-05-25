@@ -13,6 +13,8 @@ import { MealComponent } from "./meals/meal/meal.component";
 import { MealsComponent } from "./meals/meals.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { UserProfileComponent } from "./users/user-profile/user-profile.component";
+import {RecipeComponent} from "./recipe/recipe.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
 	declarations: [
@@ -21,10 +23,18 @@ import { UserProfileComponent } from "./users/user-profile/user-profile.componen
 		LoginComponent,
 		MealComponent,
 		MealsComponent,
+		RecipeComponent,
 		SidebarComponent,
 		UserProfileComponent
 	],
-	imports: [AppRoutingModule, CommonModule, FlexLayoutModule, FlexModule, MaterialsModule],
+	imports: [
+		AppRoutingModule,
+		CommonModule,
+		FlexLayoutModule,
+		FlexModule,
+		FormsModule,
+		MaterialsModule
+	],
 	providers: [{
 		deps: [AuthService],
 		multi: true,

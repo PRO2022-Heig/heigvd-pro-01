@@ -2,5 +2,7 @@ import { Model } from "../_lib/model";
 
 export interface Meal extends Model {
 	name: string;
-	// TODO
+	description: string;
+
+	home_type: "home_meal" | "restaurant_meal";
 }

@@ -1,0 +1,21 @@
+<ng-container *ngIf="recipe != null">
+	<h1>{{recipe.name}}</h1>
+	<p>{{recipe.description}}</p>
+
+
+	<div fxLayout="row" *ngFor="let step of recipe.steps">
+		<mat-card fxFlex="30">
+			<ul>
+				<li *ngFor="let ingredient of step.ingredients" [title]="ingredient.description">
+					{{ingredient.quantity}} {{ingredient.unit}} {{ingredient.name}}
+				</li>
+			</ul>
+		</mat-card>
+		<mat-card fxFlex="70">
+			<p>{{step.action}}</p>
+		</mat-card>
+	</div>
+</ng-container>
+<ng-container *ngIf="recipe == null">
+	<mat-spinner></mat-spinner>
+</ng-container>
