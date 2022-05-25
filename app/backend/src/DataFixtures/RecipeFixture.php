@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Meal\HomeMeal;
 use App\Entity\Recipe;
 use App\Entity\RecipeIngredient;
 use App\Entity\Step;
@@ -73,6 +74,11 @@ class RecipeFixture extends AbstractDataImportFixture implements DependentFixtur
             }
 
             $this->addReference("recipe-" . $this->recipeCounter++, $recipe);
+            $meal = new HomeMeal();
+            $meal
+                ->setName($item["name"])
+                ->addRecipe($recipe);
+            $manager->persist($meal);
             $manager->persist($recipe);
         }
 
