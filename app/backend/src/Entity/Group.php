@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GroupRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 #[ORM\Entity(repositoryClass: GroupRepository::class)]
 #[ORM\Table(name: "`group`")] // See comments of this answer: https://stackoverflow.com/a/10483663/6086785
@@ -13,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Group extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
+    #[NotBlank]
     private string $name;
 
     public function getName(): ?string
