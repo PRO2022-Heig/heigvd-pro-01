@@ -15,9 +15,9 @@ export interface ModelFoundAndPagination<T> {
 	};
 }
 
-// TODO (hypothetical, temporary)
-export type ModelSearch<T> = RecursivePartial<T> | {
-	id?: ModelId[] | ModelId;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export interface ModelSearch<T> {
+	id?: ModelId[];
 
 	// TODO: more
 }

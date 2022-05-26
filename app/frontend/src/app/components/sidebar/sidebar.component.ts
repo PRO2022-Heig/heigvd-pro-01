@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService, AuthUser } from "../../api/auth";
+
 import { BaseComponent } from "../_lib/_basics";
+
+import { AuthService, AuthUser } from "../../api/auth";
 
 @Component({
 	selector: "app-sidebar",

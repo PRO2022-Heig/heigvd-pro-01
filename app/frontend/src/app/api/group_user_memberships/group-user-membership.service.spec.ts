@@ -1,16 +1,16 @@
 import { TestBed } from "@angular/core/testing";
 
 import { ApiModule } from "../api.module";
-import { GroupUserMembershipsService } from "./group-user-memberships.service";
+import { GroupUserMembershipService } from "./group-user-membership.service";
 
-describe("GroupUserMembershipsService", () => {
-	let service: GroupUserMembershipsService;
+describe("GroupUserMembershipService", () => {
+	let service: GroupUserMembershipService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [ApiModule]
 		});
-		service = TestBed.inject(GroupUserMembershipsService);
+		service = TestBed.inject(GroupUserMembershipService);
 	});
 
 	it("should be created", () => {

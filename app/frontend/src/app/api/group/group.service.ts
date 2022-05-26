@@ -11,4 +11,8 @@ export class GroupService extends ModelService<Group> {
 	public static readonly ENTRY_POINT = "/groups";
 
 	public readonly entryPoint = GroupService.ENTRY_POINT;
+
+	protected override _decode() {
+		// Do nothing
+	}
 }

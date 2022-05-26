@@ -11,4 +11,8 @@ export class IngredientService extends ModelService<Ingredient> {
 	public static readonly ENTRY_POINT = "/ingredients";
 
 	public readonly entryPoint = IngredientService.ENTRY_POINT;
+
+	protected override _decode() {
+		// Do nothing
+	}
 }

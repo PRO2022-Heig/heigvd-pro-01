@@ -8,7 +8,7 @@ import { ModelFindResponse, ModelFoundAndPagination, ModelSearch, ModelSearchPar
 @Injectable({
 	providedIn: "root"
 })
-export abstract class ModelService<T extends Model> {
+export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	/**
 	 * Convert {name: {fr: {text: 1}, en: false}} => name[fr][text]=1&name[en]=false&
 	 * @param object to convert
@@ -66,7 +66,7 @@ export abstract class ModelService<T extends Model> {
 	 * Search for data according to the conditions.
 	 * @return only the models
 	 */
-	public find<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T> = {}): Promise<U[]> {
+	public find<U extends T = T>(search?: MS, params: ModelSearchParams<T> = {}): Promise<U[]> {
 		return this.findAndPagination<U>(search, params).then(res => res.data);
 	}
 
@@ -75,36 +75,41 @@ export abstract class ModelService<T extends Model> {
 	 * @return models and pagination
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	public findAndPagination<U extends T = T>(search: ModelSearch<T> = {}, params: ModelSearchParams<T> = {}): Promise<ModelFoundAndPagination<U>> {
+	public findAndPagination<U extends T = T>(search?: MS, params: ModelSearchParams<T> = {}): Promise<ModelFoundAndPagination<U>> {
 		// TODO: params, pagination
 
 		let url = this.entryPoint;
-		if (Object.keys(search).length)
+		if (search && Object.keys(search).length)
 			url+= `?${ModelService.toHttpQueryString(search)}`;
 
-		return this.apiClient.get<ModelFindResponse<U>>(url)
-			.then(res => ({data: res["hydra:member"], pagination: {total: res["hydra:totalItems"]}}));
+		return this.apiClient.get<ModelFindResponse<U>>(url).then(res => ({
+			data: res["hydra:member"].map(_ => this._decode(_) as U || _),
+			pagination: {total: res["hydra:totalItems"]}
+		}));
 	}
 
 	/**
 	 * Get a single model
 	 */
 	public get<U extends T = T>(id: ModelId): Promise<U> {
-		return this.apiClient.get<U>(`${this.entryPoint}/${id}`);
+		return this.apiClient.get<U>(`${this.entryPoint}/${id}`)
+			.then(_ => this._decode(_) as U || _);
 	}
 
 	/**
 	 * Create a model from a partial data
 	 */
 	public create<U extends T = T>(model: RecursivePartial<T>): Promise<U> {
-		return this.apiClient.post<U>(this.entryPoint, model);
+		return this.apiClient.post<U>(this.entryPoint, model)
+			.then(_ => this._decode(_) as U || _);
 	}
 
 	/**
 	 * Update a model with partial data
 	 */
 	public update<U extends T = T>(model: ModelUpdate<T>): Promise<U> {
-		return this.apiClient.patch<U>(`${this.entryPoint}/${model.id}`, model);
+		return this.apiClient.patch<U>(`${this.entryPoint}/${model.id}`, model)
+			.then(_ => this._decode(_) as U || _);
 	}
 
 	/**
@@ -116,4 +121,10 @@ export abstract class ModelService<T extends Model> {
 
 		return this.apiClient.delete(`${this.entryPoint}/${id}`);
 	}
+
+	/**
+	 * Use this to "decode" a result.
+	 * Ex: the relations are in string -> convert to number
+	 */
+	protected abstract _decode(model: T): T | undefined | void;
 }

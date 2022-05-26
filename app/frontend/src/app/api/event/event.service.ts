@@ -11,4 +11,8 @@ export class EventService extends ModelService<Event> {
 	public static readonly ENTRY_POINT = "/events";
 
 	public readonly entryPoint = EventService.ENTRY_POINT;
+
+	protected override _decode() {
+		// Do nothing
+	}
 }

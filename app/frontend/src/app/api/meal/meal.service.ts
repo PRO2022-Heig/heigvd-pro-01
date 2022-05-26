@@ -11,4 +11,8 @@ export class MealService extends ModelService<Meal> {
 	public static readonly ENTRY_POINT = "/meals";
 
 	public readonly entryPoint = MealService.ENTRY_POINT;
+
+	protected override _decode() {
+		// Do nothing
+	}
 }

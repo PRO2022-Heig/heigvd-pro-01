@@ -19,4 +19,9 @@ export class UserService extends ModelService<User> {
 	public _loadConnected<U extends User = User>() {
 		return this.apiClient.get<U>(`${this.entryPoint}/mi`);
 	}
+
+	protected override _decode() {
+		// Do noting
+		return undefined;
+	}
 }
