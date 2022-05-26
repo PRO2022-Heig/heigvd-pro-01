@@ -10,14 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GroupUserMembershipRepository::class)]
 #[ApiResource(
-//    collectionOperations: [
-//        "get" => [
-////            "security" => "object.user == user"
-//        ],
-//        "post" => [
-////            "security" => "object.user == user"
-//        ],
-//    ],
     itemOperations: [
         "get" => [],
         "delete" => [

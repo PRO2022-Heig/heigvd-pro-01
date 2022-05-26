@@ -50,8 +50,6 @@ security:
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY, methods: [POST, PUT, PATCH, DELETE] } # Allows user creation
         - { path: ^/, roles: PUBLIC_ACCESS }
 
-#        // events /app_users/ /groups /usersgroupmembership
-
 when@test:
     security:
         password_hashers:

@@ -55,7 +55,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
     normalizationContext: ["groups" => "user:restricted"],
 )]
-#[ApiFilter(SearchFilter::class, properties: ["emailAddress", "firstName", "lastName"])]
+#[ApiFilter(SearchFilter::class, properties: ["emailAddress" => "partial", "firstName" => "partial", "lastName" => "partial"])]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]
