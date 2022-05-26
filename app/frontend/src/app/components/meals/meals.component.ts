@@ -32,7 +32,7 @@ export class MealsComponent implements OnInit {
 				"name":"Pad thai",
 				"description": "Le phat thai est un plat traditionnel thaïlandais à base de nouilles de riz, très apprécié et très " +
 					"consommé dans toute la Thaïlande. Son nom signifie littéralement « sauté de style thaï ». "
-			},
+			}
 
 		] as Meal[]);
     }

@@ -5,6 +5,11 @@ export interface ModelWithId {
 }
 
 export interface Model extends ModelWithId {
+	/**
+	 * The "entity name"
+	 */
+	"@id": string;
+
 	createdAt: string;
 	updatedAt: string;
 }

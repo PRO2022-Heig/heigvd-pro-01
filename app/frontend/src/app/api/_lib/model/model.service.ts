@@ -51,6 +51,18 @@ export abstract class ModelService<T extends Model> {
 	}
 
 	/**
+	 * "Encode" an id to the backend entity name (=> @id).
+	 * ex: id=4 and <entity>=user => /user/4
+	 * @param id
+	 */
+	public getEntityName(id: ModelId | ModelWithId): string {
+		if (isNaN(<number>id) && "id" as keyof ModelWithId in (id as ModelWithId))
+			id = (id as ModelWithId).id;
+
+		return `${this.entryPoint}/${id}`;
+	}
+
+	/**
 	 * Search for data according to the conditions.
 	 * @return only the models
 	 */

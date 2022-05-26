@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { ModelService } from "../_lib/model";
+
 import { GroupUserMemberships } from "./group-user-memberships.interface";
 
 @Injectable({
