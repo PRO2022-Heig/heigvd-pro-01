@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Controller\UserMiController;
 use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -53,6 +55,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
     normalizationContext: ["groups" => "user:restricted"],
 )]
+#[ApiFilter(SearchFilter::class, properties: ["emailAddress", "firstName", "lastName"])]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]
