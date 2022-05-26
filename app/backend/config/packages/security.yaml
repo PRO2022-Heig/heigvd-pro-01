@@ -46,8 +46,11 @@ security:
         - { path: ^/token/get, roles: PUBLIC_ACCESS }
         - { path: ^/token/refresh, roles: PUBLIC_ACCESS }
         - { path: ^/app_users, roles: PUBLIC_ACCESS, methods: [POST] } # Allows user creation
-        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/(events|app_users|groups|group_user_memberships), roles: IS_AUTHENTICATED_FULLY, methods: [GET] }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY, methods: [POST, PUT, PATCH, DELETE] } # Allows user creation
+        - { path: ^/, roles: PUBLIC_ACCESS }
 
+#        // events /app_users/ /groups /usersgroupmembership
 
 when@test:
     security:
