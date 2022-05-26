@@ -9,15 +9,8 @@ use App\Repository\GroupUserMembershipRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GroupUserMembershipRepository::class)]
+#[ORM\UniqueConstraint(columns: ["group_id", "user_id"])]
 #[ApiResource(
-//    collectionOperations: [
-//        "get" => [
-////            "security" => "object.user == user"
-//        ],
-//        "post" => [
-////            "security" => "object.user == user"
-//        ],
-//    ],
     itemOperations: [
         "get" => [],
         "delete" => [
@@ -29,11 +22,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\HasLifecycleCallbacks]
 class GroupUserMembership extends AbstractEntity
 {
-    #[ORM\OneToOne(targetEntity: Group::class, cascade: ["persist"])]
+    #[ORM\ManyToOne(targetEntity: Group::class, cascade: ["persist"])]
     #[ORM\JoinColumn(nullable: false)]
     private Group $group;
 
-    #[ORM\OneToOne(targetEntity: AppUser::class, cascade: ["persist"])]
+    #[ORM\ManyToOne(targetEntity: AppUser::class, cascade: ["persist"])]
     #[ORM\JoinColumn(nullable: false)]
     private AppUser $user;
 
