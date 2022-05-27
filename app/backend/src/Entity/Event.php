@@ -22,6 +22,10 @@ class Event extends AbstractEntity
     #[ORM\ManyToOne(targetEntity: Meal::class)]
     private Meal $meal;
 
+    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: 'events')]
+    #[ORM\JoinColumn(nullable: false)]
+    private Group $group;
+
     public function getName(): ?string
     {
         return $this->name;
@@ -54,6 +58,18 @@ class Event extends AbstractEntity
     public function setMeal(?Meal $meal): self
     {
         $this->meal = $meal;
+
+        return $this;
+    }
+
+    public function getGroup(): ?Group
+    {
+        return $this->group;
+    }
+
+    public function setGroup(?Group $group): self
+    {
+        $this->group = $group;
 
         return $this;
     }
