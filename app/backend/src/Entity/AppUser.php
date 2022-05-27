@@ -17,6 +17,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource(
     collectionOperations: [
+        "get" => [ // Enable the "/app_users" entrypoint
+            // TODO: params?
+        ],
         "post" => [
             "denormalization_context" => [
                 "groups" => [
@@ -47,7 +50,8 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
     itemOperations: [
         "get" => [
-            "security" => "object == user"
+            // Disable the "Can only get myself" and use the default security options
+            // "security" => "object == user"
         ],
         "patch" => [
             "security" => "object == user"
