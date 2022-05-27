@@ -8,5 +8,7 @@ import { FoodConstraint } from "./food-constraint.interface";
 	providedIn: "root"
 })
 export class FoodConstraintService extends ModelService<FoodConstraint> {
-	public readonly entryPoint = "/food-constraint";
+	public static readonly ENTRY_POINT = "/food-constraint";
+
+	public readonly entryPoint = FoodConstraintService.ENTRY_POINT;
 }

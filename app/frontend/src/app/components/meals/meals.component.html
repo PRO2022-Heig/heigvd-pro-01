@@ -12,21 +12,25 @@
 		</tag-input-dropdown>
 	</tag-input>
 
-	<div>
+	<div class="prep-time">
 		<p>Preparation time</p>
 		<mat-slider step="5" min="0" max="90" (input)="minutes = $event.value || 0;" color="primary"></mat-slider>
-		<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
-		<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
+		<div>
+			<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
+			<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
+		</div>
 	</div>
+
+	<button mat-flat-button color="primary" (click)="launchSearch()">Find meals</button>
 </mat-card>
 
 <div class="results-title">
 	<h1>Résultats</h1>
-	<p>{{(meals$ | async)?.length}} repas trouvé(s)</p>
+	<p>{{foundMeals.length}} repas trouvé(s)</p>
 </div>
 
 <mat-accordion multi>
-	<mat-expansion-panel *ngFor="let meal of meals$ | async">
+	<mat-expansion-panel *ngFor="let meal of foundMeals"><!-- TODO load recipes when expansion panel is opened -->
 		<mat-expansion-panel-header>
 			<mat-panel-title>
 				{{meal.name}}
@@ -36,9 +40,10 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 
-		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
-		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
-		<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit.</p>
+		<!-- TODO What to display here? and where to store the data?... -->
+		<div *ngFor="">
+			<div [routerLink]=""></div>
+		</div>
 
 	</mat-expansion-panel>
 </mat-accordion>

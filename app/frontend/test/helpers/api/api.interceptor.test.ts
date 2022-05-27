@@ -3,15 +3,16 @@ import { Provider } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
 
 import { apiUrl } from "../../../src/app/api";
-import {meals, users} from "../../mocks/api";
-import {MealHttpHandler, TokenHttpHandler, UserHttpHandler} from "./http-handlers";
+import {foodConstraints, meals, users} from "../../mocks/api";
+import {FoodConstraintHttpHandler, MealHttpHandler, TokenHttpHandler, UserHttpHandler} from "./http-handlers";
 import { HttpHandlerTest } from "./http-handlers/http-handler.interface.test";
 
 export class ApiInterceptorTest implements HttpInterceptor {
 	private readonly handlers: HttpHandlerTest[] = [
 		new TokenHttpHandler(),
 		new UserHttpHandler(users),
-		new MealHttpHandler(meals)
+		new MealHttpHandler(meals),
+		new FoodConstraintHttpHandler(foodConstraints)
 	];
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
