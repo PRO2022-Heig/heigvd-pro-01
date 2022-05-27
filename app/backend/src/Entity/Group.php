@@ -19,7 +19,7 @@ class Group extends AbstractEntity
     #[NotBlank]
     private string $name;
 
-    #[ORM\OneToMany(mappedBy: 'grp', targetEntity: Event::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "grp", targetEntity: Event::class, orphanRemoval: true)]
     private $events;
 
     public function __construct()

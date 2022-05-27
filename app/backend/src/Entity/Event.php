@@ -22,7 +22,7 @@ class Event extends AbstractEntity
     #[ORM\ManyToOne(targetEntity: Meal::class)]
     private Meal $meal;
 
-    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: 'events')]
+    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: "events")]
     #[ORM\JoinColumn(nullable: false)]
     private Group $group;
 
