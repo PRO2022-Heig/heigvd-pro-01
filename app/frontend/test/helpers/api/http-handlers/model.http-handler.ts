@@ -1,6 +1,7 @@
 import { HttpErrorResponse, HttpRequest, HttpResponse, HttpResponseBase } from "@angular/common/http";
 
 import { Model } from "../../../../src/app/api/_lib/model";
+import { ModelFindResponse } from "../../../../src/app/api/_lib/model/model.types";
 
 import { HttpHandlerTest, HttpHandlerTestParams, HTTP_METHOD } from "./http-handler.interface.test";
 
@@ -13,6 +14,9 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 	}
 
 	public handle(params: HttpHandlerTestParams, request: HttpRequest<unknown>): HttpResponseBase {
+		if (this.isAFindRequest(params, request))
+			return this.handleFind(params, request);
+
 		if (this.isAGetRequest(params, request))
 			return this.handleGet(params, request);
 
@@ -40,6 +44,14 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 	/**
 	 * Determine if the request is a "get" request
 	 */
+	protected isAFindRequest(params: HttpHandlerTestParams, request: HttpRequest<unknown>): boolean {
+		// This is a bit redundant but keep the handler flexible
+		return request.method === HTTP_METHOD.GET && params.uri === this.getEntryPoint();
+	}
+
+	/**
+	 * Determine if the request is a "get" request
+	 */
 	protected isAGetRequest(params: HttpHandlerTestParams, request: HttpRequest<unknown>): boolean {
 		// This is a bit redundant but keep the handler flexible
 		return request.method === HTTP_METHOD.GET && !isNaN(+this.getAction(params).substring(1));
@@ -60,6 +72,21 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 		return request.method === HTTP_METHOD.PATCH && !isNaN(+this.getAction(params).substring(1));
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected handleFind(params: HttpHandlerTestParams, request: HttpRequest<unknown>): HttpResponseBase {
+		// TODO: override in children
+
+		return new HttpResponse({
+			// TODO: this in another function?
+			body: {
+				"hydra:member": this.mocks,
+				"hydra:totalItems": this.mocks.length
+			} as ModelFindResponse<T>,
+			url: params.fullUri,
+			status: 200
+		});
+	}
+
 	/**
 	 * Handle the "get" route
 	 */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -72,7 +99,7 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 			return new HttpResponse({
 				body: data,
 				url: params.fullUri,
-				status: 404
+				status: 200
 			});
 
 		return new HttpErrorResponse({
