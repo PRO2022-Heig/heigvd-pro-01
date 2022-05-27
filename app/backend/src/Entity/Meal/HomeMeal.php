@@ -15,7 +15,14 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: HomeMealRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
-#[ApiFilter(NumericFilter::class, properties: ["recipes.ingredients.ingredient.foodConstraints.id"])]
+#[ApiFilter(
+    NumericFilter::class,
+    properties: [
+        "recipes.ingredients.ingredient.foodConstraints.id",
+        "recipe.duration",
+        "recipe.numberOfPeople"
+    ]
+)]
 class HomeMeal extends Meal
 {
     #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: "meals")]
