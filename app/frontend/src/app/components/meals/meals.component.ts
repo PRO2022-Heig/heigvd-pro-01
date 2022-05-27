@@ -28,7 +28,7 @@ export class MealsComponent implements OnInit {
 		this.foodConstraintSearch.valueChanges.pipe(
 			startWith(""),
 			switchMap(value => {
-				return this.foodConstraintsService.find({"name": value}, {});
+				return this.foodConstraintsService.find({name: value}, {});
 			})
 		).subscribe(x => this.filteredFoodConstraints.next(x));
     }

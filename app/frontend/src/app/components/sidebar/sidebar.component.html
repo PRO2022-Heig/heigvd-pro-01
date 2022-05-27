@@ -1,10 +1,29 @@
+<div fxHide.gt-xs>
+	<div fxLayoutAlign="center center">
+		<h4 style="margin: 5px 0;">Menu</h4>
+	</div>
+
+	<app-toolbar></app-toolbar>
+
+	<div fxLayoutAlign="center center">
+		<span *ngIf="!user._connected"><i>non connecté</i></span>
+		<span *ngIf="user._connected">{{ user.firstName }} {{ user.lastName }}</span>
+	</div>
+</div>
+
 <mat-nav-list>
-	<a mat-list-item>
-		<mat-icon mat-list-icon>person</mat-icon>
-		<div mat-line>My profile</div>
-	</a>
-	<a mat-list-item [routerLink]="['meals']">
-		<mat-icon mat-list-icon>restaurant</mat-icon>
-		<div mat-line>Meals</div>
-	</a>
+	<mat-list-item routerLink="/meals">
+		<mat-icon matListIcon>menu_book</mat-icon>
+		<a matLine>Repas</a>
+	</mat-list-item>
+
+	<mat-list-item *ngIf="user._connected" routerLink="/profile/events">
+		<mat-icon matListIcon>event</mat-icon>
+		<a matLine>Événement</a>
+	</mat-list-item>
+
+	<mat-list-item *ngIf="user._connected" routerLink="/profile/groups">
+		<mat-icon matListIcon>group</mat-icon>
+		<a matLine>Groupes</a>
+	</mat-list-item>
 </mat-nav-list>

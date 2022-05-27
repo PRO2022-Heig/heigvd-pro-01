@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { APP_INITIALIZER, NgModule } from "@angular/core";
 import { FlexLayoutModule, FlexModule } from "@angular/flex-layout";
+import { FormsModule } from "@angular/forms";
 
 import { AuthService } from "../api/auth";
 import { AuthInterceptor } from "../interceptors";
@@ -11,10 +12,12 @@ import { HeaderComponent } from "./header/header.component";
 import { LoginComponent } from "./login/login.component";
 import { MealComponent } from "./meals/meal/meal.component";
 import { MealsComponent } from "./meals/meals.component";
+import { RecipeComponent } from "./recipe/recipe.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { UserEventsComponent } from "./users/user-events/user-events.component";
+import { UserGroupsComponent } from "./users/user-groups/user-groups.component";
 import { UserProfileComponent } from "./users/user-profile/user-profile.component";
-import {RecipeComponent} from "./recipe/recipe.component";
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
 	declarations: [
@@ -25,6 +28,9 @@ import {FormsModule} from "@angular/forms";
 		MealsComponent,
 		RecipeComponent,
 		SidebarComponent,
+		ToolbarComponent,
+		UserEventsComponent,
+		UserGroupsComponent,
 		UserProfileComponent
 	],
 	imports: [
