@@ -3,9 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Ingredient;
+use function array_rand;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use function array_rand;
 
 class IngredientFixture extends AbstractDataImportFixture implements DependentFixtureInterface
 {
