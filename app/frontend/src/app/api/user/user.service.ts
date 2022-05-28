@@ -20,8 +20,9 @@ export class UserService extends ModelService<User> {
 		return this.apiClient.get<U>(`${this.entryPoint}/mi`);
 	}
 
-	protected override _decode() {
-		// Do noting
-		return undefined;
+	protected override _decode(model: User) {
+		model.id = this.decodeEntityName(model["@id"]);
+
+		return model;
 	}
 }

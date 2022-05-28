@@ -55,11 +55,15 @@ export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	 * ex: id=4 and <entity>=user => /user/4
 	 * @param id
 	 */
-	public getEntityName(id: ModelId | ModelWithId): string {
+	public encodeEntityName(id: ModelId | ModelWithId): string {
 		if (isNaN(<number>id) && "id" as keyof ModelWithId in (id as ModelWithId))
 			id = (id as ModelWithId).id;
 
 		return `${this.entryPoint}/${id}`;
+	}
+
+	public decodeEntityName(name: string): ModelId {
+		return +name.substring(this.entryPoint.length + 1);
 	}
 
 	/**
@@ -108,8 +112,11 @@ export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	 * Update a model with partial data
 	 */
 	public update<U extends T = T>(model: ModelUpdate<T>): Promise<U> {
-		return this.apiClient.patch<U>(`${this.entryPoint}/${model.id}`, model)
-			.then(_ => this._decode(_) as U || _);
+		return this.apiClient.patch<U>(`${this.entryPoint}/${model.id}`, model, {
+			headers: {
+				"Content-Type": "application/merge-patch+json"
+			}
+		}).then(_ => this._decode(_) as U || _);
 	}
 
 	/**
