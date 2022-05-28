@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, of} from "rxjs";
-
-import {Recipe} from "../../api/meal/recipe.interface";
+import {Recipe} from "../../api/recipe";
 
 @Component({
   selector: "app-recipe",
@@ -10,7 +8,7 @@ import {Recipe} from "../../api/meal/recipe.interface";
 })
 export class RecipeComponent implements OnInit {
 
-	private recipe$ = of({
+	/*private recipe$ = of({
 		"id": 2,
 		"name": "Spaghetti carbonara traditionnels",
 		"description": "Ingrédients utilisés dans la recette classique.",
@@ -41,14 +39,14 @@ export class RecipeComponent implements OnInit {
 				]
 			}
 		]
-	}) as Observable<Recipe>;
+	}) as Observable<Recipe>;*/
 
 	public recipe : Recipe | null = null;
 
 	public ngOnInit() {
-	  this.recipe$.subscribe((_recipe) => {
+	  /*this.recipe$.subscribe((_recipe) => {
 		  _recipe.steps.sort((a,b) => a.orderNumber - b.orderNumber);
 		  this.recipe = _recipe;
-	  });
+	  });*/
 	}
 }
