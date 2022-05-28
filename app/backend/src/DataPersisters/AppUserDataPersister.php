@@ -33,41 +33,6 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
 
     public function persist($data, array $context = [])
     {
-        $password = $data->getPassword();
-
-        $minDigits = 1;
-        $minSpecial = 1;
-        $minUppercase = 1;
-        $minLowercase = 1;
-        $minLength = 8;
-
-        $actualDigits = 0;
-        $actualSpecial = 0;
-        $actualUppercase = 0;
-        $actualLowercase = 0;
-
-        foreach (str_split($password) as $char) {
-            if (ctype_digit($char)) {
-                ++$actualDigits;
-            } elseif (ctype_upper($char)) {
-                ++$actualUppercase;
-            } elseif (ctype_lower($char)) {
-                ++$actualLowercase;
-            } elseif (!ctype_alnum($char)) {
-                ++$actualSpecial;
-            }
-        }
-
-        if (
-            strlen($password) < $minLength
-            || $actualDigits < $minDigits
-            || $actualSpecial < $minSpecial
-            || $actualUppercase < $minUppercase
-            || $actualLowercase < $minLowercase
-        ) {
-            throw new PasswordDoesNotMatchRequirementsException();
-        }
-
         // If it is a new user, checking that the e-mail does not already exist
         if ($data->getId() === null) {
             if (count($this->appUserRepository->findBy(["emailAddress" => $data->getEmailAddress()])) > 0) {
@@ -75,7 +40,47 @@ final class AppUserDataPersister implements ContextAwareDataPersisterInterface
             }
         }
 
-        $data->setPassword($this->passwordHasher->hashPassword($data, $password));
+        $password = $data->getPassword();
+
+        // Check the password policy if it is a new user or the password is not the one already stored
+        if ($data->getId() === null || !(str_starts_with($password, "$2y$13$") && (strlen($password) === 60))) {
+            // TODO: better, this is probably not the best way to do it
+            $minDigits = 1;
+            $minSpecial = 1;
+            $minUppercase = 1;
+            $minLowercase = 1;
+            $minLength = 8;
+
+            $actualDigits = 0;
+            $actualSpecial = 0;
+            $actualUppercase = 0;
+            $actualLowercase = 0;
+
+            foreach (str_split($password) as $char) {
+                if (ctype_digit($char)) {
+                    ++$actualDigits;
+                } elseif (ctype_upper($char)) {
+                    ++$actualUppercase;
+                } elseif (ctype_lower($char)) {
+                    ++$actualLowercase;
+                } elseif (!ctype_alnum($char)) {
+                    ++$actualSpecial;
+                }
+            }
+
+            if (
+                strlen($password) < $minLength
+                || $actualDigits < $minDigits
+                || $actualSpecial < $minSpecial
+                || $actualUppercase < $minUppercase
+                || $actualLowercase < $minLowercase
+            ) {
+                throw new PasswordDoesNotMatchRequirementsException();
+            }
+
+            $data->setPassword($this->passwordHasher->hashPassword($data, $password));
+        }
+
         $this->manager->persist($data);
         $this->manager->flush();
     }
