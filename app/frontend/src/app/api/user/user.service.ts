@@ -1,13 +1,20 @@
 import { Injectable } from "@angular/core";
 
 import { ModelService } from "../_lib/model";
+import { ModelSearch } from "../_lib/model/model.types";
 
 import { User } from "./user.interface";
+
+export interface UserSearch extends ModelSearch<User> {
+	emailAddress?: string;
+	firstName?: string;
+	lastName?: string;
+}
 
 @Injectable({
 	providedIn: "root"
 })
-export class UserService extends ModelService<User> {
+export class UserService extends ModelService<User, UserSearch> {
 	public static readonly ENTRY_POINT = "/app_users";
 
 	public readonly entryPoint = UserService.ENTRY_POINT;

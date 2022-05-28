@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { ModelId, ModelService } from "../_lib/model";
 import { ModelSearch } from "../_lib/model/model.types";
 
+import { ApiClientModule } from "../api-client.module";
 import { GroupService } from "../group";
 import { UserService } from "../user";
 import { GroupUserMembership } from "./group-user-membership.interface";
@@ -20,9 +21,18 @@ export class GroupUserMembershipService extends ModelService<GroupUserMembership
 
 	public readonly entryPoint = GroupUserMembershipService.ENTRY_POINT;
 
+	public constructor(
+		client: ApiClientModule,
+		private readonly groupService: GroupService,
+		private readonly userService: UserService
+	) {
+		super(client);
+	}
+
+
 	protected override _decode(gum: GroupUserMembership) {
-		gum.__group = +gum.group.substring(GroupService.ENTRY_POINT.length + 1);
-		gum.__user = +gum.user.substring(UserService.ENTRY_POINT.length + 1);
+		gum.__group = this.groupService.decodeEntityName(gum.group);
+		gum.__user = this.userService.decodeEntityName(gum.user);
 
 		return gum;
 	}

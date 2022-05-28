@@ -1,0 +1,28 @@
+<div fxLayout="column">
+	<div id="header" fxFlex>
+		<form (ngSubmit)="createGroup()">
+			Créer un groupe :
+
+			<mat-form-field>
+				<mat-label>Nom</mat-label>
+				<input matInput [formControl]="addGroupCtrl">
+				<mat-error>{{ getControlErrorMessage(addGroupCtrl) | async }}</mat-error>
+			</mat-form-field>
+
+			<button mat-icon-button type="submit">
+				<mat-icon>add</mat-icon>
+			</button>
+		</form>
+	</div>
+
+	<div id="groups" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+		<app-user-group *ngFor="let group of groups"
+						fxFlex="500px" fxFlexAlign="start" [group]="group"
+						(groupDisappears)="removedGroup($event)"
+		></app-user-group>
+
+		<mat-card *ngIf="!groups.length" fxFlex="400px">
+			<mat-card-content>Vous ne faites parti d'aucun groupe.</mat-card-content>
+		</mat-card>
+	</div>
+</div>
