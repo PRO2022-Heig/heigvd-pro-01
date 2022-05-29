@@ -15,7 +15,7 @@
 		</form>
 	</div>
 
-	<div id="groups" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+	<div *ngIf="!loading" id="groups" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
 		<app-user-group *ngFor="let group of groups"
 						fxFlex="500px" fxFlex.lt-sm="100" fxFlexAlign="start" [group]="group"
 						(groupDisappears)="removedGroup($event)"

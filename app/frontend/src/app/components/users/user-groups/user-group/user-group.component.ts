@@ -66,7 +66,7 @@ export class UserGroupComponent extends BaseComponent implements OnInit {
 			this.authService.getUser().subscribe(_ => this.user = _),
 
 			this.addUserForm.controls.search.valueChanges.pipe(
-				debounceTime(250),
+				debounceTime(500),
 				// Do not search with empty string
 				filter((_: string) => !!_),
 				distinctUntilChanged(),

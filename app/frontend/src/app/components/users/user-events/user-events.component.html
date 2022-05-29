@@ -1,4 +1,4 @@
-<div id="events" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+<div *ngIf="!loading" id="events" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
 	<app-user-event *ngFor="let event of events"
 					fxFlex="500px" fxFlex.lt-sm="100" fxFlexAlign="start" [event]="event"
 					(eventDisappears)="removedEvent($event)"

@@ -16,7 +16,10 @@ export class MealService extends ModelService<Meal, MealSearch> {
 
 	public readonly entryPoint = MealService.ENTRY_POINT;
 
-	protected override _decode() {
-		// Do nothing
+	protected override _decode(model: Meal) {
+		model.home_type = (model as {"@type": string} & Meal)["@type"]
+			.split("M").join("_m").toLowerCase() as Meal["home_type"];
+
+		return model;
 	}
 }

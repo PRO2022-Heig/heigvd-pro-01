@@ -19,6 +19,8 @@ export class UserGroupsComponent extends BaseComponent implements OnInit {
 	public groups: GroupHelped[] = [];
 	public user!: User;
 
+	public loading = false;
+
 	public readonly addGroupCtrl = new FormControl("", [Validators.required]);
 
 	public constructor(
@@ -38,6 +40,7 @@ export class UserGroupsComponent extends BaseComponent implements OnInit {
 			this.authService.getUser().subscribe(_ => this.user = _)
 		);
 
+		this.loading = true;
 		// TODO: reload button
 		this.groups = await getAllEventsGroups({
 			eventService: this.eventService,
@@ -45,6 +48,8 @@ export class UserGroupsComponent extends BaseComponent implements OnInit {
 			guMembershipService: this.guMembershipService,
 			userService: this.userService
 		}, this.user).then(_ => _.groups);
+
+		this.loading = false;
 	}
 
 	public async createGroup() {

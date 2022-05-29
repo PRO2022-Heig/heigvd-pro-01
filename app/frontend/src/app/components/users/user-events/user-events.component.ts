@@ -21,6 +21,7 @@ export interface EventHelpedMeal extends EventHelped {
 })
 export class UserEventsComponent extends BaseComponent implements OnInit {
 	public events: EventHelpedMeal[] = [];
+	public loading = false;
 
 	private user!: User;
 
@@ -41,6 +42,7 @@ export class UserEventsComponent extends BaseComponent implements OnInit {
 			this.authService.getUser().subscribe(_ => this.user = _)
 		);
 
+		this.loading = true;
 		this.events = await getAllEventsGroups({
 			eventService: this.eventService,
 			groupService: this.groupService,
@@ -53,10 +55,13 @@ export class UserEventsComponent extends BaseComponent implements OnInit {
 				id: eventsMeal.map(_ => _.__meal as number)
 			}) : [];
 
-			console.log(eventsMeal, meals);
+			for (const event of eventsMeal)
+				event._meal = meals.splice(meals.findIndex(_ => _.id === event.__meal), 1)[0];
 
 			return events;
 		});
+
+		this.loading = false;
 	}
 
 	public removedEvent(event: EventHelpedMeal) {

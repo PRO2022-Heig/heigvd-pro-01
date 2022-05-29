@@ -30,6 +30,41 @@
 							[disabled]="!state.edit">Mettre à jour</button>
 					<mat-progress-bar *ngIf="state.loading" mode="query"></mat-progress-bar>
 				</form>
+
+				<hr id="divider">
+
+				<h3>Repas de l'événement</h3>
+
+				<form [formGroup]="mealForm" (ngSubmit)="updateMeal()">
+					<mat-form-field>
+						<mat-label>Repas</mat-label>
+
+						<mat-select [formControl]="mealForm.controls.meal">
+							<mat-option>
+								<ngx-mat-select-search placeholderLabel="Rechercher" noEntriesFoundLabel="Aucun résultat"
+													   [formControl]="mealForm.controls.search"
+													   [searching]="mealState.loading"
+								></ngx-mat-select-search>
+							</mat-option>
+
+							<mat-option *ngFor="let meal of meals" [value]="meal">
+								<mat-icon>{{ meal.home_type === "home_meal" ? "home" : "restaurant" }}</mat-icon>
+								{{ meal.name }}
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+
+					<button mat-button type="submit"
+							[disabled]="!mealForm.controls.meal.value || mealForm.controls.meal.value === event._meal">Changer</button>
+				</form>
+
+				<mat-card *ngIf="event._meal">
+					<mat-card-header><mat-card-title>{{ event._meal.name }}</mat-card-title></mat-card-header>
+
+					<mat-card-content>{{ event._meal.description }}</mat-card-content>
+				</mat-card>
+
+				<h2 *ngIf="!event._meal">Aucun repas défini</h2>
 			</mat-tab>
 
 			<mat-tab>
