@@ -30,7 +30,7 @@ interface AddUserForm extends FormGroup {
 })
 export class UserGroupComponent extends BaseComponent implements OnInit {
 	@Input()
-	public readonly group!: GroupHelped;
+	public group!: GroupHelped;
 	public user!: User;
 
 	public users: User[] = [];
@@ -41,7 +41,7 @@ export class UserGroupComponent extends BaseComponent implements OnInit {
 	 * When a group disappears, It does not need to stay visible
 	 */
 	@Output()
-	public groupDisappears = new EventEmitter<GroupHelped>();
+	private groupDisappears = new EventEmitter<GroupHelped>();
 
 	public constructor(
 		private readonly authService: AuthService,
@@ -67,6 +67,7 @@ export class UserGroupComponent extends BaseComponent implements OnInit {
 
 			this.addUserForm.controls.search.valueChanges.pipe(
 				debounceTime(250),
+				// Do not search with empty string
 				filter((_: string) => !!_),
 				distinctUntilChanged(),
 				switchMap(text =>

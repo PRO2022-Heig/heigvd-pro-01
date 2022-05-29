@@ -1,0 +1,50 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ event.name }}</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content>
+		<mat-tab-group>
+			<mat-tab label="Événement">
+				<form fxLayout="column" [formGroup]="eventForm" (ngSubmit)="updateEvent()">
+					<div fxLayout="row">
+						<mat-form-field fxFlex="grow">
+							<mat-label>Nom</mat-label>
+							<input matInput [formControl]="eventForm.controls.name">
+							<mat-error>{{ getControlErrorMessage(eventForm.controls.name) | async }}</mat-error>
+						</mat-form-field>
+
+						<div fxFlex fxLayoutAlign="flex-end">
+							<button mat-icon-button type="button" (click)="this.state.edit = !this.state.edit; toggleFormState()">
+								<mat-icon [color]="state.edit ? undefined : 'primary'">edit</mat-icon>
+							</button>
+						</div>
+					</div>
+
+					<mat-form-field appearance="fill">
+						<mat-label>Description</mat-label>
+						<textarea matInput [formControl]="eventForm.controls.description"></textarea>
+					</mat-form-field>
+
+					<button mat-raised-button type="submit" color="primary"
+							[disabled]="!state.edit">Mettre à jour</button>
+					<mat-progress-bar *ngIf="state.loading" mode="query"></mat-progress-bar>
+				</form>
+			</mat-tab>
+
+			<mat-tab>
+				<ng-template mat-tab-label>
+					{{ event._group.memberships.length }} Participants
+				</ng-template>
+
+				Issues du group <i>{{ event._group.name }}</i> :
+
+				<mat-list role="table">
+					<mat-list-item *ngFor="let membership of event._group.memberships">
+						{{ membership._user?.emailAddress }}
+					</mat-list-item>
+				</mat-list>
+			</mat-tab>
+		</mat-tab-group>
+	</mat-card-content>
+</mat-card>

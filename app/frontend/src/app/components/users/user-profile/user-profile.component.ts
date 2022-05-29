@@ -57,7 +57,7 @@ export class UserProfileComponent extends BaseComponent {
 			})
 		);
 
-		this.toggleEdition();
+		this.toggleFormState();
 	}
 
 	public async updateUser() {
@@ -65,9 +65,9 @@ export class UserProfileComponent extends BaseComponent {
 			return;
 
 		this.state.loading = true;
-		this.toggleEdition();
+		this.toggleFormState();
 
-		await this.userService.update({
+		return this.userService.update({
 			id: this.user.id,
 			firstName: this.userForm.controls.firstName.value,
 			lastName: this.userForm.controls.lastName.value
@@ -77,7 +77,7 @@ export class UserProfileComponent extends BaseComponent {
 			.finally(() => {
 				this.state.edit = false;
 				this.state.loading = false;
-				this.toggleEdition();
+				this.toggleFormState();
 			});
 	}
 
@@ -86,7 +86,7 @@ export class UserProfileComponent extends BaseComponent {
 		return this.authService.logout().then(() => this.router.navigateByUrl("/login"));
 	}
 
-	public toggleEdition() {
+	public toggleFormState() {
 		if (!this.state.edit || this.state.loading)
 			this.userForm.disable();
 		else

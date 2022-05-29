@@ -17,12 +17,12 @@
 
 	<div id="groups" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
 		<app-user-group *ngFor="let group of groups"
-						fxFlex="500px" fxFlexAlign="start" [group]="group"
+						fxFlex="500px" fxFlex.lt-sm="100" fxFlexAlign="start" [group]="group"
 						(groupDisappears)="removedGroup($event)"
 		></app-user-group>
 
 		<mat-card *ngIf="!groups.length" fxFlex="400px">
-			<mat-card-content>Vous ne faites parti d'aucun groupe.</mat-card-content>
+			<mat-card-content>Vous ne faites partie d'aucun groupe.</mat-card-content>
 		</mat-card>
 	</div>
 </div>

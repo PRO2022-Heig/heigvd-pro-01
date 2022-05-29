@@ -7,12 +7,12 @@
 		<mat-tab-group>
 			<mat-tab>
 				<ng-template mat-tab-label>
-					{{ group.memberships.length }} Participants
+					{{ group.memberships.length }} Membres
 				</ng-template>
 
 				<div>
 					<mat-form-field appearance="fill" fxFlex>
-						<mat-label>Participants</mat-label>
+						<mat-label>Membres</mat-label>
 
 						<mat-chip-list #chipList>
 							<mat-chip *ngFor="let membership of group.memberships" color="primary"
@@ -65,7 +65,7 @@
 						</button>
 					</form>
 
-					<mat-nav-list role="list">
+					<mat-nav-list role="link">
 						<mat-list-item *ngFor="let event of group._events.reverse()"
 									   routerLink="/profile/events" [queryParams]="{id: event.id}">
 							{{ event.name }}

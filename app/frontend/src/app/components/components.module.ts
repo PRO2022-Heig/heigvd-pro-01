@@ -15,6 +15,7 @@ import { MealsComponent } from "./meals/meals.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { UserEventComponent } from "./users/user-events/user-event/user-event.component";
 import { UserEventsComponent } from "./users/user-events/user-events.component";
 import { UserGroupComponent } from "./users/user-groups/user-group/user-group.component";
 import { UserGroupsComponent } from "./users/user-groups/user-groups.component";
@@ -30,6 +31,7 @@ import { UserProfileComponent } from "./users/user-profile/user-profile.componen
 		RecipeComponent,
 		SidebarComponent,
 		ToolbarComponent,
+		UserEventComponent,
 		UserEventsComponent,
 		UserGroupComponent,
 		UserGroupsComponent,

@@ -6,7 +6,7 @@
 			</mat-card-title>
 
 			<div fxFlex fxLayoutAlign="flex-end">
-				<button mat-icon-button (click)="this.state.edit = !this.state.edit; toggleEdition()">
+				<button mat-icon-button type="button" (click)="this.state.edit = !this.state.edit; toggleFormState()">
 					<mat-icon [color]="state.edit ? undefined : 'primary'">edit</mat-icon>
 				</button>
 			</div>
