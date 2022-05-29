@@ -5,11 +5,11 @@ import { Observable, of, throwError } from "rxjs";
 import { apiUrl } from "../../../src/app/api";
 import { HomeMeal } from "../../../src/app/api/home-meal";
 import { RestaurantMeal } from "../../../src/app/api/restaurant-meal";
-import {foodConstraints, meals, users} from "../../mocks/api";
+import {foodConstraints, meals, recipes, users} from "../../mocks/api";
 import {
 	FoodConstraintHttpHandler,
 	HomeMealHttpHandler,
-	MealHttpHandler, RestaurantMealHttpHandler,
+	MealHttpHandler, RecipeHttpHandler, RestaurantMealHttpHandler,
 	TokenHttpHandler,
 	UserHttpHandler
 } from "./http-handlers";
@@ -22,6 +22,7 @@ export class ApiInterceptorTest implements HttpInterceptor {
 		new HomeMealHttpHandler(meals.filter(_ => _.home_type === "home_meal") as HomeMeal[]),
 		new MealHttpHandler(meals),
 		new RestaurantMealHttpHandler(meals.filter(_ => _.home_type === "restaurant_meal") as RestaurantMeal[]),
+		new RecipeHttpHandler(recipes),
 		new UserHttpHandler(users)
 	];
 

@@ -17,6 +17,7 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TagInputModule } from "ngx-chips";
+import {MatChipsModule} from "@angular/material/chips";
 
 
 export const materials = [
@@ -25,6 +26,7 @@ export const materials = [
 	MatButtonModule,
 	MatCardModule,
 	MatCheckboxModule,
+	MatChipsModule,
 	MatExpansionModule,
 	MatDividerModule,
 	MatFormFieldModule,

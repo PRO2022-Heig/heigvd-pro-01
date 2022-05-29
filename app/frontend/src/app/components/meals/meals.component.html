@@ -1,5 +1,5 @@
 <mat-card>
-	<mat-form-field>
+	<mat-form-field appearance="fill">
 		<mat-label>Find a meal</mat-label>
 		<input matInput type="text" [(ngModel)]="searchTerms" placeholder="Ratatouille, spaghettis carbonara...">
 		<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
@@ -7,10 +7,32 @@
 		</button>
 	</mat-form-field>
 
-	<tag-input [(ngModel)]="chosenFoodConstraints" [onlyFromAutocomplete]="true" [identifyBy]="'id'" [displayBy]="'name'">
-		<tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="serverFoodConstraints"  [identifyBy]="'id'" [displayBy]="'name'">
-		</tag-input-dropdown>
-	</tag-input>
+	<mat-form-field appearance="fill">
+		<mat-label>Food constraints</mat-label>
+		<mat-chip-list #chipList>
+			<mat-chip
+				*ngFor="let fc of selectedFoodConstraints"
+				(removed)="unselectFoodConstraint(fc)">
+				{{fc.name}}
+				<button matChipRemove>
+					<mat-icon>cancel</mat-icon>
+				</button>
+			</mat-chip>
+			<input
+				placeholder="Add constraint..."
+				#foodConstraintInput
+				[formControl]="foodConstraintsControl"
+				[matAutocomplete]="auto"
+				[matChipInputFor]="chipList"
+				[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+				(matChipInputTokenEnd)="textualChipInput($event)">
+		</mat-chip-list>
+		<mat-autocomplete #auto="matAutocomplete" (optionSelected)="autocompleteOptionSelected($event)">
+			<mat-option *ngFor="let serverFc of suggestedFoodConstraints" [value]="serverFc">
+				{{serverFc.name}}
+			</mat-option>
+		</mat-autocomplete>
+	</mat-form-field>
 
 	<div class="prep-time">
 		<p>Preparation time</p>
@@ -30,7 +52,7 @@
 </div>
 
 <mat-accordion multi>
-	<mat-expansion-panel *ngFor="let meal of foundMeals"><!-- TODO load recipes when expansion panel is opened -->
+	<mat-expansion-panel *ngFor="let meal of foundMeals" (opened)="loadMealRecipes(meal.id)">
 		<mat-expansion-panel-header>
 			<mat-panel-title>
 				{{meal.name}}
@@ -40,10 +62,21 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 
-		<!-- TODO What to display here? and where to store the data?... -->
-		<div *ngFor="">
-			<div [routerLink]=""></div>
-		</div>
+		<ul>
+			<li *ngFor="let recipe of (recipesForMeal[meal.id] ?? [])">
+				<h1 [routerLink]="['/recipe', recipe.id]" class="recipe-title">
+					{{recipe.name}}
+					&nbsp;&nbsp;&nbsp;
+					{{recipe.numberOfPeople}} <mat-icon>person</mat-icon>
+				</h1>
+				<p>{{recipe.description}}</p>
+			</li>
+		</ul>
+
+
+		<ng-container *ngIf="!recipesForMeal[meal.id]">
+			<mat-spinner></mat-spinner>
+		</ng-container>
 
 	</mat-expansion-panel>
 </mat-accordion>
