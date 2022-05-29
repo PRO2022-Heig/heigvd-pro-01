@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\RestaurantMeal;
 use App\Repository\FoodConstraintRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,6 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: FoodConstraintRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
 class FoodConstraint extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
@@ -26,7 +29,7 @@ class FoodConstraint extends AbstractEntity
     private Collection $ingredients;
 
     #[ORM\ManyToMany(targetEntity: RestaurantMeal::class, mappedBy: "foodConstraint")]
-    private $restaurantMeals;
+    private Collection $restaurantMeals;
 
     public function __construct()
     {
