@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Controller\UserMiController;
 use App\Repository\AppUserRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -15,6 +17,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource(
     collectionOperations: [
+        "get" => [ // Enable the "/app_users" entrypoint
+            // TODO: params?
+        ],
         "post" => [
             "denormalization_context" => [
                 "groups" => [
@@ -45,7 +50,8 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
     itemOperations: [
         "get" => [
-            "security" => "object == user"
+            // Disable the "Can only get myself" and use the default security options
+            // "security" => "object == user"
         ],
         "patch" => [
             "security" => "object == user"
@@ -53,6 +59,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
     normalizationContext: ["groups" => "user:restricted"],
 )]
+#[ApiFilter(SearchFilter::class, properties: ["emailAddress" => "partial", "firstName" => "partial", "lastName" => "partial"])]
 class AppUser extends AbstractEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Column(type: "string", length: 255, unique: true)]

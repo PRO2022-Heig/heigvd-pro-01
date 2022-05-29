@@ -20,10 +20,15 @@ class Event extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\ManyToOne(targetEntity: Meal::class)]
-    private Meal $meal;
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Meal $meal;
+
+    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: "events")]
+    #[ORM\JoinColumn(nullable: false)]
+    private Group $group;
 
     public function getName(): ?string
     {
@@ -57,6 +62,18 @@ class Event extends AbstractEntity
     public function setMeal(?Meal $meal): self
     {
         $this->meal = $meal;
+
+        return $this;
+    }
+
+    public function getGroup(): ?Group
+    {
+        return $this->group;
+    }
+
+    public function setGroup(?Group $group): self
+    {
+        $this->group = $group;
 
         return $this;
     }
