@@ -3,9 +3,11 @@
 namespace App\DataFixtures;
 
 use App\Entity\Ingredient;
+use function array_rand;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class IngredientFixture extends AbstractDataImportFixture
+class IngredientFixture extends AbstractDataImportFixture implements DependentFixtureInterface
 {
     protected const JSON_FILE = "ingredients__product_codes_filtered.json";
 
@@ -13,9 +15,16 @@ class IngredientFixture extends AbstractDataImportFixture
     {
         $data = $this->getJsonData(mandatoryFields: ["ingredient", "products"]);
 
+        $constraints = [
+            "fr:Glute",
+            "fr:amandon",
+            "fr:oursin"
+        ];
         foreach ($data as $key => $item) {
             $ingredient = new Ingredient();
-            $ingredient->setName($item["ingredient"]);
+            $ingredient
+                ->setName($item["ingredient"])
+                ->addFoodConstraint($this->getReference("allergen-" . $constraints[array_rand($constraints)]));
 
             $manager->persist($ingredient);
             $this->addReference("ingredient-" . $key, $ingredient);
@@ -29,5 +38,12 @@ class IngredientFixture extends AbstractDataImportFixture
         }
 
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [
+            FoodConstraintFixture::class
+        ];
     }
 }
