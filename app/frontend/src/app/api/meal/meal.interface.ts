@@ -6,3 +6,7 @@ export interface Meal extends Model {
 
 	home_type: "home_meal" | "restaurant_meal";
 }
+
+export interface MealWithType extends Meal {
+	"@type": "HomeMeal" | "RestaurantMeal";
+}

@@ -19,4 +19,9 @@ export class MealHttpHandler<T extends Model = Meal> extends ModelHttpHandler<T>
 		// TODO: better
 		return stored;
 	}
+
+	protected override canDelete(): boolean {
+		// TODO: better
+		return true;
+	}
 }

@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
+import { ApiTestProviders } from "../../../../../test/helpers/api";
+import { ApiModule } from "../../../api";
+import { MaterialsModule } from "../../../modules";
 import { UserGroupsComponent } from "./user-groups.component";
 
 describe("UserGroupsComponent", () => {
@@ -8,7 +11,9 @@ describe("UserGroupsComponent", () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [UserGroupsComponent]
+			declarations: [UserGroupsComponent],
+			imports: [ApiModule, MaterialsModule],
+			providers: ApiTestProviders
 		})
 			.compileComponents();
 	});

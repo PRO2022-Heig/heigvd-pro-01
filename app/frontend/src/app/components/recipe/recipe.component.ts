@@ -26,7 +26,7 @@ export class RecipeComponent implements OnInit {
 			this.recipe = recipe;
 		});
 		this.stepService.find().then((steps) => {
-			steps.sort((a,b) => a.orderNumber - b.orderNumber);
+			steps.sort((a,b) => a.number - b.number);
 			this.recipeSteps = steps;
 		});
 	}

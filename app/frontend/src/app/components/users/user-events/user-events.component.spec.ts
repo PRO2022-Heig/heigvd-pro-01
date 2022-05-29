@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
 
+import { ApiTestProviders } from "../../../../../test/helpers/api";
+import { ApiModule } from "../../../api";
+import { MaterialsModule } from "../../../modules";
 import { UserEventsComponent } from "./user-events.component";
 
 describe("UserEventsComponent", () => {
@@ -8,7 +12,9 @@ describe("UserEventsComponent", () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [UserEventsComponent]
+			declarations: [UserEventsComponent],
+			imports: [ApiModule, MaterialsModule, RouterTestingModule],
+			providers: ApiTestProviders
 		})
 			.compileComponents();
 	});

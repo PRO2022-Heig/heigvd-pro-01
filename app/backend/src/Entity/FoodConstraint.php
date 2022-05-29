@@ -23,7 +23,7 @@ class FoodConstraint extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: "foodConstraints")]
     private Collection $ingredients;

@@ -1,11 +1,14 @@
 import { Component, OnInit } from "@angular/core";
+import { FormControl, Validators } from "@angular/forms";
 
 import { BaseComponent } from "../../_lib/_basics";
 
 import { AuthService } from "../../../api/auth";
-import { Group, GroupService } from "../../../api/group";
+import { EventService } from "../../../api/event";
+import { GroupService } from "../../../api/group";
 import { GroupUserMembershipService } from "../../../api/group_user_memberships";
-import { User } from "../../../api/user";
+import { User, UserService } from "../../../api/user";
+import { getAllEventsGroups, GroupHelped, GroupUserMembershipHelped } from "../user-event-group.helper";
 
 @Component({
 	selector: "app-user-groups",
@@ -13,50 +16,63 @@ import { User } from "../../../api/user";
 	styleUrls: ["./user-groups.component.scss"]
 })
 export class UserGroupsComponent extends BaseComponent implements OnInit {
-	public groups!: Group[];
+	public groups: GroupHelped[] = [];
+	public user!: User;
 
-	private user!: User;
+	public loading = false;
+
+	public readonly addGroupCtrl = new FormControl("", [Validators.required]);
 
 	public constructor(
 		private readonly service: GroupService,
 		private readonly authService: AuthService,
-		private readonly gumService: GroupUserMembershipService
+		private readonly eventService: EventService,
+		private readonly groupService: GroupService,
+		private readonly guMembershipService: GroupUserMembershipService,
+		private readonly userService: UserService
 	) {
 		super();
 	}
 
 	public async ngOnInit() {
 		this.addSubscriptions(
-			// The user is logged in, otherwise the authentication guard would have redirected the page.
+			// The user is logged in, otherwise the authentication guard would have redirected to the login page.
 			this.authService.getUser().subscribe(_ => this.user = _)
 		);
 
-		this.groups = await this.loadGroups();
+		this.loading = true;
+		// TODO: reload button
+		this.groups = await getAllEventsGroups({
+			eventService: this.eventService,
+			groupService: this.groupService,
+			guMembershipService: this.guMembershipService,
+			userService: this.userService
+		}, this.user).then(_ => _.groups);
+
+		this.loading = false;
 	}
 
-	private async loadGroups() {
-		const myGroupIds = await this.gumService.find({
-			"user.id": this.user.id
-		}).then(_ => _.map(_ => _.__group));
+	public async createGroup() {
+		if (!this.addGroupCtrl.valid)
+			return;
 
-		const groups = await this.service.find({id: myGroupIds});
+		return this.service.create<GroupHelped>({name: this.addGroupCtrl.value}).then(async group => {
+			const membership = await this.guMembershipService.create<GroupUserMembershipHelped>({
+				isAdmin: true,
+				group: group["@id"],
+				user: this.user["@id"]
+			});
 
-		// TODO: set number of user per group (or load all users and them?)
-		/*const allUserGM = await this.gumService.find({
-			"group.id": groups.map(_ => _.id)
-		});*/
+			group._events = [];
+			membership._user = this.user;
+			group.memberships = [membership];
 
-		return groups;
-	}
-
-	private async create(name: string) {
-		// TODO: complete
-		const group = await this.service.create({name});
-
-		return this.gumService.create({
-			isAdmin: true,
-			group: group["@id"],
-			user: this.user["@id"]
+			this.addGroupCtrl.setValue("");
+			this.groups.push(group);
 		});
+	}
+
+	public removedGroup(group: GroupHelped) {
+		this.groups.splice(this.groups.findIndex(_ => _.id === group.id), 1);
 	}
 }

@@ -19,7 +19,7 @@ class Provider extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\OneToMany(mappedBy: "provider", targetEntity: Product::class, orphanRemoval: true)]
     private Collection $products;

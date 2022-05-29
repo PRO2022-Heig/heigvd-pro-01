@@ -22,4 +22,9 @@ export class UserHttpHandler extends ModelHttpHandler<User> {
 		// TODO: better
 		return stored;
 	}
+
+	protected override canDelete(): boolean {
+		// TODO: better
+		return true;
+	}
 }

@@ -3,14 +3,11 @@ import { Provider } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
 
 import { apiUrl } from "../../../src/app/api";
-import { HomeMeal } from "../../../src/app/api/home-meal";
-import { RestaurantMeal } from "../../../src/app/api/restaurant-meal";
-import {foodConstraints, meals, recipes, users} from "../../mocks/api";
-import {steps} from "../../mocks/api/steps";
+import { events, groups, group_user_memberships, meals, users } from "../../mocks/api";
 import {
-	FoodConstraintHttpHandler,
-	HomeMealHttpHandler,
-	MealHttpHandler, RecipeHttpHandler, RestaurantMealHttpHandler, StepHttpHandler,
+	EventHttpHandler,
+	GroupHttpHandler,
+	GroupUserMembershipHttpHandler, MealHttpHandler,
 	TokenHttpHandler,
 	UserHttpHandler
 } from "./http-handlers";
@@ -19,6 +16,9 @@ import { HttpHandlerTest } from "./http-handlers/http-handler.interface.test";
 export class ApiInterceptorTest implements HttpInterceptor {
 	private readonly handlers: HttpHandlerTest[] = [
 		new TokenHttpHandler(),
+		new EventHttpHandler(events),
+		new GroupHttpHandler(groups),
+		new GroupUserMembershipHttpHandler(group_user_memberships),
 		new FoodConstraintHttpHandler(foodConstraints),
 		new HomeMealHttpHandler(meals.filter(_ => _.home_type === "home_meal") as HomeMeal[]),
 		new MealHttpHandler(meals),

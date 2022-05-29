@@ -29,8 +29,7 @@ class Recipe extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    #[Groups(["recipe:list"])]
-    private string $description;
+    private ?string $description;
 
     #[ORM\Column(type: "integer")]
     #[Assert\GreaterThan(0)]
