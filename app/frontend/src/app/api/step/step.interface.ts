@@ -1,6 +1,9 @@
-import { Model } from "../_lib/model";
+import { Model, ModelId } from "../_lib/model";
 
 export interface Step extends Model {
 	action: string;
-	orderNumber: number;
+	number: number;
+
+	recipe: string;
+	__recipe: ModelId; // decoded
 }

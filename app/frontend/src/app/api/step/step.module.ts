@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import {StepService} from "./step.service";
+
+import { StepService } from "./step.service";
 
 @NgModule({
 	providers: [StepService]

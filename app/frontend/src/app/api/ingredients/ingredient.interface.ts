@@ -6,13 +6,6 @@ export interface Ingredient extends Model {
 
 	// TODO: complete
 	// TODO: productId?
+	foodConstraints: string[];
+	products: string[];
 }
-
-/*
-export interface Ingredient extends Model {
-	name: string;
-	description: string;
-	quantity: number;
-	unit: string;
-}
-*/

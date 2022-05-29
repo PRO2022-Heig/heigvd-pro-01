@@ -22,6 +22,19 @@ export interface ModelSearch<T> {
 	// TODO: more
 }
 
+export interface ModelNumberFilter {
+	// greater
+	gt?: number;
+	// greater or equal
+	gte?: number;
+	// lesser
+	lt?: number;
+	// lesser or equal
+	lte?: number;
+
+	// TODO: add between?
+}
+
 export interface ModelSearchParams<T> {
 	limit?: number;
 	skip?: number;

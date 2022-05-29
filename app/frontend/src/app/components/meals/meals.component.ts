@@ -1,14 +1,14 @@
-import {COMMA, ENTER} from "@angular/cdk/keycodes";
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
-import {FormControl} from "@angular/forms";
-import { debounceTime, distinctUntilChanged, filter, switchMap} from "rxjs";
+import { COMMA, ENTER } from "@angular/cdk/keycodes";
+import { Component, ElementRef, ViewChild } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
+import { MatChipInputEvent } from "@angular/material/chips";
+import { debounceTime, distinctUntilChanged, filter, switchMap } from "rxjs";
+import { map } from "rxjs/operators";
 
-import {FoodConstraint, FoodConstraintService} from "../../api/food-constraint";
-import {Meal, MealService} from "../../api/meal";
-import {Recipe, RecipeService} from "../../api/recipe";
-import {MatAutocomplete, MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
-import {MatChipInputEvent} from "@angular/material/chips";
-import {map} from "rxjs/operators";
+import { FoodConstraint, FoodConstraintService } from "../../api/food-constraint";
+import { Meal, MealService } from "../../api/meal";
+import { Recipe, RecipeService } from "../../api/recipe";
 
 @Component({
 	selector: "app-meals",

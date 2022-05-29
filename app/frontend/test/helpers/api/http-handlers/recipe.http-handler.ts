@@ -1,6 +1,7 @@
 import { Model } from "../../../../src/app/api/_lib/model";
-import { ModelHttpHandler } from "./model.http-handler";
+
 import { Recipe, RecipeService } from "../../../../src/app/api/recipe";
+import { ModelHttpHandler } from "./model.http-handler";
 
 export class RecipeHttpHandler<T extends Model = Recipe> extends ModelHttpHandler<T> {
 	protected override getEntryPoint(): string {

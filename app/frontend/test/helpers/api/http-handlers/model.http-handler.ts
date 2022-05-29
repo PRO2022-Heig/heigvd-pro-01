@@ -75,21 +75,6 @@ export abstract class ModelHttpHandler<T extends Model> implements HttpHandlerTe
 		return request.method === HTTP_METHOD.PATCH && !isNaN(+this.getAction(params).substring(1));
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected handleFind(params: HttpHandlerTestParams, request: HttpRequest<unknown>): HttpResponseBase {
-		// TODO: override in children
-
-		return new HttpResponse({
-			// TODO: this in another function?
-			body: {
-				"hydra:member": this.mocks,
-				"hydra:totalItems": this.mocks.length
-			} as ModelFindResponse<T>,
-			url: params.fullUri,
-			status: 200
-		});
-	}
-
 	/**
 	 * Determine if the request is a "delete" request
 	 */

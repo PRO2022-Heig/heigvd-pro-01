@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import {Recipe, RecipeService} from "../../api/recipe";
-import {Step, StepService} from "../../api/step";
-import {ActivatedRoute, Router} from "@angular/router";
-import {IngredientService} from "../../api/ingredients";
+import { ActivatedRoute, Router } from "@angular/router";
+
+import { IngredientService } from "../../api/ingredients";
+import { Recipe, RecipeService } from "../../api/recipe";
+import { Step, StepService } from "../../api/step";
 
 @Component({
   selector: "app-recipe",

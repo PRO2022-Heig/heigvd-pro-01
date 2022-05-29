@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 
 import { ModelService } from "../_lib/model";
 
-import {Step} from "./step.interface";
+import { recipeDecodeEntityName } from "../recipe";
+import { Step } from "./step.interface";
 
 @Injectable({
 	providedIn: "root"
@@ -12,7 +13,11 @@ export class StepService extends ModelService<Step> {
 
 	public readonly entryPoint = StepService.ENTRY_POINT;
 
-	protected override _decode() {
-		// Do nothing
+	protected override _decode(model: Step) {
+		Object.defineProperty(model, "__recipe" as keyof Step, {
+			get: () => recipeDecodeEntityName(model.recipe)
+		});
+
+		return model;
 	}
 }

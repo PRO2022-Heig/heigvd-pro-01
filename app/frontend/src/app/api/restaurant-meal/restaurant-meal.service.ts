@@ -1,24 +1,41 @@
 import { Injectable } from "@angular/core";
 
-import { Model, ModelId, ModelService } from "../_lib/model";
+import { Model, ModelId } from "../_lib/model";
 
-import { MealSearch } from "../meal";
+import { ApiClientModule } from "../api-client.module";
+import { FoodConstraintService } from "../food-constraint";
+import { MealSearch, MealService } from "../meal";
+import { restaurantDecodeEntityName } from "../restaurant/restaurant.constants";
 import { RestaurantMeal } from "./restaurant-meal.interface";
 
 // TODO
 export interface RestaurantMealSearch extends MealSearch {
-	"foodConstraint.id": ModelId | Model[];
+	"foodConstraint.id"?: ModelId | Model[];
 }
 
 @Injectable({
 	providedIn: "root"
 })
-export class RestaurantMealService extends ModelService<RestaurantMeal, RestaurantMealSearch> {
-	public static readonly ENTRY_POINT = "/restaurant_meals";
+export class RestaurantMealService extends MealService<RestaurantMeal, RestaurantMealSearch> {
+	public static override readonly ENTRY_POINT = "/restaurant_meals";
 
-	public readonly entryPoint = RestaurantMealService.ENTRY_POINT;
+	public override readonly entryPoint = RestaurantMealService.ENTRY_POINT;
 
-	protected override _decode() {
-		// Do nothing
+	public constructor(
+		client: ApiClientModule,
+		protected readonly foodConstraintService: FoodConstraintService) {
+		super(client);
+	}
+
+	protected override _decode(model: RestaurantMeal) {
+		Object.defineProperty(model, "__foodConstraint" as keyof RestaurantMeal, {
+			get: () => model.foodConstraint.map(_ => this.foodConstraintService.decodeEntityName(_))
+		});
+
+		Object.defineProperty(model, "__restaurant" as keyof RestaurantMeal, {
+			get: () => restaurantDecodeEntityName(model.restaurant)
+		});
+
+		return model;
 	}
 }
