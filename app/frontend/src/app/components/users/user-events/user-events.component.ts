@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { ActivatedRoute } from "@angular/router";
 
 import { BaseComponent } from "../../_lib/_basics";
 
@@ -9,6 +11,7 @@ import { GroupUserMembershipService } from "../../../api/group_user_memberships"
 import { Meal, MealService } from "../../../api/meal";
 import { User, UserService } from "../../../api/user";
 import { EventHelped, getAllEventsGroups } from "../user-event-group.helper";
+import { UserEventComponent } from "./user-event/user-event.component";
 
 export interface EventHelpedMeal extends EventHelped {
 	_meal?: Meal;
@@ -31,7 +34,9 @@ export class UserEventsComponent extends BaseComponent implements OnInit {
 		private readonly groupService: GroupService,
 		private readonly guMembershipService: GroupUserMembershipService,
 		private readonly mealService: MealService,
-		private readonly userService: UserService
+		private readonly userService: UserService,
+		private readonly activatedRoute: ActivatedRoute,
+		private readonly dialog: MatDialog
 	) {
 		super();
 	}
@@ -56,12 +61,27 @@ export class UserEventsComponent extends BaseComponent implements OnInit {
 			}) : [];
 
 			for (const event of eventsMeal)
-				event._meal = meals.splice(meals.findIndex(_ => _.id === event.__meal), 1)[0];
+				event._meal = meals.find(_ => _.id === event.__meal);
 
 			return events;
 		});
 
 		this.loading = false;
+
+		this.addSubscriptions(
+			this.activatedRoute.queryParams.subscribe(params => {
+				if (params.id) {
+					const event = this.events.find(_ => _.id === +params.id);
+					if (event) {
+						const ref = this.dialog.open(UserEventComponent);
+
+						ref.componentInstance.event = event;
+						ref.componentInstance.ngOnInit();
+						ref.componentInstance.ngOnChanges();
+					}
+				}
+			})
+		);
 	}
 
 	public removedEvent(event: EventHelpedMeal) {

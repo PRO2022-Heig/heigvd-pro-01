@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { ApiModule } from "../../../api";
+import { MaterialsModule } from "../../../modules";
 import { UserProfileComponent } from "./user-profile.component";
 
 describe("UserProfileComponent", () => {
@@ -10,7 +12,7 @@ describe("UserProfileComponent", () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [UserProfileComponent],
-			imports: [ApiModule]
+			imports: [ApiModule, MaterialsModule, RouterTestingModule]
 		})
 			.compileComponents();
 	});

@@ -3,13 +3,23 @@ import { Provider } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
 
 import { apiUrl } from "../../../src/app/api";
-import { users } from "../../mocks/api";
-import { TokenHttpHandler, UserHttpHandler } from "./http-handlers";
+import { events, groups, group_user_memberships, meals, users } from "../../mocks/api";
+import {
+	EventHttpHandler,
+	GroupHttpHandler,
+	GroupUserMembershipHttpHandler, MealHttpHandler,
+	TokenHttpHandler,
+	UserHttpHandler
+} from "./http-handlers";
 import { HttpHandlerTest } from "./http-handlers/http-handler.interface.test";
 
 export class ApiInterceptorTest implements HttpInterceptor {
 	private readonly handlers: HttpHandlerTest[] = [
 		new TokenHttpHandler(),
+		new EventHttpHandler(events),
+		new GroupHttpHandler(groups),
+		new GroupUserMembershipHttpHandler(group_user_memberships),
+		new MealHttpHandler(meals),
 		new UserHttpHandler(users)
 	];
 

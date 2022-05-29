@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
+import { ApiModule } from "../../api";
+import { MaterialsModule } from "../../modules";
+import { ToolbarComponent } from "../toolbar/toolbar.component";
 import { SidebarComponent } from "./sidebar.component";
 
 describe("SidebarComponent", () => {
@@ -8,7 +11,8 @@ describe("SidebarComponent", () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [SidebarComponent]
+			declarations: [SidebarComponent, ToolbarComponent],
+			imports: [ApiModule, MaterialsModule]
 		})
 			.compileComponents();
 	});
