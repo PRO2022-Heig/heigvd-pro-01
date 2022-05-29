@@ -17,7 +17,7 @@ class Product extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
