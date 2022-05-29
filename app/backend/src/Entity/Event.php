@@ -17,7 +17,7 @@ class Event extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\ManyToOne(targetEntity: Meal::class)]
     private Meal $meal;
