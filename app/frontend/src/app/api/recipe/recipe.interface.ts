@@ -6,5 +6,4 @@ export interface Recipe extends Model {
 	name: string;
 	description: string;
 	numberOfPeople: number;
-	steps: Array<RecipeStep>
 }

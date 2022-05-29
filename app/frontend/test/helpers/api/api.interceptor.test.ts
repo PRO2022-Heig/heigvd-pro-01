@@ -6,10 +6,11 @@ import { apiUrl } from "../../../src/app/api";
 import { HomeMeal } from "../../../src/app/api/home-meal";
 import { RestaurantMeal } from "../../../src/app/api/restaurant-meal";
 import {foodConstraints, meals, recipes, users} from "../../mocks/api";
+import {steps} from "../../mocks/api/steps";
 import {
 	FoodConstraintHttpHandler,
 	HomeMealHttpHandler,
-	MealHttpHandler, RecipeHttpHandler, RestaurantMealHttpHandler,
+	MealHttpHandler, RecipeHttpHandler, RestaurantMealHttpHandler, StepHttpHandler,
 	TokenHttpHandler,
 	UserHttpHandler
 } from "./http-handlers";
@@ -23,6 +24,7 @@ export class ApiInterceptorTest implements HttpInterceptor {
 		new MealHttpHandler(meals),
 		new RestaurantMealHttpHandler(meals.filter(_ => _.home_type === "restaurant_meal") as RestaurantMeal[]),
 		new RecipeHttpHandler(recipes),
+		new StepHttpHandler(steps),
 		new UserHttpHandler(users)
 	];
 
