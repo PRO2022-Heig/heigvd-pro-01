@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import {Recipe} from "../../api/recipe";
+import {Recipe, RecipeService} from "../../api/recipe";
+import {Step, StepService} from "../../api/step";
+import {ActivatedRoute, Router} from "@angular/router";
+import {IngredientService} from "../../api/ingredients";
 
 @Component({
   selector: "app-recipe",
@@ -8,45 +11,23 @@ import {Recipe} from "../../api/recipe";
 })
 export class RecipeComponent implements OnInit {
 
-	/*private recipe$ = of({
-		"id": 2,
-		"name": "Spaghetti carbonara traditionnels",
-		"description": "Ingrédients utilisés dans la recette classique.",
-		"nbPeopleServed": 2,
-		"steps": [
-			{
-				"action": "Mettre l'eau dans une casserole, ajouter le sel, faire bouillir et y ajouter les pâtes.",
-				"orderNumber": 1,
-				"ingredients": [
-					{
-						"name": "spaghettis",
-						"description": "???",
-						"quantity": 200,
-						"unit": "g"
-					},
-					{
-						"name": "sel",
-						"description": "???",
-						"quantity": 1,
-						"unit": "cc"
-					},
-					{
-						"name": "eau",
-						"description": "???",
-						"quantity": 1,
-						"unit": "litre"
-					}
-				]
-			}
-		]
-	}) as Observable<Recipe>;*/
-
 	public recipe : Recipe | null = null;
+	public recipeSteps : Step[] | null = null;
+	public asdf:string | null= "";
+
+	public constructor(private recipeService: RecipeService, private stepService: StepService,
+					   private ingredientService: IngredientService, private route: ActivatedRoute,
+					   private router: Router  ) {
+		this.asdf = this.route.snapshot.paramMap.get("id");
+	}
 
 	public ngOnInit() {
-	  /*this.recipe$.subscribe((_recipe) => {
-		  _recipe.steps.sort((a,b) => a.orderNumber - b.orderNumber);
-		  this.recipe = _recipe;
-	  });*/
+		this.recipeService.get(1).then((recipe) => {
+			this.recipe = recipe;
+		});
+		this.stepService.find().then((steps) => {
+			steps.sort((a,b) => a.orderNumber - b.orderNumber);
+			this.recipeSteps = steps;
+		});
 	}
 }
