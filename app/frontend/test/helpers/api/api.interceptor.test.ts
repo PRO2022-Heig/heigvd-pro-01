@@ -3,11 +3,20 @@ import { Provider } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
 
 import { apiUrl } from "../../../src/app/api";
-import { events, groups, group_user_memberships, meals, users } from "../../mocks/api";
+import { HomeMeal } from "../../../src/app/api/home-meal";
+import { RestaurantMeal } from "../../../src/app/api/restaurant-meal";
+import { events, foodConstraints, groups, group_user_memberships, ingredients, meals, products, recipes, steps, users } from "../../mocks/api";
 import {
 	EventHttpHandler,
+	FoodConstraintHttpHandler,
 	GroupHttpHandler,
-	GroupUserMembershipHttpHandler, MealHttpHandler,
+	GroupUserMembershipHttpHandler,
+	HomeMealHttpHandler, IngredientHttpHandler,
+	MealHttpHandler,
+	ProductHttpHandler,
+	RecipeHttpHandler,
+	RestaurantMealHttpHandler,
+	StepHttpHandler,
 	TokenHttpHandler,
 	UserHttpHandler
 } from "./http-handlers";
@@ -20,10 +29,12 @@ export class ApiInterceptorTest implements HttpInterceptor {
 		new GroupHttpHandler(groups),
 		new GroupUserMembershipHttpHandler(group_user_memberships),
 		new FoodConstraintHttpHandler(foodConstraints),
-		new HomeMealHttpHandler(meals.filter(_ => _.home_type === "home_meal") as HomeMeal[]),
+		new HomeMealHttpHandler(meals.filter(_ => _.home_type === "home_meal") as unknown as HomeMeal[]),
+		new IngredientHttpHandler(ingredients),
 		new MealHttpHandler(meals),
-		new RestaurantMealHttpHandler(meals.filter(_ => _.home_type === "restaurant_meal") as RestaurantMeal[]),
+		new ProductHttpHandler(products),
 		new RecipeHttpHandler(recipes),
+		new RestaurantMealHttpHandler(meals.filter(_ => _.home_type === "restaurant_meal") as unknown as RestaurantMeal[]),
 		new StepHttpHandler(steps),
 		new UserHttpHandler(users)
 	];
@@ -46,7 +57,10 @@ export class ApiInterceptorTest implements HttpInterceptor {
 					uri = uri.substring(0, paramPos);
 			}
 
-			const response = handler.handle({uri, fullUri}, request);
+			const response = handler.handle({
+				uri,
+				fullUri
+			}, request);
 			return response.status >= 400
 				? throwError(() => response)
 				: of(response as HttpResponse<unknown>);
