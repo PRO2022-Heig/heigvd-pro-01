@@ -1,0 +1,23 @@
+:host {
+	position: relative;
+	text-align: center;
+
+	h1 {
+		padding-top: 7rem;
+		padding-bottom: 2rem;
+		font-size: 4rem;
+	}
+
+	p {
+		font-size: 2rem;
+		line-height: 1.4;
+	}
+}
+
+.confused-travolta {
+	position: absolute;
+	width: 26vw;
+	bottom: 0;
+	left: 50%;
+	margin-left: -13vw;
+}

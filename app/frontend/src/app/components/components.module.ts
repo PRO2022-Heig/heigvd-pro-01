@@ -15,6 +15,7 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { UserProfileComponent } from "./users/user-profile/user-profile.component";
 import {RecipeComponent} from "./recipe/recipe.component";
 import {FormsModule} from "@angular/forms";
+import { NotFoundComponent } from './not-found/not-found/not-found.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +26,8 @@ import {FormsModule} from "@angular/forms";
 		MealsComponent,
 		RecipeComponent,
 		SidebarComponent,
-		UserProfileComponent
+		UserProfileComponent,
+  NotFoundComponent
 	],
 	imports: [
 		AppRoutingModule,

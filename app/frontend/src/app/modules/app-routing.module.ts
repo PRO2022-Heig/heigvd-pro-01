@@ -7,6 +7,7 @@ import { MealsComponent } from "../components/meals/meals.component";
 import { RecipeComponent } from "../components/recipe/recipe.component";
 import { UserProfileComponent } from "../components/users/user-profile/user-profile.component";
 import { AuthGuard } from "../guards";
+import {NotFoundComponent} from "../components/not-found/not-found/not-found.component";
 
 const routes: Routes = [{
 	component: UserProfileComponent,
@@ -28,6 +29,9 @@ const routes: Routes = [{
 }, {
 	component: RecipeComponent,
 	path: "recipe/:id"
+}, {
+	component: NotFoundComponent,
+	path: "**"
 }];
 
 @NgModule({
