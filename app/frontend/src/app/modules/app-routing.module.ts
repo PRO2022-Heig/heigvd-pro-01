@@ -30,6 +30,10 @@ const routes: Routes = [{
 	component: RecipeComponent,
 	path: "recipe/:id"
 }, {
+	path: "",
+	redirectTo: "/meals",
+	pathMatch: "full"
+}, {
 	component: NotFoundComponent,
 	path: "**"
 }];
