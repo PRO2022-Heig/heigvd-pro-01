@@ -40,7 +40,7 @@ RUN mkdir -p /var/symfony && chown -R www-data:www-data /var/symfony && chmod 77
 
 FROM base as backend
 ENV APP_ENV=prod
-ENV VAR_DIR=
+ENV VAR_DIR=/var/symfony
 # Copy site into place.
 COPY ./backend /app
 RUN ln -s /app /var/www/app && ln -s /app/setup.sh /setup.sh
