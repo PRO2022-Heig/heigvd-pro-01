@@ -5,10 +5,10 @@ import { ModelNumberFilter, ModelSearch } from "../_lib/model/model.types";
 
 import { ApiClientModule } from "../api-client.module";
 import { HomeMealService } from "../home-meal";
+import { IngredientService } from "../ingredients";
 import { StepService } from "../step";
 import { RECIPES_ENTRY_POINT} from "./recipe.constants";
 import { Recipe, RecipeIngredient } from "./recipe.interface";
-import { IngredientService } from "../ingredients";
 
 export interface RecipeSearch extends ModelSearch<Recipe>, Partial<Pick<Recipe, "name" | "description">> {
 	"meals.id"?: ModelId | ModelId[];
