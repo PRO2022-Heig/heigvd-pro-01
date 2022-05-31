@@ -8,6 +8,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\HomeMeal;
+use App\Filters\NotInFilter;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -21,6 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
 #[ApiFilter(NumericFilter::class, properties: ["meals.id"])]
 #[ApiFilter(RangeFilter::class, properties: ["numberOfPeople", "duration"])]
+#[ApiFilter(NotInFilter::class, properties: ["ingredients.ingredient.products.foodConstraints.id"])]
 class Recipe extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
