@@ -46,7 +46,8 @@ class Unit extends AbstractEntity
     {
         return [
             "volume",
-            "wight"
+            "weight",
+            "undefined"
         ];
     }
 }

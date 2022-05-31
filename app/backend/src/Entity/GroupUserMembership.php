@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
     itemOperations: [
         "get" => [],
         "delete" => [
-            "security" => "object.getUser() == user"
+            "security" => "object.getUser() == user || object.getGroup().isAdmin(user)"
         ],
     ],
 )]

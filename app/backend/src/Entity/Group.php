@@ -22,6 +22,9 @@ class Group extends AbstractEntity
     #[ORM\OneToMany(mappedBy: "group", targetEntity: Event::class, orphanRemoval: true)]
     private Collection $events;
 
+    #[ORM\OneToMany(mappedBy: "group", targetEntity: GroupUserMembership::class, orphanRemoval: true)]
+    private Collection $groupUserMemberships;
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
@@ -67,5 +70,19 @@ class Group extends AbstractEntity
         }
 
         return $this;
+    }
+
+    public function isAdmin(AppUser $appUser)
+    {
+        /**
+         * @var $groupUseryMembership \App\Entity\GroupUserMembership
+         */
+        foreach ($this->groupUserMemberships as $groupUserMembership) {
+            if ($groupUserMembership->getIsAdmin() && $groupUserMembership->getUser()->getId() == $appUser->getId()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
