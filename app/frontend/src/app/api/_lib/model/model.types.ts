@@ -36,9 +36,11 @@ export interface ModelNumberFilter {
 }
 
 export interface ModelSearchParams<T> {
+	page?: number;
+
+	// TODO (hypothetical)
 	limit?: number;
 	skip?: number;
-	// TODO (hypothetical)
 	sort?: ModelSort<T>;
 }
 

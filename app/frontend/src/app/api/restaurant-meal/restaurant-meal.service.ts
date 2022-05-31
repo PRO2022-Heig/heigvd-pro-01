@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { Model, ModelId } from "../_lib/model";
+import { ModelId } from "../_lib/model";
 
 import { ApiClientModule } from "../api-client.module";
 import { FoodConstraintService } from "../food-constraint";
@@ -10,7 +10,7 @@ import { RestaurantMeal } from "./restaurant-meal.interface";
 
 // TODO
 export interface RestaurantMealSearch extends MealSearch {
-	"foodConstraint.id"?: ModelId | Model[];
+	"foodConstraint.id"?: ModelId | ModelId[];
 }
 
 @Injectable({
@@ -35,6 +35,8 @@ export class RestaurantMealService extends MealService<RestaurantMeal, Restauran
 		Object.defineProperty(model, "__restaurant" as keyof RestaurantMeal, {
 			get: () => restaurantDecodeEntityName(model.restaurant)
 		});
+
+		model.home_type = "restaurant_meal";
 
 		return model;
 	}

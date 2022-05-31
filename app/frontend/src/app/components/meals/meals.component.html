@@ -1,82 +1,117 @@
-<mat-card>
-	<mat-form-field appearance="fill">
-		<mat-label>Find a meal</mat-label>
-		<input matInput type="text" [(ngModel)]="searchTerms" placeholder="Ratatouille, spaghettis carbonara...">
-		<button *ngIf="searchTerms" matSuffix mat-icon-button aria-label="Clear" (click)="launchSearch()">
-			<mat-icon>search</mat-icon>
-		</button>
-	</mat-form-field>
+<div id="host">
+	<mat-card>
+		<mat-card-content>
+			<form [formGroup]="searchForm" (ngSubmit)="runSearch()" fxLayout="column">
+				<mat-form-field appearance="fill">
+					<mat-label>Recherche par nom</mat-label>
 
-	<mat-form-field appearance="fill">
-		<mat-label>Food constraints</mat-label>
-		<mat-chip-list #chipList>
-			<mat-chip
-				*ngFor="let fc of selectedFoodConstraints"
-				(removed)="unselectFoodConstraint(fc)">
-				{{fc.name}}
-				<button matChipRemove>
-					<mat-icon>cancel</mat-icon>
-				</button>
-			</mat-chip>
-			<input
-				placeholder="Add constraint..."
-				#foodConstraintInput
-				[formControl]="foodConstraintsControl"
-				[matAutocomplete]="auto"
-				[matChipInputFor]="chipList"
-				[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-				(matChipInputTokenEnd)="textualChipInput($event)">
-		</mat-chip-list>
-		<mat-autocomplete #auto="matAutocomplete" (optionSelected)="autocompleteOptionSelected($event)">
-			<mat-option *ngFor="let serverFc of suggestedFoodConstraints" [value]="serverFc">
-				{{serverFc.name}}
-			</mat-option>
-		</mat-autocomplete>
-	</mat-form-field>
+					<input matInput type="text" placeholder="Ratatouille, spaghettis carbonara, ..."
+						   [formControl]="searchForm.controls.name">
 
-	<div class="prep-time">
-		<p>Preparation time</p>
-		<mat-slider step="5" min="0" max="90" (input)="minutes = $event.value || 0;" color="primary"></mat-slider>
-		<div>
-			<ng-container *ngIf="minutes > 0">{{minutes}} minutes</ng-container>
-			<ng-container *ngIf="minutes == 0">Nevermind</ng-container>
+					<button matSuffix mat-icon-button aria-label="Clear">
+						<mat-icon>search</mat-icon>
+					</button>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Contraintes d'exclusion</mat-label>
+					<mat-chip-list #chipList [formControl]="searchForm.controls.constraints">
+						<mat-chip
+							*ngFor="let constraint of searchForm.value.constraints"
+							(removed)="removeConstraint(constraint)">
+
+							{{ constraint.name }}
+
+							<button matChipRemove>
+								<mat-icon>cancel</mat-icon>
+							</button>
+						</mat-chip>
+
+						<input
+							placeholder="Ajouter une contrainte"
+							[formControl]="constraintSearch"
+							[matAutocomplete]="auto"
+							[matChipInputFor]="chipList"
+							[value]="constraintSearch.value">
+					</mat-chip-list>
+
+					<mat-autocomplete #auto="matAutocomplete" (optionSelected)="addConstraint($event.option.value)">
+						<mat-option *ngFor="let constraint of foodConstraints" [value]="constraint">
+							{{ constraint.name }} <span *ngIf="constraint.description">- {{ constraint.description }}</span>
+						</mat-option>
+					</mat-autocomplete>
+				</mat-form-field>
+
+				<mat-radio-group id="meal-types" [formControl]="searchForm.controls.mealType">
+					<mat-radio-button color="primary" value="home_meal">Maison</mat-radio-button>
+					<mat-radio-button color="primary" value="restaurant_meal">Restaurant</mat-radio-button>
+				</mat-radio-group>
+
+				<div *ngIf="searchForm.value.mealType === 'home_meal'" id="ngx-slider">
+					<h2>Temps de préparation</h2>
+
+					<ngx-slider label="Temps de préparation"
+								[value]="searchForm.value.timeMin" [highValue]="searchForm.value.timeMax"
+								[options]="SLIDER_OPTIONS"
+								(valueChange)="searchForm.controls.timeMin.setValue($event)"
+								(highValueChange)="searchForm.controls.timeMax.setValue($event)"
+					></ngx-slider>
+				</div>
+			</form>
+		</mat-card-content>
+
+		<mat-card-actions>
+			<button color="primary" mat-flat-button type="submit" (click)="runSearch()">
+				Rechercher <mat-icon>search</mat-icon>
+			</button>
+		</mat-card-actions>
+	</mat-card>
+
+	<div *ngIf="meals">
+		<div class="meals-sep">
+			<h1 id="meals-result-title">Résultats</h1>
+			<p>{{ meals.data.length }} repas trouvé(s) sur {{ meals.pagination.total }}</p>
+		</div>
+
+		<mat-accordion>
+			<mat-expansion-panel *ngFor="let meal of meals.data" (opened)="loadRecipes(meal)">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						{{ meal.name }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ meal.description }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+
+				<ng-container *ngIf="meal.recipeState && meal.home_type === 'home_meal'">
+					<div *ngIf="meal.recipeState.loading" fxLayoutAlign="center center">
+						<mat-spinner></mat-spinner>
+					</div>
+
+					<div *ngIf="!meal.recipeState.error && !meal.recipeState.loading">
+						<mat-nav-list>
+							<mat-list-item *ngFor="let recipe of meal.recipeState.recipes" [routerLink]="['/recipe', recipe.id]">
+								<div matLine>{{ recipe.name }}</div>
+								<div matLine>{{ recipe.description }}</div>
+
+								 {{ recipe.numberOfPeople }} <mat-icon>person</mat-icon>
+							</mat-list-item>
+						</mat-nav-list>
+
+						<p *ngIf="!meal.recipeState.recipes.length">Pas de recettes trouvées.</p>
+					</div>
+				</ng-container>
+
+				<ng-container *ngIf="meal.home_type === 'restaurant_meal'">
+					<div>Il n'y pas de recette pour un plat fourni dans un restaurant.</div>
+				</ng-container>
+			</mat-expansion-panel>
+		</mat-accordion>
+
+		<div class="meals-sep" fxLayout="column">
+			<button *ngIf="meals.data.length < meals.pagination.total" fxFlex mat-button
+					(click)="nextPage()">Charger plus</button>
 		</div>
 	</div>
-
-	<button mat-flat-button color="primary" (click)="launchSearch()">Find meals</button>
-</mat-card>
-
-<div class="results-title">
-	<h1>Résultats</h1>
-	<p>{{foundMeals.length}} repas trouvé(s)</p>
 </div>
-
-<mat-accordion multi>
-	<mat-expansion-panel *ngFor="let meal of foundMeals" (opened)="loadMealRecipes(meal.id)">
-		<mat-expansion-panel-header>
-			<mat-panel-title>
-				{{meal.name}}
-			</mat-panel-title>
-			<mat-panel-description>
-				{{meal.description}}
-			</mat-panel-description>
-		</mat-expansion-panel-header>
-
-		<ul>
-			<li *ngFor="let recipe of (recipesForMeal[meal.id] ?? [])">
-				<h1 [routerLink]="['/recipe', recipe.id]" class="recipe-title">
-					{{recipe.name}}
-					&nbsp;&nbsp;&nbsp;
-					{{recipe.numberOfPeople}} <mat-icon>person</mat-icon>
-				</h1>
-				<p>{{recipe.description}}</p>
-			</li>
-		</ul>
-
-
-		<ng-container *ngIf="!recipesForMeal[meal.id]">
-			<mat-spinner></mat-spinner>
-		</ng-container>
-
-	</mat-expansion-panel>
-</mat-accordion>

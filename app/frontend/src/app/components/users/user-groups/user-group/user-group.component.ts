@@ -70,11 +70,12 @@ export class UserGroupComponent extends BaseComponent implements OnInit {
 				// Do not search with empty string
 				filter((_: string) => !!_),
 				distinctUntilChanged(),
-				switchMap(text =>
-					this.userService.find({emailAddress: text})
-						.then(users => users.filter(_ => !this.group.memberships.map(_ => _.__user).includes(_.id)))
-						.catch(() => [])
-				)
+				switchMap(text => {
+					const ids = this.group.memberships.map(_ => _.__user);
+					return this.userService.find({emailAddress: text})
+						.then(users => users.filter(_ => !ids.includes(_.id)))
+						.catch(() => []);
+				})
 			).subscribe(users => this.users = users)
 		);
 	}

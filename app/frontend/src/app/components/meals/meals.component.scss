@@ -1,35 +1,6 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-:host {
+#host {
 	padding: 1em;
 	box-sizing: border-box;
-
-	mat-form-field {
-		width: 100%;
-		/*font-size: 1.5em;*/
-	}
-	mat-slider {
-		width: 80%;
-	}
-
-	mat-card {
-		margin-bottom: 1em;
-
-		.prep-time {
-			margin: 1em 0;
-			display: flex;
-			align-items: center;
-
-			> * {
-				margin: 0;
-			}
-
-			> *:not(:first-child) {
-				margin-left: 1em;
-			}
-		}
-	}
 
 	mat-panel-title {
 		font-size: 1.2em;
@@ -38,22 +9,37 @@
 	mat-panel-description {
 		font-size: 0.85em;
 	}
+}
 
-	.results-title {
-		margin: 1em 0;
-		padding: 0.5em 0;
-		background: rgba(255,255,255,0.5);
-		color: #a37d62;
+::ng-deep #ngx-slider .ngx-slider {
+	$color: #4b8b52;
 
-		> * {
-			margin: 0;
-			padding: 0;
-			text-align: center;
+	.ngx-slider-pointer {
+		background: $color;
+
+		&::after {
+			background: lightblue;
 		}
 	}
 
-	.recipe-title {
-		cursor: pointer;
-		color: #4b8b52;
+	.ngx-slider-selection {
+		background: $color;
+	}
+}
+
+#meal-types {
+	mat-radio-button {
+		padding: 10px;
+	}
+}
+
+.meals-sep {
+	background: rgba(255, 255, 255, 50%);
+	color: #a37d62;
+	margin: 1em 0;
+	padding: 0.5em 0;
+
+	#meals-result-title {
+		margin-bottom: 5px;
 	}
 }

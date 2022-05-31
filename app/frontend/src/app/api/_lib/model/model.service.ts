@@ -82,6 +82,9 @@ export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	public findAndPagination<U extends T = T>(search?: MS, params: ModelSearchParams<T> = {}): Promise<ModelFoundAndPagination<U>> {
 		// TODO: params, pagination
 
+		if (params.page)
+			(search as unknown as Record<string, number>).page = params.page;
+
 		let url = this.entryPoint;
 		if (search && Object.keys(search).length)
 			url+= `?${ModelService.toHttpQueryString(search)}`;

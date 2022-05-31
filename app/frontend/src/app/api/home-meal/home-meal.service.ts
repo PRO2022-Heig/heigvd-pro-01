@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { Model, ModelId } from "../_lib/model";
+import { ModelId } from "../_lib/model";
 
 import { MealSearch, MealService } from "../meal";
 import { recipeDecodeEntityName } from "../recipe";
@@ -8,7 +8,7 @@ import { HomeMeal } from "./home-meal.interface";
 
 // TODO
 export interface HomeMealSearch extends MealSearch {
-	"recipes.ingredients.ingredient.foodConstraints.id"?: ModelId | Model[];
+	"recipes.ingredients.ingredient.foodConstraints.id"?: ModelId | ModelId[];
 }
 
 @Injectable({
@@ -23,6 +23,8 @@ export class HomeMealService extends MealService<HomeMeal, HomeMealSearch> {
 		Object.defineProperty(model, "__recipes" as keyof HomeMeal, {
 			get: () => model.recipes.map(recipeDecodeEntityName)
 		});
+
+		model.home_type = "home_meal";
 
 		return model;
 	}
