@@ -27,7 +27,7 @@ export class UserService extends ModelService<User, UserSearch> {
 		return this.apiClient.get<U>(`${this.entryPoint}/mi`);
 	}
 
-	protected override _decode(model: User) {
+	public override _decode(model: User) {
 		model.id = this.decodeEntityName(model["@id"]);
 
 		return model;

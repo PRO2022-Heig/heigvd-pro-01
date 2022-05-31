@@ -17,7 +17,7 @@ export class ProductService extends ModelService<Product, ProductSearch> {
 
 	public readonly entryPoint = ProductService.ENTRY_POINT;
 
-	protected override _decode() {
+	public override _decode() {
 		// Do nothing
 	}
 }

@@ -19,7 +19,7 @@ export class HomeMealService extends MealService<HomeMeal, HomeMealSearch> {
 
 	public override readonly entryPoint = HomeMealService.ENTRY_POINT;
 
-	protected override _decode(model: HomeMeal) {
+	public override _decode(model: HomeMeal) {
 		Object.defineProperty(model, "__recipes" as keyof HomeMeal, {
 			get: () => model.recipes.map(recipeDecodeEntityName)
 		});

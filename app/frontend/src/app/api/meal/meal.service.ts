@@ -17,7 +17,7 @@ export class MealService<T extends Meal = Meal, MS = MealSearch> extends ModelSe
 
 	public readonly entryPoint: string = MealService.ENTRY_POINT;
 
-	protected override _decode(model: T) {
+	public override _decode(model: T) {
 		model.home_type = (model as unknown as MealWithType)["@type"]
 			.split("M").join("_m").toLowerCase() as T["home_type"];
 

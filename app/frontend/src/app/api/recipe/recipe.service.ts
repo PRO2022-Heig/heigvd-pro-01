@@ -7,7 +7,8 @@ import { ApiClientModule } from "../api-client.module";
 import { HomeMealService } from "../home-meal";
 import { StepService } from "../step";
 import { RECIPES_ENTRY_POINT} from "./recipe.constants";
-import { Recipe } from "./recipe.interface";
+import { Recipe, RecipeIngredient } from "./recipe.interface";
+import { IngredientService } from "../ingredients";
 
 export interface RecipeSearch extends ModelSearch<Recipe>, Partial<Pick<Recipe, "name" | "description">> {
 	"meals.id"?: ModelId | ModelId[];
@@ -27,11 +28,12 @@ export class RecipeService extends ModelService<Recipe, RecipeSearch> {
 	public constructor(
 		client: ApiClientModule,
 		private readonly homeMealService: HomeMealService,
+		private readonly ingredientService: IngredientService,
 		private readonly stepService: StepService) {
 		super(client);
 	}
 
-	protected override _decode(model: Recipe) {
+	public override _decode(model: Recipe) {
 		Object.defineProperty(model, "__meals" as keyof Recipe, {
 			get: () => model.meals.map(_ => this.homeMealService.decodeEntityName(_))
 		});
@@ -39,6 +41,14 @@ export class RecipeService extends ModelService<Recipe, RecipeSearch> {
 		Object.defineProperty(model, "__steps" as keyof Recipe, {
 			get: () => model.steps.map(_ => this.stepService.decodeEntityName(_))
 		});
+
+		for (const ingredient of model.ingredients) {
+			Object.defineProperty(ingredient, "__recipe" as keyof RecipeIngredient, {
+				get: () => this.decodeEntityName(ingredient.recipe)
+			});
+
+			ingredient.ingredient = this.ingredientService._decode(ingredient.ingredient);
+		}
 
 		return model;
 	}

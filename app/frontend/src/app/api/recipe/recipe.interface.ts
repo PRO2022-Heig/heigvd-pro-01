@@ -1,5 +1,25 @@
 import { Model, ModelId } from "../_lib/model";
 
+import { Ingredient } from "../ingredients";
+
+export interface RecipeIngredientUnit extends Model {
+	name: string;
+	type: string;
+
+	__isInitialized__: boolean;
+}
+
+export interface RecipeIngredient extends Model {
+	products: never[]; // TODO?
+	quantity: number;
+
+	recipe: string;
+	__recipe: ModelId; // decoded
+
+	ingredient: Ingredient;
+	unit: RecipeIngredientUnit;
+}
+
 export interface Recipe extends Model {
 	name: string;
 	description: string;
@@ -11,5 +31,5 @@ export interface Recipe extends Model {
 	steps: string[];
 	__steps: ModelId[]; // decoded
 
-	ingredients: never[]; // TODO: use the Ingredient API interface? (I think not)
+	ingredients: RecipeIngredient[];
 }

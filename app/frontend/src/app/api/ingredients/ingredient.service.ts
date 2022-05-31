@@ -22,7 +22,7 @@ export class IngredientService extends ModelService<Ingredient> {
 		super(client);
 	}
 
-	protected override _decode(model: Ingredient) {
+	public override _decode(model: Ingredient) {
 		Object.defineProperty(model, "__foodConstraints" as keyof Ingredient, {
 			get: () => model.foodConstraints.map(_ => this.foodConstraintService.decodeEntityName(_))
 		});

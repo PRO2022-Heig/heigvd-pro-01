@@ -133,5 +133,5 @@ export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	 * Use this to "decode" a result.
 	 * Ex: the relations are in string -> convert to number
 	 */
-	protected abstract _decode(model: T): T | undefined | void;
+	public abstract _decode(model: T): T | undefined | void;
 }

@@ -16,7 +16,7 @@ export class FoodConstraintService extends ModelService<FoodConstraint, FoodCons
 
 	public readonly entryPoint = FoodConstraintService.ENTRY_POINT;
 
-	protected _decode() {
+	public override _decode() {
 		// Do nothing
 	}
 }

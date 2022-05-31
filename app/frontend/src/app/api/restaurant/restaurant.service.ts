@@ -26,7 +26,7 @@ export class RestaurantService extends ModelService<Restaurant, RestaurantSearch
 		super(client);
 	}
 
-	protected override _decode(model: Restaurant) {
+	public override _decode(model: Restaurant) {
 		Object.defineProperty(model, "__meals" as keyof Restaurant, {
 			get: () => model.meals.map(_ => this.restaurantMealService.decodeEntityName(_))
 		});

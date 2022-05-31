@@ -13,7 +13,7 @@ export class StepService extends ModelService<Step> {
 
 	public readonly entryPoint = StepService.ENTRY_POINT;
 
-	protected override _decode(model: Step) {
+	public override _decode(model: Step) {
 		Object.defineProperty(model, "__recipe" as keyof Step, {
 			get: () => recipeDecodeEntityName(model.recipe)
 		});
