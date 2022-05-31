@@ -1,1 +1,10 @@
-<p>meal works!</p>
+<h1>{{meal.name}}</h1>
+<p>{{meal.description}}</p>
+
+<div fxLayout="row" *ngFor="let recipe of meal.recipes" [routerLink]="['/recipe/',recipe.id]">
+	<mat-card fxFlex="30">
+		<mat-card-title>{{recipe.name}}</mat-card-title>
+		<mat-card-subtitle>{{recipe.nbPeopleServed}} personne(s)</mat-card-subtitle>
+		<p>{{recipe.description}}</p>
+	</mat-card>
+</div>
