@@ -7,7 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class FoodConstraintFixture extends AbstractDataImportFixture
 {
-    protected const CSV_FILE = "allergens_filtered.csv";
+    protected const CSV_FILE = "allergens.csv";
 
     public function load(ObjectManager $manager): void
     {

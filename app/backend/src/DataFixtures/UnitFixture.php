@@ -33,7 +33,7 @@ class UnitFixture extends AbstractDataImportFixture
                 }
                 $unit = new Unit();
 
-                $unit->setName($unitName)->setType("undefined");
+                $unit->setName($unitName)->setType("unité(s)");
                 $this->addReference("unit-" . $unitName, $unit);
                 $manager->persist($unit);
             }

@@ -5,6 +5,7 @@ namespace App\Entity\Meal;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 use App\Entity\Meal;
 use App\Entity\Recipe;
 use App\Repository\Meal\HomeMealRepository;
@@ -19,10 +20,10 @@ use Doctrine\ORM\Mapping as ORM;
     NumericFilter::class,
     properties: [
         "recipes.ingredients.ingredient.foodConstraints.id",
-        "recipe.duration",
         "recipe.numberOfPeople"
     ]
 )]
+#[ApiFilter(RangeFilter::class, properties: ["recipes.duration"])]
 class HomeMeal extends Meal
 {
     #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: "meals")]

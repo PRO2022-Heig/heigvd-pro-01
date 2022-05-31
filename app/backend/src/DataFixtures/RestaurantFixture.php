@@ -31,6 +31,12 @@ class RestaurantFixture extends AbstractDataImportFixture
                         ->setName($meal["name"])
                         ->setDescription($meal["description"]);
 
+                    foreach ($meal["allergens"] ?? [] as $constraint) {
+                        if ($this->hasReference($constraint)) {
+                            $restaurantMeal->addFoodConstraint($this->getReference($constraint));
+                        }
+                    }
+
                     $this->addReference($refKey, $restaurantMeal);
                 }
                 $restaurant->addMeal($restaurantMeal);
