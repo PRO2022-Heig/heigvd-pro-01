@@ -2,8 +2,12 @@
 
 test -f "/setup.sh" && /setup.sh
 
+ISOLATED_DB_PORT=$(echo $DATABASE_URL | grep -Po '(?<=://)[^/?]*' | grep -Po '[^@]*$')
+DATABASE=$(echo $ISOLATED_DB_PORT | grep -Po '^[a-zA-Z_-]*')
+PORT=$(echo $ISOLATED_DB_PORT | grep -Po '\d*$')
+
 echo "Waiting for database"
-/app/wait-for-it.sh -h database -p 3306 -t 90
+/app/wait-for-it.sh -h ${DATABASE:=database} -p ${PORT:=3306} -t 90
 
 echo "DATABASE_URL='$DATABASE_URL'" >> /app/.env
 

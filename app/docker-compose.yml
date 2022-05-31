@@ -15,7 +15,8 @@ services:
       context: .
     image: foodzen-app
     ports:
-      - "8020:80"
+      - "80:80"
+      - "443:443"
     environment:
     - "DATABASE_URL=mariadb://db:db@database:3306/db?serverVersion=10.3&driver=pdo_mysql"
     - "CORS_ALLOW_ORIGIN=.*"

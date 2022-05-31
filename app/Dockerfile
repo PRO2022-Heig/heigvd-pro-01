@@ -32,12 +32,15 @@ RUN cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.p
 # Enable apache mods.
 RUN a2enmod php8.1 rewrite proxy_fcgi setenvif && a2enconf php8.1-fpm && \
     rm /etc/apache2/sites-enabled/*
+RUN mkdir -p /var/symfony && chown -R www-data:www-data /var/symfony && chmod 777 /var/symfony
 
 # Update the PHP.ini file, enable <? ?> tags and quieten logging.
 # RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php5/apache2/php.ini
 # RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php5/apache2/php.ini
 
 FROM base as backend
+ENV APP_ENV=prod
+ENV VAR_DIR=
 # Copy site into place.
 COPY ./backend /app
 RUN ln -s /app /var/www/app && ln -s /app/setup.sh /setup.sh
