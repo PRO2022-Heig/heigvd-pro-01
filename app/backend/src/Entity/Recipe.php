@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
 #[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
-#[ApiFilter(NumericFilter::class, properties: ["meals.id"])]
+#[ApiFilter(NumericFilter::class, properties: ["meals.id", "ingredients.ingredient.products.foodConstraints.id"])]
 #[ApiFilter(RangeFilter::class, properties: ["numberOfPeople", "duration"])]
 #[ApiFilter(NotInFilter::class, properties: ["ingredients.ingredient.products.foodConstraints.id"])]
 class Recipe extends AbstractEntity
