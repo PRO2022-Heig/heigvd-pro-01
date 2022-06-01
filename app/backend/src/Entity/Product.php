@@ -37,6 +37,7 @@ class Product extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
+    #[Groups(["product:list"])]
     private ?string $description;
 
     #[ORM\Column(type: "string", length: 255)]
