@@ -18,5 +18,6 @@ services:
       - "80:80"
       - "443:443"
     environment:
-    - "DATABASE_URL=mysql://db:db@database:3306/db"
+    - "DATABASE_URL=mariadb://db:db@database:3306/db?serverVersion=10.3&driver=pdo_mysql"
+    # - "CORS_ALLOW_ORIGIN=.*"
     - "SERVERNAME=foodzen.localhost"
