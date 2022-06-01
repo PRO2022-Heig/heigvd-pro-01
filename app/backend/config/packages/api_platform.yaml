@@ -1,6 +1,7 @@
 api_platform:
     exception_to_status:
         App\CustomException\EmailDuplicateException: 409
+        App\CustomException\PasswordDoesNotMatchRequirementsException: 409
         Symfony\Component\Serializer\Exception\UnexpectedValueException: 400
         Doctrine\DBAL\Exception\UniqueConstraintViolationException: 400
     mapping:
