@@ -58,11 +58,11 @@ class NumericNotInFilter extends AbstractContextAwareFilter
 
         if (1 === \count($values)) {
             $queryBuilder
-                ->andWhere(sprintf('%s.%s != :%s', $alias, $field, $valueParameter))
+                ->andWhere(sprintf("%s.%s != :%s", $alias, $field, $valueParameter))
                 ->setParameter($valueParameter, $values[0], (string) $this->getDoctrineFieldType($property, $resourceClass));
         } else {
             $queryBuilder
-                ->andWhere(sprintf('%s.%s NOT IN (:%s)', $alias, $field, $valueParameter))
+                ->andWhere(sprintf("%s.%s NOT IN (:%s)", $alias, $field, $valueParameter))
                 ->setParameter($valueParameter, $values);
         }
     }
@@ -76,26 +76,24 @@ class NumericNotInFilter extends AbstractContextAwareFilter
         $description = [];
         foreach ($this->properties as $property => $strategy) {
             $propertyName = $this->normalizePropertyName($property);
-            $filterParameterNames = [$propertyName, $propertyName . '[]'];
+            $filterParameterNames = [$propertyName, $propertyName . "[]"];
             foreach ($filterParameterNames as $filterParameterName) {
                 $description["not_in_$property"] = [
                     "property" => $property,
-                    'type' => $this->getType((string)$this->getDoctrineFieldType($property, $resourceClass)),
+                    "type" => $this->getType((string) $this->getDoctrineFieldType($property, $resourceClass)),
                     "required" => false,
                     "swagger" => [
                         "description" => "sucker",
                         "name" => "Custom name to use in the Swagger documentation",
                         "type" => "Will appear below the name in the Swagger documentation"
                     ],
-                    'is_collection' => str_ends_with((string)$filterParameterName, '[]')
+                    "is_collection" => str_ends_with((string) $filterParameterName, "[]")
                 ];
             }
-
         }
 
         return $description;
     }
-
 
     /**
      * {@inheritdoc}
@@ -103,13 +101,13 @@ class NumericNotInFilter extends AbstractContextAwareFilter
     protected function getType(string $doctrineType = null): string
     {
         if (null === $doctrineType || Types::DECIMAL === $doctrineType) {
-            return 'string';
+            return "string";
         }
 
         if (Types::FLOAT === $doctrineType) {
-            return 'float';
+            return "float";
         }
 
-        return 'int';
+        return "int";
     }
 }
