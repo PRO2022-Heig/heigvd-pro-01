@@ -11,7 +11,8 @@ import { FoodConstraint, FoodConstraintService } from "../../api/food-constraint
 import { HomeMealSearch, HomeMealService } from "../../api/home-meal";
 import { Meal, MealType } from "../../api/meal";
 import { Recipe, RecipeSearch, RecipeService } from "../../api/recipe";
-import { RestaurantMealService } from "../../api/restaurant-meal";
+import { Restaurant, RestaurantService } from "../../api/restaurant";
+import { RestaurantMeal, RestaurantMealService } from "../../api/restaurant-meal";
 
 interface SearchForm extends FormGroup {
 	controls: {
@@ -36,6 +37,7 @@ interface SearchForm extends FormGroup {
 interface MealHelped extends Meal {
 	recipeState?: {
 		error: false | HttpErrorResponse;
+		restaurant: Restaurant;
 		loading: boolean;
 		recipes: Recipe[];
 	}
@@ -75,7 +77,8 @@ export class MealsComponent extends BaseComponent implements OnInit {
 		private readonly homeMealService: HomeMealService,
 		private readonly restaurantMealService: RestaurantMealService,
 		private readonly foodConstraintsService: FoodConstraintService,
-		private readonly recipeService: RecipeService) {
+		private readonly recipeService: RecipeService,
+		private readonly restaurantService: RestaurantService) {
 		super();
 
 		this.SLIDER_OPTIONS = {
@@ -178,16 +181,25 @@ export class MealsComponent extends BaseComponent implements OnInit {
 		}).catch(() => undefined);
 	}
 
-	public loadRecipes(meal: MealHelped) {
-		if (meal.home_type === "restaurant_meal")
-			return;
-
+	public async loadRecipes(meal: MealHelped) {
 		const recipeState: MealHelped["recipeState"] = {
 			error: false,
 			loading: true,
-			recipes: []
+			recipes: [],
+			// not the best, but ...
+			restaurant: undefined as never
 		};
 		meal.recipeState = recipeState;
+
+		if (meal.home_type === "restaurant_meal") {
+			recipeState.restaurant = await this.restaurantService.get((meal as RestaurantMeal).__restaurant)
+				.catch(error => {
+					recipeState.error = error;
+					return undefined as never;
+				})
+				.finally(() => recipeState.loading = false);
+			return;
+		}
 
 		const search: RecipeSearch = {
 			duration: {},

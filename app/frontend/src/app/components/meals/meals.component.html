@@ -113,28 +113,41 @@
 					</mat-panel-description>
 				</mat-expansion-panel-header>
 
-				<ng-container *ngIf="meal.recipeState && meal.home_type === 'home_meal'">
+				<ng-container *ngIf="meal.recipeState">
 					<div *ngIf="meal.recipeState.loading" fxLayoutAlign="center center">
 						<mat-spinner></mat-spinner>
 					</div>
 
-					<div *ngIf="!meal.recipeState.error && !meal.recipeState.loading">
-						<mat-nav-list>
-							<mat-list-item *ngFor="let recipe of meal.recipeState.recipes" [routerLink]="['/recipe', recipe.id]">
-								<div matLine>{{ recipe.name }}</div>
-								<div matLine>{{ recipe.description }}</div>
+					<ng-container *ngIf="!meal.recipeState.loading">
+						<ng-container *ngIf="meal.recipeState.error">
+							<h3>Une erreur est survenue!</h3>
+							<p>Erreur {{ meal.recipeState.error.status }}</p>
+						</ng-container>
 
-								 {{ recipe.numberOfPeople }} <mat-icon>person</mat-icon>
-							</mat-list-item>
-						</mat-nav-list>
+						<ng-container *ngIf="!meal.recipeState.error">
+							<div *ngIf="meal.home_type === 'restaurant_meal'">
+								<p>Ce plat est servi ici dans le restaurant suivant :</p>
 
-						<p *ngIf="!meal.recipeState.recipes.length">Pas de recettes trouvées.</p>
-					</div>
+								<h3 class="restaurant-name">{{ meal.recipeState.restaurant.name }}</h3>
+								<p>{{ meal.recipeState.restaurant.location }}</p>
+							</div>
+
+							<div *ngIf="meal.home_type === 'home_meal'">
+								<mat-nav-list>
+									<mat-list-item *ngFor="let recipe of meal.recipeState.recipes" [routerLink]="['/recipe', recipe.id]">
+										<div matLine>{{ recipe.name }}</div>
+										<div matLine>{{ recipe.description }}</div>
+
+										{{ recipe.numberOfPeople }} <mat-icon>person</mat-icon>
+									</mat-list-item>
+								</mat-nav-list>
+
+								<p *ngIf="!meal.recipeState.recipes.length">Pas de recettes trouvées.</p>
+							</div>
+						</ng-container>
+					</ng-container>
 				</ng-container>
 
-				<ng-container *ngIf="meal.home_type === 'restaurant_meal'">
-					<div>Il n'y pas de recette pour un plat fourni dans un restaurant.</div>
-				</ng-container>
 			</mat-expansion-panel>
 		</mat-accordion>
 
