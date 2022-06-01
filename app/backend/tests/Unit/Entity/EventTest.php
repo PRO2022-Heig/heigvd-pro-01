@@ -42,7 +42,6 @@ class EventTest extends KernelTestCase
         $this->assertEquals($meal, $event->getMeal(), $meal->getName() . " does not match return");
     }
 
-
     public function testGroupGetterAndSetter(): void
     {
         $group = $this->hydrate(Group::class, ["name" => "ghidra-fans"]);

@@ -51,7 +51,6 @@ class GroupTest extends KernelTestCase
         $reflectionPropertyUser->setValue($appUser1, 12);
         $reflectionPropertyUser->setValue($appUser2, 15);
 
-
         $group = $this->hydrate(
             Group::class,
             [
