@@ -83,7 +83,7 @@ class NumericNotInFilter extends AbstractContextAwareFilter
             $propertyName = $this->normalizePropertyName($property);
             $filterParameterNames = [$propertyName, $propertyName . "[]"];
             foreach ($filterParameterNames as $filterParameterName) {
-                $description["not_in_" . $property] = [
+                $description["not_in_" . $property . "[]"] = [
                     "property" => $propertyName,
                     "type" => $this->getType((string) $this->getDoctrineFieldType($property, $resourceClass)),
                     "required" => false,
