@@ -11,6 +11,7 @@ import { AppComponent } from "./app/app.component";
 import { HeaderComponent } from "./header/header.component";
 import { LoginComponent } from "./login/login.component";
 import { MealsComponent } from "./meals/meals.component";
+import { NotFoundComponent } from "./not-found/not-found/not-found.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
@@ -26,6 +27,7 @@ import { UserProfileComponent } from "./users/user-profile/user-profile.componen
 		HeaderComponent,
 		LoginComponent,
 		MealsComponent,
+		NotFoundComponent,
 		RecipeComponent,
 		SidebarComponent,
 		ToolbarComponent,

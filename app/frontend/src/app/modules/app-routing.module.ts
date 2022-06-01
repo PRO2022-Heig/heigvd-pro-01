@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { LoginComponent, LoginComponentData } from "../components/login/login.component";
 import { MealsComponent } from "../components/meals/meals.component";
+import { NotFoundComponent } from "../components/not-found/not-found/not-found.component";
 import { RecipeComponent } from "../components/recipe/recipe.component";
 import { UserEventsComponent } from "../components/users/user-events/user-events.component";
 import { UserGroupsComponent } from "../components/users/user-groups/user-groups.component";
@@ -34,6 +35,13 @@ const routes: Routes = [{
 }, {
 	component: RecipeComponent,
 	path: "recipe/:id"
+}, {
+	path: "",
+	redirectTo: "/meals",
+	pathMatch: "full"
+}, {
+	component: NotFoundComponent,
+	path: "**"
 }];
 
 @NgModule({
