@@ -63,7 +63,8 @@ export abstract class ModelService<T extends Model, MS = ModelSearch<T>> {
 	}
 
 	public decodeEntityName(name: string): ModelId {
-		return +name.substring(this.entryPoint.length + 1);
+		const chunk = name.split("/");
+		return +chunk[chunk.length - 1];
 	}
 
 	/**
