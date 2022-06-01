@@ -4,10 +4,6 @@ use App\Kernel;
 
 require_once dirname(__DIR__) . "/vendor/autoload_runtime.php";
 
-if ((getenv("APP_ENV") ?? "") === "prod") {
-    chdir("backend");
-}
-
 return function (array $context) {
-    return new Kernel($context["APP_ENV"], (bool) $context["APP_DEBUG"]);
+    return new Kernel($context["APP_ENV"], $context["APP_ENV"] !== "prod");
 };

@@ -19,5 +19,4 @@ services:
       - "443:443"
     environment:
     - "DATABASE_URL=mysql://db:db@database:3306/db"
-    - "CORS_ALLOW_ORIGIN=.*"
     - "SERVERNAME=foodzen.localhost"
