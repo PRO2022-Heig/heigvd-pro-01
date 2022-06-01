@@ -12,7 +12,7 @@ echo "Waiting for database"
 echo "DATABASE_URL='$DATABASE_URL'" >> /app/.env
 
 echo "Seting up composer"
-cd /app && composer install && composer setup
+cd /app && composer setup
 chown -R www-data:www-data /var/symfony
 # ./wait-for-it.sh
 service php8.1-fpm start
