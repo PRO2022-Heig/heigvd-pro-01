@@ -52,7 +52,7 @@
 								{{ meal.name }}
 							</ng-template>
 
-							<mat-select-trigger>
+							<mat-select-trigger *ngIf="mealForm.controls.meal.value">
 								<ng-container *ngTemplateOutlet="mealOption; context: {meal: mealForm.controls.meal.value}"></ng-container>
 							</mat-select-trigger>
 

@@ -102,15 +102,22 @@ export class UserGroupComponent extends BaseComponent implements OnInit {
 		if (!this.amIAdmin())
 			return;
 
+		// Avoid showing "[Object object]"
+		this.addUserForm.controls.search.setValue("");
+
 		return this.guMembershipService.create<GroupUserMembershipHelped>({
 			group: this.group["@id"],
 			user: user["@id"],
 			isAdmin: this.addUserForm.controls.isAdmin.value
 		}).then(membership => {
+			this.users = [];
 			membership._user = user;
 			this.group.memberships.push(membership);
+		}).catch(() => {
+			// TODO: use error
 
-			this.addUserForm.controls.search.setValue("");
+			// reset the search value
+			this.addUserForm.controls.search.setValue(user.emailAddress);
 		});
 	}
 
