@@ -34,6 +34,11 @@ class NumericNotInFilter extends AbstractContextAwareFilter
         string $resourceClass,
         string $operationName = null
     ) {
+        if (str_starts_with($property, "not_in_")) {
+            $property = str_replace("not_in_", "", $property);
+        } else {
+            return;
+        }
         if (
             !$this->isPropertyEnabled($property, $resourceClass) ||
             !$this->isPropertyMapped($property, $resourceClass) ||
@@ -78,12 +83,12 @@ class NumericNotInFilter extends AbstractContextAwareFilter
             $propertyName = $this->normalizePropertyName($property);
             $filterParameterNames = [$propertyName, $propertyName . "[]"];
             foreach ($filterParameterNames as $filterParameterName) {
-                $description["not_in_$property"] = [
-                    "property" => $property,
+                $description["not_in_" . $property] = [
+                    "property" => $propertyName,
                     "type" => $this->getType((string) $this->getDoctrineFieldType($property, $resourceClass)),
                     "required" => false,
                     "swagger" => [
-                        "description" => "sucker",
+                        "description" => "Check not in",
                         "name" => "Custom name to use in the Swagger documentation",
                         "type" => "Will appear below the name in the Swagger documentation"
                     ],
