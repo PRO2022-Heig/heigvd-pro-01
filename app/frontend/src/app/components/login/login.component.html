@@ -44,6 +44,11 @@
 						<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
 
 						<p *ngIf="error">
+							<mat-error *ngIf="error.status === 400">
+								<mat-icon inline>error_outline</mat-icon>
+								<ng-container>Votre requête a échoué. <br>Vérifiez que votre mot de passe contient 8 charactères, au moins une majuscule, un chiffre et un charactère spécial.</ng-container>
+							</mat-error>
+
 							<mat-error *ngIf="error.status === 401">
 								<mat-icon inline>error_outline</mat-icon>
 								<ng-container>L'identification a echoué.</ng-container>
