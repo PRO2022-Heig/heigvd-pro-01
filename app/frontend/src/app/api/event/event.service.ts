@@ -13,7 +13,7 @@ export class EventService extends ModelService<Event> {
 
 	public readonly entryPoint = EventService.ENTRY_POINT;
 
-	protected override _decode(model: Event) {
+	public override _decode(model: Event) {
 		Object.defineProperty(model, "__group" as keyof Event, {
 			get: () => groupDecodeEntityName(model.group)
 		});

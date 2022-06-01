@@ -17,7 +17,7 @@ class UnitFixture extends AbstractDataImportFixture
         $undefinedUnit = new Unit();
         $undefinedUnit
             ->setType("undefined")
-            ->setName("undefined");
+            ->setName("unité(s)");
 
         $this->addReference("unit-undefined", $undefinedUnit);
         $manager->persist($undefinedUnit);

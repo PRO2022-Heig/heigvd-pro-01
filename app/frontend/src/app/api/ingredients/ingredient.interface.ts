@@ -1,18 +1,12 @@
-import { Model } from "../_lib/model";
+import { Model, ModelId } from "../_lib/model";
 
 export interface Ingredient extends Model {
 	name: string;
 	description: string;
 
-	// TODO: complete
-	// TODO: productId?
-}
+	foodConstraints: string[];
+	__foodConstraints: ModelId[]; // decoded
 
-/*
-export interface Ingredient extends Model {
-	name: string;
-	description: string;
-	quantity: number;
-	unit: string;
+	products: string[];
+	__products: ModelId[]; // decoded
 }
-*/

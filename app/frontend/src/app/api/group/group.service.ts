@@ -22,7 +22,7 @@ export class GroupService extends ModelService<Group> {
 		super(client);
 	}
 
-	protected override _decode(model: Group) {
+	public override _decode(model: Group) {
 		Object.defineProperty(model, "__events" as keyof Group, {
 			get: () => model.events.map(_ => this.eventService.decodeEntityName(_))
 		});

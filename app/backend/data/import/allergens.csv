@@ -1,13 +1,10 @@
 tag,name
 fr:Loco,Loco
-fr:GLUEN,Gluen
-fr:Beurr,Beurr
-fr:CONTENANT,Contenant
-fr:urticaire,Urticaire
+fr:GLUEN,Gluten
+fr:Beurr,Beurre
 fr:levure,Levure
 fr:lin,Lin
 fr:samon,Samon
-fr:PROGRAMME,Programme
 fr:Filets de Lieu,Filets De Lieu
 fr:melk,Melk
 fr:Haferflocken,Haferflocken
@@ -50,7 +47,7 @@ fr:Arches,Arches
 fr:filetage,Filetage
 fr:eigle,Eigle
 fr:crustacées,Crustacées
-fr:Lácteo,Lácteo
+fr:Lácteo,Lactose
 fr:Senapspulver,Senapspulver
 fr:Pollachius virens,Pollachius Virens
 fr:Soyabean,Soyabean
@@ -67,21 +64,14 @@ fr:Poudre,Poudre
 fr:Composition,Composition
 fr:Fromagère,Fromagère
 fr:riz,Riz
-fr:disufite,Disufite
-fr:Feuilletée,Feuilletée
-fr:Weizenvollkornmehl,Weizenvollkornmehl
-fr:Mjölkpulver,Mjölkpulver
 fr:amende,Amende
-fr:CAS,Cas
 fr:merlan bleu,Merlan Bleu
-fr:Vollkorngerste,Vollkorngerste
 fr:Crème liquide,Crème Liquide
 fr:Margarine,Margarine
 fr:Brie,Brie
 fr:Apio,Apio
-fr:FROID,Froid
 fr:celeri  déshydraté,Celeri  Déshydraté
-fr:Mozzarelle,Mozzarelle
+fr:Mozzarelle,Mozzarella
 fr:Molusco,Molusco
 fr:Chinchard,Chinchard
 fr:bolets,Bolets
@@ -92,7 +82,7 @@ fr:fenilalanina,Fenilalanina
 fr:Fabrication garantie sans allergènes,Fabrication Garantie Sans Allergènes
 fr:Conservateur chimique,Conservateur Chimique
 fr:Demi-crème,Demi Crème
-fr:Nblé,Nblé
+fr:Nblé,Blé
 fr:Boulghour,Boulghour
 fr:coriandre,Coriandre
 fr:Calmar géant,Calmar Géant
@@ -102,7 +92,7 @@ fr:PAU,Pau
 fr:bière,Bière
 fr:ORANGE,Orange
 fr:Ghee,Ghee
-fr:Eouf,Eouf
+fr:Eouf,Oeuf
 fr:Technophobia,Technophobia
 fr:CITRUS,Citrus
 fr:noisette crue,Noisette Crue
@@ -111,7 +101,7 @@ fr:RAVE,Rave
 fr:Alit,Alit
 fr:BIé,Bié
 fr:Viande,Viande
-fr:Nchois,Nchois
+fr:Nchois,Anchois
 fr:ALES,Ales
 fr:GRANA,Grana
 fr:gruau,Gruau
@@ -168,7 +158,7 @@ fr:Saumon Atlantique,Saumon Atlantique
 fr:surimi,Surimi
 fr:Pirovo,Pirovo
 fr:INDIQUER,Indiquer
-fr:LAlT,Lalt
+fr:LAlT,Lait
 fr:Schabziger,Schabziger
 fr:AUVERGNE,Auvergne
 fr:Tofu fumé,Tofu Fumé
@@ -198,7 +188,7 @@ fr:LEMON,Lemon
 fr:Gerstenmalz,Gerstenmalz
 fr:Garniture,Garniture
 fr:Framboise,Framboise
-fr:Euf,Euf
+fr:Euf,Oeuf
 fr:échalote,Échalote
 fr:RECONGELER,Recongeler
 fr:CEPHALOPODES,Cephalopodes
@@ -206,7 +196,7 @@ fr:romatique,Romatique
 fr:glutamate,Glutamate
 fr:PROT,Prot
 fr:panure,Panure
-fr:Sahne,Sahne
+fr:Sahne,Crème
 fr:blé tendre,Blé Tendre
 fr:nordhavsrâkor,Nordhavsrâkor
 fr:bonito,Bonito
@@ -218,7 +208,6 @@ fr:Ovas,Ovas
 fr:Cumin,Cumin
 fr:écrémé,Écrémé
 fr:Acoupa aiguille,Acoupa Aiguille
-fr:PET,Pet
 fr:Bar,Bar
 fr:germes de blé,Germes De Blé
 fr:oursin,Oursin
@@ -227,12 +216,8 @@ fr:Saumon sauvage,Saumon Sauvage
 fr:lactase,Lactase
 fr:Farce,Farce
 fr:Bulot,Bulot
-fr:Maux de tête,Maux De Tête
-fr:ICC,Icc
-fr:mlijeko,Mlijeko
 fr:CEPAGE,Cepage
 fr:INES,Ines
-fr:Raclette aux poivres,Raclette Aux Poivres
 fr:grondin,Grondin
 fr:Flour,Flour
 fr:Mande,Mande
@@ -244,11 +229,10 @@ fr:âggvita,Âggvita
 fr:Laktoza,Laktoza
 fr:pressure,Pressure
 fr:Soufflés salés,Soufflés Salés
-fr:Céler,Céler
+fr:Céler,Célerie
 fr:Tamari,Tamari
 fr:thym,Thym
 fr:Crustracés,Crustracés
-fr:Raclette classique,Raclette Classique
 fr:carpe,Carpe
 fr:ASC,Asc
 fr:râpé,Râpé
@@ -257,8 +241,8 @@ fr:Sardinelles,Sardinelles
 fr:Penne,Penne
 fr:cajou,Cajou
 fr:porto,Porto
-fr:Creème,Creème
-fr:Glute,Glute
+fr:Creème,Crème
+fr:Glute,Gluten
 fr:eigeel,Eigeel
 fr:pépins de pin,Pépins De Pin
 fr:citron,Citron
@@ -276,14 +260,10 @@ fr:préparation de fromage fondu,Préparation De Fromage Fondu
 fr:Soufflés à la cacahuète,Soufflés À La Cacahuète
 fr:Négatif,Négatif
 fr:Cuisses de grenouilles,Cuisses De Grenouilles
-fr:son,Son
-fr:soufre,Soufre
 fr:Marisco,Marisco
-fr:amandon,Amandon
+fr:amandon,Amande
 fr:Harang,Harang
 fr:capelan,Capelan
-fr:rien,Rien
-fr:eau,Eau
 fr:crémeuse,Crémeuse
 fr:Espadon,Espadon
 fr:Saumon rose du Pacifique,Saumon Rose Du Pacifique
@@ -298,19 +278,13 @@ fr:entiers,Entiers
 fr:Crème entière,Crème Entière
 fr:Weizenstärke,Weizenstärke
 fr:ANHYDRIDE,Anhydride
-fr:VII,Vii
 fr:Truite arc-en-ciel,Truite Arc En Ciel
-fr:EMB,Emb
 fr:Butterfat,Butterfat
-fr:LACTOSUERO,Lactosuero
-fr:ogre,Ogre
-fr:Rge,Rge
 fr:séré,Séré
 fr:Lompe,Lompe
 fr:KIWI,Kiwi
 fr:Maïs,Maïs
 fr:Sepia,Sepia
-fr:aun,Aun
 fr:Lotte,Lotte
 fr:Peif,Peif
 fr:Langouste caraïbe,Langouste Caraïbe
@@ -337,8 +311,7 @@ fr:Pescado,Pescado
 fr:mélange boisé,Mélange Boisé
 fr:Yogourt,Yogourt
 fr:nausées,Nausées
-fr:chair de homard américain,Chair De Homard Américain
-fr:BLANC,Blanc
+fr:chair de homard américain,Homard
 fr:Weizenröstmalz,Weizenröstmalz
 fr:glucose,Glucose
 fr:Pois,Pois
@@ -368,18 +341,16 @@ fr:PESTICIDES,Pesticides
 fr:Emmerflocken,Emmerflocken
 fr:azyme,Azyme
 fr:Mjólktrdufl,Mjólktrdufl
-fr:Cheddar-Käse,Cheddar Käse
-fr:NON,Non
+fr:Cheddar-Käse,Cheddar
 fr:corn,Corn
 fr:CACAO,Cacao
 fr:Réglisse,Réglisse
-fr:INGREDIENTS,Ingredients
 fr:noix de pin,Noix De Pin
 fr:Weizeneiweiß,Weizeneiweiß
 fr:truite fumée,Truite Fumée
 fr:Panulirus argus,Panulirus Argus
 fr:Hafervollkornmehl,Hafervollkornmehl
-fr:Beuure,Beuure
+fr:Beuure,Beurre
 fr:Pienas,Pienas
 fr:Sorbitol,Sorbitol
 fr:Poivron rouge,Poivron Rouge
@@ -388,13 +359,10 @@ fr:SFL,Sfl
 fr:Weizenmehl,Weizenmehl
 fr:Fabriqué dans un atelier,Fabriqué Dans Un Atelier
 fr:fibre de tige de blé,Fibre De Tige De Blé
-fr:Ingrédients,Ingrédients
-fr:PRODUIT,Produit
 fr:Raugas,Raugas
 fr:Carvi,Carvi
 fr:Malté,Malté
 fr:paprika,Paprika
-fr:FRANCE,France
 fr:Sardellenextrakt,Sardellenextrakt
 fr:Thon Albacore,Thon Albacore
 fr:FROMAGE EDAM,Fromage Edam
@@ -403,19 +371,16 @@ fr:rapesan,Rapesan
 fr:ACIDE,Acide
 fr:arôme,Arôme
 fr:Kabeljau,Kabeljau
-fr:Tout sauf noyau atomique,Tout Sauf Noyau Atomique
-fr:Chips saveur bolognaise,Chips Saveur Bolognaise
 fr:Alcool,Alcool
 fr:Sarrasin,Sarrasin
 fr:lai,Lai
 fr:Lactate,Lactate
 fr:Congre,Congre
-fr:Omelette,Omelette
 fr:Féra,Féra
 fr:Mulet,Mulet
 fr:Penaeus vannamei,Penaeus Vannamei
 fr:maasdam,Maasdam
-fr:Mozzarella cheese,Mozzarella Cheese
+fr:Mozzarella cheese,Mozzarella
 fr:Thazard,Thazard
 fr:mozzarrella,Mozzarrella
 fr:Vollkornhafer,Vollkornhafer
@@ -427,10 +392,10 @@ fr:Natriummetabisulfit,Natriummetabisulfit
 fr:Pulpe,Pulpe
 fr:Comté AOP,Comté Aop
 fr:Plie,Plie
-fr:EMMENATL,Emmenatl
+fr:EMMENATL,Emmental
 fr:Maslac,Maslac
 fr:perche,Perche
-fr:crèrme,Crèrme
+fr:crèrme,Crème
 fr:homard bleu,Homard Bleu
 fr:Arachide grillée,Arachide Grillée
 fr:Coquillages,Coquillages
@@ -441,12 +406,10 @@ fr:anacardier,Anacardier
 fr:Fromage mozzarella,Fromage Mozzarella
 fr:Camenbert,Camenbert
 fr:ETG,Etg
-fr:burro,Burro
+fr:burro,Beurre
 fr:Cynoglossus itinus,Cynoglossus Itinus
 fr:PIMENT,Piment
-fr:mou,Mou
 fr:CERTICAR,Certicar
-fr:ABSENCE,Absence
 fr:éperlan,Éperlan
 fr:Filets de harengs,Filets De Harengs
 fr:Cochenilles,Cochenilles
@@ -455,15 +418,13 @@ fr:Liquide de couverture,Liquide De Couverture
 fr:coco,Coco
 fr:Thon germon,Thon Germon
 fr:Malt froment,Malt Froment
-fr:Morchella esculenta - conica - vulgaris - costata,Morchella Esculenta   Conica   Vulgaris   Costata
-fr:Scargots,Scargots
+fr:Scargots,Escargots
 fr:Malts de blé,Malts De Blé
 fr:Dérivés,Dérivés
-fr:Emmental français,Emmental Français
+fr:Emmental français,Emmental
 fr:amidon,Amidon
-fr:Raclette de Savoie,Raclette De Savoie
 fr:loddarom,Loddarom
-fr:Laktose,Laktose
+fr:Laktose,Lactose
 fr:Ténébrions,Ténébrions
 fr:fonte,Fonte
 fr:pesto,Pesto
@@ -473,28 +434,25 @@ fr:Porc,Porc
 fr:pangas,Pangas
 fr:neant,Neant
 fr:Molkenerzeugnis,Molkenerzeugnis
-fr:TES,Tes
-fr:AIT,Ait
+fr:AIT,Lait
 fr:Biologique,Biologique
 fr:grillons,Grillons
 fr:STG,Stg
 fr:sodium,Sodium
 fr:fruits,Fruits
 fr:Malt de blé,Malt De Blé
-fr:CACAHUETTE,Cacahuette
-fr:insomnies hyperactivité,Insomnies Hyperactivité
+fr:CACAHUETTE,Cacahuète
 fr:Crevette nordique,Crevette Nordique
 fr:germe de blé,Germe De Blé
-fr:beure,Beure
+fr:beure,Beurre
 fr:concentré,Concentré
 fr:fontina,Fontina
 fr:Penaeus monodon,Penaeus Monodon
-fr:Pollen,Pollen
 fr:fanne de froment,Fanne De Froment
 fr:Cafeine,Cafeine
 fr:Ufs,Ufs
 fr:SAME,Same
-fr:Voine,Voine
+fr:Voine,Avoine
 fr:Daurade,Daurade
 fr:châtaigne,Châtaigne
 fr:Cynoglossus oligolepis,Cynoglossus Oligolepis
@@ -511,41 +469,35 @@ fr:Metton,Metton
 fr:GRAPEFRUIT,Grapefruit
 fr:cohana,Cohana
 fr:FERMENTS,Ferments
-fr:PATE,Pate
-fr:CREM,Crem
+fr:PATE,Pâte
+fr:CREM,Crème
 fr:Palourde,Palourde
 fr:Surutke,Surutke
-fr:Guten,Guten
+fr:Guten,Gluten
 fr:Alune,Alune
 fr:mais,Mais
 fr:Fenugrec,Fenugrec
 fr:Mleko,Mleko
 fr:TRANSPARENCE,Transparence
 fr:carraghénanes,Carraghénanes
-fr:calamares,Calamares
+fr:calamares,Calamars
 fr:TOME,Tome
-fr:CACAHETE,Cacahete
-fr:XIV,Xiv
+fr:CACAHETE,Cacahuète
 fr:imazalil,Imazalil
 fr:Millet,Millet
 fr:algue,Algue
 fr:persil,Persil
 fr:Sirop,Sirop
-fr:Argopecten purpuratus,Argopecten Purpuratus
-fr:Clementine,Clementine
-fr:àggula,Àggula
+fr:Clementine,Clémentine
 fr:dioxyde de sulfure,Dioxyde De Sulfure
-fr:org,Org
+fr:org,Orge
 fr:HCO,Hco
 fr:Dextrose,Dextrose
-fr:APRICOT,Apricot
+fr:APRICOT,Abricot
 fr:Noic du brésil,Noic Du Brésil
 fr:Láctea,Láctea
-fr:CAN,Can
-fr:Frais,Frais
-fr:JACQUES,Jacques
 fr:manteca pura,Manteca Pura
-fr:Fromage parmesan,Fromage Parmesan
+fr:Fromage parmesan,Parmesan
 fr:Iactate,Iactate
 fr:Thunnus albacares,Thunnus Albacares
 fr:fromage bleu,Fromage Bleu
@@ -556,13 +508,11 @@ fr:Haricot mungo,Haricot Mungo
 fr:Calmars du Cap,Calmars Du Cap
 fr:étrilles,Étrilles
 fr:REGGIANO,Reggiano
-fr:BRESIL,Bresil
 fr:Farine,Farine
-fr:noix de pécn,Noix De Pécn
+fr:noix de pécn,Noix De Pécan
 fr:Aroma,Aroma
 fr:gras,Gras
 fr:phil germe de froment,Phil Germe De Froment
-fr:Sauce,Sauce
 fr:malte,Malte
 fr:USA,Usa
 fr:Weizenflakes,Weizenflakes
@@ -578,8 +528,6 @@ fr:Flétan du Groenland,Flétan Du Groenland
 fr:lécithine,Lécithine
 fr:anit,Anit
 fr:céphalopode,Céphalopode
-fr:Biscuit,Biscuit
-fr:plomb,Plomb
 fr:Blé-lactose,Blé Lactose
 fr:Néant,Néant
 fr:ALASKA,Alaska
@@ -596,5 +544,5 @@ fr:mozzarela,Mozzarela
 fr:blé de khorasan,Blé De Khorasan
 fr:LEVAIN,Levain
 fr:Couscous,Couscous
-fr:Celerey,Celerey
+fr:Celerey,Céleri
 fr:BANANE,Banane

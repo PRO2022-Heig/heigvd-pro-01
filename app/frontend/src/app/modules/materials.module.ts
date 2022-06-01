@@ -1,3 +1,4 @@
+import { NgxSliderModule } from "@angular-slider/ngx-slider";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
@@ -13,6 +14,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
@@ -35,11 +37,13 @@ export const materials = [
 	MatListModule,
 	MatProgressBarModule,
 	MatProgressSpinnerModule,
+	MatRadioModule,
 	MatSelectModule,
 	MatSidenavModule,
 	MatTabsModule,
 	MatToolbarModule,
 	NgxMatSelectSearchModule,
+	NgxSliderModule,
 	ReactiveFormsModule
 ];
 

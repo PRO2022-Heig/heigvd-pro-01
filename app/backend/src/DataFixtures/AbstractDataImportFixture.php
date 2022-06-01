@@ -36,12 +36,14 @@ abstract class AbstractDataImportFixture extends Fixture implements FixtureGroup
         if (empty($path)) {
             $path = static::CSV_FILE;
             if (empty($path)) {
+                $this->logger->error("Path must not be empty");
                 throw new InvalidArgumentException("path must not be empty");
             }
         }
 
         $file = fopen(static::DATA_DIRECTORY . $path, "r");
         if ($file === false) {
+            $this->logger->info("File could not be open");
             return [];
         }
 
@@ -79,6 +81,7 @@ abstract class AbstractDataImportFixture extends Fixture implements FixtureGroup
         if (empty($path)) {
             $path = static::JSON_FILE;
             if (empty($path)) {
+                $this->logger->error("Path must not be empty");
                 throw new InvalidArgumentException("path must not be empty");
             }
         }

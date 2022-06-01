@@ -29,8 +29,7 @@ export class GroupUserMembershipService extends ModelService<GroupUserMembership
 		super(client);
 	}
 
-
-	protected override _decode(gum: GroupUserMembership) {
+	public override _decode(gum: GroupUserMembership) {
 		gum.__group = this.groupService.decodeEntityName(gum.group);
 		gum.__user = this.userService.decodeEntityName(gum.user);
 
