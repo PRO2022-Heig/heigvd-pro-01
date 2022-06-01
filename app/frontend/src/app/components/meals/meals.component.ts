@@ -203,9 +203,9 @@ export class MealsComponent extends BaseComponent implements OnInit {
 
 		const search: RecipeSearch = {
 			duration: {},
-			"ingredients.ingredient.products.foodConstraints.id": this.searchForm.value.inConstraints.map(_ => _.id),
+			"ingredients.ingredient.foodConstraints.id": this.searchForm.value.inConstraints.map(_ => _.id),
 			"meals.id": meal.id,
-			"not_in_ingredients.ingredient.products.foodConstraints.id": this.searchForm.value.outConstraints.map(_ => _.id)
+			"not_in_ingredients.ingredient.foodConstraints.id": this.searchForm.value.outConstraints.map(_ => _.id)
 		};
 
 		if (this.searchForm.value.timeMin)
@@ -236,7 +236,7 @@ export class MealsComponent extends BaseComponent implements OnInit {
 				name,
 				"recipes.duration": {},
 				"recipes.ingredients.ingredient.foodConstraints.id": inConstraintIds,
-				"not_in_recipes.ingredients.ingredient.products.foodConstraints.id": outConstraintIds
+				"not_in_recipes.ingredients.ingredient.foodConstraints.id": outConstraintIds
 			};
 
 			if (this.searchForm.value.timeMin)

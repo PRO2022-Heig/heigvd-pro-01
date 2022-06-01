@@ -11,7 +11,7 @@ import { HomeMeal } from "./home-meal.interface";
 export interface HomeMealSearch extends MealSearch {
 	"recipes.duration"?: ModelNumberFilter;
 	"recipes.ingredients.ingredient.foodConstraints.id"?: ModelId | ModelId[];
-	"not_in_recipes.ingredients.ingredient.products.foodConstraints.id"?: ModelId[];
+	"not_in_recipes.ingredients.ingredient.foodConstraints.id"?: ModelId[];
 }
 
 @Injectable({
