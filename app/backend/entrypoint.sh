@@ -10,6 +10,7 @@ echo "Waiting for database"
 /app/wait-for-it.sh -h ${DATABASE:=database} -p ${PORT:=3306} -t 90
 
 echo "DATABASE_URL='$DATABASE_URL'" >> /app/.env
+echo "APP_ENV='prod'" >> /app/.env
 
 echo "Seting up composer"
 cd /app && composer setup
