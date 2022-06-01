@@ -14,7 +14,7 @@ class RecipeIngredient extends AbstractEntity
 
     #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: "ingredients")]
     #[ORM\JoinColumn(nullable: false)]
-    private Recipe $recipe;
+    private ?Recipe $recipe;
 
     #[ORM\ManyToOne(targetEntity: Ingredient::class)]
     #[ORM\JoinColumn(nullable: false)]
