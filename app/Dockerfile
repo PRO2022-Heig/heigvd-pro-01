@@ -2,7 +2,7 @@
 FROM node:18-alpine3.14 AS build_node
 COPY ./frontend /src
 WORKDIR /src
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 
 FROM debian:latest as base
