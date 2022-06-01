@@ -1,5 +1,5 @@
 import { KeysOf, RecursivePartial } from "../../../../helpers/types";
-import { Model, ModelWithId } from "./model.interface";
+import {Model, ModelId, ModelWithId} from "./model.interface";
 
 export interface ModelFindResponse<T> {
 	// TODO: watch for field change
@@ -15,13 +15,32 @@ export interface ModelFoundAndPagination<T> {
 	};
 }
 
-// TODO (hypothetical, temporary)
-export type ModelSearch<T> = RecursivePartial<T>;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export interface ModelSearch<T> {
+	id?: ModelId[];
+
+	// TODO: more
+}
+
+export interface ModelNumberFilter {
+	// greater
+	gt?: number;
+	// greater or equal
+	gte?: number;
+	// lesser
+	lt?: number;
+	// lesser or equal
+	lte?: number;
+
+	// TODO: add between?
+}
 
 export interface ModelSearchParams<T> {
+	page?: number;
+
+	// TODO (hypothetical)
 	limit?: number;
 	skip?: number;
-	// TODO (hypothetical)
 	sort?: ModelSort<T>;
 }
 

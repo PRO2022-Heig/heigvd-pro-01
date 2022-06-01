@@ -2,16 +2,25 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { LoginComponent, LoginComponentData } from "../components/login/login.component";
-import { MealComponent } from "../components/meals/meal/meal.component";
 import { MealsComponent } from "../components/meals/meals.component";
+import { NotFoundComponent } from "../components/not-found/not-found/not-found.component";
 import { RecipeComponent } from "../components/recipe/recipe.component";
+import { UserEventsComponent } from "../components/users/user-events/user-events.component";
+import { UserGroupsComponent } from "../components/users/user-groups/user-groups.component";
 import { UserProfileComponent } from "../components/users/user-profile/user-profile.component";
 import { AuthGuard } from "../guards";
-import {NotFoundComponent} from "../components/not-found/not-found/not-found.component";
 
 const routes: Routes = [{
 	component: UserProfileComponent,
 	path: "profile",
+	canActivate: [AuthGuard]
+}, {
+	component: UserEventsComponent,
+	path: "profile/events",
+	canActivate: [AuthGuard]
+}, {
+	component: UserGroupsComponent,
+	path: "profile/groups",
 	canActivate: [AuthGuard]
 }, {
 	component: LoginComponent,
@@ -23,9 +32,6 @@ const routes: Routes = [{
 }, {
 	component: MealsComponent,
 	path: "meals"
-}, {
-	component: MealComponent,
-	path: "meal/:id"
 }, {
 	component: RecipeComponent,
 	path: "recipe/:id"

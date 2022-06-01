@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Entity\Meal\HomeMeal;
 use App\Entity\Meal\RestaurantMeal;
 use App\Repository\MealRepository;
@@ -15,6 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\DiscriminatorMap(["home_meal" => HomeMeal::class, "restaurant_meal" => RestaurantMeal::class])]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
 class Meal extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
@@ -22,7 +25,7 @@ class Meal extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     public function getName(): ?string
     {

@@ -1,0 +1,21 @@
+<div *ngIf="!loading" id="events" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+	<app-user-event *ngFor="let event of events"
+					fxFlex="500px" fxFlex.lt-sm="100" fxFlexAlign="start" [event]="event"
+					(eventDisappears)="removedEvent($event)"
+	></app-user-event>
+
+	<mat-card *ngIf="!events.length">
+		<mat-card-header>
+			<mat-card-title>Pas d'événements</mat-card-title>
+		</mat-card-header>
+
+		<mat-card-content>
+			<p>Vous ne faites partie d'aucun groupe ou aucun de vos groupe n'a d'événement.</p>
+
+			<p>
+				Accédez à la page des
+				<a routerLink="/profile/groups">Groupes</a>.
+			</p>
+		</mat-card-content>
+	</mat-card>
+</div>
