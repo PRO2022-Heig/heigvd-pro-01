@@ -46,7 +46,10 @@
 						<p *ngIf="error">
 							<mat-error *ngIf="error.status === 400">
 								<mat-icon inline>error_outline</mat-icon>
-								<ng-container>Votre requête a échoué. <br>Vérifiez que votre mot de passe contient 8 charactères, au moins une majuscule, un chiffre et un charactère spécial.</ng-container>
+								<ng-container>Votre requête a échoué. <br>
+									Vérifiez que votre mot de passe contient 8 charactères,
+									au moins une majuscule, un chiffre et un charactère spécial.
+								</ng-container>
 							</mat-error>
 
 							<mat-error *ngIf="error.status === 401">
