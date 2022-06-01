@@ -9,7 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\PropertyInfo\Type;
 
-class NotInFilter extends AbstractContextAwareFilter
+class NumericNotInFilter extends AbstractContextAwareFilter
 {
     use NumericFilterTrait;
 
@@ -34,18 +34,37 @@ class NotInFilter extends AbstractContextAwareFilter
         string $resourceClass,
         string $operationName = null
     ) {
-        // otherwise filter is applied to order and page as well
         if (
             !$this->isPropertyEnabled($property, $resourceClass) ||
-            !$this->isPropertyMapped($property, $resourceClass)
+            !$this->isPropertyMapped($property, $resourceClass) ||
+            !$this->isNumericField($property, $resourceClass)
         ) {
             return;
         }
 
-        $parameterName = $queryNameGenerator->generateParameterName($property); // Generate a unique parameter name to avoid collisions with other filters
-        $queryBuilder
-            ->andWhere(sprintf('%s NOT IN (%s)', $property, $parameterName))
-            ->setParameter($parameterName, $value);
+        $values = $this->normalizeValues($value, $property);
+        if (null === $values) {
+            return;
+        }
+
+        $alias = $queryBuilder->getRootAliases()[0];
+        $field = $property;
+
+        if ($this->isPropertyNested($property, $resourceClass)) {
+            [$alias, $field] = $this->addJoinsForNestedProperty($property, $alias, $queryBuilder, $queryNameGenerator, $resourceClass);
+        }
+
+        $valueParameter = $queryNameGenerator->generateParameterName($field);
+
+        if (1 === \count($values)) {
+            $queryBuilder
+                ->andWhere(sprintf('%s.%s != :%s', $alias, $field, $valueParameter))
+                ->setParameter($valueParameter, $values[0], (string) $this->getDoctrineFieldType($property, $resourceClass));
+        } else {
+            $queryBuilder
+                ->andWhere(sprintf('%s.%s NOT IN (:%s)', $alias, $field, $valueParameter))
+                ->setParameter($valueParameter, $values);
+        }
     }
 
     public function getDescription(string $resourceClass): array
