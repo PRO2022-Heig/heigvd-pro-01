@@ -28,6 +28,7 @@ class Group extends AbstractEntity
     public function __construct()
     {
         $this->events = new ArrayCollection();
+        $this->groupUserMemberships = new ArrayCollection();
     }
 
     public function getName(): ?string
@@ -62,12 +63,7 @@ class Group extends AbstractEntity
 
     public function removeEvent(Event $event): self
     {
-        if ($this->events->removeElement($event)) {
-            // set the owning side to null (unless already changed)
-            if ($event->getGroup() === $this) {
-                $event->setGroup(null);
-            }
-        }
+        $this->events->removeElement($event);
 
         return $this;
     }

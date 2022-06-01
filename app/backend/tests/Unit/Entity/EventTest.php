@@ -3,6 +3,7 @@
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\Event;
+use App\Entity\Group;
 use App\Entity\Meal;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -39,5 +40,13 @@ class EventTest extends KernelTestCase
         $meal = $this->hydrate(Meal::class, ["name" => "meal"]);
         $event = $this->hydrate(Event::class, ["meal" => $meal]);
         $this->assertEquals($meal, $event->getMeal(), $meal->getName() . " does not match return");
+    }
+
+
+    public function testGroupGetterAndSetter(): void
+    {
+        $group = $this->hydrate(Group::class, ["name" => "ghidra-fans"]);
+        $event = $this->hydrate(Event::class, ["group" => $group]);
+        $this->assertEquals($group, $event->getGroup(), "Group is incorrect");
     }
 }
