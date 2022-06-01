@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { ModelId } from "../_lib/model";
+import { ModelNumberFilter } from "../_lib/model/model.types";
 
 import { MealSearch, MealService } from "../meal";
 import { recipeDecodeEntityName } from "../recipe";
@@ -8,7 +9,9 @@ import { HomeMeal } from "./home-meal.interface";
 
 // TODO
 export interface HomeMealSearch extends MealSearch {
+	"recipes.duration"?: ModelNumberFilter;
 	"recipes.ingredients.ingredient.foodConstraints.id"?: ModelId | ModelId[];
+	"not_in_recipes.ingredients.ingredient.products.foodConstraints.id"?: ModelId[];
 }
 
 @Injectable({

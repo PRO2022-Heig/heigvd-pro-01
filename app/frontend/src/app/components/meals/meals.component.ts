@@ -8,14 +8,15 @@ import { ModelFoundAndPagination } from "../../api/_lib/model/model.types";
 import { BaseComponent } from "../_lib/_basics";
 
 import { FoodConstraint, FoodConstraintService } from "../../api/food-constraint";
-import { HomeMealService } from "../../api/home-meal";
+import { HomeMealSearch, HomeMealService } from "../../api/home-meal";
 import { Meal, MealType } from "../../api/meal";
 import { Recipe, RecipeSearch, RecipeService } from "../../api/recipe";
 import { RestaurantMealService } from "../../api/restaurant-meal";
 
 interface SearchForm extends FormGroup {
 	controls: {
-		constraints: FormControl;
+		inConstraints: FormControl;
+		outConstraints: FormControl;
 		name: FormControl;
 		mealType: FormControl;
 		timeMin: FormControl;
@@ -23,7 +24,8 @@ interface SearchForm extends FormGroup {
 	};
 
 	value: {
-		constraints: FoodConstraint[];
+		inConstraints: FoodConstraint[];
+		outConstraints: FoodConstraint[];
 		mealType: MealType,
 		name: string;
 		timeMin: number;
@@ -60,10 +62,11 @@ export class MealsComponent extends BaseComponent implements OnInit {
 
 	// search results
 	public meals?: ModelFoundAndPagination<MealHelped>;
-	public recipesForMeal: { [mealId: number]: Recipe[] } = {};
 
-	public readonly constraintSearch = new FormControl();
-	public foodConstraints: FoodConstraint[] = [];
+	public readonly inConstraintSearch = new FormControl();
+	public readonly outConstraintSearch = new FormControl();
+	public foodInConstraints: FoodConstraint[] = [];
+	public foodOutConstraints: FoodConstraint[] = [];
 	public readonly searchForm: SearchForm;
 
 	private page = 1;
@@ -90,7 +93,8 @@ export class MealsComponent extends BaseComponent implements OnInit {
 		const timeValidators = [Validators.min(this.TIME_MIN), Validators.max(this.TIME_MAX)];
 
 		this.searchForm = new FormGroup({
-			constraints: new FormControl([]),
+			inConstraints: new FormControl([]),
+			outConstraints: new FormControl([]),
 			mealType: new FormControl("home_meal" as MealType, [Validators.required]),
 			name: new FormControl(""),
 			timeMin: new FormControl(this.TIME_MIN, timeValidators),
@@ -100,34 +104,61 @@ export class MealsComponent extends BaseComponent implements OnInit {
 
 	public ngOnInit() {
 		this.addSubscriptions(
-			this.constraintSearch.valueChanges.pipe(
+			this.inConstraintSearch.valueChanges.pipe(
 				debounceTime(250),
 				// Do not search with empty string
 				filter((_: string) => !!_),
 				distinctUntilChanged(),
 				switchMap(name => {
-					const ids = this.foodConstraints.map(_ => _.id);
+					const ids = this.foodInConstraints.map(_ => _.id);
 					return this.foodConstraintsService.find({name})
 						// Do not display if a constraint is already set
 						.then(constraints => constraints.filter(_ => !ids.includes(_.id)))
 						.catch(() => []);
 				})
-			).subscribe(_ => this.foodConstraints = _)
-		);
+			).subscribe(_ => this.foodInConstraints = _),
 
-		this.runSearch();
+			this.outConstraintSearch.valueChanges.pipe(
+				debounceTime(250),
+				// Do not search with empty string
+				filter((_: string) => !!_),
+				distinctUntilChanged(),
+				switchMap(name => {
+					const ids = this.foodOutConstraints.map(_ => _.id);
+					return this.foodConstraintsService.find({name})
+						// Do not display if a constraint is already set
+						.then(constraints => constraints.filter(_ => !ids.includes(_.id)))
+						.catch(() => []);
+				})
+			).subscribe(_ => this.foodOutConstraints = _)
+		);
 	}
 
-	public addConstraint(constraint: FoodConstraint) {
-		const constraints = this.searchForm.value.constraints;
+	public addInConstraint(constraint: FoodConstraint) {
+		const constraints = this.searchForm.value.inConstraints;
 		if (!constraints.find(_ => _.id === constraint.id))
 			constraints.push(constraint);
 
-		this.constraintSearch.setValue("");
+		this.inConstraintSearch.setValue("");
 	}
 
-	public removeConstraint(constraint: FoodConstraint) {
-		const constraints = this.searchForm.value.constraints;
+	public removeInConstraint(constraint: FoodConstraint) {
+		const constraints = this.searchForm.value.inConstraints;
+		const index = constraints.findIndex(_ => _.id === constraint.id);
+		if (index >= 0)
+			constraints.splice(index, 1);
+	}
+
+	public addOutConstraint(constraint: FoodConstraint) {
+		const constraints = this.searchForm.value.outConstraints;
+		if (!constraints.find(_ => _.id === constraint.id))
+			constraints.push(constraint);
+
+		this.outConstraintSearch.setValue("");
+	}
+
+	public removeOutConstraint(constraint: FoodConstraint) {
+		const constraints = this.searchForm.value.outConstraints;
 		const index = constraints.findIndex(_ => _.id === constraint.id);
 		if (index >= 0)
 			constraints.splice(index, 1);
@@ -160,12 +191,14 @@ export class MealsComponent extends BaseComponent implements OnInit {
 
 		const search: RecipeSearch = {
 			duration: {},
-			"meals.id": meal.id
+			"ingredients.ingredient.products.foodConstraints.id": this.searchForm.value.inConstraints.map(_ => _.id),
+			"meals.id": meal.id,
+			"not_in_ingredients.ingredient.products.foodConstraints.id": this.searchForm.value.outConstraints.map(_ => _.id)
 		};
 
 		if (this.searchForm.value.timeMin)
 			search.duration!.gte = this.searchForm.value.timeMin;
-		if (this.searchForm.value.timeMax >= this.TIME_MAX)
+		if (this.searchForm.value.timeMax < this.TIME_MAX)
 			search.duration!.lte = this.searchForm.value.timeMax;
 
 		return this.recipeService.find(search)
@@ -175,18 +208,32 @@ export class MealsComponent extends BaseComponent implements OnInit {
 	}
 
 	private loadMeals(): Promise<ModelFoundAndPagination<Meal>> {
-		const constraintIds = this.searchForm.value.constraints.map(_ => _.id);
+		const inConstraintIds = this.searchForm.value.inConstraints.map(_ => _.id);
+		const outConstraintIds = this.searchForm.value.outConstraints.map(_ => _.id);
 		const name = this.searchForm.value.name;
 
-		const action: Promise<ModelFoundAndPagination<Meal>> = this.searchForm.value.mealType === "restaurant_meal"
-			? this.restaurantMealService.findAndPagination({
-				name, "foodConstraint.id": constraintIds
-			}, {page: this.page})
-			: this.homeMealService.findAndPagination({
+		let action: Promise<ModelFoundAndPagination<Meal>>;
+		if (this.searchForm.value.mealType === "restaurant_meal")
+			action = this.restaurantMealService.findAndPagination({
 				name,
-				"recipes.ingredients.ingredient.foodConstraints.id": constraintIds
-			}, {page: this.page})
-		;
+				"foodConstraint.id": inConstraintIds,
+				"not_in_foodConstraint.id": outConstraintIds
+			}, {page: this.page});
+		else {
+			const search: HomeMealSearch = {
+				name,
+				"recipes.duration": {},
+				"recipes.ingredients.ingredient.foodConstraints.id": inConstraintIds,
+				"not_in_recipes.ingredients.ingredient.products.foodConstraints.id": outConstraintIds
+			};
+
+			if (this.searchForm.value.timeMin)
+				search["recipes.duration"]!.gte = this.searchForm.value.timeMin;
+			if (this.searchForm.value.timeMax < this.TIME_MAX)
+				search["recipes.duration"]!.lte = this.searchForm.value.timeMax;
+
+			action = this.homeMealService.findAndPagination(search, {page: this.page});
+		}
 
 		this.state.error = false;
 		this.state.loading = true;

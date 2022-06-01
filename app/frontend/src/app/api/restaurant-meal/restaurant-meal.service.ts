@@ -11,6 +11,7 @@ import { RestaurantMeal } from "./restaurant-meal.interface";
 // TODO
 export interface RestaurantMealSearch extends MealSearch {
 	"foodConstraint.id"?: ModelId | ModelId[];
+	"not_in_foodConstraint.id"?: ModelId[];
 }
 
 @Injectable({

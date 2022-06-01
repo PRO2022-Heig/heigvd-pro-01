@@ -12,6 +12,8 @@ import { Recipe, RecipeIngredient } from "./recipe.interface";
 
 export interface RecipeSearch extends ModelSearch<Recipe>, Partial<Pick<Recipe, "name" | "description">> {
 	"meals.id"?: ModelId | ModelId[];
+	"ingredients.ingredient.products.foodConstraints.id"?: ModelId | ModelId[];
+	"not_in_ingredients.ingredient.products.foodConstraints.id"?: ModelId[];
 
 	duration?: ModelNumberFilter;
 	numberOfPeople?: ModelNumberFilter;

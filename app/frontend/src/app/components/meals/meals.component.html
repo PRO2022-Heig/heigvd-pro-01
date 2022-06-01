@@ -14,11 +14,11 @@
 				</mat-form-field>
 
 				<mat-form-field appearance="fill">
-					<mat-label>Contraintes d'exclusion</mat-label>
-					<mat-chip-list #chipList [formControl]="searchForm.controls.constraints">
+					<mat-label>Contraintes d'inclusion</mat-label>
+					<mat-chip-list #chipListIn [formControl]="searchForm.controls.inConstraints">
 						<mat-chip
-							*ngFor="let constraint of searchForm.value.constraints"
-							(removed)="removeConstraint(constraint)">
+							*ngFor="let constraint of searchForm.value.inConstraints"
+							(removed)="removeInConstraint(constraint)">
 
 							{{ constraint.name }}
 
@@ -29,14 +29,43 @@
 
 						<input
 							placeholder="Ajouter une contrainte"
-							[formControl]="constraintSearch"
-							[matAutocomplete]="auto"
-							[matChipInputFor]="chipList"
-							[value]="constraintSearch.value">
+							[formControl]="inConstraintSearch"
+							[matAutocomplete]="autoIn"
+							[matChipInputFor]="chipListIn"
+							[value]="inConstraintSearch.value">
 					</mat-chip-list>
 
-					<mat-autocomplete #auto="matAutocomplete" (optionSelected)="addConstraint($event.option.value)">
-						<mat-option *ngFor="let constraint of foodConstraints" [value]="constraint">
+					<mat-autocomplete #autoIn="matAutocomplete" (optionSelected)="addInConstraint($event.option.value)">
+						<mat-option *ngFor="let constraint of foodInConstraints" [value]="constraint">
+							{{ constraint.name }} <span *ngIf="constraint.description">- {{ constraint.description }}</span>
+						</mat-option>
+					</mat-autocomplete>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Contraintes d'exclusion</mat-label>
+					<mat-chip-list #chipListOut [formControl]="searchForm.controls.outConstraints">
+						<mat-chip
+							*ngFor="let constraint of searchForm.value.outConstraints"
+							(removed)="removeOutConstraint(constraint)">
+
+							{{ constraint.name }}
+
+							<button matChipRemove>
+								<mat-icon>cancel</mat-icon>
+							</button>
+						</mat-chip>
+
+						<input
+							placeholder="Ajouter une contrainte"
+							[formControl]="outConstraintSearch"
+							[matAutocomplete]="autoOut"
+							[matChipInputFor]="chipListOut"
+							[value]="outConstraintSearch.value">
+					</mat-chip-list>
+
+					<mat-autocomplete #autoOut="matAutocomplete" (optionSelected)="addOutConstraint($event.option.value)">
+						<mat-option *ngFor="let constraint of foodOutConstraints" [value]="constraint">
 							{{ constraint.name }} <span *ngIf="constraint.description">- {{ constraint.description }}</span>
 						</mat-option>
 					</mat-autocomplete>
