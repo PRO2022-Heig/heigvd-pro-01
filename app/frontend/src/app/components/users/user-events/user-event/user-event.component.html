@@ -47,15 +47,23 @@
 								></ngx-mat-select-search>
 							</mat-option>
 
-							<mat-option *ngFor="let meal of meals" [value]="meal">
+							<ng-template #mealOption let-meal="meal">
 								<mat-icon>{{ meal.home_type === "home_meal" ? "home" : "restaurant" }}</mat-icon>
 								{{ meal.name }}
+							</ng-template>
+
+							<mat-select-trigger *ngIf="mealForm.controls.meal.value">
+								<ng-container *ngTemplateOutlet="mealOption; context: {meal: mealForm.controls.meal.value}"></ng-container>
+							</mat-select-trigger>
+
+							<mat-option *ngFor="let meal of meals" [value]="meal">
+								<ng-container *ngTemplateOutlet="mealOption; context: {meal}"></ng-container>
 							</mat-option>
 						</mat-select>
 					</mat-form-field>
 
 					<button mat-button type="submit"
-							[disabled]="!mealForm.controls.meal.value || mealForm.controls.meal.value === event._meal">Changer</button>
+							[disabled]="!mealForm.controls.meal.value || mealForm.controls.meal.value === event._meal">Appliquer</button>
 				</form>
 
 				<mat-card *ngIf="event._meal">

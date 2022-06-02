@@ -44,12 +44,19 @@ export async function getAllEventsGroups(services: GetAllEventsGroupsServices, u
 	return guMembershipService.find({
 		"user.id": user.id
 	}).then(_ => _.map(_ => _.__group)).then(async myGroupIds => {
+		if (!myGroupIds.length)
+			return {events: [], groups: []};
+
 		const groups = await groupService.find<GroupHelped>({id: myGroupIds});
+		if (!groups.length) // Should not happen
+			return {events: [], groups: []};
+
+		const eventIds = groups.reduce((prev, curr) => prev.concat(curr.__events), [] as ModelId[]);
 
 		const [events, memberships] = await Promise.all([
-			eventService.find<EventHelped>({
-				id: groups.reduce((prev, curr) => prev.concat(curr.__events), [] as ModelId[])
-			}),
+			eventIds.length ? eventService.find<EventHelped>({
+				id: eventIds
+			}) : [],
 			guMembershipService.find<GroupUserMembershipHelped>({
 				"group.id": myGroupIds
 			}).then(async memberships => {

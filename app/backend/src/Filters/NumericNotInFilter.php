@@ -7,7 +7,6 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\AbstractContextAwareFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\QueryNameGeneratorInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\QueryBuilder;
-use Symfony\Component\PropertyInfo\Type;
 
 class NumericNotInFilter extends AbstractContextAwareFilter
 {
@@ -39,6 +38,7 @@ class NumericNotInFilter extends AbstractContextAwareFilter
         } else {
             return;
         }
+
         if (
             !$this->isPropertyEnabled($property, $resourceClass) ||
             !$this->isPropertyMapped($property, $resourceClass) ||
@@ -52,22 +52,49 @@ class NumericNotInFilter extends AbstractContextAwareFilter
             return;
         }
 
-        $alias = $queryBuilder->getRootAliases()[0];
-        $field = $property;
-
-        if ($this->isPropertyNested($property, $resourceClass)) {
-            [$alias, $field] = $this->addJoinsForNestedProperty($property, $alias, $queryBuilder, $queryNameGenerator, $resourceClass);
+        if (!is_array($values)) {
+            // Only manage "NOT IN"
+            $values = [$values];
         }
 
+        // Default alias and field
+        $tblAlias = $queryBuilder->getRootAliases()[0];
+        $field = $property;
+        // Name of the PDO parameter
         $valueParameter = $queryNameGenerator->generateParameterName($field);
 
-        if (1 === \count($values)) {
+        if ($this->isPropertyNested($property, $resourceClass)) {
+            // TODO: create a "NotInRelationsFilter" and let this one as a simple NOT IN?
+            // Use another alias than the default the nested query
+            $nestedAlias = "o_n";
+            $nestedQuery = $queryBuilder
+                ->getEntityManager()
+                ->getRepository($resourceClass)
+                ->createQueryBuilder($nestedAlias);
+
+            // Get the alias relation and field
+            [$rAlias, $rField] = $this->addJoinsForNestedProperty($property, $nestedAlias, $nestedQuery, $queryNameGenerator, $resourceClass);
+
+            // Primary key field
+            $pkField = $this->getClassMetadata($resourceClass)->getIdentifier()[0];
+
+            // The nested query (Adding the parameters here will fail the request)
+            $nestedQuery
+                ->select(sprintf("DISTINCT %s.%s", $nestedAlias, $pkField))
+                ->andWhere(sprintf("%s.%s IN (:%s)", $rAlias, $rField, $valueParameter));
+
             $queryBuilder
-                ->andWhere(sprintf("%s.%s != :%s", $alias, $field, $valueParameter))
-                ->setParameter($valueParameter, $values[0], (string) $this->getDoctrineFieldType($property, $resourceClass));
+                ->andWhere(
+                    $queryBuilder->expr()->notIn(
+                        sprintf("%s.%s", $tblAlias, $pkField),
+                        $nestedQuery->getDQL()
+                    )
+                )
+                ->setParameter($valueParameter, $values);
         } else {
+            // NOT IN without any relations
             $queryBuilder
-                ->andWhere(sprintf("%s.%s NOT IN (:%s)", $alias, $field, $valueParameter))
+                ->andWhere(sprintf("%s.%s NOT IN (:%s)", $tblAlias, $field, $valueParameter))
                 ->setParameter($valueParameter, $values);
         }
     }
