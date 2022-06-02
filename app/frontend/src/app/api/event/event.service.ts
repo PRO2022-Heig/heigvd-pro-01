@@ -18,8 +18,10 @@ export class EventService extends ModelService<Event> {
 			get: () => groupDecodeEntityName(model.group)
 		});
 
-		if (model.meal) // TODO: better
-			model.__meal = +model.meal.split("/")[2];
+		if (model.meal) {
+			const chunk = model.meal.split("/");
+			model.__meal = +chunk[chunk.length - 1];
+		}
 
 		return model;
 	}
