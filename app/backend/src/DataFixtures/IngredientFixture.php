@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Ingredient;
-use function array_rand;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
