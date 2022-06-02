@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+	<button mat-icon-button (click)="menuClick.emit()" fxHide.gt-xs>
+		<mat-icon>menu</mat-icon>
+	</button>
+
+	<h1 class="logo"><img src="assets/foodzen-logo.png" alt="FoodZen"></h1>
+	<div fxFlex fxLayoutAlign="flex-end">
+		<app-toolbar fxHide.xs></app-toolbar>
+	</div>
+
+</mat-toolbar>

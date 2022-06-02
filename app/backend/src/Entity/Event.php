@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -10,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ["name" => "partial", "description" => "partial"])]
 class Event extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
@@ -17,10 +20,15 @@ class Event extends AbstractEntity
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\ManyToOne(targetEntity: Meal::class)]
-    private Meal $meal;
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Meal $meal;
+
+    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: "events")]
+    #[ORM\JoinColumn(nullable: false)]
+    private Group $group;
 
     public function getName(): ?string
     {
@@ -54,6 +62,18 @@ class Event extends AbstractEntity
     public function setMeal(?Meal $meal): self
     {
         $this->meal = $meal;
+
+        return $this;
+    }
+
+    public function getGroup(): ?Group
+    {
+        return $this->group;
+    }
+
+    public function setGroup(?Group $group): self
+    {
+        $this->group = $group;
 
         return $this;
     }

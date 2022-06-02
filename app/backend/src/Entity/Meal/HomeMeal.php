@@ -2,9 +2,13 @@
 
 namespace App\Entity\Meal;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 use App\Entity\Meal;
 use App\Entity\Recipe;
+use App\Filters\NumericNotInFilter;
 use App\Repository\Meal\HomeMealRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -13,9 +17,18 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: HomeMealRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ApiResource]
+#[ApiFilter(
+    NumericFilter::class,
+    properties: [
+        "recipes.ingredients.ingredient.foodConstraints.id",
+        "recipe.numberOfPeople"
+    ]
+)]
+#[ApiFilter(RangeFilter::class, properties: ["recipes.duration"])]
+#[ApiFilter(NumericNotInFilter::class, properties: ["recipes.ingredients.ingredient.foodConstraints.id"])]
 class HomeMeal extends Meal
 {
-    #[ORM\ManyToMany(targetEntity: Recipe::class)]
+    #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: "meals")]
     private Collection $recipes;
 
     public function __construct()
@@ -35,6 +48,7 @@ class HomeMeal extends Meal
     {
         if (!$this->recipes->contains($recipe)) {
             $this->recipes[] = $recipe;
+            $recipe->addMeal($this);
         }
 
         return $this;
@@ -42,7 +56,9 @@ class HomeMeal extends Meal
 
     public function removeRecipe(Recipe $recipe): self
     {
-        $this->recipes->removeElement($recipe);
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeMeal($this);
+        }
 
         return $this;
     }

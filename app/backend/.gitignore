@@ -23,3 +23,8 @@ coverage.txt
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+!/config/jwt/*_insecure.pem
+###< lexik/jwt-authentication-bundle ###

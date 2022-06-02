@@ -20,8 +20,11 @@ jobs:
         run: npm ci
         working-directory: './app/frontend'
       - name: Test
-        run: npm test -- --no-watch --browsers=ChromeHeadlessCI
+        run: npm run test-inline
         working-directory: './app/frontend'
-      - name: Lint
-        run: npm run lint
+      - name: Lint-code
+        run: npm run lint-code
+        working-directory: './app/frontend'
+      - name: Lint-style
+        run: npm run lint-style
         working-directory: './app/frontend'

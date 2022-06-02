@@ -2,21 +2,28 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\NumericFilter;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\HasLifecycleCallbacks]
+#[ApiFilter(NumericFilter::class, properties: ["id"])]
 abstract class AbstractEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
+    #[Groups(["entity:full"])]
     protected ?int $id = null;
 
-    #[ORM\Column(type: "datetime")]
+    #[ORM\Column(type: "datetime_immutable")]
+    #[Groups(["entity:full"])]
     protected DateTimeImmutable $createdAt;
 
-    #[ORM\Column(type: "datetime")]
+    #[ORM\Column(type: "datetime_immutable")]
+    #[Groups(["entity:full"])]
     protected DateTimeImmutable $updatedAt;
 
     #[ORM\PrePersist]

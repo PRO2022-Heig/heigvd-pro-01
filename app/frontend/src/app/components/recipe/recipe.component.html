@@ -1,0 +1,53 @@
+<div id="host" fxLayoutAlign="center center" ngClass.gt-xs="desktop-view">
+	<mat-card fxFlex="80" fxFlex.lt-sm="100">
+		<mat-card-content *ngIf="state.loading" fxLayoutAlign="center center">
+			<mat-spinner></mat-spinner>
+		</mat-card-content>
+
+		<mat-card-content *ngIf="state.error">
+			<mat-card-header>
+				<mat-card-title>Erreur</mat-card-title>
+				<mat-card-subtitle>{{ state.error.status }}</mat-card-subtitle>
+			</mat-card-header>
+
+			<mat-card-content>
+				<p>Une erreur est survenu.</p>
+
+				<mat-expansion-panel>
+					<mat-expansion-panel-header>Voir l'erreur ?</mat-expansion-panel-header>
+					{{ state.error.message }}
+				</mat-expansion-panel>
+			</mat-card-content>
+		</mat-card-content>
+
+		<mat-card-header *ngIf="data">
+			<mat-card-title>{{ data.recipe.name }}</mat-card-title>
+			<mat-card-subtitle *ngIf="data.recipe.description">{{ data.recipe.description }}</mat-card-subtitle>
+		</mat-card-header>
+
+		<mat-card-content *ngIf="data">
+			<hr>
+
+			<h2>Ingredients</h2>
+			<div id="ingredients" fxLayout="row wrap" fxLayoutAlign="left center">
+				<mat-card *ngFor="let ingredient of data.recipe.ingredients" class="ingredient">
+					<mat-card-subtitle>{{ ingredient.ingredient.name }}</mat-card-subtitle>
+					<mat-card-content>
+						{{ ingredient.quantity }} <span *ngIf="ingredient.unit.name !== 'undefined'">{{ ingredient.unit.name }}</span>
+					</mat-card-content>
+				</mat-card>
+			</div>
+
+			<hr>
+
+			<h2>Étapes</h2>
+			<div id="steps">
+				<div *ngFor="let step of data.steps" class="step">
+					<h3 class="step-title">Étape {{ step.number }}</h3>
+
+					<p>{{ step.action }}</p>
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</div>

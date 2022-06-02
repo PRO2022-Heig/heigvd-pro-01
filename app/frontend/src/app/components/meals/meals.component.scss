@@ -1,0 +1,51 @@
+#host {
+	padding: 1em;
+	box-sizing: border-box;
+
+	mat-panel-title {
+		font-size: 1.2em;
+	}
+
+	mat-panel-description {
+		font-size: 0.85em;
+	}
+}
+
+::ng-deep #ngx-slider .ngx-slider {
+	$color: #4b8b52;
+
+	.ngx-slider-pointer {
+		background: $color;
+
+		&::after {
+			background: lightblue;
+		}
+	}
+
+	.ngx-slider-selection {
+		background: $color;
+	}
+}
+
+#meal-types {
+	mat-radio-button {
+		padding: 10px;
+	}
+}
+
+.meals-sep {
+	background: rgba(255, 255, 255, 50%);
+	color: #a37d62;
+	margin: 1em 0;
+	padding: 0.5em 0;
+
+	#meals-result-title {
+		margin-bottom: 5px;
+	}
+}
+
+.restaurant-name {
+	font-style: italic;
+	margin-bottom: 5px;
+	text-decoration: underline;
+}

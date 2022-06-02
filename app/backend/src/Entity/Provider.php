@@ -6,6 +6,7 @@ use App\Repository\ProviderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProviderRepository::class)]
@@ -14,10 +15,11 @@ class Provider extends AbstractEntity
 {
     #[ORM\Column(type: "string", length: 255)]
     #[Assert\NotBlank]
+    #[Groups(["product:list"])]
     private string $name;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\OneToMany(mappedBy: "provider", targetEntity: Product::class, orphanRemoval: true)]
     private Collection $products;

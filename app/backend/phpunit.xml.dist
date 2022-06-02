@@ -31,6 +31,8 @@
         <exclude>
             <directory suffix=".php">src/Repository</directory>
             <directory suffix=".php">src/DataFixtures</directory>
+            <directory suffix=".php">src/Decorators</directory>
+            <directory suffix=".php">src/Filters</directory>
             <file>src/Kernel.php</file>
         </exclude>
         <report>
