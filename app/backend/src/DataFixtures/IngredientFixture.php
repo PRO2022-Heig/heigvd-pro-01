@@ -15,16 +15,16 @@ class IngredientFixture extends AbstractDataImportFixture implements DependentFi
     {
         $data = $this->getJsonData(mandatoryFields: ["ingredient", "products"]);
 
-        $constraints = [
-            "fr:Glute",
-            "fr:amandon",
-            "fr:oursin"
-        ];
         foreach ($data as $key => $item) {
             $ingredient = new Ingredient();
-            $ingredient
-                ->setName($item["ingredient"])
-                ->addFoodConstraint($this->getReference("allergen-" . $constraints[array_rand($constraints)]));
+            $ingredient->setName($item["ingredient"]);
+
+            foreach ($item["allergens"] ?? [] as $allergen) {
+                $ref = "allergen-$allergen";
+                if ($this->hasReference($ref)) {
+                    $ingredient->addFoodConstraint($this->getReference($ref));
+                }
+            }
 
             $manager->persist($ingredient);
             $this->addReference("ingredient-" . $key, $ingredient);
