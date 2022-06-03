@@ -1,3914 +1,2489 @@
 {
     "pur\u00e9e": [
-        "fr:pure",
-        "fr:pvure",
-        "fr:puure"
+        "pur\u00e9e"
     ],
     "oignons": [
-        "fr:oig\u0148ons",
-        "fr:\ufeffoignons",
-        "fr:oignonsl"
+        "oignons"
     ],
     "ail": [
-        "fr:\ud83e\uddc5ail",
-        "fr:\ud83e\uddc2ail",
-        "fr:sail"
+        "ail"
     ],
     "tomates": [
-        "fr:tomatesl",
-        "fr:tomates1",
-        "fr:v-tomates"
+        "tomates"
     ],
     "farine": [
-        "fr:t-farine",
-        "fr:oefarine",
-        "fr:j-farine"
+        "farine"
     ],
     "herbes de Provence": [
-        "fr:herbes-de-provencel",
-        "fr:herbes-de-provence-o",
-        "fr:herbes-de-provence-i"
+        "herbes de Provence"
     ],
     "Parmesan": [
-        "fr:parmesan-1",
-        "fr:pdo-parmesan",
-        "fr:parmesan-sel"
+        "Parmesan"
     ],
     "beurre": [
-        "fr:beurre\ud83e\uddc8",
-        "fr:beurret",
-        "fr:beurrer"
+        "beurre"
     ],
     "fromage r\u00e2p\u00e9": [
-        "fr:fromage-repe",
-        "fr:fromage-rape",
-        "fr:fromage-rappe"
+        "fromage r\u00e2p\u00e9"
     ],
     "sel": [
-        "fr:se\u013c",
-        "fr:\ud83e\udd69sel",
-        "fr:\ud83e\udd5bsel"
+        "sel"
     ],
     "poivre": [
-        "fr:poivrez",
-        "fr:poivrer",
-        "fr:poivren"
+        "poivre"
     ],
     "viande hach\u00e9e": [
-        "fr:viande-hachee",
-        "fr:viandes-blanches",
-        "fr:viandc-fraiche"
+        "viande hach\u00e9e"
     ],
     "jaune d'oeuf": [
-        "fr:jaune-doeuf",
-        "fr:jaune-dtoeuf",
-        "fr:jaune-doeufs"
+        "jaune d'oeuf"
     ],
     "pomme de terre": [
-        "fr:pomme-de-terre\ud83e\udd54",
-        "fr:pomme-de-terref",
-        "fr:pomme-de-terre1"
+        "pomme de terre"
     ],
     "oignon": [
-        "fr:oignon\ud83e\uddc5",
-        "fr:oignont",
-        "fr:oig\u0148ons"
+        "oignon"
     ],
     "reblochon": [
-        "fr:reblochon",
-        "fr:reblochons",
-        "fr:reblochon-ao"
+        "reblochon"
     ],
     "huile": [
-        "fr:huilez",
-        "fr:t-huile",
-        "fr:huilede"
+        "huile"
     ],
     "lardons fum\u00e9s": [
-        "fr:lardons-fum-es",
-        "fr:lardonsfumes",
-        "fr:lardons-fumes-4"
+        "lardons fum\u00e9s"
     ],
-    "cube de bouillon": [],
+    "cube de bouillon": [
+        "cube de bouillon"
+    ],
     "bouillon de poule": [
-        "fr:fr-bouillon-de-poule",
-        "fr:bouillon-de-poulet-60",
-        "fr:eau-bouillon-de-poulet"
+        "bouillon de poule"
     ],
     "carottes": [
-        "fr:c\u1ea3rottes",
-        "fr:carottes\ud83e\udd55",
-        "fr:carottesl"
+        "carottes"
     ],
     "oignon jaune": [
-        "fr:oignon-jaunet",
-        "fr:oignon-jaune-cal",
-        "fr:oignon-jaune-cat-1-cal-40"
+        "oignon jaune"
     ],
     "champignon": [
-        "fr:champignonst",
-        "fr:champignoner",
-        "fr:1-champignon"
+        "champignon"
     ],
     "cr\u00e8me fra\u00eeche": [
-        "fr:creme-frache",
-        "fr:creme-franche",
-        "fr:creme-fr\u0103iche"
+        "cr\u00e8me fra\u00eeche"
     ],
     "citron": [
-        "fr:icitron",
-        "fr:citron3",
-        "fr:citron1"
+        "citron"
     ],
     "vin blanc": [
-        "fr:vin-blanca",
-        "fr:vin-blanc-1",
-        "fr:vin-blanc-0"
+        "vin blanc"
     ],
     "blanquette de veau": [
-        "fr:blanquette-de-veau"
+        "blanquette de veau"
     ],
     "beurre doux": [
-        "fr:babeurre-doux",
-        "fr:2-beurre-doux",
-        "fr:beurre-doux-lait"
+        "beurre doux"
     ],
     "lait": [
-        "fr:\u013cait",
-        "fr:plait",
-        "fr:llait"
+        "lait"
     ],
     "lasagnes": [
-        "fr:pate-a-lasagnes",
-        "fr:pates-a-lasagnes"
+        "lasagnes"
     ],
     "oignons jaunes": [
-        "fr:oignons-jaunes-calibre-50",
-        "fr:oignons-jaunes-dmufs-sales"
+        "oignons jaunes"
     ],
     "c\u00e9leri": [
-        "fr:cleri",
-        "fr:csleri",
-        "fr:\u0107eleri"
+        "c\u00e9leri"
     ],
     "carotte": [
-        "fr:lcarotte",
-        "fr:c\u1ea3rottes",
-        "fr:carotter"
+        "carotte"
     ],
     "pur\u00e9e de tomate": [
-        "fr:pure-de-tomate",
-        "fr:pures-de-tomate",
-        "fr:pur\u0117e-de-tomate"
+        "pur\u00e9e de tomate"
     ],
     "eau": [
-        "fr:e\u0103\u0173",
-        "fr:seau",
-        "fr:reau"
+        "eau"
     ],
     "vin rouge": [
-        "fr:vi\u0146-rouge",
-        "fr:vin-rouge-s",
-        "fr:vin-rouge-1"
+        "vin rouge"
     ],
     "feuilles de laurier": [
-        "fr:clous-de-girofle-moulus-feuilles-de-laurier"
+        "feuilles de laurier"
     ],
     "thym": [
-        "fr:thyml",
-        "fr:thyme",
-        "fr:thyma"
+        "thym"
     ],
     "basilic": [
-        "fr:ba\u015filic",
-        "fr:basilicu",
-        "fr:basilico"
+        "basilic"
     ],
     "muscade": [
-        "fr:muscade-l",
-        "fr:muscade-0",
-        "fr:f4-muscade"
+        "muscade"
     ],
     "boeuf hach\u00e9": [
-        "fr:boeuf-hache",
-        "fr:boeuf-hache-1",
-        "fr:boeuf-halal"
+        "boeuf hach\u00e9"
     ],
     "poireau": [
-        "fr:poireaut",
-        "fr:poireaur",
-        "fr:poireaul"
+        "poireau"
     ],
     "moutarde de Dijon": [
-        "fr:moutarde-d\u1ec5-dijon",
-        "fr:moutarde-de-dijon-3",
-        "fr:moutarde-de-dijon-1"
+        "moutarde de Dijon"
     ],
     "jus de citron": [
-        "fr:jus-de-citroni",
-        "fr:\u2155-jus-de-citron",
-        "fr:jus-de-citron17"
+        "jus de citron"
     ],
     "chili": [
-        "fr:chilies",
-        "fr:chili-0",
-        "fr:b-chili"
+        "chili"
     ],
     "cumin en poudre": [
-        "fr:cumin-en-poudre",
-        "fr:tombava-cumin-en-poudre",
-        "fr:cumin-en-poudre-piment-fort"
+        "cumin en poudre"
     ],
     "concentr\u00e9 de tomates": [
-        "fr:concentr-de-tomates",
-        "fr:concentrf-de-tomates",
-        "fr:concentr\u1ebb-de-tomates"
+        "concentr\u00e9 de tomates"
     ],
     "haricots rouges": [
-        "fr:haricots-rouges-1",
-        "fr:pate-haricots-rouges",
-        "fr:haricots-rouges-azuki"
+        "haricots rouges"
     ],
     "bouillon de boeuf": [
-        "fr:sel-bouillon-de-boeuf",
-        "fr:bouillon-de-boeuf-eau",
-        "fr:ents-bouillon-de-boeuf"
+        "bouillon de boeuf"
     ],
     "persil": [
-        "fr:per\u0161il",
-        "fr:persill",
-        "fr:persili"
+        "persil"
     ],
     "p\u00e2tes": [
-        "fr:putes",
-        "fr:pa\u021bes",
-        "fr:eptes"
+        "p\u00e2tes"
     ],
     "lardons": [
-        "fr:lardons-1",
-        "fr:fr-lardons",
-        "fr:sel-lardons"
+        "lardons"
     ],
     "jaunes d'oeuf": [
-        "fr:jaunes-doeufs",
-        "fr:jaune-doeuf",
-        "fr:jaunes-dtoeufs"
+        "jaunes d'oeuf"
     ],
     "merguez": [
-        "fr:merguez-8",
-        "fr:mix-merguez",
-        "fr:8-j-merguez"
+        "merguez"
     ],
     "huile d'olive": [
-        "fr:huile-dolive",
-        "fr:huile-dzolive",
-        "fr:huile-dtolive"
+        "huile d'olive"
     ],
     "\u00e9pices \u00e0 couscous": [
-        "fr:epices-couscous",
-        "fr:epices-ouscous",
-        "fr:i-de-couscous"
+        "\u00e9pices \u00e0 couscous"
     ],
     "harissa": [
-        "fr:hariss\u0103",
-        "fr:harissa-0",
-        "fr:sel-harissa"
+        "harissa"
     ],
     "cubes de bouillon": [
-        "fr:des-cubes-de-bouillon",
-        "fr:poule-ingredients-cubes-de-bouillon"
+        "cubes de bouillon"
     ],
     "courgettes": [
-        "fr:courgettesi",
-        "fr:t-courgettes",
-        "fr:courgettes-8"
+        "courgettes"
     ],
     "pois chiches": [
-        "fr:poi\u015b-chiches",
-        "fr:3-pois-chiches",
-        "fr:pois-chiches-25"
+        "pois chiches"
     ],
     "pilons de poulet": [
-        "fr:pilons-de-poulet",
-        "fr:pilons-de-poulet-cuits",
-        "fr:pilons-de-poulet-5-eau"
+        "pilons de poulet"
     ],
     "navets": [
-        "fr:navets-4",
-        "fr:navets-3-z",
-        "fr:navets-cubes"
+        "navets"
     ],
     "huile de s\u00e9same": [
-        "fr:lhuile-de-sesame",
-        "fr:hule-de-sesame",
-        "fr:huile-desesame"
+        "huile de s\u00e9same"
     ],
     "gingembre": [
-        "fr:gingembrei",
-        "fr:gingembrea",
-        "fr:l-gingembre"
+        "gingembre"
     ],
     "nouilles chinoises": [
-        "fr:nouilles-chinoises",
-        "fr:nouilles-chinoises-seches",
-        "fr:nouilles-chinoises-cuites"
+        "nouilles chinoises"
     ],
     "ma\u00efs": [
-        "fr:mas",
-        "fr:omas",
-        "fr:mays"
+        "ma\u00efs"
     ],
     "miso": [
-        "fr:misoi",
-        "fr:misoal",
-        "fr:miso-soja"
+        "miso"
     ],
     "germe de luzerne": [
-        "fr:germes-de-luzerne",
-        "fr:miel-de-luzerne",
-        "fr:germe-de-hle"
+        "germe de luzerne"
     ],
     "comt\u00e9": [
-        "fr:com",
-        "fr:comtit",
-        "fr:compte"
+        "comt\u00e9"
     ],
     "beaufort": [
-        "fr:beaufort",
-        "fr:beaufortaop",
-        "fr:sell-beaufort"
+        "beaufort"
     ],
     "emmental": [
-        "fr:emmentale",
-        "fr:emmental1",
-        "fr:o-emmental"
+        "emmental"
     ],
     "vin blanc sec": [
-        "fr:10cl-de-vin-blanc-sec",
-        "fr:vin-blanc-sec-condrieu",
-        "fr:echalotes-vin-blanc-sec"
+        "vin blanc sec"
     ],
     "ma\u00efzena": [
-        "fr:maizena",
-        "fr:maiena",
-        "fr:matenau"
+        "ma\u00efzena"
     ],
     "liqueur": [
-        "fr:liqueur-rhum",
-        "fr:liqueure-cacao",
-        "fr:liqueur-orange"
+        "liqueur"
     ],
     "oeuf": [
-        "fr:o\u0113uf",
-        "fr:poeuf",
-        "fr:ooeuf"
+        "oeuf"
     ],
     "curcuma": [
-        "fr:curcum\u0103",
-        "fr:curcumat",
-        "fr:curcuman"
+        "curcuma"
     ],
     "piment": [
-        "fr:\ud83e\uddc2piment",
-        "fr:piment\ud83c\udf36",
-        "fr:pimento"
+        "piment"
     ],
     "saucisses": [
-        "fr:saucisses",
-        "fr:8-saucisses",
-        "fr:5-saucisses"
+        "saucisses"
     ],
     "laurier": [
-        "fr:lauriert",
-        "fr:laurier-0",
-        "fr:he-laurier"
+        "laurier"
     ],
     "bouquet garni": [
-        "fr:bouquet-garni",
-        "fr:6-dont-bouquet-garni",
-        "fr:avec-un-bouquet-garni"
+        "bouquet garni"
     ],
     "bourguignon": [
-        "fr:beuf-bourguignon",
-        "fr:boeuf-bourguignon",
-        "fr:sauce-bourguignonne"
+        "bourguignon"
     ],
     "pommes de terre": [
-        "fr:t-pommes-de-terre",
-        "fr:pommes-de-terre-9",
-        "fr:pommes-de-terre-6"
+        "pommes de terre"
     ],
     "sauce barbecue": [
-        "fr:sauce-barbecue",
-        "fr:de-sauce-barbecue",
-        "fr:d-une-sauce-barbecue"
+        "sauce barbecue"
     ],
     "gouda": [
-        "fr:gouda",
-        "fr:gouda-sel",
-        "fr:dont-gouda"
+        "gouda"
     ],
     "tabasco": [
-        "fr:tabasco",
-        "fr:tabasco-rouge",
-        "fr:sauce-tabasco"
+        "tabasco"
     ],
     "tortillas": [
-        "fr:tortillas-souples",
-        "fr:epinards-tortillas",
-        "fr:ingredients-tortillas"
+        "tortillas"
     ],
     "oignon blanc": [
-        "fr:oignon-blanc-26"
+        "oignon blanc"
     ],
     "coulis de tomate": [
-        "fr:coulis-de-tomates",
-        "fr:sel-coulis-de-tomate",
-        "fr:coulis-de-tomates-37"
+        "coulis de tomate"
     ],
     "poivron vert": [
-        "fr:poivron-verte",
-        "fr:poivron-vert-2",
-        "fr:poivron-vert-zff"
+        "poivron vert"
     ],
     "laitue": [
-        "fr:laitue-1",
-        "fr:g-laitue",
-        "fr:ljcfi-laitue"
+        "laitue"
     ],
     "riz": [
-        "fr:ri\u0307z",
-        "fr:rizz",
-        "fr:rizi"
+        "riz"
     ],
     "bouillon de l\u00e9gumes": [
-        "fr:bouillon-de-legumesz",
-        "fr:boullon-de-legumes",
-        "fr:bouillon-delegumes"
+        "bouillon de l\u00e9gumes"
     ],
     "\u00e9chalote": [
-        "fr:chalote",
-        "fr:\ufffdchalote",
-        "fr:chalotes"
+        "\u00e9chalote"
     ],
     "moutarde": [
-        "fr:moutardel",
-        "fr:t-moutarde",
-        "fr:moutardede"
+        "moutarde"
     ],
     "filet mignon": [
-        "fr:filet-mignon-de",
-        "fr:filet-mignon-de-dinde",
-        "fr:filet-mignon-de-porc33-z"
+        "filet mignon"
     ],
     "r\u00f4ti de boeuf": [
-        "fr:roti-de-boeuf\ud83d\udc02",
-        "fr:roti-de-baeuf",
-        "fr:ras-de-boeuf"
+        "r\u00f4ti de boeuf"
     ],
     "moules": [
-        "fr:p-moules",
-        "fr:moules-1",
-        "fr:m-moules"
+        "moules"
     ],
     "\u00e9chalotes": [
-        "fr:chalotes",
-        "fr:\ufffdchalotes",
-        "fr:halotes"
+        "\u00e9chalotes"
     ],
     "mont d'or": [
-        "fr:piment-dort",
-        "fr:piment-door",
-        "fr:molt-d-orge"
+        "mont d'or"
     ],
     "tomates concass\u00e9es": [
-        "fr:tomaates-concassees",
-        "fr:n-tomates-concassees",
-        "fr:tomates-concnssees"
+        "tomates concass\u00e9es"
     ],
     "jarret de veau": [
-        "fr:jarret-de-veau",
-        "fr:jarret-de-veau-marine",
-        "fr:jarret-de-veau-avec-os"
+        "jarret de veau"
     ],
     "bar": [
-        "fr:bar",
-        "fr:tbar",
-        "fr:bark"
+        "bar"
     ],
     "endive": [
-        "fr:4-endive",
-        "fr:4-endives-cat"
+        "endive"
     ],
     "gruy\u00e8re r\u00e2p\u00e9": [
-        "fr:gruyere-rape",
-        "fr:gruyere-aop",
-        "fr:gruyere-35"
+        "gruy\u00e8re r\u00e2p\u00e9"
     ],
     "jambon": [
-        "fr:5-jambon",
-        "fr:jambon-11",
-        "fr:jambonneau"
+        "jambon"
     ],
     "cr\u00e8me": [
-        "fr:cr\u0450me",
-        "fr:crome",
-        "fr:crlme"
+        "cr\u00e8me"
     ],
     "tomates cerise": [
-        "fr:tomates-cerise-8",
-        "fr:tomates-cerise-7",
-        "fr:6-tomates-cerise"
+        "tomates cerise"
     ],
     "bouillon de volaille": [
-        "fr:l-bouillon-de-volaille",
-        "fr:bouillon-de-volaille-n",
-        "fr:bouillon-de-volaille-maison"
+        "bouillon de volaille"
     ],
     "feuille de laurier": [
-        "fr:persil-feuille-de-laurier",
-        "fr:feuille-de-laurier-colorant",
-        "fr:\u0161ajte-che-um-feuille-de-laurier"
+        "feuille de laurier"
     ],
     "poulet": [
-        "fr:poulet-m",
-        "fr:poulet-3",
-        "fr:depoulet"
+        "poulet"
     ],
     "poireaux": [
-        "fr:poireaux-9",
-        "fr:poireaux-4",
-        "fr:poireaux-3"
+        "poireaux"
     ],
     "clous de girofle": [
-        "fr:clous-de-girofle-lt",
-        "fr:clous-de-girofle-ab",
-        "fr:sel-clous-de-girofle"
+        "clous de girofle"
     ],
     "gros sel": [
-        "fr:courges-gros-sel",
-        "fr:gros-sel-d-oleron"
+        "gros sel"
     ],
     "viande": [
-        "fr:viandede",
-        "fr:viande-1",
-        "fr:8-viande"
+        "viande"
     ],
     "boeuf": [
-        "fr:boeuf-l",
-        "fr:boeuf-8",
-        "fr:4-boeuf"
+        "boeuf"
     ],
     "os \u00e0 moelle": [
-        "fr:osmolalite",
-        "fr:o-n-amille",
-        "fr:macarons-moelleux"
+        "os \u00e0 moelle"
     ],
     "pain de mie": [
-        "fr:o-pain-de-mie",
-        "fr:pain-de-mie-41",
-        "fr:pain-de-mie-32"
+        "pain de mie"
     ],
     "beurre tendre": [
-        "fr:beurr-terre",
-        "fr:beurre-roentre",
-        "fr:beurre-trace"
+        "beurre tendre"
     ],
     "toastinette": [
-        "fr:toastee",
-        "fr:tartiflette",
-        "fr:troussepinette"
+        "toastinette"
     ],
     "lentilles vertes": [
-        "fr:lentilles-vertes-9",
-        "fr:lentilles-vertes-5",
-        "fr:0-lentilles-vertes"
+        "lentilles vertes"
     ],
     "aubergines": [
-        "fr:aubergines-p",
-        "fr:aubergines-9",
-        "fr:aubergines-6"
+        "aubergines"
     ],
     "cannelle": [
-        "fr:c\u1ea1nnelle",
-        "fr:cannelle1",
-        "fr:cannelle-o"
+        "cannelle"
     ],
     "miel": [
-        "fr:tmiel",
-        "fr:mielt",
-        "fr:miell"
+        "miel"
     ],
     "c\u00e2pres": [
-        "fr:cpres",
-        "fr:cypres",
-        "fr:cipres"
+        "c\u00e2pres"
     ],
     "saumon": [
-        "fr:\ud83e\uddc2saumon",
-        "fr:saumon1",
-        "fr:saumon-1"
+        "saumon"
     ],
     "romarin": [
-        "fr:romarinn",
-        "fr:romarin1",
-        "fr:romarin-0"
+        "romarin"
     ],
     "gigot d'agneau": [
-        "fr:ragout-d-agneau",
-        "fr:briouat-d-agneau",
-        "fr:gigot-d-agneau-avec-os"
+        "gigot d'agneau"
     ],
     "graisse d'oie": [
-        "fr:graisse-doie",
-        "fr:graisse-dtoie",
-        "fr:graisse-dole"
+        "graisse d'oie"
     ],
     "r\u00f4ti de porc": [
-        "fr:partir-de-porc",
-        "fr:toie-de-porc",
-        "fr:rine-de-porc"
+        "r\u00f4ti de porc"
     ],
     "cassonade": [
-        "fr:cassonadei",
-        "fr:cassonade-7",
-        "fr:1-cassonade"
+        "cassonade"
     ],
     "lard fum\u00e9": [
-        "fr:larc-fume",
-        "fr:glar-cum",
-        "fr:bar-fume"
+        "lard fum\u00e9"
     ],
     "pain d'\u00e9pices": [
-        "fr:pain-depices",
-        "fr:pain-d-epices-2",
-        "fr:pein-d-epices"
+        "pain d'\u00e9pices"
     ],
     "bi\u00e8re brune": [
-        "fr:biere-brune",
-        "fr:sucre-brune",
-        "fr:chair-brune"
+        "bi\u00e8re brune"
     ],
     "champignon de Paris": [
-        "fr:champignon-de-paris-6",
-        "fr:champignon-de-paris-1",
-        "fr:7-champignon-de-paris"
+        "champignon de Paris"
     ],
     "huile de tournesol": [
-        "fr:huile-de-tourne\u015fol",
-        "fr:xhuile-de-tournesol",
-        "fr:ihuile-de-tournesol"
+        "huile de tournesol"
     ],
     "r\u00f4ti de veau": [
-        "fr:ris-de-veau",
-        "fr:tripes-de-veau",
-        "fr:jarret-de-veau"
+        "r\u00f4ti de veau"
     ],
     "coriandre": [
-        "fr:decoriandre",
-        "fr:coriandre-o",
-        "fr:coriandre-l"
+        "coriandre"
     ],
     "bouillon": [
-        "fr:bouillon-7",
-        "fr:5-bouillon",
-        "fr:visbouillon"
+        "bouillon"
     ],
     "\u00e9toile de badiane": [
-        "fr:etoile-de-badiane",
-        "fr:etoiles-de-badiane",
-        "fr:etoile-de-badiane-lt"
+        "\u00e9toile de badiane"
     ],
     "sauce nuoc mam": [
-        "fr:sauce-nuoc-m\u1ea1m",
-        "fr:sauce-nuoc-mam-n",
-        "fr:3-sauce-nuoc-mam"
+        "sauce nuoc mam"
     ],
     "citron vert": [
-        "fr:citron-vert-0",
-        "fr:1-citron-vert",
-        "fr:citron-vert-25"
+        "citron vert"
     ],
     "petit piment": [
-        "fr:petits-piments",
-        "fr:extrait-piment",
-        "fr:petit-pain"
+        "petit piment"
     ],
     "ciboulette": [
-        "fr:ciboulett\u0119",
-        "fr:ciboulettel",
-        "fr:l-ciboulette"
+        "ciboulette"
     ],
     "nouilles de riz": [
-        "fr:nouilles-de-riz-bouilli"
+        "nouilles de riz"
     ],
     "tagliatelles fra\u00eeches": [
-        "fr:tagliatelles-blanches",
-        "fr:tagliatelles-vertes",
-        "fr:tagliatelles-bouclees"
+        "tagliatelles fra\u00eeches"
     ],
     "parmesan r\u00e2p\u00e9": [
-        "fr:parmesan-rape",
-        "fr:parmesan-pdo",
-        "fr:parmesan-1"
+        "parmesan r\u00e2p\u00e9"
     ],
     "saumon frais": [
-        "fr:saumon-frais",
-        "fr:saumon-frais-elevage-irlande"
+        "saumon frais"
     ],
     "clou de girofle": [
-        "fr:s-clou-de-girofle",
-        "fr:clou-de-girofle-chili",
-        "fr:poivre-clou-de-girofle"
+        "clou de girofle"
     ],
     "cuisses de poulet": [
-        "fr:2-cuisses-de-poulet",
-        "fr:cuisses-de-poulet-9096",
-        "fr:cuisses-de-poulet-jaune"
+        "cuisses de poulet"
     ],
     "geni\u00e8vre": [
-        "fr:genevre",
-        "fr:enievre",
-        "fr:gnvre"
+        "geni\u00e8vre"
     ],
     "chair \u00e0 saucisse": [
-        "fr:chair-a-saucisse",
-        "fr:chair-a-saucisse-crue",
-        "fr:chair-a-saucisse-de-porc"
+        "chair \u00e0 saucisse"
     ],
     "souris d'agneau": [
-        "fr:souris-d-agneau",
-        "fr:soufi-d-agneau",
-        "fr:os-d-agneau"
+        "souris d'agneau"
     ],
     "chorizo": [
-        "fr:chorizo",
-        "fr:j-chorizo",
-        "fr:chorizo-8"
+        "chorizo"
     ],
     "poivrons": [
-        "fr:poivronsl",
-        "fr:poivrons-9",
-        "fr:poivrons-7"
+        "poivrons"
     ],
     "tomate": [
-        "fr:tomate\ud83c\udf45",
-        "fr:tomatet",
-        "fr:tomater"
+        "tomate"
     ],
     "safran": [
-        "fr:safrany",
-        "fr:safran-q",
-        "fr:safran-3e"
+        "safran"
     ],
     "filet de poulet": [
-        "fr:\ufb01let-de-poulet",
-        "fr:filet-de-poulet-1",
-        "fr:6-filet-de-poul\u0119t"
+        "filet de poulet"
     ],
     "calamar": [
-        "fr:calamari",
-        "fr:calamares",
-        "fr:petit-calamar"
+        "fr:calamares"
     ],
     "crevettes": [
-        "fr:c\u0159evettes",
-        "fr:crevettes-p",
-        "fr:crevettes-4"
+        "crevettes"
     ],
     "poule": [
-        "fr:2-poule",
-        "fr:poulet-m",
-        "fr:poulet-3"
+        "poule"
     ],
     "navet": [
-        "fr:navet-8",
-        "fr:navets-4",
-        "fr:pois-navet"
+        "navet"
     ],
     "fond de veau": [
-        "fr:fond-de-veau-lie",
-        "fr:base-pour-fond-de-veau"
+        "fond de veau"
     ],
     "vinaigre balsamique": [
-        "fr:vinaigre-balsamique-3",
-        "fr:vinaigre-balsamique-2",
-        "fr:vinaigre-balsamique-1"
+        "vinaigre balsamique"
     ],
     "paupiettes de veau": [
-        "fr:paupiettes-de-veau",
-        "fr:2-paupiettes-de-veau",
-        "fr:paupiettes-de-veau-et-volaille"
+        "paupiettes de veau"
     ],
     "crozet": [
-        "fr:crozet",
-        "fr:crozet-nature"
+        "crozet"
     ],
     "ketchup": [
-        "fr:ketchup-l",
-        "fr:ketchup-eau",
-        "fr:sauce-ketchup"
+        "ketchup"
     ],
     "pain pour hamburger": [
-        "fr:pain-hamburger",
-        "fr:pain-special-pour-hamburger",
-        "fr:pains-speciaux-pour-hamburgers"
+        "pain pour hamburger"
     ],
     "cheddar": [
-        "fr:cheddar",
-        "fr:cheddar-3",
-        "fr:8-cheddar"
+        "cheddar"
     ],
     "salade": [
-        "fr:salade-7",
-        "fr:salade-6",
-        "fr:salade-1"
+        "salade"
     ],
     "oeufs": [
-        "fr:\u008coeufs",
-        "fr:qoeufs",
-        "fr:oeufst"
+        "oeufs"
     ],
     "petits pois": [
-        "fr:petits-pois3",
-        "fr:petits-pois-9",
-        "fr:petits-pois-6"
+        "petits pois"
     ],
     "ramen": [
-        "fr:\u0159amen",
-        "fr:aramen",
-        "fr:syramena"
+        "ramen"
     ],
     "steak": [
-        "fr:steak",
-        "fr:steaks",
-        "fr:rumsteak"
+        "steak"
     ],
     "chou chinois": [
-        "fr:chou-chinois-10",
-        "fr:chou-chinois-606",
-        "fr:chou-chinois-pak-choi"
+        "chou chinois"
     ],
     "oignons nouveaux": [
-        "fr:oignons-nouveaux",
-        "fr:oignons-nouveaux-seches"
+        "oignons nouveaux"
     ],
     "sauce soja": [
-        "fr:sauce-soja-g",
-        "fr:sauce-soja-6",
-        "fr:sauce-soja-2"
+        "sauce soja"
     ],
     "sauce Yakitori": [
-        "fr:sauce-yakitori"
+        "sauce Yakitori"
     ],
     "choucroute": [
-        "fr:cchoucroute",
-        "fr:ing-choucroute",
-        "fr:choucroute-54-0"
+        "choucroute"
     ],
     "palette": [
-        "fr:palette-salee",
-        "fr:palettes-de-riz",
-        "fr:palette-de-porc"
+        "palette"
     ],
     "saindoux": [
-        "fr:s\u1ea1indoux",
-        "fr:saindoux-4",
-        "fr:sel-saindoux"
+        "saindoux"
     ],
     "riesling": [
-        "fr:riesling",
-        "fr:riesling-1",
-        "fr:vin-riesling"
+        "riesling"
     ],
     "saucisses de Strasbourg": [
-        "fr:2-saucisses-de-strasbourg",
-        "fr:saucisses-de-strasbourg-saucisson",
-        "fr:saucisses-de-strasbourg-ingredients-viande-de-porc"
+        "saucisses de Strasbourg"
     ],
     "saut\u00e9 de porc": [
-        "fr:saute-de-porc",
-        "fr:saveur-de-porc",
-        "fr:museau-de-porc"
+        "saut\u00e9 de porc"
     ],
     "cr\u00e8me fra\u00eeche \u00e9paisse": [
-        "fr:creme-fraiche-epaisse-6",
-        "fr:creme-fraiche-epaisse-3",
-        "fr:creme-fraicbe-epaisse"
+        "cr\u00e8me fra\u00eeche \u00e9paisse"
     ],
     "Magrets de Canard": [
-        "fr:magrets-de-canard-du-sud-ouest"
+        "Magrets de Canard"
     ],
     "poivre en grains": [
-        "fr:poivre-en-grains"
+        "poivre en grains"
     ],
     "paprika": [
-        "fr:paprikaaa",
-        "fr:paprika-s",
-        "fr:paprika-1"
+        "paprika"
     ],
     "huile de friture": [
-        "fr:7-huile-de-friture",
-        "fr:poivrer-huile-de-friture",
-        "fr:huile-de-friture-huile-de-tournesol"
+        "huile de friture"
     ],
     "f\u00e8ves": [
-        "fr:ves",
-        "fr:fes",
-        "fr:ofives"
+        "f\u00e8ves"
     ],
     "basilic frais": [
-        "fr:basilic-frais-genovese",
-        "fr:basilic-frais-genoveseaop",
-        "fr:feuille-de-basilic-frais-1"
+        "basilic frais"
     ],
     "coquilles saint-jacques": [
-        "fr:petites-coquilles-saint-jacques",
-        "fr:coquille-saint-jacquesianchois",
-        "fr:es-saint-jacques"
+        "coquilles saint-jacques"
     ],
     "chapelure": [
-        "fr:chapelurez",
-        "fr:u-chapelure",
-        "fr:t-chapelure"
+        "chapelure"
     ],
     "sucre": [
-        "fr:sucr\u0117",
-        "fr:\ud83e\udd5bsucre",
-        "fr:zsucre"
+        "sucre"
     ],
     "lapin": [
-        "fr:vian-lapin"
+        "lapin"
     ],
     "poivron": [
-        "fr:poivronsl",
-        "fr:poivron-6",
-        "fr:e-poivron"
+        "poivron"
     ],
     "filets mignons": [
-        "fr:paves-de-filets-mignons-de-dinde"
+        "filets mignons"
     ],
     "moutarde \u00e0 l'ancienne": [
-        "fr:moutarde-a-lancienne",
-        "fr:moutarde-a-l-ancienne",
-        "fr:moutarde-llancienne"
+        "moutarde \u00e0 l'ancienne"
     ],
     "cornichons": [
-        "fr:i-cornichons",
-        "fr:cornichons-eau",
-        "fr:ale-cornichons"
+        "cornichons"
     ],
     "mayonnaise": [
-        "fr:mayonnaise4",
-        "fr:uce-mayonnaise",
-        "fr:mayonnaise-eau"
+        "mayonnaise"
     ],
     "blancs d'oeuf": [
-        "fr:blancs-doeuf",
-        "fr:blancs-doeufs",
-        "fr:blanc-doeuf"
+        "blancs d'oeuf"
     ],
     "escalopes de poulet": [
-        "fr:escalopes-de-poulet-halal",
-        "fr:escalopes-de-poulet-extra-fines",
-        "fr:3-escalopes-de-poulet-extra-fines"
+        "escalopes de poulet"
     ],
     "noix de coco": [
-        "fr:noix-de-cocol",
-        "fr:t-noix-de-coco",
-        "fr:noix-de-coco-g"
+        "noix de coco"
     ],
     "curry": [
-        "fr:curry-o",
-        "fr:curry-2",
-        "fr:curry-1"
+        "curry"
     ],
     "lait de coco": [
-        "fr:lait-de-coco-1",
-        "fr:8-lait-de-coco",
-        "fr:lait-de-coconut"
+        "lait de coco"
     ],
     "noix": [
-        "fr:noix-o",
-        "fr:noix-6",
-        "fr:noix-1"
+        "noix"
     ],
     "olives": [
-        "fr:olive\u0161",
-        "fr:volives",
-        "fr:y-olives"
+        "olives"
     ],
     "anchois": [
-        "fr:anchoise",
-        "fr:anchois-g",
-        "fr:e-danchois"
+        "anchois"
     ],
     "champignons de Paris": [
-        "fr:i-champignons-de-paris",
-        "fr:champignons-de-paris-i",
-        "fr:champignons-de-paris-6"
+        "champignons de Paris"
     ],
     "coquillettes": [
-        "fr:coquillettes",
-        "fr:pates-coquillettes",
-        "fr:coquillettes-cuites"
+        "coquillettes"
     ],
     "batavia": [
-        "fr:batavia",
-        "fr:batavia-verte",
-        "fr:batavia-rouge"
+        "batavia"
     ],
     "soja": [
-        "fr:soj\u0105",
-        "fr:\ud83e\uddc2soja",
-        "fr:sojav"
+        "soja"
     ],
     "menthe": [
-        "fr:menthet",
-        "fr:menthel",
-        "fr:menthe1"
+        "menthe"
     ],
     "arachide": [
-        "fr:varachide",
-        "fr:parachide",
-        "fr:larachide"
+        "arachide"
     ],
     "vinaigre": [
-        "fr:v\u1ecbnaigre",
-        "fr:vinaigret",
-        "fr:vinaigree"
+        "vinaigre"
     ],
     "nuoc mam": [
-        "fr:nuoc-mam-l",
-        "fr:nuoc-mam-1",
-        "fr:nuoc-mam-4-8"
+        "nuoc mam"
     ],
     "sauce d'hu\u00eetre": [
-        "fr:sauce-d-huitre",
-        "fr:sauce-huitre",
-        "fr:sauce-de-huitre"
+        "sauce d'hu\u00eetre"
     ],
     "glutamate": [
-        "fr:glutamate-m",
-        "fr:it-glutamate",
-        "fr:glutamate-mo"
+        "glutamate"
     ],
     "vermicelles de riz": [
-        "fr:vermicelles-de-riz",
-        "fr:vermicelles-de-riz-cuits",
-        "fr:vermicelles-de-riz-blanc"
+        "vermicelles de riz"
     ],
     "nems": [
-        "fr:nems",
-        "fr:nems-4-x",
-        "fr:nems-porc"
+        "nems"
     ],
     "noix de saint-jacques": [
-        "fr:noix-de-saintjacques",
-        "fr:oix-de-saint-jacques",
-        "fr:noix-de-saint-jaques"
+        "noix de saint-jacques"
     ],
     "beurre sal\u00e9": [
-        "fr:eurre-sale",
-        "fr:beurresale",
-        "fr:beurre-sel"
+        "beurre sal\u00e9"
     ],
     "c\u00f4te de boeuf": [
-        "fr:cote-de-boeuf",
-        "fr:ite-de-boeuf",
-        "fr:gite-de-boeuf"
+        "c\u00f4te de boeuf"
     ],
     "fleur de sel": [
-        "fr:\ufb02eur-de-sel",
-        "fr:fleur-de-sel-0",
-        "fr:8-fleur-de-sel"
+        "fleur de sel"
     ],
     "courgette": [
-        "fr:courgettey",
-        "fr:courgetten",
-        "fr:courgettec"
+        "courgette"
     ],
     "cumin": [
-        "fr:c\u1ee5min",
-        "fr:cumino",
-        "fr:cumini"
+        "cumin"
     ],
     "\u00e9pices": [
-        "fr:pices",
-        "fr:spices",
-        "fr:pieces"
+        "\u00e9pices"
     ],
     "selle d'agneau": [
-        "fr:l-agneau",
-        "fr:os-d-agneau",
-        "fr:jus-dagneau"
+        "selle d'agneau"
     ],
     "olives vertes": [
-        "fr:olives-vertes-5",
-        "fr:olives-vertes-sel",
-        "fr:olives-vertes-eau"
+        "olives vertes"
     ],
     "cognac": [
-        "fr:cognac-xo",
-        "fr:cognac-vs",
-        "fr:cognac-mo"
+        "cognac"
     ],
     "huile d'arachide": [
-        "fr:huile-dtarachide",
-        "fr:uile-d-arachide",
-        "fr:l-huile-d-arachide"
+        "huile d'arachide"
     ],
     "piment de Cayenne": [
-        "fr:piment-de-\u010dayenne",
-        "fr:piment-de-cayenne-f",
-        "fr:piment-de-cayenne-0"
+        "piment de Cayenne"
     ],
     "queue": [
-        "fr:queues"
+        "queue"
     ],
     "tomates pel\u00e9es": [
-        "fr:tomates-elees",
-        "fr:tomates-pelees-1",
-        "fr:tomates-passees"
+        "tomates pel\u00e9es"
     ],
     "\u00e9paule d'agneau": [
-        "fr:saute-d-agneau",
-        "fr:panse-d-agneau",
-        "fr:presure-d-agneau"
+        "\u00e9paule d'agneau"
     ],
-    "blancs de poulet": [],
+    "blancs de poulet": [
+        "blancs de poulet"
+    ],
     "cr\u00e8me fra\u00eeche all\u00e9g\u00e9e": [
-        "fr:creme-fraiche-ble",
-        "fr:creme-fraiche-ail",
-        "fr:creme-fraiche-dllsigny"
+        "cr\u00e8me fra\u00eeche all\u00e9g\u00e9e"
     ],
     "tagliatelles": [
-        "fr:pates-tagliatelles",
-        "fr:tagliatelles-vertes",
-        "fr:tagliatelles-bouclees"
+        "tagliatelles"
     ],
     "crevette rose": [
-        "fr:crevette-rouge",
-        "fr:crevette-sel",
-        "fr:crevettes-sel"
+        "crevette rose"
     ],
     "farine de bl\u00e9 noir": [
-        "fr:farine-de-bl\u011b-noir",
-        "fr:farine-de-bile-noir",
-        "fr:faine-de-ble-noir"
+        "farine de bl\u00e9 noir"
     ],
     "poivron rouge": [
-        "fr:poivron-rouge-6",
-        "fr:poivron-rouge-5",
-        "fr:poivron-rouge-3"
+        "poivron rouge"
     ],
     "m\u00e9lange 5 \u00e9pices": [
-        "fr:melange-5-epices",
-        "fr:melange-pices",
-        "fr:melange-i-epices"
+        "m\u00e9lange 5 \u00e9pices"
     ],
     "lieu noir": [
-        "fr:b-lieu-noir",
-        "fr:pave-de-lieu-noir",
-        "fr:lieu-noir-et-jaune"
+        "lieu noir"
     ],
     "lentilles corail": [
-        "fr:lentilles-coraill",
-        "fr:lentilles-corail-i",
-        "fr:lentilles-corail-3"
+        "lentilles corail"
     ],
     "Riz, c\u00e9r\u00e9ales": [
-        "fr:riz-creole",
-        "fr:riz-prepares",
-        "fr:riz-carottes"
+        "Riz, c\u00e9r\u00e9ales"
     ],
     "p\u00e2tes \u00e0 lasagne": [
-        "fr:pates-a-lasagnes",
-        "fr:pate-a-lasagne",
-        "fr:pate-lasagne"
+        "p\u00e2tes \u00e0 lasagne"
     ],
     "sauce bolognaise": [
-        "fr:sauce-bolognais\u1ebd",
-        "fr:fr-sauce-bolognaise",
-        "fr:sauce-bolognaise-nnel"
+        "sauce bolognaise"
     ],
     "courge spaghetti": [
-        "fr:courge-variete-spaghetti",
-        "fr:algues-spaghetti",
-        "fr:ble-spaghettis"
+        "courge spaghetti"
     ],
     "blanc de poulet": [
-        "fr:blanc-de-poulet-eau",
-        "fr:6096-blanc-de-poulet",
-        "fr:blanc-de-poulet-de-ble"
+        "blanc de poulet"
     ],
     "fajitas": [
-        "fr:sauce-fajitas",
-        "fr:niture-a-fajitas"
+        "fajitas"
     ],
     "guacamole": [
-        "fr:guacamole",
-        "fr:du-guacamole",
-        "fr:guacamole-d-avocat"
+        "guacamole"
     ],
     "haricots coco": [
-        "fr:haricots-coco-roses",
-        "fr:haricots-coco-plats",
-        "fr:f-haricots-cocos-roses"
+        "haricots coco"
     ],
     "saucisson \u00e0 l'ail": [
-        "fr:saucisson-cuit-a-l-ail",
-        "fr:saucis-ail",
-        "fr:saucisse-de-lyon-a-l-ail"
+        "saucisson \u00e0 l'ail"
     ],
     "saucisses de Toulouse": [
-        "fr:saucisses-de-toulouse",
-        "fr:6-saucisses-de-toulouse",
-        "fr:4-saucisses-de-toulouse"
+        "saucisses de Toulouse"
     ],
     "poitrine de porc": [
-        "fr:poitrine-de-porct",
-        "fr:poitrine-de-porc-1",
-        "fr:6-poitrine-de-porc"
+        "poitrine de porc"
     ],
     "confit de canard": [
-        "fr:i-confit-de-canard",
-        "fr:mancnon-confit-de-canard",
-        "fr:manchon-confit-de-canard"
+        "confit de canard"
     ],
     "hach\u00e9 de veau": [
-        "fr:blanc-de-veau",
-        "fr:acide-eau",
-        "fr:chair-de-eau"
+        "hach\u00e9 de veau"
     ],
     "biscottes": [
-        "fr:34-biscottes",
-        "fr:biscottes-au-babeurre"
+        "biscottes"
     ],
     "chou": [
-        "fr:choune",
-        "fr:cachou",
-        "fr:choux-7"
+        "chou"
     ],
     "margarine": [
-        "fr:margari\u0146e",
-        "fr:o-margarine",
-        "fr:margarine-t"
+        "margarine"
     ],
     "panais": [
-        "fr:panais1",
-        "fr:panais-1",
-        "fr:o-panais"
+        "panais"
     ],
     "huile de noix": [
-        "fr:2-huile-de-noix",
-        "fr:huile-de-noix-de-o",
-        "fr:huile-de-noix-cajou"
+        "huile de noix"
     ],
     "tamari": [
-        "fr:tamarind",
-        "fr:4-tamari",
-        "fr:tamarinde"
+        "tamari"
     ],
     "graisse de canard": [
-        "fr:i-graisse-de-canard",
-        "fr:graisse-de-canard-0",
-        "fr:graisse-de-canard-lt"
+        "graisse de canard"
     ],
     "petit sal\u00e9": [
-        "fr:petit-sal",
-        "fr:petit-sale",
-        "fr:petits"
+        "petit sal\u00e9"
     ],
     "jambonneau": [
-        "fr:jambonneau",
-        "fr:jambonneau-de-porc",
-        "fr:jambonneau-de-i-ue"
+        "jambonneau"
     ],
-    "saucisse de morteau": [],
-    "Rosbif": [],
+    "saucisse de morteau": [
+        "saucisse de morteau"
+    ],
+    "Rosbif": [
+        "Rosbif"
+    ],
     "coq": [
-        "fr:coq",
-        "fr:coqu",
-        "fr:coq1e"
+        "coq"
     ],
     "ris de veau": [
-        "fr:ris-de-veau",
-        "fr:ris-de-veau-cuit",
-        "fr:pintade-et-ris-de-veau"
+        "ris de veau"
     ],
-    "soles": [],
+    "soles": [
+        "soles"
+    ],
     "saucisses de Montb\u00e9liard": [
-        "fr:saucisse-de-montbeliard-9",
-        "fr:saucisses-de-canard",
-        "fr:saucisse-de-canard"
+        "saucisses de Montb\u00e9liard"
     ],
     "bouquets garnis": [
-        "fr:bouquet-garni",
-        "fr:bouque-garni",
-        "fr:bouquet-gami"
+        "bouquets garnis"
     ],
     "saucisses de morteau": [
-        "fr:saucisses-de-tondeuse",
-        "fr:saucisses-de-poulet",
-        "fr:4-saucisses-de-porc"
+        "saucisses de morteau"
     ],
     "vinaigre de vin": [
-        "fr:vinaigre-de-vint",
-        "fr:vinaigre-de-vino",
-        "fr:vinaigre-de-vine"
+        "vinaigre de vin"
     ],
     "chevreuil": [
-        "fr:chevreuil",
-        "fr:iande-de-chevreuil",
-        "fr:civet-de-chevreuil"
+        "chevreuil"
     ],
     "porc": [
-        "fr:por\u010d",
-        "fr:porce",
-        "fr:porcao"
+        "porc"
     ],
     "ciboule": [
-        "fr:ciboulete",
-        "fr:ciboule-1",
-        "fr:ciboulett\u0119"
+        "ciboule"
     ],
     "f\u00e9cule de pomme de terre": [
-        "fr:ffecule-de-pomme-de-terre",
-        "fr:fecule-ide-pomme-de-terre",
-        "fr:fecule-dle-pomme-de-terre"
+        "f\u00e9cule de pomme de terre"
     ],
     "sucre roux": [
-        "fr:i-sucre-roux",
-        "fr:5-sucre-roux",
-        "fr:sucre-roux-gt"
+        "sucre roux"
     ],
     "germes de soja": [
-        "fr:germes-de-soja",
-        "fr:germes-de-soja-degraisses"
+        "germes de soja"
     ],
     "saumon fum\u00e9": [
-        "fr:saumon-fum-l",
-        "fr:saumon-fume-3",
-        "fr:saumon-fume-1"
+        "saumon fum\u00e9"
     ],
     "\u00e9pinards": [
-        "fr:pinards",
-        "fr:epignards",
-        "fr:epnards"
+        "\u00e9pinards"
     ],
     "cr\u00e8me fra\u00eeche liquide": [
-        "fr:creme-fraiche-liquide",
-        "fr:1-creme-fraiche-liquide",
-        "fr:creme-tra-che-liquide"
+        "cr\u00e8me fra\u00eeche liquide"
     ],
     "poivre de Cayenne": [
-        "fr:poivre-de-cayenne-n-b",
-        "fr:all-poivre-de-cayenne",
-        "fr:poivre-de-cayenne-8010"
+        "poivre de Cayenne"
     ],
     "sauce worcestershire": [
-        "fr:sauce-worcestershire-vinaigre-de-malt"
+        "sauce worcestershire"
     ],
     "spaghetti": [
-        "fr:spaghetti-wit",
-        "fr:spaghetti-rcod",
-        "fr:spaghetti-cuit"
+        "spaghetti"
     ],
     "sanglier": [
-        "fr:sanglier",
-        "fr:sanglier-cuit",
-        "fr:roti-de-sanglier"
+        "sanglier"
     ],
     "joue": [
-        "fr:joue"
+        "joue"
     ],
     "farine de bl\u00e9": [
-        "fr:farine-de-bl",
-        "fr:farine-de-blp",
-        "fr:farine-de-blg"
+        "farine de bl\u00e9"
     ],
     "gruy\u00e8re": [
-        "fr:gruyere",
-        "fr:ruyere",
-        "fr:rure"
+        "gruy\u00e8re"
     ],
     "sauce tomate": [
-        "fr:sauce-tomatee",
-        "fr:sauce-tomate-9",
-        "fr:sauce-tomate-5"
+        "sauce tomate"
     ],
     "canneloni": [
-        "fr:canneloni-pur-boeuf"
+        "canneloni"
     ],
     "mozzarella": [
-        "fr:mozzarella",
-        "fr:mozzarella2",
-        "fr:mozzarella1"
+        "fr:mozzarrella"
     ],
     "veau": [
-        "fr:cuveau"
+        "veau"
     ],
     "steaks": [
-        "fr:steaks",
-        "fr:2-steaks"
+        "steaks"
     ],
     "fromage": [
-        "fr:fromagel",
-        "fr:v-fromage",
-        "fr:fromageau"
+        "fromage"
     ],
     "ail semoule": [
-        "fr:ail-semoule",
-        "fr:2-ail-semoule",
-        "fr:spigowcom-ail-semoule"
+        "ail semoule"
     ],
     "paleron": [
-        "fr:paleron-de-boeuf"
+        "paleron"
     ],
     "petits piments": [
-        "fr:petits-piments",
-        "fr:petits-piments-forts",
-        "fr:petits-piments-entiers"
+        "petits piments"
     ],
     "orange": [
-        "fr:torange",
-        "fr:orange\ud83c\udf4a",
-        "fr:oranget"
+        "orange"
     ],
     "fenouil": [
-        "fr:fenouill",
-        "fr:fenouille",
-        "fr:8-fenouil"
+        "fenouil"
     ],
     "lotte": [
-        "fr:grlotte",
-        "fr:calotte",
-        "fr:calottes"
+        "lotte"
     ],
-    "rascasse": [],
+    "rascasse": [
+        "rascasse"
+    ],
     "congre": [
-        "fr:5-de-congre"
+        "congre"
     ],
     "saint-pierre": [
-        "fr:97410-saint-pierre",
-        "fr:sancerre",
-        "fr:saipetre"
+        "saint-pierre"
     ],
     "vive": [
-        "fr:ex-vive"
+        "vive"
     ],
     "grondin": [
-        "fr:grondin-rouge",
-        "fr:rouget-grondin",
-        "fr:filet-de-grondin"
+        "grondin"
     ],
     "cigale de mer": [
-        "fr:huile-de-mer",
-        "fr:celle-de-mer",
-        "fr:scl-de-mer"
+        "cigale de mer"
     ],
     "\u00e9pices pour tajine": [
-        "fr:epices-tajine",
-        "fr:epices-pour-sate",
-        "fr:epices-une-tartine"
+        "\u00e9pices pour tajine"
     ],
     "cuisses de canard": [
-        "fr:5-cuisses-de-canard",
-        "fr:4-cuisses-de-canard",
-        "fr:2-cuisses-de-canard"
+        "cuisses de canard"
     ],
     "pain de campagne": [
-        "fr:pain-de-campagne",
-        "fr:pate-pour-pain-de-campagne",
-        "fr:pain-de-campagne-aux-cereales"
+        "pain de campagne"
     ],
     "jambon blanc": [
-        "fr:jambon-blanc",
-        "fr:jambon-blanc-slos",
-        "fr:jambon-blanc-superieur"
+        "jambon blanc"
     ],
     "oignon au vinaigre": [
-        "fr:oignon-au-vinaigre",
-        "fr:compotee-d-oignon-au-vinaigre-de-xeres"
+        "oignon au vinaigre"
     ],
-    "charcuteries": [],
+    "charcuteries": [
+        "charcuteries"
+    ],
     "fromage \u00e0 raclette": [
-        "fr:fromage-a-raclette",
-        "fr:fromage-raclette",
-        "fr:fromage-a-raclette-8"
+        "fromage \u00e0 raclette"
     ],
     "p\u00e2te de curry": [
-        "fr:p-ats-de-curry",
-        "fr:pate-de-curry-vert",
-        "fr:pate-de-curry-thai"
+        "p\u00e2te de curry"
     ],
     "massala": [
-        "fr:massala",
-        "fr:coco-massala",
-        "fr:garam-massala"
+        "massala"
     ],
     "morue": [
-        "fr:morue-413",
-        "fr:eau-morue",
-        "fr:morue-38et"
+        "morue"
     ],
     "m\u00e9lange 4 \u00e9pices": [
-        "fr:melange-4-epices",
-        "fr:melange-4epices",
-        "fr:melange-pices"
+        "m\u00e9lange 4 \u00e9pices"
     ],
     "aubergine": [
-        "fr:auberginen",
-        "fr:l-aubergine",
-        "fr:aubergine-9"
+        "aubergine"
     ],
     "\u00e9pices \u00e0 colombo": [
-        "fr:epices-colombo",
-        "fr:epice-colombo",
-        "fr:epces-colombo"
+        "\u00e9pices \u00e0 colombo"
     ],
     "bacon": [
-        "fr:bacon-1",
-        "fr:4-bacon",
-        "fr:bacon-oh"
+        "bacon"
     ],
     "paupiettes": [
-        "fr:paupiettes-de-veau",
-        "fr:2-paupiettes-de-veau",
-        "fr:3-paupiettes-de-dinde"
+        "paupiettes"
     ],
     "aneth": [
-        "fr:l-aneth",
-        "fr:k-aneth",
-        "fr:j-aneth"
+        "aneth"
     ],
     "Ras el Hanout": [
-        "fr:ras-el-hanouth",
-        "fr:ar-ras-el-hanout",
-        "fr:ras-el-hanout-jaune"
+        "Ras el Hanout"
     ],
     "couscous": [
-        "fr:couscous-c",
-        "fr:couscous-fi",
-        "fr:mix-couscous"
+        "couscous"
     ],
     "mouton": [
-        "fr:do-mouton",
-        "fr:mouton-2-1",
-        "fr:poule-mouton"
+        "mouton"
     ],
     "courge": [
-        "fr:courget",
-        "fr:l-courge",
-        "fr:courgett"
+        "courge"
     ],
     "langue": [
-        "fr:langue",
-        "fr:langues",
-        "fr:languedoc"
+        "langue"
     ],
     "mati\u00e8re grasse": [
-        "fr:matiere-graisse",
-        "fr:matiere-grass",
-        "fr:matiere-grase"
+        "mati\u00e8re grasse"
     ],
     "double concentr\u00e9 de tomates": [
-        "fr:double-concentr-de-tomates",
-        "fr:double-concentree-de-tomates",
-        "fr:double-concentrede-tomates"
+        "double concentr\u00e9 de tomates"
     ],
     "sel et poivre": [
-        "fr:sel-et-poivre-gout",
-        "fr:arome-sel-et-poivre",
-        "fr:saveur-sel-et-poivre"
+        "sel et poivre"
     ],
     "anguille": [
-        "fr:anguilles"
+        "anguille"
     ],
     "perche": [
-        "fr:se-percher",
-        "fr:pate-percherc",
-        "fr:miel-du-perche"
+        "perche"
     ],
-    "barbeau": [],
+    "barbeau": [
+        "barbeau"
+    ],
     "sandre": [
-        "fr:sandre"
+        "sandre"
     ],
     "bi\u00e8re": [
-        "fr:birne",
-        "fr:ire",
-        "fr:bre"
+        "bi\u00e8re"
     ],
     "joue de porc": [
-        "fr:joue-de-porc",
-        "fr:joue-de-porc-fumee",
-        "fr:noix-de-joue-de-porc"
+        "joue de porc"
     ],
     "escalopes de veau": [
-        "fr:escalopes-de-veau",
-        "fr:2-escalopes-de-veau"
+        "escalopes de veau"
     ],
     "roquette": [
-        "fr:roquette-4",
-        "fr:croquettes",
-        "fr:9-roquette"
+        "roquette"
     ],
     "piment fort": [
-        "fr:piment-fortj",
-        "fr:piment-fort-0",
-        "fr:piment-fort-ail"
+        "piment fort"
     ],
     "daurade": [
-        "fr:daurade",
-        "fr:daurade-royale"
+        "daurade"
     ],
     "beurre de cacahu\u00e8tes": [
-        "fr:beurre\ud83e\uddc8-de-cacahuetes\ud83e\udd5c",
-        "fr:\ud83c\udf3bbeurre\ud83e\uddc8-de-cacahuetes\ud83e\udd5c",
-        "fr:beurre-de-cacahuetes-1pc"
+        "beurre de cacahu\u00e8tes"
     ],
     "patates douces": [
-        "fr:patates-douces-1",
-        "fr:patates-douces-78-eau",
-        "fr:patates-douces-oranges"
+        "patates douces"
     ],
     "couteaux": [
-        "fr:couteaux",
-        "fr:aux-couteaux",
-        "fr:couteaux-chilennes"
+        "couteaux"
     ],
     "galettes de bl\u00e9": [
-        "fr:alettes-de-ble",
-        "fr:gatette-de-ble",
-        "fr:galette-de-loz"
+        "galettes de bl\u00e9"
     ],
     "pulpe de tomate": [
-        "fr:pulpe-de-tomate-12",
-        "fr:pulpe-de-tomates-6d",
-        "fr:pulpe-de-tomates-22"
+        "pulpe de tomate"
     ],
     "pruneau": [
-        "fr:5-pruneaux",
-        "fr:eau-pruneaux",
-        "fr:5-et-pruneau"
+        "pruneau"
     ],
     "th\u00e9": [
-        "fr:th",
-        "fr:tyh",
-        "fr:thy"
+        "th\u00e9"
     ],
     "amandes": [
-        "fr:amande\u015f",
-        "fr:damandes",
-        "fr:amandest"
+        "amandes"
     ],
     "c\u00f4tes de porc": [
-        "fr:2-cotes-de-porc",
-        "fr:tetes-de-porc",
-        "fr:e-de-porc"
+        "c\u00f4tes de porc"
     ],
     "andouillette": [
-        "fr:andouillette",
-        "fr:andouillette-x-3",
-        "fr:andouillette-troyes"
+        "andouillette"
     ],
     "vinaigre d'alcool": [
-        "fr:vinaigre-dalcool",
-        "fr:vinaigre-dtalcool",
-        "fr:vinaigre-dsalcool"
+        "vinaigre d'alcool"
     ],
     "bouillons": [
-        "fr:bouillons-1",
-        "fr:sel-bouillons",
-        "fr:bouillons-eau"
+        "bouillons"
     ],
     "patrelle": [
-        "fr:naturelle",
-        "fr:peterselle",
-        "fr:par-gelule"
+        "patrelle"
     ],
     "\u00e9chine de porc": [
-        "fr:echine-de-porc",
-        "fr:haine-de-porc",
-        "fr:ine-de-porc"
+        "\u00e9chine de porc"
     ],
     "\u00e9paule": [
-        "fr:epaule",
-        "fr:paul",
-        "fr:pale"
+        "\u00e9paule"
     ],
     "g\u00eete": [
-        "fr:gute",
-        "fr:gate",
-        "fr:te"
+        "g\u00eete"
     ],
     "pommes": [
-        "fr:pommes1",
-        "fr:s-pommes",
-        "fr:pommes\ud83c\udf4e\ud83c\udf4f"
+        "pommes"
     ],
     "boudin noir": [
-        "fr:boudin-noir",
-        "fr:complet-boudin-noir",
-        "fr:boudin-noir-ingreoients"
+        "boudin noir"
     ],
     "poivrons verts": [
-        "fr:poivrons-verts-2",
-        "fr:sel-poivrons-verts",
-        "fr:poivrons-verts-sel"
+        "poivrons verts"
     ],
     "poivrons rouges": [
-        "fr:poivrons-rougesv",
-        "fr:poivrons-rougest",
-        "fr:poivrons-rouges-l"
+        "poivrons rouges"
     ],
     "citrouille": [
-        "fr:framb-citrouille",
-        "fr:citrouille-verte",
-        "fr:citrouille-pomme"
+        "citrouille"
     ],
     "pains": [
-        "fr:pains-choco"
+        "pains"
     ],
     "relish": [
-        "fr:relish",
-        "fr:relish-sucree"
+        "relish"
     ],
     "knackis": [
-        "fr:knacks",
-        "fr:knack",
-        "fr:snacks"
+        "knackis"
     ],
     "b\u00e9chamel": [
-        "fr:bechamel-31",
-        "fr:chmiel",
-        "fr:charme"
+        "b\u00e9chamel"
     ],
     "ailes de poulet": [
-        "fr:ailes-de-poulet-saveur",
-        "fr:cuisses-et-ailes-de-poulet",
-        "fr:ailes-de-poulet-mexicaines"
+        "ailes de poulet"
     ],
     "truffe": [
-        "fr:truffel",
-        "fr:truffeln",
-        "fr:truffe-1"
+        "truffe"
     ],
     "tournedos": [
-        "fr:tournedos-x2-lp",
-        "fr:pave-en-tournedos",
-        "fr:2-tournedos-de-boeuf"
+        "tournedos"
     ],
     "mad\u00e8re": [
-        "fr:mare",
-        "fr:made",
-        "fr:maandre"
+        "mad\u00e8re"
     ],
     "Foie gras": [
-        "fr:foie-gras",
-        "fr:de-foie-gras",
-        "fr:duck-foie-gras"
+        "Foie gras"
     ],
     "beurre demi-sel": [
-        "fr:beurre-demi-sel-5",
-        "fr:beurre-de-sel",
-        "fr:beurre-miel"
+        "beurre demi-sel"
     ],
     "raies": [
-        "fr:raies-por",
-        "fr:ail-fraies"
+        "raies"
     ],
     "citrons confits": [
-        "fr:citrons-confits-au-sel"
+        "citrons confits"
     ],
     "huile d'argan": [
-        "fr:huile-d-argan",
-        "fr:huile-d-argane",
-        "fr:huile-de-margarine"
+        "huile d'argan"
     ],
     "gambas": [
-        "fr:gambas-cuites",
-        "fr:petites-gambas"
+        "gambas"
     ],
     "brique": [
-        "fr:brique",
-        "fr:rubrique",
-        "fr:rabrique"
+        "brique"
     ],
     "cuisse de dinde": [
-        "fr:cuisse-de-dinde-halal",
-        "fr:haut-de-cuisse-de-dinde",
-        "fr:cuisse-de-dinde-sans-os"
+        "cuisse de dinde"
     ],
     "rognons": [
-        "fr:rognons-de-veau",
-        "fr:rognons-de-porc",
-        "fr:poumops-rognons"
+        "rognons"
     ],
     "aiguillette de poulet": [
-        "fr:aiguillette-de-poulet",
-        "fr:aiguillette-de-poulet-896",
-        "fr:viande-d-aiguillette-de-poulet"
+        "aiguillette de poulet"
     ],
     "c\u00f4te de porc": [
-        "fr:e-de-porc",
-        "fr:toie-de-porc",
-        "fr:tete-de-porc"
+        "c\u00f4te de porc"
     ],
     "orecchiette": [
-        "fr:recette",
-        "fr:frecinette",
-        "fr:recettes"
+        "orecchiette"
     ],
     "dinde": [
-        "fr:dinde-nee",
-        "fr:vian-dinde",
-        "fr:edindehalai"
+        "dinde"
     ],
     "yaourt": [
-        "fr:yaourt-2",
-        "fr:yaourt-1",
-        "fr:j-yaourt"
+        "yaourt"
     ],
     "thon": [
-        "fr:th\u1ecdn",
-        "fr:xthon",
-        "fr:tthon"
+        "thon"
     ],
     "filets de poulet": [
-        "fr:filets-de-poulet",
-        "fr:3-filets-de-poulet",
-        "fr:2-filets-de-poulet"
+        "filets de poulet"
     ],
     "scampi": [
-        "fr:scampi"
+        "scampi"
     ],
     "nouilles": [
-        "fr:nouilles-91",
-        "fr:nouilles-85",
-        "fr:nouilles-ramen"
+        "nouilles"
     ],
     "palourde": [
-        "fr:fond-de-palourdes"
+        "palourde"
     ],
     "cr\u00e8me \u00e9paisse": [
-        "fr:creme-epaisse",
-        "fr:creme-depaisse",
-        "fr:creme-epasse"
+        "cr\u00e8me \u00e9paisse"
     ],
     "chips": [
-        "fr:chips",
-        "fr:10-chips",
-        "fr:viva-chips"
+        "chips"
     ],
     "\u00e9crevisse": [
-        "fr:reisbase",
-        "fr:sucresuisse",
-        "fr:decrevisses-ry"
+        "\u00e9crevisse"
     ],
     "cr\u00e8me liquide": [
-        "fr:crem-e-liquide",
-        "fr:creme-liquid",
-        "fr:creme-iquide"
+        "cr\u00e8me liquide"
     ],
     "bigorneau": [
-        "fr:bigorneau",
-        "fr:bigorneaux-gros",
-        "fr:bigorneaux-cuits"
+        "bigorneau"
     ],
     "couenne": [
-        "fr:decouenne",
-        "fr:decouennee",
-        "fr:couenne-eau"
+        "couenne"
     ],
     "\u00e9pices tandoori": [
-        "fr:epices-tandoori",
-        "fr:pate-tandoori",
-        "fr:sauce-tandoori"
+        "\u00e9pices tandoori"
     ],
     "reblochons": [
-        "fr:reblochons"
+        "reblochons"
     ],
     "cr\u00e8me fleurette": [
-        "fr:creme-fleurette",
-        "fr:en-fleurettes",
-        "fr:creme-fouette"
+        "cr\u00e8me fleurette"
     ],
     "t\u00eate de veau": [
-        "fr:tete-de-veau",
-        "fr:5-tete-de-veau",
-        "fr:saute-de-veau"
+        "t\u00eate de veau"
     ],
     "cerfeuil": [
-        "fr:cerfeuille",
-        "fr:cerfeuil-0",
-        "fr:eau-cerfeuil"
+        "cerfeuil"
     ],
     "radis": [
-        "fr:radish",
-        "fr:radise",
-        "fr:radisa"
+        "radis"
     ],
     "escalopes de dinde": [
-        "fr:escalopes-de-dinde",
-        "fr:2-escalopes-de-dinde",
-        "fr:escalopes-de-dinde-halal"
+        "escalopes de dinde"
     ],
     "olives noires": [
-        "fr:olives-noires-2",
-        "fr:olives-noires-1",
-        "fr:8-olives-noires"
+        "olives noires"
     ],
     "bouch\u00e9es feuillet\u00e9es": [
-        "fr:brioche-feuillettee",
-        "fr:biscuits-feuilletes",
-        "fr:tiges-feuillees"
+        "bouch\u00e9es feuillet\u00e9es"
     ],
     "macaroni": [
-        "fr:macaroni",
-        "fr:macaronis",
-        "fr:macaroni-cuit"
+        "macaroni"
     ],
     "tomme": [
-        "fr:tomme",
-        "fr:tomme-vw"
+        "tomme"
     ],
     "cantal": [
-        "fr:cantal",
-        "fr:cantal-5",
-        "fr:cantaloup"
+        "cantal"
     ],
     "haricots verts": [
-        "fr:haricots-vertsl",
-        "fr:haricots-verts1",
-        "fr:haricots-verts-i"
+        "haricots verts"
     ],
     "cancoillotte": [
-        "fr:cancoillotte",
-        "fr:ses-cancoillottes-fromages"
+        "cancoillotte"
     ],
     "b\u00fbche de ch\u00e8vre": [
-        "fr:buche-de-chevre",
-        "fr:creme-de-chevre",
-        "fr:chae-de-crabe"
+        "b\u00fbche de ch\u00e8vre"
     ],
     "sauce salsa": [
-        "fr:sauce-salsa"
+        "sauce salsa"
     ],
     "escalope de poulet": [
-        "fr:sel-ne-escalope-de-poulet-par-personne"
+        "escalope de poulet"
     ],
     "pomme": [
-        "fr:pommez",
-        "fr:pommel",
-        "fr:pomme1"
+        "pomme"
     ],
     "miel liquide": [
-        "fr:miel-liquide-de-fleurs",
-        "fr:miel-liquide-gelee-royale"
+        "miel liquide"
     ],
     "camembert": [
-        "fr:camembert",
-        "fr:91-camembert",
-        "fr:camembertfondu"
+        "camembert"
     ],
     "bleu": [
-        "fr:bleut",
-        "fr:bleue",
-        "fr:ibleur"
+        "bleu"
     ],
     "champignons": [
-        "fr:champignonst",
-        "fr:champignons-c",
-        "fr:champignons-4"
+        "champignons"
     ],
     "saucisse": [
-        "fr:saucisse",
-        "fr:saucisses",
-        "fr:8-saucisses"
+        "saucisse"
     ],
     "levure": [
-        "fr:l\u0113vure",
-        "fr:levuret",
-        "fr:levure2"
+        "levure"
     ],
     "sauge": [
-        "fr:7-sauge",
-        "fr:sauge-thym",
-        "fr:arome-sauge"
+        "sauge"
     ],
     "lard": [
-        "fr:lardo",
-        "fr:lardoi",
-        "fr:lard-6"
+        "lard"
     ],
     "vin": [
-        "fr:vino",
-        "fr:vini",
-        "fr:vine"
+        "vin"
     ],
     "morilles": [
-        "fr:morilles-i",
-        "fr:morilles-0",
-        "fr:sauce-morilles"
+        "morilles"
     ],
     "cuisses de grenouille": [
-        "fr:cuisses-de-grenouille-sauvages",
-        "fr:chair-de-cuisses-de-grenouille",
-        "fr:cuisses-de-grenouilles-sauvages"
+        "cuisses de grenouille"
     ],
     "oie": [
-        "fr:soie",
-        "fr:poie",
-        "fr:oiens"
+        "oie"
     ],
     "pain": [
-        "fr:spain",
-        "fr:paine",
-        "fr:papain"
+        "pain"
     ],
     "oignon grelot": [
-        "fr:sel-oignon-grelot",
-        "fr:oignon-oignon-grelot"
+        "oignon grelot"
     ],
     "semoule": [
-        "fr:semoule-1",
-        "fr:kg-semoule",
-        "fr:semoule-urt"
+        "semoule"
     ],
     "fond": [
-        "fr:fondu",
-        "fr:fondus",
-        "fr:fondue"
+        "fond"
     ],
     "riz rond": [
-        "fr:riz-ronde",
-        "fr:riz-rond-88-5",
-        "fr:riz-rond-etuve"
+        "riz rond"
     ],
     "coulis": [
-        "fr:coulis",
-        "fr:tomatencoulis",
-        "fr:coulis-fraise"
+        "coulis"
     ],
     "p\u00e2tes feuillet\u00e9es": [
-        "fr:pte-feuilletee",
-        "fr:pate-feuillete",
-        "fr:tiges-feuillees"
+        "p\u00e2tes feuillet\u00e9es"
     ],
     "crottin de ch\u00e8vre": [
-        "fr:crottin-de-chevre",
-        "fr:proteine-de-chanvre",
-        "fr:proteines-de-chanvre"
+        "crottin de ch\u00e8vre"
     ],
     "risotto": [
-        "fr:risotto",
-        "fr:risottos",
-        "fr:a-risottos"
+        "risotto"
     ],
     "vinaigre de cidre": [
-        "fr:vi\u0146aigre-de-cidre",
-        "fr:vinaigre-de-cidre-5",
-        "fr:i-vinaigre-de-cidre"
+        "vinaigre de cidre"
     ],
     "travers de porc": [
-        "fr:arome-travers-de-porc",
-        "fr:exhausteurs-de-gout-travers-de-porc"
+        "travers de porc"
     ],
     "fromage de ch\u00e8vre": [
-        "fr:fromage-de-ch\u010dvre",
-        "fr:fromagede-chevre",
-        "fr:fromage-e-chevre"
+        "fromage de ch\u00e8vre"
     ],
     "sucre en poudre": [
-        "fr:sucre-en-poudre-pour",
-        "fr:palmel-sucre-en-poudre",
-        "fr:lactogum-sucre-en-poudre"
+        "sucre en poudre"
     ],
     "\u00e9paule de veau": [
-        "fr:epaule-de-veau",
-        "fr:epaute-de-veau",
-        "fr:saute-de-veau"
+        "\u00e9paule de veau"
     ],
     "muscat": [
-        "fr:muscat",
-        "fr:muscate",
-        "fr:muscat-sec"
+        "muscat"
     ],
     "faisan": [
-        "fr:faisan"
+        "faisan"
     ],
     "raisin": [
-        "fr:raisin\ud83c\udf47",
-        "fr:raisint",
-        "fr:raising"
+        "raisin"
     ],
     "origan": [
-        "fr:origant",
-        "fr:origano",
-        "fr:origanl"
+        "origan"
     ],
     "lait ferment\u00e9": [
-        "fr:lait-ferments",
-        "fr:laitfermente",
-        "fr:lait-ermente"
+        "lait ferment\u00e9"
     ],
     "asperge": [
-        "fr:asperge-0",
-        "fr:asperges-5",
-        "fr:asperge-5n"
+        "asperge"
     ],
     "riz pour risotto": [
-        "fr:riz-pour-risotto",
-        "fr:riz-pour-risotto-etuve",
-        "fr:riz-pour-risotto-precuit"
+        "riz pour risotto"
     ],
     "poivre blanc": [
-        "fr:poivre-blancl",
-        "fr:zxpoivre-blanc",
-        "fr:poivre-blanc-m"
+        "poivre blanc"
     ],
     "poisson": [
-        "fr:pois\u0161on",
-        "fr:poissonz",
-        "fr:t-poisson"
+        "poisson"
     ],
     "l\u00e9gumes": [
-        "fr:legutmes",
-        "fr:legumesl",
-        "fr:legumes2"
+        "l\u00e9gumes"
     ],
     "jumbo": [
-        "fr:jumbo",
-        "fr:oats-jumbo",
-        "fr:jumbo-oats"
+        "jumbo"
     ],
     "thiof": [
-        "fr:tif",
-        "fr:thi",
-        "fr:methio"
+        "thiof"
     ],
     "yet": [
-        "fr:yete",
-        "fr:ueyette"
+        "yet"
     ],
     "chou blanc": [
-        "fr:chou-blanc1",
-        "fr:chou-blanc-3",
-        "fr:chou-blanc-16"
+        "chou blanc"
     ],
     "igname": [
-        "fr:poudre-igname",
-        "fr:pate-d-igname"
+        "igname"
     ],
     "pastis": [
-        "fr:pastis",
-        "fr:pastis-45",
-        "fr:pastis-modifie"
+        "pastis"
     ],
     "tripes": [
-        "fr:tripes",
-        "fr:stripes",
-        "fr:tripes-nu-vou"
+        "tripes"
     ],
-    "boudins blancs": [],
+    "boudins blancs": [
+        "boudins blancs"
+    ],
     "whisky": [
-        "fr:whisky-0",
-        "fr:5-whisky",
-        "fr:irish-whisky"
+        "whisky"
     ],
     "crevettes roses": [
-        "fr:crevettes-rouges",
-        "fr:crevettes-sel",
-        "fr:crevettes-sec"
+        "crevettes roses"
     ],
     "porto": [
-        "fr:portont",
-        "fr:portoca",
-        "fr:27-porto"
+        "porto"
     ],
     "rognon de veau": [
-        "fr:rognon-de-veau",
-        "fr:rognon-de-veau-200g-degraisse"
+        "rognon de veau"
     ],
     "quatre-\u00e9pices": [
-        "fr:quatre-epices",
-        "fr:quatres-epices",
-        "fr:quatre-epice"
+        "quatre-\u00e9pices"
     ],
     "salp\u00eatre": [
-        "fr:sapetre",
-        "fr:satre",
-        "fr:srlpetre"
+        "salp\u00eatre"
     ],
     "boyau": [
-        "fr:boyau",
-        "fr:boyaux",
-        "fr:boyau-c"
+        "boyau"
     ],
     "vinaigre de riz": [
-        "fr:vi\u0146aigre-de-riz",
-        "fr:i-vinaigre-de-riz",
-        "fr:vinaigre-de-riz-ref"
+        "vinaigre de riz"
     ],
     "pousses d'\u00e9pinards": [
-        "fr:jeunes-pousses-depinards",
-        "fr:pousses-d-epinards-17-eau",
-        "fr:poudre-dlepinards"
+        "pousses d'\u00e9pinards"
     ],
     "oignons blancs": [
-        "fr:5-oignons-blancs",
-        "fr:be-oignons-blancs",
-        "fr:oignons-blancs-grelots"
+        "oignons blancs"
     ],
     "linguine": [
-        "fr:di-linguine",
-        "fr:pates-linguine"
+        "linguine"
     ],
     "coques": [
-        "fr:3-coques",
-        "fr:tl-coques",
-        "fr:ea-coques"
+        "coques"
     ],
     "f\u00e9cule": [
-        "fr:f-cule",
-        "fr:cule",
-        "fr:feule"
+        "f\u00e9cule"
     ],
     "coeur d'artichaut": [
-        "fr:coars-d-artichauts",
-        "fr:c-urs-d-artichauts",
-        "fr:suc-d-artichaut"
+        "coeur d'artichaut"
     ],
     "chapon": [
-        "fr:chapon",
-        "fr:chapon-ne",
-        "fr:chapon-confit"
+        "chapon"
     ],
     "cidre": [
-        "fr:acidre-at",
-        "fr:cidre-rose",
-        "fr:cidre-doux"
+        "cidre"
     ],
     "raclette": [
-        "fr:raclette",
-        "fr:raclette-4",
-        "fr:dont-raclette"
+        "raclette"
     ],
     "saint-nectaire": [
-        "fr:saint-nectaire",
-        "fr:sdint-nectaire",
-        "fr:st-nectaire"
+        "saint-nectaire"
     ],
     "fourme d'ambert": [
-        "fr:fourme-d-ambert",
-        "fr:fourme-dambelt",
-        "fr:fourme-ambert-nri"
+        "fourme d'ambert"
     ],
     "picodon": [
-        "fr:picodon-x2",
-        "fr:fromage-picodon"
+        "picodon"
     ],
     "saucisse de Toulouse": [
-        "fr:1-saucisse-de-toulouse",
-        "fr:saucisse-de-toulouse-braisee",
-        "fr:saucisse-de-toulouse-rissolee"
+        "saucisse de Toulouse"
     ],
     "ricotta": [
-        "fr:ricottal",
-        "fr:ricotta-6",
-        "fr:5-ricotta"
+        "ricotta"
     ],
     "truite": [
-        "fr:truite-eau",
-        "fr:truite-arc",
-        "fr:5-de-truite"
+        "truite"
     ],
     "estragon": [
-        "fr:estragon-0",
-        "fr:sel-estragon",
-        "fr:estragon-set"
+        "estragon"
     ],
     "langoustines": [
-        "fr:langoustines-5e",
-        "fr:tout-langoustines",
-        "fr:queues-de-langoustines"
+        "langoustines"
     ],
     "feuille de riz": [
-        "fr:feuilles-de-riz",
-        "fr:feuilles-de-cari",
-        "fr:feuille-de-brick"
+        "feuille de riz"
     ],
     "vinaigre de x\u00e9r\u00e8s": [
-        "fr:vi\u0146aigre-de-xeres",
-        "fr:vinaire-de-xeres",
-        "fr:vinaigre-dexeres"
+        "vinaigre de x\u00e9r\u00e8s"
     ],
     "garam masala": [
-        "fr:curry-garam-masala",
-        "fr:epices-garam-masala",
-        "fr:epices-garam-masala-poudre"
+        "garam masala"
     ],
     "noix de cajou": [
-        "fr:noix-de-cajouj",
-        "fr:noix-de-cajou-2",
-        "fr:noix-de-cajou-1"
+        "noix de cajou"
     ],
     "feuilles de coriandre": [
-        "fr:persil-feuilles-de-coriandre",
-        "fr:feuilles-de-coriandre-assechees",
-        "fr:puree-d-ail-feuilles-de-coriandre"
+        "feuilles de coriandre"
     ],
     "tandoori": [
-        "fr:tandoori",
-        "fr:pate-tandoori",
-        "fr:sauce-tandoori"
+        "tandoori"
     ],
     "f\u00e9cule de ma\u00efs": [
-        "fr:fecule-de-mats",
-        "fr:fecule-de-maiis",
-        "fr:fecule-de-ma-is"
+        "f\u00e9cule de ma\u00efs"
     ],
     "boulgour": [
-        "fr:boulgourl",
-        "fr:eau-boulgour",
-        "fr:boulgour-sec"
+        "boulgour"
     ],
     "oignon rouge": [
-        "fr:oignon-rouge-\u200f",
-        "fr:oignon-rouge-1",
-        "fr:6-oignon-rouge"
+        "oignon rouge"
     ],
     "avocats": [
-        "fr:avocats-hass",
-        "fr:4-demi-avocats"
+        "avocats"
     ],
     "citrons verts": [
-        "fr:jus-de-citrons-verts-presses"
+        "citrons verts"
     ],
     "fromage frais": [
-        "fr:fromage-frais-7",
-        "fr:fromage-frais-1",
-        "fr:4-fromage-frais"
+        "fromage frais"
     ],
     "brocoli": [
-        "fr:brocoli1",
-        "fr:i-brocoli",
-        "fr:brocoli-9"
+        "brocoli"
     ],
     "p\u00e2tes fra\u00eeches": [
-        "fr:6-pates-fraiches",
-        "fr:pommes-fraiches",
-        "fr:dattes-fraiches"
+        "p\u00e2tes fra\u00eeches"
     ],
     "bl\u00e9": [
-        "fr:bl",
-        "fr:ebl",
-        "fr:bol"
+        "bl\u00e9"
     ],
     "kombu": [
-        "fr:kombualgen",
-        "fr:alga-kombu",
-        "fr:alque-kombu"
+        "kombu"
     ],
     "julienne": [
-        "fr:celeri-julienne",
-        "fr:carotte-julienne",
-        "fr:carottes-julienne"
+        "julienne"
     ],
-    "oursins": [],
+    "oursins": [
+        "oursins"
+    ],
     "oranges": [
-        "fr:oranges-1",
-        "fr:9-oranges",
-        "fr:oranges-13"
+        "oranges"
     ],
     "canard": [
-        "fr:je-canard",
-        "fr:canard-ne",
-        "fr:canard-51"
+        "canard"
     ],
     "grand-marnier": [
-        "fr:grand-marnier",
-        "fr:grand-marnier-sel",
-        "fr:grand-marnier-496"
+        "grand-marnier"
     ],
     "jus d'orange": [
-        "fr:jus-dorange",
-        "fr:jus-doranges",
-        "fr:jus-diorange"
+        "jus d'orange"
     ],
     "piment d'Espelette": [
-        "fr:piment-despelette",
-        "fr:piment-dlespelette",
-        "fr:piments-dlespelette"
+        "piment d'Espelette"
     ],
     "chipiron": [
-        "fr:chipirons-entiers"
+        "chipiron"
     ],
     "autres": [
-        "fr:autres",
-        "fr:d-autres",
-        "fr:et-autres"
+        "autres"
     ],
     "levure chimique": [
-        "fr:5-levure-chimique",
-        "fr:levure-chimique-sel",
-        "fr:selt-levure-chimique"
+        "levure chimique"
     ],
     "\u00e9pinards frais": [
-        "fr:epinards-i",
-        "fr:poin-fraise",
-        "fr:produits-frais"
+        "\u00e9pinards frais"
     ],
     "foie": [
-        "fr:1-foie",
-        "fr:foie-ma",
-        "fr:foie-35"
+        "foie"
     ],
     "vinaigre aromatis\u00e9": [
-        "fr:vinaigre-arome",
-        "fr:vinaigre-japonais",
-        "fr:vinaigre-ama"
+        "vinaigre aromatis\u00e9"
     ],
     "citrons": [
-        "fr:4-citrons",
-        "fr:citronsyre",
-        "fr:citronsyra"
+        "citrons"
     ],
     "cacahu\u00e8tes": [
-        "fr:cacahu\u011btes",
-        "fr:cacahuetest",
-        "fr:cacahuetesf"
+        "cacahu\u00e8tes"
     ],
     "sauce hu\u00eetre": [
-        "fr:sauce-huitre",
-        "fr:sauce-huitres",
-        "fr:sauce-d-huitre"
+        "sauce hu\u00eetre"
     ],
     "anis \u00e9toil\u00e9": [
-        "fr:anis-oil",
-        "fr:anis-\ufffdtoil\ufffd",
-        "fr:anis-etoil\u0117"
+        "anis \u00e9toil\u00e9"
     ],
     "noix de p\u00e9toncle": [
-        "fr:noix-de-polme",
-        "fr:noix-de-porc",
-        "fr:noix-de-pate"
+        "noix de p\u00e9toncle"
     ],
     "ormeau": [
-        "fr:arome-d-ormeau"
+        "ormeau"
     ],
     "riz blanc": [
-        "fr:riz-blanc-sel",
-        "fr:riz-blanc-sec",
-        "fr:riz-blanc-thai"
+        "riz blanc"
     ],
     "jambon de Parme": [
-        "fr:jambon-de-parme",
-        "fr:jambon-de-parme-a-o-p"
+        "jambon de Parme"
     ],
     "cr\u00eapes": [
-        "fr:cres",
-        "fr:ucres",
-        "fr:crves"
+        "cr\u00eapes"
     ],
     "saut\u00e9 de veau": [
-        "fr:saute-de-veau",
-        "fr:epaute-de-veau",
-        "fr:os-de-veau"
+        "saut\u00e9 de veau"
     ],
     "rave": [
-        "fr:rave",
-        "fr:raves",
-        "fr:rave-4"
+        "rave"
     ],
     "c\u00e9leri branche": [
-        "fr:celeri-branche",
-        "fr:celeri-branchet",
-        "fr:citeri-branche"
+        "c\u00e9leri branche"
     ],
     "roquefort": [
-        "fr:roquefort",
-        "fr:roqueforti",
-        "fr:t-roquefort"
+        "roquefort"
     ],
-    "briques": [],
+    "briques": [
+        "briques"
+    ],
     "vinaigre de framboise": [
-        "fr:vinaigre-de-framboise",
-        "fr:sucre-vinaigre-de-framboise"
+        "vinaigre de framboise"
     ],
-    "cailles": [],
+    "cailles": [
+        "cailles"
+    ],
     "viandox": [
-        "fr:viando",
-        "fr:viand",
-        "fr:vin-doux"
+        "viandox"
     ],
     "pecorino romano": [
-        "fr:pecorino-romano-pdo",
-        "fr:pecorino-romano-dop",
-        "fr:pecorino-romano-a0p"
+        "pecorino romano"
     ],
     "macreuse": [
-        "fr:macreuse",
-        "fr:macreuse-de-boeuf"
+        "macreuse"
     ],
     "colin": [
-        "fr:colin",
-        "fr:colina",
-        "fr:colin-j"
+        "colin"
     ],
     "feta": [
-        "fr:feta",
-        "fr:fetate",
-        "fr:fetass"
+        "feta"
     ],
     "semoule moyenne": [
-        "fr:semoule-moyenne-de-ble-dur"
+        "semoule moyenne"
     ],
     "collier d'agneau": [
-        "fr:collier-de-veau",
-        "fr:cotes-d-agneau",
-        "fr:collier-de-boeuf"
+        "collier d'agneau"
     ],
     "p\u00e2te bris\u00e9e": [
-        "fr:pate-bricee",
-        "fr:pasteu-rise",
-        "fr:tarte-brisee"
+        "p\u00e2te bris\u00e9e"
     ],
     "Fines herbes": [
-        "fr:\ufb01nes-herbes",
-        "fr:sel-fines-herbes",
-        "fr:ail-fines-herbes"
+        "Fines herbes"
     ],
-    "fruit de mer": [],
+    "fruit de mer": [
+        "fruit de mer"
+    ],
     "court-bouillon": [
-        "fr:court-bouillon",
-        "fr:cuits-court-bouillon",
-        "fr:porc-bouillon"
+        "court-bouillon"
     ],
     "chipolata": [
-        "fr:chipolatas-porc",
-        "fr:chipolatas-landaises",
-        "fr:chipolata-superieure"
+        "chipolata"
     ],
     "haddock": [
-        "fr:ce-haddock",
-        "fr:minced-haddock",
-        "fr:haddock-fillets"
+        "haddock"
     ],
     "sucre glace": [
-        "fr:sucre-glace-2",
-        "fr:sucre-glace-bioo",
-        "fr:sucre-glace-oeufs"
+        "sucre glace"
     ],
-    "brick": [],
+    "brick": [
+        "brick"
+    ],
     "piments": [
-        "fr:piments-r",
-        "fr:piments-2",
-        "fr:piments-1"
+        "piments"
     ],
     "p\u00e2te d'arachide": [
-        "fr:pote-d-arachide",
-        "fr:pkte-d-arachides",
-        "fr:i-pate-d-arachide"
+        "p\u00e2te d'arachide"
     ],
     "marrons": [
-        "fr:marrons-ue",
-        "fr:puree-marrons",
-        "fr:e2501-marrons"
+        "marrons"
     ],
     "pignons": [
-        "fr:pignons-9",
-        "fr:ampignons",
-        "fr:thampignons"
+        "pignons"
     ],
     "pecorino": [
-        "fr:pecorino-dop",
-        "fr:pecorino-rornt",
-        "fr:pecorino-dolce"
+        "pecorino"
     ],
     "poivron jaune": [
-        "fr:poivron-jaune-6",
-        "fr:poivron-jaune-1",
-        "fr:poivron-jaune-21"
+        "poivron jaune"
     ],
     "Condiments": [
-        "fr:condiments-miso",
-        "fr:nd-condiments-sel",
-        "fr:lange-de-condiments"
+        "Condiments"
     ],
     "quenelles": [
-        "fr:quenelles",
-        "fr:des-quenelles",
-        "fr:quenelles-de-veau"
+        "quenelles"
     ],
     "homard": [
-        "fr:homard-ail",
-        "fr:homard-bleu",
-        "fr:homard-moule"
+        "homard"
     ],
     "ravioles": [
-        "fr:ravioles",
-        "fr:ravioles-38",
-        "fr:ravioles-pbte"
+        "ravioles"
     ],
     "cr\u00e8me semi-\u00e9paisse": [
-        "fr:creme-epaisse",
-        "fr:creme-depaisse",
-        "fr:creme-epasse"
+        "cr\u00e8me semi-\u00e9paisse"
     ],
     "hu\u00eetres": [
-        "fr:huites",
-        "fr:autres",
-        "fr:ures"
+        "hu\u00eetres"
     ],
     "champignons frais": [
-        "fr:champignons-reishi",
-        "fr:champignons-oirs",
-        "fr:champignons-e-paris"
+        "champignons frais"
     ],
     "champignons noirs": [
-        "fr:11-champignons-noirs",
-        "fr:eaucchampignons-noirs",
-        "fr:champignons-noirs-3-6x"
+        "champignons noirs"
     ],
     "pigeonneaux": [
-        "fr:pineau",
-        "fr:pigeon",
-        "fr:bigorneau"
+        "pigeonneaux"
     ],
     "pain brioch\u00e9": [
-        "fr:pain-brioche",
-        "fr:levain-brioche",
-        "fr:mini-brioche"
+        "pain brioch\u00e9"
     ],
     "poitrine fum\u00e9e": [
-        "fr:poitrine-fum-ee",
-        "fr:poirine-fumee",
-        "fr:poitrine-fumee-2"
+        "poitrine fum\u00e9e"
     ],
     "asperges": [
-        "fr:asperges-5",
-        "fr:asperges-5-5",
-        "fr:creme-d-asperges"
+        "asperges"
     ],
     "Magret de Canard": [
-        "fr:magret-de-canard-ie",
-        "fr:ma-magret-de-canard",
-        "fr:magret-de-canard-sel"
+        "Magret de Canard"
     ],
     "oignons rouges": [
-        "fr:oignons-rouges-v",
-        "fr:oignons-rouges-4-1",
-        "fr:oignons-rouges-1-71"
+        "oignons rouges"
     ],
     "gnocchi": [
-        "fr:gnocchi",
-        "fr:gnocchis",
-        "fr:fr-gnocchi"
+        "gnocchi"
     ],
     "pesto": [
-        "fr:pesto",
-        "fr:pesto-de",
-        "fr:du-pesto"
+        "fr:pesto"
     ],
     "tomate s\u00e9ch\u00e9e": [
-        "fr:tomate-sechee",
-        "fr:tomate-s-chee",
-        "fr:tomates-seches"
+        "tomate s\u00e9ch\u00e9e"
     ],
     "graine de fenouil": [
-        "fr:graine-de-fenouil-doux",
-        "fr:graine-de-fenouil-sauvage",
-        "fr:gousse-de-graine-de-fenouil"
+        "graine de fenouil"
     ],
     "nori": [
-        "fr:onori",
-        "fr:oignori",
-        "fr:mafunori"
+        "nori"
     ],
     "gingembre confit": [
-        "fr:gingembre-confit",
-        "fr:gingembre-confit-11",
-        "fr:des-de-gingembre-confit"
+        "gingembre confit"
     ],
     "poulpe": [
-        "fr:poulpe-sel",
-        "fr:petits-poulpes"
+        "poulpe"
     ],
     "dashi": [
-        "fr:dashi"
+        "dashi"
     ],
     "flocons de bonite": [
-        "fr:flocons-de-bie",
-        "fr:fond-de-bonite",
-        "fr:flocons-de-bl\u1ebf"
+        "flocons de bonite"
     ],
     "sauce okonomiyaki": [
-        "fr:sauce-okonomiyaki"
+        "sauce okonomiyaki"
     ],
     "feuillets \u00e0 raviolis": [
-        "fr:feuille-de-raviole",
-        "fr:feuilles-de-raisin",
-        "fr:feuilles-de-fraise"
+        "feuillets \u00e0 raviolis"
     ],
     "liseron d'eau": [
-        "fr:liseron-d-eau",
-        "fr:liserons-d-eau",
-        "fr:lise-d-eau"
+        "liseron d'eau"
     ],
     "pousse de bambou": [
-        "fr:jets-de-pousse-de-bambou",
-        "fr:ibres-de-pousse-de-bambou",
-        "fr:pousse-de-bambou-en-lamelle"
+        "pousse de bambou"
     ],
     "potimarron": [
-        "fr:potimarron-57",
-        "fr:potimarron-vert",
-        "fr:courge-potimarron"
+        "potimarron"
     ],
     "biscotte": [
-        "fr:biscotte-ble",
-        "fr:34-biscottes",
-        "fr:biscotte-de-ble"
+        "biscotte"
     ],
     "tahini": [
-        "fr:tahini",
-        "fr:le-tahini",
-        "fr:tahini-cru"
+        "tahini"
     ],
     "Choux-Fleurs en fleurettes ZRP Saint Eloi": [
-        "fr:noux-fleurs-en-fleurettes-lredients",
-        "fr:choux-fleursen-fleurettes",
-        "fr:choux-fleurs-en-fleurette"
+        "Choux-Fleurs en fleurettes ZRP Saint Eloi"
     ],
     "concombre": [
-        "fr:concombre-9",
-        "fr:concombre-8",
-        "fr:concombre-1"
+        "concombre"
     ],
     "bourgogne": [
-        "fr:de-bourgogne",
-        "fr:bourgogne-rouge",
-        "fr:bourgogne-aligote"
+        "bourgogne"
     ],
     "carvi": [
-        "fr:carvil",
-        "fr:i-carvi",
-        "fr:5-carvi"
+        "carvi"
     ],
-    "foie de veau": [],
+    "foie de veau": [
+        "foie de veau"
+    ],
     "noix de coco rap\u00e9e": [
-        "fr:noix-de-coco-rape",
-        "fr:noix-de-coco-rapee",
-        "fr:noix-de-coco-rappee"
+        "noix de coco rap\u00e9e"
     ],
     "cardamome": [
-        "fr:sel-cardamome",
-        "fr:ct-cardamomel",
-        "fr:cardamome-sel"
+        "cardamome"
     ],
     "loup de mer": [
-        "fr:loup-de-mer"
+        "loup de mer"
     ],
     "cervelas": [
-        "fr:cervelas",
-        "fr:salade-cervelas",
-        "fr:cervelas-de-eau"
+        "cervelas"
     ],
     "m\u00e9rous": [
-        "fr:samous",
-        "fr:rus",
-        "fr:rouges"
+        "m\u00e9rous"
     ],
     "combava": [
-        "fr:huile-combava",
-        "fr:eau-combava-i",
-        "fr:combava-zeste"
+        "combava"
     ],
     "papier sulfuris\u00e9": [
-        "fr:apio-y-sulfitcs",
-        "fr:persil-frise",
-        "fr:ladide-sulfureux"
+        "papier sulfuris\u00e9"
     ],
     "pieds de veau": [
-        "fr:pieds-de-veau"
+        "pieds de veau"
     ],
     "couenne de panne": [
-        "fr:couenne-de-pore",
-        "fr:couenne-de-p-sel",
-        "fr:couenne-de-eau"
+        "couenne de panne"
     ],
     "fumet": [
-        "fr:fumet-e",
-        "fr:visfumet"
+        "fumet"
     ],
     "riz long": [
-        "fr:riz-long-1",
-        "fr:riz-long-st24",
-        "fr:riz-long-noir"
+        "riz long"
     ],
     "\u00e9pices \u00e0 paella": [
-        "fr:epices-paella",
-        "fr:epices-pate",
-        "fr:pices-cannelle"
+        "\u00e9pices \u00e0 paella"
     ],
-    "guignolet": [],
+    "guignolet": [
+        "guignolet"
+    ],
     "encornet": [
-        "fr:encornetsj",
-        "fr:3-encornet",
-        "fr:encornets-80"
+        "encornet"
     ],
     "baies roses": [
-        "fr:miel-baies-roses",
-        "fr:curcuma-baies-roses",
-        "fr:poivre-vert-baies-roses"
+        "baies roses"
     ],
     "chocolat noir": [
-        "fr:chocolat-noirl",
-        "fr:chocolat-noire",
-        "fr:chocolat-noira"
+        "chocolat noir"
     ],
     "framboises": [
-        "fr:l-framboises",
-        "fr:framboises-5",
-        "fr:framboises-3"
+        "framboises"
     ],
     "gel\u00e9e": [
-        "fr:gele",
-        "fr:gel",
-        "fr:gee"
+        "gel\u00e9e"
     ],
     "saucisses de Francfort": [
-        "fr:saucisses-de-francfort-g",
-        "fr:3-saucisses-de-francfort",
-        "fr:4-saucisses-de-francfort-qualite-superieure"
+        "saucisses de Francfort"
     ],
     "riz tha\u00ef": [
-        "fr:riz-thai-1",
-        "fr:riz-t",
-        "fr:riz-thai-eau"
+        "riz tha\u00ef"
     ],
     "s\u00e9same": [
-        "fr:sosame",
-        "fr:sksame",
-        "fr:ssam"
+        "s\u00e9same"
     ],
     "pur\u00e9e de piment": [
-        "fr:purec-de-piment",
-        "fr:puree-de-piment-g",
-        "fr:puree-de-piment-0"
+        "pur\u00e9e de piment"
     ],
     "\u00e9corce d'orange": [
-        "fr:ecorce-dorange",
-        "fr:ecorces-dorange",
-        "fr:ecorces-doranges"
+        "\u00e9corce d'orange"
     ],
     "Volaille": [
-        "fr:dc-volaille",
-        "fr:volaille-nee",
-        "fr:volaille-feau"
+        "Volaille"
     ],
     "ch\u00e8vre": [
-        "fr:chanvre",
-        "fr:hevre",
-        "fr:havre"
+        "ch\u00e8vre"
     ],
     "gorgonzola": [
-        "fr:gorgonzola",
-        "fr:gorgonzola-2",
-        "fr:gorgonzola-1"
+        "gorgonzola"
     ],
     "patate douce": [
-        "fr:patate-doucet",
-        "fr:patate-douce-iqf",
-        "fr:3-de-patate-douce"
+        "patate douce"
     ],
     "cr\u00e8me de coco": [
-        "fr:rm-de-coco",
-        "fr:creme-de-c0co",
-        "fr:sucre-de-coc"
+        "cr\u00e8me de coco"
     ],
     "pintades": [
-        "fr:pintade",
-        "fr:pintade-evis",
-        "fr:pinards"
+        "pintades"
     ],
     "marcassin": [
-        "fr:civet-de-marcassin",
-        "fr:viande-de-marcassin",
-        "fr:epaule-de-marcassin"
+        "marcassin"
     ],
     "raisin blanc": [
-        "fr:arome-raisin-blanc",
-        "fr:raisin-blanc-citron",
-        "fr:raisin-blanc-essense"
+        "raisin blanc"
     ],
     "raisins secs": [
-        "fr:r\u1ea1isins-secs",
-        "fr:raisins-secst",
-        "fr:raisins-secsr"
+        "raisins secs"
     ],
     "mayonnaise au citron": [
-        "fr:mayonnaise-au-citron"
+        "mayonnaise au citron"
     ],
     "crevette bouquet": [
-        "fr:crevette-rouge",
-        "fr:crevette-mollusques",
-        "fr:crevette-uite"
+        "crevette bouquet"
     ],
     "pintade": [
-        "fr:pintade",
-        "fr:de-pintade",
-        "fr:pintade-929"
+        "pintade"
     ],
     "queue de langouste": [
-        "fr:queue-de-langouste-caraibe"
+        "queue de langouste"
     ],
     "pistaches": [
-        "fr:pistaches-6",
-        "fr:pistaches-1",
-        "fr:pistaches-0"
+        "pistaches"
     ],
     "yaourt nature": [
-        "fr:yaourt-nature",
-        "fr:yaourt-naturel",
-        "fr:yaourt-nature-sla"
+        "yaourt nature"
     ],
     "piments verts": [
-        "fr:p\u012fments-verts-doux",
-        "fr:piments-verts-cabri",
-        "fr:amidon-piments-verts"
+        "piments verts"
     ],
     "tempeh": [
-        "fr:tempeh"
+        "tempeh"
     ],
     "citronnelle": [
-        "fr:citronnelle1",
-        "fr:citronnelle-0",
-        "fr:51-citronnelle"
+        "citronnelle"
     ],
     "galanga": [
-        "fr:galangal",
-        "fr:galangale",
-        "fr:sel-galanga"
+        "galanga"
     ],
     "yaourts": [
-        "fr:fromages-yaourts",
-        "fr:dans-vos-yaourts"
+        "yaourts"
     ],
     "p\u00e2te": [
-        "fr:pte",
-        "fr:prte",
-        "fr:pote"
+        "p\u00e2te"
     ],
     "coppa": [
-        "fr:coppa-33",
-        "fr:coppa-ham"
+        "coppa"
     ],
     "cr\u00e8me all\u00e9g\u00e9e": [
-        "fr:creme-vanille",
-        "fr:creme-caillee",
-        "fr:creme-allegee"
+        "cr\u00e8me all\u00e9g\u00e9e"
     ],
     "fregola sarda": [
-        "fr:fregola-sarda"
+        "fregola sarda"
     ],
     "tomates confites \u00e0 l\u2019huile": [
-        "fr:tomates-seches-a-l-huile",
-        "fr:tomates-sechees-a-l-huile",
-        "fr:tomates-confites-ingrediems"
+        "tomates confites \u00e0 l\u2019huile"
     ],
     "endives": [
-        "fr:4-endives-cat",
-        "fr:jus-des-endives",
-        "fr:endives-witloof"
+        "endives"
     ],
     "champignon frais": [
-        "fr:champignons-reishi",
-        "fr:champignon-de-aris",
-        "fr:champignons-e-paris"
+        "champignon frais"
     ],
     "riz sauvage": [
-        "fr:riz-sauvage-0",
-        "fr:e-riz-sauvage",
-        "fr:riz-sauvage-sel"
+        "riz sauvage"
     ],
     "herbes": [
-        "fr:herb\u0117s",
-        "fr:rherbes",
-        "fr:herbes-7"
+        "herbes"
     ],
     "penne": [
-        "fr:penne-p",
-        "fr:mini-penne",
-        "fr:pates-penne"
+        "penne"
     ],
     "graines de coriandre": [
-        "fr:graines-de-coriandre-0",
-        "fr:graines-de-coriandre-cumin",
-        "fr:graines-de-coriandre-poudre"
+        "graines de coriandre"
     ],
     "bois d'Inde": [
-        "fr:pois-didne",
-        "fr:bois-d-inde-moulu",
-        "fr:vian-dinde"
+        "bois d'Inde"
     ],
     "\u00e9trille": [
-        "fr:trilles",
-        "fr:etrille",
-        "fr:etrilles"
+        "\u00e9trille"
     ],
     "haricot lingot": [
-        "fr:retrouvez-le-haricot-lingot"
+        "haricot lingot"
     ],
     "coquille saint-jacques": [
-        "fr:coquille-saint-jacquesianchois",
-        "fr:petites-coquilles-saint-jacques",
-        "fr:arome-type-coquille-saint-jacques"
+        "coquille saint-jacques"
     ],
     "tendron de veau": [
-        "fr:fon-de-veau",
-        "fr:rognon-de-veau",
-        "fr:tete-de-veau"
+        "tendron de veau"
     ],
     "faisselle": [
-        "fr:faisselle",
-        "fr:faisselle-poire",
-        "fr:faisselle-au-lait"
+        "faisselle"
     ],
     "oignon nouveau": [
-        "fr:oignon-nouveau",
-        "fr:oignon-nouveau-seche",
-        "fr:oignon-nouveau-deshydrate"
+        "oignon nouveau"
     ],
     "andouille": [
-        "fr:andouille",
-        "fr:andouillette",
-        "fr:andouillette-x-3"
+        "andouille"
     ],
     "feta marin\u00e9e": [
-        "fr:fete-farine",
-        "fr:tamarinde",
-        "fr:set-marin"
+        "feta marin\u00e9e"
     ],
     "vermicelles": [
-        "fr:vermicelles-i",
-        "fr:vermicelles-3",
-        "fr:vermicelles-cuits"
+        "vermicelles"
     ],
     "fromage blanc": [
-        "fr:fromage-blanc-8",
-        "fr:fromage-blanc-7",
-        "fr:fromage-blanc-3"
+        "fromage blanc"
     ],
     "chou-fleur": [
-        "fr:choufleur",
-        "fr:chou-\ufb02eur",
-        "fr:chou-feur"
+        "chou-fleur"
     ],
     "tsuyu (bouillon au poisson volant)": [
-        "fr:oeufs-de-poisson-volant",
-        "fr:bouillon-de-poission"
+        "tsuyu (bouillon au poisson volant)"
     ],
     "cuisses de lapin": [
-        "fr:cuisses-de-lapin",
-        "fr:cuisses-de-lapin-coupees-en-morceaux"
+        "cuisses de lapin"
     ],
     "maroilles": [
-        "fr:maroilles",
-        "fr:quart-maroilles",
-        "fr:maroilles-fondu"
+        "maroilles"
     ],
     "flageolet": [
-        "fr:\ufb02ageolets",
-        "fr:flageolets-min",
-        "fr:navet-flageolet"
+        "flageolet"
     ],
     "berkoukes": [
-        "fr:boterkoekjes",
-        "fr:rouges",
-        "fr:evr-ouves"
+        "berkoukes"
     ],
     "gruy\u00e8re suisse": [
-        "fr:gruyere-suisse",
-        "fr:sucre-suisse",
-        "fr:levure-suisse"
+        "gruy\u00e8re suisse"
     ],
     "vacherin Fribourgeois": [
-        "fr:vacherin-fribourgeois",
-        "fr:fromage-gras-a-pate-dure-vacherin-fribourgeois",
-        "fr:fromage-gras-a-pate-mi-dure-vacherin-fribourgeois"
+        "vacherin Fribourgeois"
     ],
     "couteau": [
-        "fr:couteaux",
-        "fr:aux-couteaux",
-        "fr:poisson-couteau"
+        "couteau"
     ],
     "kirsch": [
-        "fr:kirsch",
-        "fr:kirscht",
-        "fr:kirsche"
+        "kirsch"
     ],
     "p\u00e2te feuillet\u00e9e": [
-        "fr:pte-feuilletee",
-        "fr:pate-feuillete",
-        "fr:prte-feuilletee"
+        "p\u00e2te feuillet\u00e9e"
     ],
     "queues de langouste": [
-        "fr:queues-de-langoustes",
-        "fr:queues-de-langouste-blanche",
-        "fr:queues-de-langoustes-blanches"
+        "queues de langouste"
     ],
     "champagne": [
-        "fr:champagne-12",
-        "fr:fine-champagne",
-        "fr:champagne-rose"
+        "champagne"
     ],
     "lentilles": [
-        "fr:lentilles-8",
-        "fr:lentilles-1",
-        "fr:lentilles-riz"
+        "lentilles"
     ],
     "sauce teriyaki": [
-        "fr:2-sauce-teriyaki",
-        "fr:viand\u011b-de-poulet-sauce-teriyaki"
+        "sauce teriyaki"
     ],
     "c\u00f4te d'agneau": [
-        "fr:cotes-d-agneau",
-        "fr:saute-d-agneau",
-        "fr:dagneau"
+        "c\u00f4te d'agneau"
     ],
     "poules": [
-        "fr:mes-poules"
+        "poules"
     ],
     "cuisse de poulet": [
-        "fr:cuisse-de-poulet-91",
-        "fr:cuisse-de-poulet-31",
-        "fr:cuisse-de-poulet-91-0"
+        "cuisse de poulet"
     ],
     "colorant": [
-        "fr:co\u013corant",
-        "fr:\ud83e\udd5acolorant",
-        "fr:\u010dolorants"
+        "colorant"
     ],
     "p\u00e2te \u00e0 pizza": [
-        "fr:pate-pizza",
-        "fr:pate-apizza",
-        "fr:paton-a-pizza"
+        "p\u00e2te \u00e0 pizza"
     ],
     "feuilles de nori": [
-        "fr:feuilles-de-riz",
-        "fr:feuilles-de-cari",
-        "fr:feuilles-d-ortie"
+        "feuilles de nori"
     ],
     "wasabi": [
-        "fr:wasabi-4",
-        "fr:1-wasabi",
-        "fr:l5-wasabi"
+        "wasabi"
     ],
     "graines de s\u00e9same": [
-        "fr:graines-de-\u015fesame",
-        "fr:graine-de-ssame",
-        "fr:\ud83e\udd5bgraines-de-sesame"
+        "graines de s\u00e9same"
     ],
     "li\u00e8vre": [
-        "fr:livre",
-        "fr:lievre",
-        "fr:live"
+        "li\u00e8vre"
     ],
     "myrtilles": [
-        "fr:myrtilles1",
-        "fr:3-myrtilles",
-        "fr:myrtilles-16"
+        "myrtilles"
     ],
     "confiture de myrtilles": [
-        "fr:confiture-de-myrtilles",
-        "fr:confiture-de-myrtilles-sauvages"
+        "confiture de myrtilles"
     ],
-    "camemberts": [],
+    "camemberts": [
+        "camemberts"
+    ],
     "pains de campagne": [
-        "fr:pain-de-campagne",
-        "fr:pain-campagne",
-        "fr:pain-de-mie-campagne"
+        "pains de campagne"
     ],
     "m\u00e2che": [
-        "fr:miche",
-        "fr:mce",
-        "fr:che"
+        "m\u00e2che"
     ],
     "piment vert": [
-        "fr:piment-vert-1",
-        "fr:piment-vert-doux",
-        "fr:piment-verts-forts"
+        "piment vert"
     ],
     "poudre de colombo": [
-        "fr:cives-poudre-de-colombo"
+        "poudre de colombo"
     ],
     "crabes": [
-        "fr:4-crabes",
-        "fr:crabes-verts",
-        "fr:crabes-farcis"
+        "crabes"
     ],
     "cive": [
-        "fr:cive",
-        "fr:cives",
-        "fr:civette"
+        "cive"
     ],
     "surimi": [
-        "fr:surimi2",
-        "fr:2-surimi",
-        "fr:surimi-4z"
+        "surimi"
     ],
     "jambon fum\u00e9": [
-        "fr:jambon-fume-d",
-        "fr:jambon-oeu-fume",
-        "fr:jambon-gout-fume"
+        "jambon fum\u00e9"
     ],
     "farine de ma\u00efs": [
-        "fr:farine-de-mas",
-        "fr:farine-de-mays",
-        "fr:farine-de-mats"
+        "farine de ma\u00efs"
     ],
     "sauceline": [
-        "fr:sucelies",
-        "fr:sauce-praline",
-        "fr:sauce-nem"
+        "sauceline"
     ],
     "saucisson sec": [
-        "fr:saucisson-sec",
-        "fr:saucisson-sec-fume",
-        "fr:saucisson-sec-pur-porc"
+        "saucisson sec"
     ],
     "seiche": [
-        "fr:seiches-eau",
-        "fr:fl-de-seiche",
-        "fr:noir-de-seiche"
+        "seiche"
     ],
     "cacahu\u00e8te grill\u00e9e": [
-        "fr:cacahueetes-grillees",
-        "fr:cacahuetesgrillees",
-        "fr:cafrahuetes-grillees"
+        "cacahu\u00e8te grill\u00e9e"
     ],
     "sauce poisson": [
-        "fr:sauce-poisson-prepa",
-        "fr:sauce-poisson-de-ta",
-        "fr:sauce-poisson-canard"
+        "sauce poisson"
     ],
     "boyau pour saucisse": [
-        "fr:base-pour-sauce",
-        "fr:pour-la-suisse",
-        "fr:viande-de-porc-saucisses"
+        "boyau pour saucisse"
     ],
     "bananes": [
-        "fr:bananes-p",
-        "fr:1-bananes",
-        "fr:70-bananes"
+        "bananes"
     ],
     "bonite": [
-        "fr:bonite",
-        "fr:fond-de-bonite",
-        "fr:bonite-du-nord"
+        "bonite"
     ],
     "pineau des charentes": [
-        "fr:pineau-des-charentes",
-        "fr:pineau-des-charentes-rose"
+        "pineau des charentes"
     ],
     "clovisse": [
-        "fr:clovisses",
-        "fr:7-calmar-clovisse"
+        "clovisse"
     ],
     "pimiento del piquillo": [
-        "fr:pimiento-de-piquillo",
-        "fr:pimentos-del-piquillo",
-        "fr:pimientos-del-piqui-lo"
+        "pimiento del piquillo"
     ],
     "brochet": [
-        "fr:brochet",
-        "fr:brochettes",
-        "fr:brochet-20"
+        "brochet"
     ],
     "mahi mahi": [
-        "fr:mix-mais",
-        "fr:mai-mehl",
-        "fr:prai-mais"
+        "mahi mahi"
     ],
     "papaye": [
-        "fr:papaye-3",
-        "fr:papaye-32",
-        "fr:eau-papaye"
+        "papaye"
     ],
     "telline": [
-        "fr:talline",
-        "fr:tline",
-        "fr:vetellne"
+        "telline"
     ],
     "Monbazillac": [
-        "fr:monbazillac",
-        "fr:vin-monbazillac",
-        "fr:monbazillac-wine"
+        "Monbazillac"
     ],
     "d\u00e9s de jambon": [
-        "fr:os-de-jambon",
-        "fr:viande-de-jambon",
-        "fr:os-de-jambon-sec"
+        "d\u00e9s de jambon"
     ],
     "torsades": [
-        "fr:torsades",
-        "fr:pates-torsades",
-        "fr:torsades-cuites"
+        "torsades"
     ],
     "Moutarde blanche": [
-        "fr:moutarde-blanche",
-        "fr:moutarde-blanchet-vinaigre",
-        "fr:graines-de-moutarde-blanche"
+        "Moutarde blanche"
     ],
     "bonnet": [
-        "fr:bonnet",
-        "fr:bonnets",
-        "fr:bonneterre-1"
+        "bonnet"
     ],
     "ch\u00e2taignes": [
-        "fr:ch\u0103taignes",
-        "fr:chatignes",
-        "fr:chatagnes"
+        "ch\u00e2taignes"
     ],
     "blanc d'oeuf": [
-        "fr:blanc-doeuf",
-        "fr:blancs-doeuf",
-        "fr:blanc-dtoeuf"
+        "blanc d'oeuf"
     ],
     "jambon cru": [
-        "fr:u-jambon-cru",
-        "fr:jambon-cru-i-h",
-        "fr:oeufs-jambon-cru"
+        "jambon cru"
     ],
     "bi\u00e8re blonde": [
-        "fr:biere-blonde",
-        "fr:britt-blonde",
-        "fr:orange-blonde"
+        "bi\u00e8re blonde"
     ],
     "saut\u00e9 de dinde": [
-        "fr:eau-de-dinde",
-        "fr:saute-de-dindonneau",
-        "fr:steak-de-dinde"
+        "saut\u00e9 de dinde"
     ],
     "calvados": [
-        "fr:o-calvados",
-        "fr:sel-calvados",
-        "fr:calvados-a-o"
+        "calvados"
     ],
     "sot-l'y-laisse": [
-        "fr:mollasse",
-        "fr:laisse"
+        "sot-l'y-laisse"
     ],
     "sak\u00e9": [
-        "fr:smak",
-        "fr:sank",
-        "fr:saka"
+        "sak\u00e9"
     ],
     "mirin": [
-        "fr:honmirin",
-        "fr:sake-mirin",
-        "fr:mirin-wine"
+        "mirin"
     ],
     "pruneaux": [
-        "fr:5-pruneaux",
-        "fr:eau-pruneaux",
-        "fr:1-0-pruneaux"
+        "pruneaux"
     ],
     "artichauts": [
-        "fr:artichauts-90",
-        "fr:6-artichauts-2",
-        "fr:artichauts-6096"
+        "artichauts"
     ],
     "agneau": [
-        "fr:dagneau",
-        "fr:l-agneau",
-        "fr:os-d-agneau"
+        "agneau"
     ],
     "girolle": [
-        "fr:mini-girolle",
-        "fr:girolles-1-1",
-        "fr:girolle-pochee"
+        "girolle"
     ],
     "sucre brun": [
-        "fr:sucre-brune",
-        "fr:sucre-brun-doux",
-        "fr:arome-sucre-brun"
+        "sucre brun"
     ],
     "ratte": [
-        "fr:gratter",
-        "fr:keratter",
-        "fr:gratte-cul"
+        "ratte"
     ],
     "sauce pour nem": [
-        "fr:sauce-pour-nems",
-        "fr:coupelle-de-sauce-pour-nems",
-        "fr:1-sachet-de-sauce-pour-nems"
+        "sauce pour nem"
     ],
-    "galettes de riz": [],
+    "galettes de riz": [
+        "galettes de riz"
+    ],
     "huile de p\u00e9pin de raisin": [
-        "fr:5-huile-de-pepin-de-raisin",
-        "fr:hulle-de-pepins-de-raisin",
-        "fr:huilede-pepins-de-raisins"
+        "huile de p\u00e9pin de raisin"
     ],
     "viande d\u2019agneau": [
-        "fr:viande-eau",
-        "fr:4-de-viande-d-agneau",
-        "fr:viande-de-eau"
+        "viande d\u2019agneau"
     ],
     "toastinettes": [
-        "fr:toastee",
-        "fr:tartines",
-        "fr:rosettes"
+        "toastinettes"
     ],
     "farine compl\u00e8te": [
-        "fr:farine-compl",
-        "fr:farine-complete-e",
-        "fr:tarine-complete"
+        "farine compl\u00e8te"
     ],
     "galettes (bretonnes)": [
-        "fr:algues-bretonnes",
-        "fr:palets-bretons",
-        "fr:alettes-bretonnes-au-beurre"
+        "galettes (bretonnes)"
     ],
     "r\u00f4ti de biche": [
-        "fr:ii-de-bie",
-        "fr:arine-de-bie",
-        "fr:viande-de-biche"
+        "r\u00f4ti de biche"
     ],
     "Pav\u00e9s de saumon": [
-        "fr:paves-de-saumon",
-        "fr:pave-de-saumon",
-        "fr:2-paves-de-saumon"
+        "Pav\u00e9s de saumon"
     ],
     "pains pour hamburger": [
-        "fr:pain-special-pour-hamburger",
-        "fr:pain-hamburger",
-        "fr:pains-speciaux-pour-hamburgers"
+        "pains pour hamburger"
     ],
     "citron confit": [
-        "fr:citron-confit",
-        "fr:citron-confit-1",
-        "fr:citron-confit-sel"
+        "citron confit"
     ],
     "brioche": [
-        "fr:briochette",
-        "fr:mix-brioche",
-        "fr:pain-brioche"
+        "brioche"
     ],
     "merlan": [
-        "fr:merlans-etes"
+        "merlan"
     ],
     "blanc de poireau": [
-        "fr:blanc-de-poireau",
-        "fr:blanc-de-poireaux"
+        "blanc de poireau"
     ],
     "pied de veau": [
-        "fr:pied-de-veau",
-        "fr:2-pied-de-veau"
+        "pied de veau"
     ],
     "girofle": [
-        "fr:o-de-girofle",
-        "fr:gras-girofle",
-        "fr:girofle-clou"
+        "girofle"
     ],
     "bavettes": [
-        "fr:bavettes-d-aloyau"
+        "bavettes"
     ],
     "poivre de sichuan": [
-        "fr:poivre-de-sichuan",
-        "fr:poivre-de-sichuan-0",
-        "fr:dont-poivre-de-sichuan"
+        "poivre de sichuan"
     ],
     "pancetta": [
-        "fr:pancetta",
-        "fr:be-pancetta",
-        "fr:pancetta-fumee"
+        "pancetta"
     ],
     "lait de coco Suzi Wan\u00ae": [
-        "fr:lait-de-coco-uht",
-        "fr:lait-de-coco-eau",
-        "fr:lait-de-coco-11-eau"
+        "lait de coco Suzi Wan\u00ae"
     ],
     "pousses de bambous Suzi Wan\u00ae": [
-        "fr:pousses-de-bambous-3",
-        "fr:pousses-de-bambouu",
-        "fr:ousses-de-bambou"
+        "pousses de bambous Suzi Wan\u00ae"
     ],
     "pur\u00e9e de piment Suzi Wan\u00ae": [
-        "fr:puree-de-piment-rouae",
-        "fr:puree-de-piment-rouge-manne",
-        "fr:poudre-de-piment-ancho"
+        "pur\u00e9e de piment Suzi Wan\u00ae"
     ],
     "sp\u00e9culoos": [
-        "fr:speculoos0",
-        "fr:speculous",
-        "fr:spccutoos"
+        "sp\u00e9culoos"
     ],
     "boudins noirs": [
-        "fr:boudins-noirs-epices-52",
-        "fr:5-boudins-noirs-piment-maigre"
+        "boudins noirs"
     ],
     "baies de gen\u00e9vrier": [
-        "fr:baies-de-genevrier",
-        "fr:baies-de-genevriers",
-        "fr:baie-de-genevrier"
+        "baies de gen\u00e9vrier"
     ],
     "f\u00e8ve de tonka": [
-        "fr:feve-de-tonka",
-        "fr:ive-de-tonka",
-        "fr:feve-de-tonja"
+        "f\u00e8ve de tonka"
     ],
-    "sumac": [],
+    "sumac": [
+        "sumac"
+    ],
     "cabillaud": [
-        "fr:f-cabillaud",
-        "fr:b-cabillaud",
-        "fr:ve-cabillaud"
+        "cabillaud"
     ],
     "levure de boulanger s\u00e8che": [
-        "fr:levure-de-boulanger-seche",
-        "fr:levure-de-boulangerche",
-        "fr:levure-de-boulangerie-seche"
+        "levure de boulanger s\u00e8che"
     ],
     "butternut": [
-        "fr:butternut",
-        "fr:butternut-blo",
-        "fr:courg-butternut"
+        "butternut"
     ],
     "airelles": [
-        "fr:airelles-2",
-        "fr:airelles-rouge",
-        "fr:airelles-rouges"
+        "airelles"
     ],
     "fusilli": [
-        "fr:fusilli",
-        "fr:fusilli-31",
-        "fr:pate-fusilli"
+        "fusilli"
     ],
     "jarret de boeuf": [
-        "fr:jarret-de-boeuf",
-        "fr:jarret-de-boeuf-marine",
-        "fr:saute-de-jarret-de-boeuf"
+        "jarret de boeuf"
     ],
     "sauce piment\u00e9e": [
-        "fr:sauce-pimentee",
-        "fr:sauce-menthe",
-        "fr:sauvde-pimentee"
+        "sauce piment\u00e9e"
     ],
     "g\u00e9latine": [
-        "fr:g\u0117latine",
-        "fr:g-latine",
-        "fr:latine"
+        "g\u00e9latine"
     ],
     "poivrons jaunes": [
-        "fr:poivrons-jaunes-3",
-        "fr:poivrons-jaunes-1",
-        "fr:poivrons-jaunes-1896"
+        "poivrons jaunes"
     ],
     "polenta": [
-        "fr:polenta",
-        "fr:5-polenta",
-        "fr:polenta-de-mais"
+        "polenta"
     ],
     "escalopes de porc": [
-        "fr:escalope-de-quorn",
-        "fr:escalope-de-porc-sans-os",
-        "fr:escalopes-de-veau"
+        "escalopes de porc"
     ],
     "colorant alimentaire": [
-        "fr:e407-colorant-alimentaire",
-        "fr:colorant-alimentaire-bleu",
-        "fr:colorant-alimentaire-rouge"
+        "colorant alimentaire"
     ],
     "navarin d'agneau": [
-        "fr:navarin-d-agneau",
-        "fr:panse-d-agneau",
-        "fr:halal-viande-d-agneau"
+        "navarin d'agneau"
     ],
     "muscadet": [
-        "fr:muscadet-poivre",
-        "fr:noix-de-muscadet",
-        "fr:muscadet-oignons"
+        "muscadet"
     ],
     "escargot": [
-        "fr:escargots-noirs",
-        "fr:escargots-au-lait",
-        "fr:chairs-d-escargots"
+        "escargot"
     ],
     "Golden curry mild S&B\u00ae": [
-        "fr:golden-curry-amakuchi",
-        "fr:golden-promise"
+        "Golden curry mild S&B\u00ae"
     ],
     "panko (chapelure japonaise)": [
-        "fr:chapelure-japonaise",
-        "fr:chapelure-de-pois",
-        "fr:chapelure-assaisonnee"
+        "panko (chapelure japonaise)"
     ],
     "sarriette": [
-        "fr:sarriette-o",
-        "fr:sarriette-sel",
-        "fr:ail-sarriette"
+        "sarriette"
     ],
     "jus de cuisson": [
-        "fr:jus-de-cuisson",
-        "fr:jus-de-cuisson-tripes",
-        "fr:jus-de-cuisson-du-veau"
+        "jus de cuisson"
     ],
-    "jarrets de porc": [],
+    "jarrets de porc": [
+        "jarrets de porc"
+    ],
     "baie de gen\u00e9vrier": [
-        "fr:baie-de-genevrier",
-        "fr:baies-de-genevrier",
-        "fr:baies-de-genevriers"
+        "baie de gen\u00e9vrier"
     ],
     "loup": [
-        "fr:loup",
-        "fr:kaloupile",
-        "fr:cantaloup"
+        "loup"
     ],
     "langues": [
-        "fr:langues"
+        "langues"
     ],
     "pains brioch\u00e9s": [
-        "fr:pain-brioche",
-        "fr:levain-brioche",
-        "fr:mini-brioche"
+        "pains brioch\u00e9s"
     ],
     "Chair de homard": [
-        "fr:chair-de-homard",
-        "fr:chair-de-homard-europeen",
-        "fr:chair-de-homard-americain"
+        "Chair de homard"
     ],
     "pamplemousses": [
-        "fr:pamplemousses-blancs",
-        "fr:pamplemousses-ruby-red",
-        "fr:segments-de-pamplemousses"
+        "pamplemousses"
     ],
     "crabe": [
-        "fr:\u010drabe",
-        "fr:m-crabe",
-        "fr:4-crabes"
+        "crabe"
     ],
     "lime": [
-        "fr:lime",
-        "fr:limes",
-        "fr:limen"
+        "lime"
     ],
     "farine de pois chiches": [
-        "fr:j-qfarine-de-pois-chiches",
-        "fr:farine-de-pois-chiches-5-5",
-        "fr:v-la-farine-de-pois-chiches"
+        "farine de pois chiches"
     ],
     "caf\u00e9": [
-        "fr:kcaf",
-        "fr:cfaaf",
-        "fr:cf"
+        "caf\u00e9"
     ],
     "huile de colza": [
-        "fr:huile-de-colz\u0105",
-        "fr:huile-de-colzam",
-        "fr:huile-de-colzal"
+        "huile de colza"
     ],
     "p\u00e2te de soja ferment\u00e9e": [
-        "fr:pate-de-soja-fermente",
-        "fr:pate-de-soja-fermentee",
-        "fr:poudre-de-soja-fermentee"
+        "p\u00e2te de soja ferment\u00e9e"
     ],
     "oignon c\u00e9bette": [
-        "fr:oignon-cebette",
-        "fr:oignon-ciboulette",
-        "fr:oignons-botte"
+        "oignon c\u00e9bette"
     ],
     "sardines": [
-        "fr:sardines-76",
-        "fr:sardines-75",
-        "fr:sardines-51"
+        "sardines"
     ],
     "calamars": [
-        "fr:calamars-poulpes",
-        "fr:tubes-de-calamars"
+        "calamars"
     ],
     "barde de lard": [
-        "fr:barde-de-porc",
-        "fr:maigre-et-lard",
-        "fr:biere-de-garde"
+        "barde de lard"
     ],
     "farfalle": [
-        "fr:farfalles",
-        "fr:plini-farfalle",
-        "fr:pates-farfalle"
+        "farfalle"
     ],
     "farce": [
-        "fr:farce-2",
-        "fr:3-farce",
-        "fr:in-farce"
+        "farce"
     ],
     "cr\u00e9pine": [
-        "fr:crepine",
-        "fr:crine",
-        "fr:cerine"
+        "cr\u00e9pine"
     ],
     "riz basmati": [
-        "fr:riz-b\u0103smati",
-        "fr:riz-basmati-l",
-        "fr:riz-basmati-3"
+        "riz basmati"
     ],
     "tofu": [
-        "fr:tofu-5",
-        "fr:7-tofu",
-        "fr:2-tofu"
+        "tofu"
     ],
     "julienne de l\u00e9gumes": [
-        "fr:julienne-de-legumes",
-        "fr:iulienne-de-legumes",
-        "fr:julienne-d-oranges"
+        "julienne de l\u00e9gumes"
     ],
     "fruits de mer": [
-        "fr:fr-fruits-de-mer",
-        "fr:sesa-fruits-de-mer",
-        "fr:ange-de-fruits-de-mer"
+        "fruits de mer"
     ],
     "artichaut": [
-        "fr:artichauta",
-        "fr:artichaut-rt",
-        "fr:artichaut-18"
+        "artichaut"
     ],
     "osso bucco de veau": [
-        "fr:osso-bucco-de-dinde",
-        "fr:os-de-veau",
-        "fr:succo-e-pera"
+        "osso bucco de veau"
     ],
     "agar-agar": [
-        "fr:agaragar",
-        "fr:agaraga",
-        "fr:agar-gar"
+        "agar-agar"
     ],
     "lait d'avoine": [
-        "fr:malt-d-avoine",
-        "fr:lait-de-arone",
-        "fr:l-avoine"
+        "lait d'avoine"
     ],
     "escalope": [
-        "fr:escalope",
-        "fr:escalope-lndian",
-        "fr:escalope-de-veau"
+        "escalope"
     ],
     "panure": [
-        "fr:panure-7",
-        "fr:l-panure",
-        "fr:panure-25"
+        "panure"
     ],
     "fraises": [
-        "fr:fraise\u0219",
-        "fr:fraises\ud83c\udf53",
-        "fr:fraisesl"
+        "fraises"
     ],
     "plat de c\u00f4te": [
-        "fr:plat-de-cote",
-        "fr:lat-de-culture",
-        "fr:pate-de-e"
+        "plat de c\u00f4te"
     ],
     "jarret de porc": [
-        "fr:tete-et-jarret-de-porc",
-        "fr:jarret-de-porc-desosse",
-        "fr:jarret-de-porc-avec-os"
+        "jarret de porc"
     ],
     "levure de boulanger": [
-        "fr:levure-de-boulangerche",
-        "fr:levure-de-boulanger-sel",
-        "fr:levure-de-boulanger-seche"
+        "levure de boulanger"
     ],
-    "poulets": [],
+    "poulets": [
+        "poulets"
+    ],
     "feuilles de guascas": [
-        "fr:feuilles-de-muscade",
-        "fr:feuilles-de-cassis",
-        "fr:feuilles-de-casses"
+        "feuilles de guascas"
     ],
     "huile de coco": [
-        "fr:huile-de-cocot",
-        "fr:huile-de-cocon",
-        "fr:huile-de-cocol"
+        "huile de coco"
     ],
     "fenugreek": [
-        "fr:fenugreek",
-        "fr:fenugreek-seeds",
-        "fr:fenugreek-fibre"
+        "fenugreek"
     ],
     "semoule fine": [
-        "fr:semoule-fine-de-ble",
-        "fr:semoule-fine-de-ble-dur",
-        "fr:semoule-fine-100-ble-dur"
+        "semoule fine"
     ],
-    "dorade": [],
+    "dorade": [
+        "dorade"
+    ],
     "aillet": [
-        "fr:paillete",
-        "fr:caillette",
-        "fr:caillettes"
+        "aillet"
     ],
     "palourdes": [
-        "fr:fond-de-palourdes",
-        "fr:palourdes-precuites",
-        "fr:chairs-de-palourdes"
+        "palourdes"
     ],
     "champignon noir": [
-        "fr:champignon-noir-1",
-        "fr:champignon-noir-sec",
-        "fr:cepe-champignon-noir"
+        "champignon noir"
     ],
     "aiguillette de canard": [
-        "fr:aiguillette-de-canard",
-        "fr:aiguillette-de-canard-gras",
-        "fr:aiguillette-de-canard-du-sud-ouest"
+        "aiguillette de canard"
     ],
     "aiguillettes de poulet": [
-        "fr:aiguillettes-de-poulet",
-        "fr:daiguillettes-de-poulet",
-        "fr:4-aiguillettes-de-poulet"
+        "aiguillettes de poulet"
     ],
     "steaks de soja": [
-        "fr:steak-de-soja",
-        "fr:steak-au-soja",
-        "fr:salsa-de-soja"
+        "steaks de soja"
     ],
     "c\u00f4tes d'agneau": [
-        "fr:cotes-d-agneau",
-        "fr:os-d-agneau",
-        "fr:jus-dagneau"
+        "c\u00f4tes d'agneau"
     ],
     "escalopes": [
-        "fr:escalopes-de-veau",
-        "fr:escalopes-de-dinde",
-        "fr:2-escalopes-de-veau"
+        "escalopes"
     ],
-    "sel gris": [],
+    "sel gris": [
+        "sel gris"
+    ],
     "s\u00e9baste": [
-        "fr:s-base",
-        "fr:sate",
-        "fr:bate"
+        "s\u00e9baste"
     ],
     "fonio": [
-        "fr:fonio"
+        "fonio"
     ],
     "c\u00e9leri-rave": [
-        "fr:clerirave",
-        "fr:celeri-rave1",
-        "fr:eleri-rave"
+        "c\u00e9leri-rave"
     ],
     "fond de volaille": [
-        "fr:fond-de-volaille-naturel",
-        "fr:base-de-fond-de-volaille",
-        "fr:fond-de-volaille-aromatise"
+        "fond de volaille"
     ],
     "cinq-\u00e9pices": [
-        "fr:cinq-epices",
-        "fr:i-pices",
-        "fr:cinq-baies"
+        "cinq-\u00e9pices"
     ],
     "raisin noir": [
-        "fr:jus-de-raisin-noire",
-        "fr:raisin-noir-cat1-chili",
-        "fr:raisin-noir-1-myrtille"
+        "raisin noir"
     ],
     "poivre vert": [
-        "fr:poivre-vert-1",
-        "fr:poivre-vert-1-96",
-        "fr:poivre-vert-1-sel"
+        "poivre vert"
     ],
     "cerf": [
-        "fr:cerf",
-        "fr:cerfs",
-        "fr:cerfeull"
+        "cerf"
     ],
     "rhum": [
-        "fr:rhume",
-        "fr:rhum-i",
-        "fr:rhum-4"
+        "rhum"
     ],
     "limande": [
-        "fr:limande-jaune",
-        "fr:limande-du-nord",
-        "fr:filet-de-limande"
+        "limande"
     ],
     "sole": [
-        "fr:rasole",
-        "fr:isolees",
-        "fr:irasole"
+        "sole"
     ],
     "dorades": [
-        "fr:dores",
-        "fr:torsades",
-        "fr:prades"
+        "dorades"
     ],
     "boursin": [
-        "fr:boursin",
-        "fr:boursin-kaas",
-        "fr:fromage-boursin"
+        "boursin"
     ],
     "abricot": [
-        "fr:abri\u0307cot",
-        "fr:fabricot",
-        "fr:abricot-i"
+        "abricot"
     ]
 }
