@@ -13,7 +13,9 @@ echo "DATABASE_URL='$DATABASE_URL'" >> /app/.env
 echo "APP_ENV='prod'" >> /app/.env
 
 echo "Seting up composer"
-cd /app && composer setup
+if [[ "$COMPOSER_IGNORE" != "true" ]]; then
+    cd /app && composer setup
+fi
 chown -R www-data:www-data /var/symfony
 # ./wait-for-it.sh
 service php8.1-fpm start
